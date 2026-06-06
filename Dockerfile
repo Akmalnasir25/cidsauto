@@ -1,15 +1,10 @@
 FROM node:20-slim
 
-# Install Python, wget, dan Google Chrome
+# Install Python dan Chromium (lebih ringan dari Chrome penuh)
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
-    wget \
-    gnupg \
-    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg \
-    && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list \
-    && apt-get update \
-    && apt-get install -y google-chrome-stable \
+    chromium \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python requirements
@@ -30,4 +25,5 @@ RUN mkdir -p /app/data
 
 EXPOSE 3001
 
+ENV NODE_OPTIONS="--max-old-space-size=384"
 CMD ["node", "server.js"]

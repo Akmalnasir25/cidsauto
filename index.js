@@ -38,7 +38,7 @@ const CONFIG = {
   username: USERNAME,
   password: PASSWORD,
   headless: process.env.HEADLESS === 'true' || process.env.NODE_ENV === 'production',
-  slowMo: 300,
+  slowMo: 100,
   timeout: 60000,
   teacherName: TEAM_NAME,
   rptFile: RPT_FILE,
@@ -904,19 +904,43 @@ async function main() {
   console.log('Weeks: ' + startWeek + ' to ' + endWeek);
   console.log('Group: ' + targetGroup);
 
-   const launchOptions = {
-     headless: CONFIG.headless,
-     slowMo: CONFIG.slowMo,
-     channel: 'chrome',
-     args: [
-       '--no-sandbox',
-       '--disable-setuid-sandbox',
-       '--disable-dev-shm-usage',
-       '--disable-gpu'
-     ]
-   };
+  const launchOptions = {
+    headless: CONFIG.headless,
+    slowMo: CONFIG.slowMo,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
+      '--disable-software-rasterizer',
+      '--disable-accelerated-2d-canvas',
+      '--disable-accelerated-jpeg-decoding',
+      '--disable-extensions',
+      '--disable-background-networking',
+      '--disable-background-timer-throttling',
+      '--disable-backgrounding-occluded-windows',
+      '--disable-breakpad',
+      '--disable-client-side-phishing-detection',
+      '--disable-default-apps',
+      '--disable-domain-reliability',
+      '--disable-hang-monitor',
+      '--disable-ipc-flooding-protection',
+      '--disable-popup-blocking',
+      '--disable-prompt-on-repost',
+      '--disable-renderer-backgrounding',
+      '--disable-sync',
+      '--disable-translate',
+      '--disable-web-security',
+      '--disable-features=TranslateUI',
+      '--memory-pressure-off',
+      '--no-first-run',
+      '--single-process',
+      '--no-zygote',
+      '--js-flags="--max-old-space-size=256"'
+    ]
+  };
 
-   const browser = await chromium.launch(launchOptions);
+  const browser = await chromium.launch(launchOptions);
 
   const context = await browser.newContext({
     viewport: { width: 1280, height: 900 },
