@@ -1,0 +1,28 @@
+1. Login...
+   Logged in
+2. ERPH > Rekod > Buka Rekod...
+3. Select Nama...
+4. Click Cari...
+   URL: https://asiemodel.net/model/search9.php?action=listmiw&d=PPD+Kinta+Utara&sk=ABA2057&u=159707&cl=&sg=&s=&l=10&filter=Cari&sop=&op=
+5. Click Mar...
+   URL after Mar: https://asiemodel.net/model/search9.php?action=listmiw&ml=3&yl=2026&c=Malaysia&n=Perak&d=PPD+Kinta+Utara&sk=ABA2057&u=159707&rt=&sop=&cg=cg_primary&cl=&sg=&s=&l=10
+6. Checking records for March...
+   Row0: Minggu Kalendar11Min | MATT6M8 | check=27068450
+   Row1: Minggu Kalendar11Min | PJT6M8 | check=27068232
+   Row2: Minggu Kalendar11Min | PJT4M8 | check=27068499
+   Row3: Minggu Kalendar11Min | PJT5M8 | check=27068503
+   Row4: Minggu Kalendar11Min | RBTT5M8 | check=27068515
+   Row5: Minggu Kalendar11Min | RBTT6M8 | check=27068530
+   Row6: Minggu Kalendar10Min | M7RBTT6Disahkan oleh: 1. MOHAMAD RIDHAUD | check=25911302
+   Row7: Minggu Kalendar10Min | M7MT | check=25911308
+   Row8: Minggu Kalendar10Min | M7PJT4 | check=25911202
+   Row9: Minggu Kalendar10Min | M7PJT5 | check=25911213
+7. Select only Minggu 8 RPH...
+   Selected: MATT6M8 (27068450)
+   Selected: PJT6M8 (27068232)
+   Selected: PJT4M8 (27068499)
+   Selected: PJT5M8 (27068503)
+   Selected: RBTT5M8 (27068515)
+   Selected: RBTT6M8 (27068530)
+   Selected 6 Minggu 8 records
+8. Click Pengesahan Pukal...

@@ -1,0 +1,2303 @@
+<!DOCTYPE html><html lang="ms"><head>
+<title>createmiw Tetapan - ASIE Model</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1, user-scalable=yes">
+
+<link rel="stylesheet" href="/css/bootstrap-5.0.0-beta1/bootstrap.min.css">
+<link rel="stylesheet" href="/css/fontawesome-free-5.15.2-web/css/all.css">
+
+<link rel="stylesheet" type="text/css" href="/css/v9styles.css?20260205b">
+
+
+<!-- <link rel="stylesheet" type="text/css" href="/css/styles.css" /> -->
+
+<link rel="stylesheet" type="text/css" href="/css/chosen.css">
+
+<link rel="stylesheet" type="text/css" href="/css/select2.min.410b1.css">
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+
+<script type="text/javascript" src="/js/select2.full.min.410b1.js"></script>
+<script type="text/javascript" src="/js/jquery-validation-1.17.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="set.20230818.js"></script>
+
+<!-- script src="/js/jquery.ui.touch-punch.min.js"></script -->
+
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jqueryui-editable/css/jqueryui-editable.css" rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jqueryui-editable/js/jqueryui-editable.min.js"></script>
+
+
+<link href="/js/lity-2.3.1/dist/lity.css" rel="stylesheet">
+<script src="/js/lity-2.3.1/dist/lity.js"></script>
+
+<!-- script type="text/javascript" src="/js/bootstrap-multiselect.js"></script -->
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J4MP2SJKZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J4MP2SJKZ5');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92269807-1', 'auto');
+  ga('send', 'pageview');
+
+
+	var dbug='';
+	
+	var doneparent = [];
+
+</script>
+<style>
+#row_welcome input.disabled {
+	cursor:default;
+}
+.instructional_profile .table_miw_attachment {
+	border:1px solid #ddd;
+}
+#row_welcome .bahan_kongsi {
+	font-size:14px;
+}
+.select2-container--default .select2-results__option--selected {
+	background-color: initial;
+}
+.select2-container--default .select2-results__option[aria-selected=true] {
+    color: #000000;
+    background: #eee;
+}
+.container .row h3 {
+    width: 100%;
+}
+.container .row .title_head {
+    width: 50%;
+	float:left;
+}
+.container .row .title_head h4{
+	color:#e9e9e9;
+}
+.nextStep_InsMPr9  {
+    background-color: #3f7cc8;
+}
+.after_InsMPr9, .nextStep_DevSki, .after_DevSki, .nextStep_BuiCha, .after_BuiCha, .nextStep_InsMLe  {
+    background-color: #d94340;
+}
+.nextStep.nextStep_past.nextStep_InsMPr9:hover {
+    background-color: #3f7cc8;
+}
+.nextStep.nextStep_past.nextStep_DevSki:hover,.nextStep.nextStep_past.nextStep_BuiCha:hover {
+    background-color: #d94340;
+}
+.after_InsMLe,.nextStep.nextStep_past.nextStep.after_InsMLe:hover   {
+    background-color: #05bc57;
+}
+.blue_info {
+	cursor:default;
+	width:30px;
+	padding-left:0px;
+	font-weight:normal;
+}
+.blue_info_content {
+    top: -5px
+}	
+.popup_header .container .row {
+	display:flex;
+}
+.container .row .title_desc {
+	position:relative;
+	display:block;
+	text-align:right;
+}
+.content_desc {
+	/*position:absolute;*/
+	bottom:10px;
+	right:5px;
+}
+.grouplabel_wrapper {
+	position:relative;
+	display:flex;
+}
+.grouplabel_wrapper .blue_info{
+	padding-left:5px;
+}
+.grouplabel_wrapper .blue_info_content{
+	left:5px;
+}
+.grouplabel_wrapper .help_text {
+	top: 3px;
+    position: absolute;
+    left: 50%;
+}
+.item_label_innerwrap {
+	display:flex;
+}
+.item_label_innerwrap .blue_info{
+	padding-left:5px;
+}
+.item_label_innerwrap .blue_info_content{
+	left:5px;
+}
+.item_label_innerwrap .il{
+	
+}
+#row_welcome .help_text p{
+	font-style:italic;
+	font-size:12px;
+}
+#row_welcome .help_text b{
+	font-size:12px;
+}
+.nosubset .item_label {
+	font-weight:bold;
+}
+.form .form-control, .form .form-select {
+	display:inline-block;
+}
+
+
+.ver9 .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    border: 1px solid #ddd;
+    padding: 5px;
+
+}
+.ver9 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+	border-right:0;
+}
+
+.ver9 .chosen-container-multi .search-field textarea {
+	font-size:16px;
+	margin-left: 5px;
+	width: 98%;
+}
+.ver9 .chosen-container-multi .search-field textarea:focus {
+	outline: 1px solid #eee;
+}
+.ver9 .chosen-container-multi .chosen-choices {
+	padding: 0;
+	border-radius:4px;
+}
+.ver9 .chosen-container-multi .chosen-choices li.search-choice span.editable-click {
+	margin-right:15px;
+	line-height:21px;
+}
+.ver9 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+	top:11px;
+}
+.ver9 .chosen-container-multi .chosen-choices li.search-choice .editable-container {
+	padding-right:15px;
+}
+.ver9 .chosen-container-multi .chosen-choices li.search-choice {
+	background-color: #e4e4e4;
+	background-image:unset;
+    border-radius: 4px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 5px;
+	margin-bottom:0px;
+    border: 1px solid #ddd;
+    padding: 5px;
+	width: calc(100% - 10px);
+}
+.ver9 .row_content input, .ver9 .row_content select {
+	max-width:400px;
+}
+.subset>ul>li.li_row {
+	padding:0;
+}
+.subset .col_2 {
+	width:120px;
+}
+.subset .col_1 {
+	width: calc(100% - 120px);
+}
+
+
+.navbar .container-fluid {
+	flex-wrap: nowrap;
+}
+.container-lg>.container-fluid {
+	padding:0;
+}
+.row .header {
+	font-weight:bold;
+}
+.row_content .row {
+	margin-left:0;
+	margin-right:0;
+}
+.row_content .row:hover {
+	background-color:rgba(200,200,200,0.4);
+}
+.row_content .CCR_4:hover {
+	background-color:#d9d7d7;
+}
+.row_content .CCR_3:hover {
+	background-color:#caffca;
+}
+.row_content .CCR_2:hover {
+	background-color:#7ee97e;
+}
+.row_content .CCR_1:hover {
+	background-color:#7ee97e;
+}
+.row_content .row.instruction_row:hover {
+	background-color:#4d4de6;
+}
+.row_content .row>div {
+	border-bottom:1px solid #ddd;
+	border-right:1px solid #ddd;
+	padding:8px;
+}
+.row_content .row>div:first-child {
+	border-left:1px solid #ddd;
+}
+.row_content .row:first-child>div {
+	border-top:1px solid #ddd;
+}
+.row_content .row>div.header {
+	border-bottom:2px solid #666;
+	border-top:2px solid #666;
+}
+.instruction_row .col-wtd {
+	min-height: 76px;
+}
+.div-chosen-select {
+	width:400px;
+}
+.multitext-wrapper {
+	float:left;
+	/*width:400px;*/
+	margin-right:10px;
+}
+.group-wrapper {
+	clear:both;
+}
+.grouplabel_wrapper {
+	width: 50%;
+    float: left;
+    padding-right: 10px;
+    min-width: 300px;
+}
+
+@media (max-width: 991px){
+	.instruction_row .col-wtd {
+		position:relative;
+	}
+	.instruction_row .lily-video {
+		top: 0;
+		right: 215px;
+	}
+	.instruction_row .col-wtd {
+		min-height:40px;
+	}
+}
+@media (max-width: 767px){
+	body {
+		font-size:0.9rem;
+	}
+	.wtd_header {
+		font-size: 12px;
+	}
+	.instruction, .instruction p {
+		font-size:14px;
+		margin-bottom: 12px;
+	}
+	.title_head {
+		font-size:smaller;
+	}
+	.title_desc {
+		font-size:smaller;
+	}
+	.table>:not(caption)>*>* {
+		padding: 5px;
+	}
+	.row>* {
+		padding-right:5px;
+		padding-left:5px;
+	}
+}
+@media (max-width: 575px) {
+	.menubar .usertext {
+		display:none;
+	}
+} 
+@media (max-width: 575px){
+.row_content .row>div.col-12:nth-child(2) {
+	border-left:1px solid #ddd;
+}
+.row_content .row>div.col-12:first-child {
+	border-bottom:0;
+}
+.div-chosen-select {
+	width:100%;
+}
+.multitext-wrapper {
+	width:100%;
+}
+.subtable {
+	padding-left:0;
+}
+.content_desc {
+	position:initial;
+}
+.grouplabel_wrapper {
+	width: 100%;
+}
+.subset {
+	padding-left:0;
+}
+.instructional_profile .InsPro.label_desc {
+    max-width: unset;
+}
+
+
+}
+.whattodo {
+	position: relative;
+}
+.whattodo.expand {
+	position: absolute;
+	top:36px;
+}
+.lily-video {
+	position:relative!important;
+	right:0;
+}
+.lang_en .d-flex .lily-video {
+	right: 0;
+}
+.help_icon_bar {
+	position:relative;
+}
+.help_icons {
+	height:40px;
+}	
+.row_content {
+    margin-top: 5px;
+}
+.help_note {
+	display:table;
+	min-width:100px;
+	font-size:12px;
+	font-style:italic;
+}
+.help_note p{
+	font-size:12px!important;
+}
+.help_note b{
+	font-size:12px!important;
+}
+.blue_info ul {
+	padding-left:1rem;
+}
+body.pop_1 {
+	padding-top:0;
+}
+.disablelink {
+	pointer-events: none;
+}
+.class_status_0 {
+	color:#a88;
+}
+#row_welcome i p, #row_welcome i p a {
+	font-size:12px;
+}
+.pop_1 .asie-wrapper {
+	padding-top:0px;
+}
+.smartsearch {
+    border: 1px solid #999;
+    border-radius: 10px;
+    padding: 3px 10px;
+    margin: 3px;
+    color: #333;
+    cursor: pointer;
+	width: 120px;
+    text-align: center;
+}
+.smartsearch .btn {
+	font-size:12px;
+	padding: 0 0 4px;
+}
+.smartsearch #ai_wait{
+	display:none;
+}
+.smartsearch.waiting {
+	background-color:transparent!important;
+	border:0;
+}
+.smartsearch.waiting button{
+	display:none;
+}
+.smartsearch.waiting #ai_wait{
+	display:block;
+}
+ul.table_sortable li.li_sortable.no-dragable .col_1 {
+	cursor:default;
+}
+.lang_en .d-flex .lily-video {
+	right: 0;
+}
+.src_miwpra .FacPro {
+	/*display:none;*/
+}
+.src_miwpra .FacPro_time_allocation {
+	display:none;
+}
+.datepicker, select.select2_w {
+	width: 110px;
+    padding: 5px;
+}
+.redalert {
+	border:2px dotted red;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="nav.css?20260205b">
+</head>
+<body id="body" class="debug_ lang_ms folded action_createmiw ver9 pop_">
+
+<nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-asie topbar d-print-none" aria-label="Ninth navbar example">
+    <div class="container-fluid">
+
+	<button id="menuToggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>    
+<!--
+	<button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mySidenav" aria-controls="mySidenav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+-->
+      <a class="navbar-brand" href="/model">CIDS <span style="font-size:14px">New-Gen</span></a>
+	  
+ 	  
+      <div class="collapse navbar-collapse" id="asietopnavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          
+		  <!--
+		  <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="main9.php">
+			<span class="media-left d-lg-none">
+				<i class="icon fa fa-home fa-fw " aria-hidden="true"  ></i>
+			</span>
+			<span class="d-none d-lg-block">Laman Model</span></a>
+          </li>
+		  -->
+		  		   <li class="nav-item">
+            <a class="nav-link" href="main9.php">
+			<span class="media-left">
+				<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">eRPH</span>
+			</a>
+          </li>
+		  		  		             <li class="nav-item">
+            <a class="nav-link" href="record.php?action=newmiw">
+			<span class="media-left">
+				<i class="icon fa fa-plus fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Cipta Rekod Baharu</span>
+			</a>
+          </li>
+		 
+		  <li class="nav-item">
+            <a class="nav-link" href="search9.php?action=listmiw">
+			<span class="media-left">
+				<i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Buka Rekod</span></a>
+          </li>
+		  		  				  <li class="nav-item">
+            <a class="nav-link" href="search9.php?action=listmiwpra">
+			<span class="media-left">
+				<i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Buka Rekod Prasekolah</span></a>
+          </li>		
+				  
+		  		  
+		  		  <li class="nav-item">
+            <a class="nav-link" href="search9.php?action=search_yearly">
+			<span class="media-left">
+				<i class="icon far fa-calendar-alt fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">RPT</span></a>
+          </li>
+		  		  <li class="nav-item">
+            <a class="nav-link" href="teachers9.php?action=waktumengajar">
+			<span class="media-left">
+				<i class="icon fas fa-table fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Jadual Waktu</span></a>
+          </li>
+		  
+		             <li class="nav-item">
+            <a class="nav-link" href="record.php?action=supervision">
+			<span class="media-left">
+				<i class="icon fa fa-file-signature fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Rekod Penyeliaan</span>
+			</a>
+          </li>          
+		  				
+		  		
+		          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="recordname" data-bs-toggle="dropdown" aria-expanded="false">
+			<span class="media-left">
+				<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Rekod:</span>
+			<span class="miw_name" id="miw_name" title="">TEST_EXPLORE_M2</span></a>		
+            <ul class="dropdown-menu navbar-asie" aria-labelledby="recordname" id="miw_competency_submenu">
+			
+			              			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=instructional');return false;" href="set9.php?action=instructional">Integrasi Pengetahuan - Profil Pembelajaran</a></li>
+			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=media9');return false;" href="set9.php?action=media9">Integrasi Pengetahuan - Profil Pelajar</a></li>
+              <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=developingskills');return false;" href="set9.php?action=developingskills">Membangun - Kemahiran</a></li>
+			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=buildingcharacter');return false;" href="set9.php?action=buildingcharacter">Membentuk - Karakter</a></li>
+			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=instillingmetalearning');return false;" href="set9.php?action=instillingmetalearning">Menerap - Pembelajaran-Meta</a></li>
+			  			  			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('miw9.php?action=miw');return false;" href="miw9.php?action=miw">MIW</a></li>
+			                
+            </ul>
+          </li>
+		         </ul>
+        
+		
+			
+      </div>
+	  <div class="navbar-expand" id="asieusermenu">
+		<ul class="nav navbar-nav ml-auto">
+			<div class="d-none d-lg-block">
+			
+			</div>
+	   
+			<!-- user_menu -->
+			<li class="nav-item d-flex align-items-center">
+				<div class="usermenu">
+					<div class="action-menu moodle-actionmenu nowrap-items d-inline" id="action-menu-1" data-enhance="moodle-core-actionmenu">
+						<div class="menubar d-flex " id="action-menu-1-menubar" role="menubar">
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a href="#" tabindex="0" class="nav-link dropdown-toggle icon-no-margin" id="profilemenu" aria-label="User menu" data-bs-toggle="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-1-menu">
+				
+                            <span class="userbutton"><span class="usertext mr-1">MUHAMMAD AKMAL BIN NASIR </span>
+														<span class="avatars">
+							<span class="avatar current"> <img src="upload/159707/900225025035.jpg" class="userpicture defaultuserpic" width="35" height="35" role="presentation" aria-hidden="true"></span></span>
+														</span>
+                                
+                            <b class="caret"></b>
+                        </a>
+						<ul class="dropdown-menu navbar-asie" aria-labelledby="profilemenu">
+						  <li><a class="dropdown-item" href="admin9.php?action=profail">Sunting Profil Saya</a></li>
+
+				
+						  <li><a class="dropdown-item" href="akaun.php">Akaun</a></li>
+										  <!-- <li><a class="dropdown-item" href="javascript:void(0);">Mesej</a></li> -->
+						  <li><a class="dropdown-item" href="logout.php?redirect=">Log Keluar</a></li>
+						  						  
+						</ul>
+                    </div>
+                </div>
+
+						</div>
+
+				</div></div>
+			</li>
+		</ul>
+		</div>
+    </div>
+  </nav>
+  
+<div class="asie-wrapper"> 
+
+<div id="overlay"></div>
+	
+<nav id="mySidenav" class="d-print-none sidenav navbar  navbar-dark navbar-asie d-md-block sidebar  side-menu" aria-hidden="false" tabindex="-1" style="min-height: 854px;">
+	 <script>document.getElementById("mySidenav").style.minHeight = (window.innerHeight-46)+'px';</script>  
+   <div id="mySidenav2" class="d-md-block ">
+        <ul class="nav flex-column pt-3">
+          <li class="nav-item chevron-link">
+            <a class="nav-link" onclick="toggleNav();" href="javascript:void(0);">
+			<div class="media media-expand">
+				<span class="media-left">
+					<i class="icon fa fa-chevron-circle-right fa-fw " aria-hidden="true" title="Expand Menu" alt="Expand Menu"></i>
+				</span>
+				<span class="media-body ">&nbsp;</span>
+			</div>	
+			<div class="media media-collapse">
+				<span class="media-left">
+					<i class="icon fa fa-chevron-circle-left fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Tutup Menu</span>
+			</div>	
+            </a>
+          </li>
+		  		  <li class="nav-item">
+            <a class="nav-link" href="main.php">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-home fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Laman Utama</span>
+			</div>	
+            </a>
+          </li>
+		  		  
+		 
+		  <li class="nav-item  dropdown">
+		    <a href="javascript:void(0);" class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#record-collapse" aria-expanded="false">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Rekod</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="record-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+							<li><a class="dropdown-item" href="record.php?action=newmiw">
+				Cipta Rekod Baharu</a>
+				</li>
+				<li><a class="dropdown-item" href="search9.php?action=listmiw">
+				Buka Rekod</a>
+				</li>
+															<li><a class="dropdown-item" href="search9.php?action=listmiwpra">
+				Buka Rekod Prasekolah</a>
+				</li>				
+								
+								<li><a class="dropdown-item" href="record.php?action=supervision">
+				Rekod Penyeliaan</a>
+				</li>
+												
+				 				<li><a class="dropdown-item" href="search9.php?action=sharedmiwpra">
+				Perkongsian Rekod Prasekolah</a>
+				</li>
+				 				 				<li><a class="dropdown-item" href="search9.php?action=sharedmiw">
+				Perkongsian Rekod</a>
+				</li>
+				 								<li><a class="dropdown-item" href="search9.php?action=searchlib">Koleksi Rekod</a>
+				</li>
+					
+				<li><a class="dropdown-item" href="search9.php?action=listunsubmitted">
+				Rekod Belum Sah</a>
+				</li>
+								
+								<li class="divider"></li>
+				<li><a class="dropdown-item" href="record.php?action=editmiw">
+				Sunting Rekod</a></li>
+				<li><a class="dropdown-item" href="record.php?action=deletemiw">
+				Hapus Rekod</a></li>
+				<li><a class="dropdown-item" href="main9.php?action=clearmiw">
+				Tutup Rekod</a></li>
+				
+							<li class="divider"></li>
+				<li><a class="dropdown-item" href="record.php?action=search_yearly">
+				Rancangan Pelajaran Tahunan</a></li> 
+				<li><a class="dropdown-item" href="record.php?action=sharedrpt">
+				Perkongsian Rancangan Pelajaran Tahunan</a></li> 
+		
+				</ul>
+			</div>				
+          </li>
+		  		
+			<li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#profile-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-user-circle fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Profil</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="profile-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				
+				
+				<li><a class="dropdown-item" href="admin9.php?action=profail">
+				Sunting Profil Saya</a></li>
+				<li><a class="dropdown-item" href="admin9.php?action=profail_institusi">
+				Profil Institusi</a></li>
+												<li class="divider"></li>
+				<li><a class="dropdown-item" href="admin9.php?action=senarai">
+				Cari Profil Pengguna</a></li>
+								<li><a class="dropdown-item" href="admin9.php?action=cipta_profail">
+				Cipta Profil Pengguna</a></li>
+									</ul>
+			</div>	
+          </li>
+
+		  
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#setting-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-cog fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Tetapan</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="setting-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+									<li><a class="dropdown-item" href="set9.php?action=LeaCla&amp;do=create">Cipta Kelas Baharu</a></li>
+					<li><a class="dropdown-item" href="set9.php?action=LeaCla&amp;do=createcombined">Cipta Kelas Gabungan</a></li>
+					<li><a class="dropdown-item" href="set9.php?action=LeaCla&amp;do=search">Sunting Kelas</a></li>
+				
+				 
+				<li><a class="dropdown-item" href="teachers9.php?action=waktumengajar">
+				Jadual Waktu Instruksional</a></li>
+				<li class="divider"></li>
+			
+				<li><a class="dropdown-item" href="set9.php?action=InsPro">
+				Profil Pembelajaran</a></li>
+				<li><a class="dropdown-item" href="set9.php?action=FacPro">
+				Adegan Pengajaran</a></li>
+				
+			
+															
+			</ul>
+			</div>			
+          </li>
+
+		   <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#resource-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa-fw fas fa-images " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Sumber</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="resource-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+								<li id="li_link_to_rph_resources" style="display:none"><a class="dropdown-item" id="menu_link_to_rph_resources" onclick="popupCenter('upload.php?action=uploadRefleksi&amp;rph=&amp;bahanrefleksi=pbd', 'Settings',1000,450);" href="javascript:void(0);">
+				Pautan ke Sumber Maklumat</a></li>
+				
+				
+				<li><a class="dropdown-item" href="resource.php">
+				Library</a></li>
+				<li><a class="dropdown-item" onclick="popupCenter('mediagallery.php?pop=1', 'Settings',1000,450);" href="javascript:void(0);">
+				Galeri</a></li>
+			
+			</ul>
+			</div>			
+          </li>
+		  
+		  		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#statistic-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-chart-bar fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Statistik</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="statistic-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
+				<li><a class="dropdown-item" href="statistik9.php">Statistik Pengguna</a></li>
+				<li><a class="dropdown-item" href="statistik9.php?action=demo">Statistik Pendidikan Abad Ke-21</a></li>
+			</ul>
+			</div>
+          </li>
+		  		  
+		  <li class="  my-3"></li>
+		  
+						<li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#language-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-globe fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bahasa</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="language-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="main9.php?cb=ms">Bahasa Melayu</a></li><li><a class="dropdown-item" href="main9.php?cb=en">English</a></li>				</ul>
+				</div>
+			</li>
+								
+		  		  
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#communication-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-phone-square-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Komunikasi</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="communication-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="meeting9.php?action=videomeet">
+					CIDS VideoCorps</a></li>
+				
+			</ul>
+			</div>
+          </li>
+		  
+		  
+		  <li class="nav-item">
+			            <a class="nav-link" target="web" href="https://asiemodel.net/ms/tutorial-video/">
+						<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-video fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bimbingan Video</span>				
+			</div>	
+            </a>
+          </li>
+		 
+		  
+		  	 
+		
+ 		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#help-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-info-circle fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bantuan</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="help-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie" id="menu1">
+			
+			
+							
+			
+				<li><a class="dropdown-item" href="main9.php?wb=open">Langkah-langkah Pengguna Baharu</a></li>
+
+								
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/manual-pengguna-pengenalan-umum/" target="web">Kerangka Konseptual CIDS</a></li>
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/manual-pengguna-memulakan-perancangan/" target="web">Manual Pengguna - Memulakan Perancangan</a></li>
+				<li><a class="dropdown-item" href="https://asiemodel.net/perancangan-prasekolah-2026-prasekolah-pendidikan-khas-2026/" target="web">Manual Pengguna - Prasekolah</a></li>
+				
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/bimbingan-pdpr/" target="web">Bimbingan Pengguna – Kemahiran PdPR</a></li>
+									<!--
+				<li ><a class="dropdown-item" href="https://asiemodel.net/ms/kategori-subjek/" target="web">Manual Pengguna: Kategori Subjek</a></li>
+				-->
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/rujukan-dskp/" target="web">Rujukan: Sukatan &amp; Kategori Subjek</a></li>
+				<!--
+				<li ><a class="dropdown-item" href="https://asiemodel.net/ms/kbs-bahan-rujukan/" target="web">KBS - Bahan Rujukan</a></li>
+				-->
+				
+				
+				
+										
+								<!-- 
+				<li class="divider"></li>
+				<li ><B>Rujukan</B>
+									<li><a class="dropdown-item" href="javascript:void(0);">KBAT<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:40px">
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (aplikasi di sekolah 2014).pdf">KBAT (aplikasi di sekolah 2014)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (pedagogi -2014).pdf">KBAT (pedagogi -2014)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (konsep) (BI).pdf">KBAT (konsep) (BI)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (panduan).pdf">KBAT (panduan)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (aplikasi di sekolah 2014).pdf">KBAT (aplikasi di sekolah 2014)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (konsep).pdf">KBAT (konsep)</a></li>
+
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">Ujian Psikometrik<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:40px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/ujian psikometrik_rendah (panduan).pdf">Ujian psikometrik_rendah (panduan)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian psikometrik_menengah (panduan).pdf">Ujian psikometrik_menengah (panduan).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (IMK).pdf">Ujian Psikometrik (IMK).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (ITP).pdf">Ujian Psikometrik (ITP).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (IKK).pdf">Ujian Psikometrik (IKK).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Kecerdasan Pelbagai (BI).pdf">Kecerdasan Pelbagai (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Kecerdasan Pelbagai 2 (BI).pdf">Kecerdasan Pelbagai 2 (BI).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Aptitud Tahun3 (penerangan).pdf">Ujian Aptitud Tahun3 (penerangan).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Aptitud Tahun3 (dokumen).pdf">Ujian Aptitud Tahun3 (dokumen).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Gaya belajar (BI).pdf">Gaya belajar (BI).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (huraian).pdf">Ujian Psikometrik (huraian).pdf</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">Pembelajaran Abad Ke-21<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:117px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pembelajaran Abad Ke-21/Pembelajaran Abad Ke-21 (huraian ringkas).pdf">Pembelajaran Abad Ke-21 (huraian ringkas)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pembelajaran Abad Ke-21/Pembelajaran Abad Ke-21_2 (BI).pdf">Pembelajaran Abad Ke-21_2 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pembelajaran Abad Ke-21/Pembelajaran Abad Ke-21 (BI).pdf">Pembelajaran Abad Ke-21 (BI)</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">Pendidikan Umum<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:40px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran Abad Ke-21 (huraian ringkas).pdf">Pembelajaran Abad Ke-21 (huraian ringkas)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran Abad Ke-21_2 (BI).pdf">Pembelajaran Abad Ke-21_2 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pendidikan UNESCO_2030 (BI).pdf">Pendidikan UNESCO_2030 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pengajaran berkesan (BI).pdf">Pengajaran berkesan (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pendidikan UNESCO (BI).pdf">Pendidikan UNESCO (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran berasaskan hasilan (BI).pdf">Pembelajaran berasaskan hasilan (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/PPPM 2013-2025.pdf">PPPM 2013-2025</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Buku Panduan Pengurusan  PBS 2012.pdf">Buku Panduan Pengurusan  PBS 2012</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran Abad Ke-21 (BI).pdf">Pembelajaran Abad Ke-21 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Ubahsuaian Taksonomi Bloom (BI).pdf">Ubahsuaian Taksonomi Bloom (BI)</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">PLC<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:168px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/PLC/Konsep PLC.pdf">Konsep PLC</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/PLC/Modul PLC.pdf">Modul PLC</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/PENJELASAN MEDIA PENGAJARAN.pdf">Penjelasan Media Pengajaran</a></li>
+					
+								</li>
+				-->
+			</ul>
+			</div>
+          </li>    
+		
+ 
+		 <li class="nav-item dropdown" id="faq">
+		             <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#faq-collapse" aria-expanded="false" href="https://asiemodel.net/ms/soalan-lazim-faq/">
+		 			<div class="media">
+				<span class="media-left">
+						
+					<i class="icon far fa-comment-dots" aria-hidden="true" style="width:1.25em;text-align: center;"></i>
+				</span>
+				<span class="media-body ">Soalan Lazim - FAQ</span>
+			</div>	
+            </a>
+		 </li>	
+
+
+		 
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#exit-collapse" aria-expanded="false" href="#">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-sign-out-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Keluar</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="exit-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+						
+				<li><a class="dropdown-item" href="main.php">Laman Utama</a>
+				</li>
+							<li><a class="dropdown-item" href="logout.php?redirect=">Log Keluar</a>
+				</li>
+				
+			</ul>
+			</div>
+		</li>
+
+        </ul>
+
+        
+      </div>
+	  
+	
+ </nav>
+ <script>
+    const menu = document.getElementById('mySidenav');
+    const overlay = document.getElementById('overlay');
+    const toggleBtn = document.getElementById('menuToggle');
+
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        toggleBtn.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        toggleBtn.classList.remove('active');
+    });	
+
+</script>
+ <script type="text/javascript">
+function checkBeforeNavigate (url,msg="Anda belum Simpan tetapan atau kandungan! Sila klik Cancel untuk kembali atau klik OK untuk terus!") {
+
+	if (typeof belumedit === "undefined") {
+		proceed=true;
+	}
+	else if (belumedit) {
+		proceed=true;
+	}
+	else {
+		proceed=confirm(msg);
+	}
+	if (proceed) {
+		location.href=url;
+	}	
+	return false;
+}
+</script>
+ 	
+<main id="main" class=""> 
+		
+		
+  <div class="container-fluid navbar-dark bg-asie pt-4">
+	<div class="container-lg set_page">
+		<div class="row pb-3">
+
+<script>
+	$(document).ready(function() {
+		// validate signup form on keyup and submit
+		/*
+		$("#new").validate({
+			rules: { 
+					"content[date_from]": {"required":true},
+					"content[date_to]": {"required":true},
+			},
+			messages: {				
+				"content[date_from]": "Sila pilih tarikh mula",
+				"content[date_to]": "Sila pilih tarikh akhir",
+			},
+
+		});
+		*/
+	});
+    var c = 'inline';
+    $.fn.editable.defaults.mode = 'inline';
+	$.fn.editable.defaults.toggle = 'dblclick';
+	$.fn.editableform.buttons =
+'<button type="submit" class="btn btn-primary btn-sm editable-submit">' +
+    '<i class="fa fa-fw fa-check"></i>' +
+    '</button>' +
+'<button type="button" class="btn btn-warning btn-sm editable-cancel">' +
+    '<i class="fa fa-fw fa-times"></i>' +
+    '</button>';
+//var $j = jQuery.noConflict();
+	$(function(){
+  
+		//defaults
+		//$.fn.editable.defaults.url = '/model'; 
+   
+		//editables 
+		$('#username').editable({
+			//   url: '/post',
+			   type: 'textarea'
+		});
+		
+		$('#firstname').editable({
+			validate: function(value) {
+			   if($.trim(value) == '') return 'This field is required';
+			}
+		});
+		
+		$('.search-choice-value').editable({
+			//   url: '/post',
+			   type: 'textarea',
+			   success: function(response, newValue) {
+					//userModel.set('username', newValue); //update backbone model
+					//alert(newValue);
+					var f = this.parentNode.getElementsByTagName("input")[0];
+					f.value = newValue;
+					//alert(f.value);
+				}
+		});
+		/*
+		$('.select2-selection__choice').editable({
+			//   url: '/post',
+			   type: 'textarea',
+			   mode: 'popup',
+		});
+		*/
+		 
+	});
+	/*
+	$(document).on("focus",".input-large",function(){
+	//remove all characters but numbers 
+	//var _val = $(this).val().match(/\d/g).join("");
+	var _val = $(this).val().replace(/<span>(.*)<\/span>/ig, '').replace(/×/,'');
+	
+	//set it.
+	$(this).val(_val);
+	});
+*/
+
+</script>  
+<style>
+	.whattodo {
+		position: relative;
+	}
+	.whattodo.expand {
+		position: absolute;
+		top:44px;
+	}
+	.instructional_profile .lily-video {
+		position:relative!important;
+		right:0;
+		top:0;
+	}
+</style>
+	
+	<div class="title_head col-12 col-xs-12 col-md-6">
+	<h3 style="float:none">Dimensi 1: Integrasi - Pengetahuan</h3>
+	<a href="https://bit.ly/2YKDNeK" target="_blank">
+	<img src="/images/4DM2.png" style="float:left;width:100px;padding:0px 10px 10px 0"></a>
+		<i><span style="float:none;font-size:17px;line-height:20px;margin:10px 0;font-weight:normal;color:#eee">
+		“Apa yang kita tahu dan faham”</span></i>
+	</div>
+	<div class="title_desc col-12 col-xs-12 col-md-6" style="">
+	<h4 class="text-end">Profil Pembelajaran</h4>
+	<div class="text-end content_desc">Mencipta maklumat khusus untuk isi-isi penting pada item: <b>Tema</b> - merangkumi pengetahuan dalam pelbagai <b>Disiplin, Bidang</b> (cabang), <b>Profil Subjek &amp; Konsep Teras</b> (termasuk proses)</div></div>
+</div></div></div>
+	
+
+<script>$(document).ready(function() {
+			  document.getElementById("miw_name").innerHTML = 'TEST_EXPLORE_M2';
+			});</script><form method="post" action="set9.php" class="form" id="new" autocomplete="off" onsubmit="return !!(compareSelectValue('miw_week_start','miw_week_end','The teaching week entered is not valid!') &amp; compareTwoDate('datetimepicker','datetimepicker2','Tarikh yang dimasukkan tidak sah!') &amp; checkUnsave('Anda telah menaip sesuatu tetapi belum mengklik butang Tambah atau menekan Enter. \nJika anda teruskan maklumat tersebut akan hilang. \nKlik Cancel sekarang untuk mengklik butang Tambah sebelum Simpan. \nKlik OK jika ingin meneruskan tanpa menyimpan maklumat tersebut.')); ">
+
+  <div class="container-lg pt-4 grid100 content">
+	<div class="container-fluid row_content f_setInstructional instructional_profile" id="">
+		
+
+<!--		
+<div class="grid100 content">
+<div class="container">
+<div class="row">
+-->
+
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+	 <h4 class="alert-heading">Berjaya</h4>Rekod Baharu telah dicipta: TEST_EXPLORE_M2
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div><!--
+<div class="row_content f_setInstructional" id="row_welcome">	
+-->
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3 header">Nama Rekod</div>
+	<div class="col-7 col-xs-7 col-sm-9 header">TEST_EXPLORE_M2</div>
+</div>	
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3">Institusi</div>
+	<div class="col-7 col-xs-7 col-sm-9">SEKOLAH KEBANGSAAN PENGKALAN</div>
+</div>	
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3">Kod Institusi</div>
+	<div class="col-7 col-xs-7 col-sm-9">ABA2057</div>
+</div>	
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3">Daerah, Negeri, Negara</div>
+	<div class="col-7 col-xs-7 col-sm-9">PPD Kinta Utara, Perak, Malaysia</div>
+</div>	
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3">Nama</div>
+	<div class="col-7 col-xs-7 col-sm-9">MUHAMMAD AKMAL BIN NASIR</div>
+</div>
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3">Emel</div>
+	<div class="col-7 col-xs-7 col-sm-9">akmalnasir252@gmail.com</div>
+</div>
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3">Kategori Institusi</div>
+	<div class="col-7 col-xs-7 col-sm-9">Sekolah Rendah</div>
+</div>
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3">Aras Kelas</div>
+	<div class="col-7 col-xs-7 col-sm-9">Tahun 6	<input type="hidden" name="level" id="level" value="Sekolah Rendah Tahun 6" style=""></div>
+	
+</div>
+
+	<div class="row"><div class="col-5 col-xs-5 col-sm-3">Sesi Persekolahan / Akademik
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_year_session noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content"><p>Merujuk pada sesi pembelajaran dalam masa satu tahun akademik. Sila buat pilihan yang tepat<br>Contoh:</p>
+<ul>
+<li>2025 - sesi permulaan &amp; sesi akhir pembelajaran pada tahun yang sama.</li>
+<li>2025/2026 – sesi permulaan pada tahun 2025, sesi berakhir/tamat 2026</li>
+</ul></div>
+		</div></div><div class="col-7 col-xs-7 col-sm-9"><select name="sesi" style="width:150px" class="form-control"><option value="2025">2025</option><option value="2025/2026">2025/2026</option><option value="2026" selected="">2026</option><option value="2026/2027">2026/2027</option><option value="2027">2027</option><option value="2027/2028">2027/2028</option></select></div></div>
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3">Kategori Subjek / Bidang</div>
+	<div class="col-7 col-xs-7 col-sm-9">Kemanusiaan</div>
+</div>
+<div class="row">
+	<div class="col-5 col-xs-5 col-sm-3">Subjek</div>
+	<div class="col-7 col-xs-7 col-sm-9">Pendidikan Jasmani dan Pendidikan Kesihatan (Semakan)	<input type="hidden" id="subject" value="Pendidikan Jasmani dan Pendidikan Kesihatan (Semakan)" style="">
+		<p style="float:right;text-align:right">
+	<a href="https://asiemodel.net/ms/rujukan-dskp/" target="web"><i>Tekan di sini untuk merujuk Sukatan &amp; Kategori Subjek</i></a>
+	</p>	
+	</div>
+</div>
+	
+				
+<div class="row">
+	<div class="col-12 col-xs-5 col-sm-3">Tarikh Perancangan Instruksional Mingguan	
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_date noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content">Perancangan Instruksional Mingguan mengikut kalendar tahunan</div>
+		</div></div>
+	<div class="col-12 col-xs-7 col-sm-9">
+	<div style="display:block;float:left;margin-right:18px">
+	Dari	<input id="datetimepicker" class="datepicker autodate form-control" type="text" name="content[date_from]" value="08-06-2026" pattern="\d{2}-\d{2}-\d{4}" required="" onchange="fetch_miwweek(this.value,'miw_week_start')" style=""> 
+	Hingga 
+	<input id="datetimepicker2" class="datepicker autodate form-control" type="text" name="content[date_to]" value="12-06-2026" required="" onchange="compareTwoDate ('datetimepicker','datetimepicker2','');fetch_miwweek(this.value,'miw_week_end')" pattern="\d{2}-\d{2}-\d{4}" style="">
+	</div>
+	<div class="help_note"><p>Tekan untuk mengubah penetapan tarikh mengikut keperluan<br><span style="color: #ba372a;">(Tarikh perlu berada dalam jangka masa 1 minggu)</span></p></div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 col-xs-5 col-sm-3">Minggu Instruksional	
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_week noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content">Perancangan Instruksional Mingguan mengikut takwim sekolah</div>
+		</div></div>
+	<div class="col-12 col-xs-7 col-sm-9"><div style="display:block;float:left;margin-right:18px">
+	Dari 
+	<select name="content[miw_week]" class="select2_w form-select" style="" id="miw_week_start" onchange="copySelectValue('miw_week_start','miw_week_end');" required=""><option value=""> </option>
+	<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option>	</select> Hingga  
+	<select name="content[miw_week_end]" class="select2_w form-select" style="" id="miw_week_end" onchange="compareSelectValue('miw_week_start','miw_week_end','');" required=""><option value=""> </option>
+	<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option>	</select> 
+		<script>
+	$(document).ready(function() {
+		fetch_miwweek('08-06-2026','miw_week_start');
+		fetch_miwweek('12-06-2026','miw_week_end');
+	})
+	</script>
+		</div>
+	<div class="help_note"><p>Tekan untuk memilih minggu pengajaran.<br><span style="color: #ba372a;"><em>(Kekalkan nombor yang sama jika perancangan pengajaran hanya untuk 1 minggu)</em></span></p></div>
+	</div>
+</div>
+
+<div class="row">
+<div class="instruction_row">
+
+	<div class="col-12 " style="">
+		<div class="d-flex justify-content-end">
+		<div class="whattodo" id="faq_instructional"><span class="wtd_ikon"></span><span class="wtd_header">FAQ</span>
+		<span class="wtd_content"><ul>
+<li><strong>Perlulkah saya pilih/isi semua item-item pada profil kandungan subjek ini?</strong>
+<ul>
+<li>Terpulang pada anda mengikut keperluan dan kesesuaian.</li>
+</ul>
+</li>
+<li><strong>Berapa banyak topik pada standard kandungan/standard pembelajaran yang perlu saya pilih?</strong>
+<ul>
+<li>Terpulang juga pada anda asalkan pemilihan ini untuk satu minggu pengajaran.&nbsp;</li>
+</ul>
+</li>
+<li><strong>Berapa objektif yang perlu saya tulis?</strong>
+<ul>
+<li>Terpulang juga pada anda asalkan pemilihannya untuk 1 minggu pengajaran.</li>
+</ul>
+</li>
+<li><strong>Bolehkah ditulis beberapa objektif sekali gus?</strong>
+<ul>
+<li>Seeloknya tulis 1 objektif - tekan enter.</li>
+<li>Kemudian tulis objektif ke 2 - tekan enter dan seterusnnya.</li>
+<li>Ini memudahkan anda memilih objektif yang tertentu pada waktu RPH tertentu.</li>
+</ul>
+</li>
+<li><strong>Perlukan saya tulis Kriteria Kejayaan?</strong>
+<ul>
+<li>Terpulang juga pada anda.</li>
+</ul>
+</li>
+<li><strong>Kenapa isi kandungan pada item-item profil pembelajaran tidak ada atau dipapar "No results found"?</strong>
+<ul>
+<li>Pastikan anda memilih Kategori subjek/Aras kelas dan Subjek yang betul.</li>
+<li>Kemungkinan sususan item-item itu sudah diubahsuai.</li>
+<li>Jika terdapat item, atau susunan item tidak betul, tekan butang "Reset Tetapan"</li>
+</ul>
+</li>
+<li><strong>Bagaimana tulisan Arab/Jawi hendak ditulis dengan betul pada ruang objektif?</strong>
+<ul>
+<li>Pada ruang itu klik kanan - pilih "Writing Direction" - tick/tanda "Right to Left".</li>
+</ul>
+</li>
+<li><strong>Di samping isi kandungan yang sudah ada pada profil pembelajaran, bolehkah saya tambah isi-isi tambahan pada ruang item-item profil pembelajaran itu?</strong>
+<ul>
+<li>Boleh asalkan perlu klik enter setelah ditulis/ditampal (paste).</li>
+</ul>
+</li>
+</ul></span></div>
+		<div class="lily-video" id="vidtut_instructional9" style="position:absolute"><a data-lity="" href="https://www.youtube.com/embed/NxCbT8bBBgw?autoplay=1&amp;rel=0"><img src="/images/video.jpg"></a></div>		<div class="whattodo" id="wtd_instructional"><span class="wtd_ikon"></span><span class="wtd_header">Apa perlu saya buat?</span>
+		<span class="wtd_content"><p><strong>Paparan pada MIW ini adalah hasil pilihan anda bagi 1 minggu pengajaran untuk mencipta beberapa RPH kelas-kelas yang terlibat.</strong></p>
+<ul>
+<li><strong>Pilih/Isi</strong> maklumat yang diperlukan.</li>
+<li><strong>Tinggalkan kosong</strong> jika terdapat item-item <strong>opsyenal yang tidak diperlukan</strong></li>
+<li>Item <strong>profil pembelajaran boleh diubahsuai</strong> mengikut keperluan.</li>
+<li>Anda boleh tekan fungsi <strong>AI - Smart Search</strong> pada item berkenaan jika perlu.</li>
+<li>Sila baca maklumat.</li>
+</ul></span></div>
+		
+	</div></div>
+	<div class="col-12 "><p><strong>Langkah 2:</strong>&nbsp;<strong> Pengetahuan</strong> - Mengisi item-item Profil Pembelajaran &amp; memilih Tema Antara Disiplin - Literasi &amp; Proses</p>	</div>
+</div></div>
+
+<div class="row instruction">
+	<div class="col-12"><p>Pilih item yang<strong> diperlukan sahaja. </strong>Tekan butang<strong> Simpan </strong>di akhir halaman.</p><br> 
+	<p><strong>Opsyenal</strong>: Tekan butang <strong>Tukar Tetapan Profil Pembelajaran</strong> untuk pengubahsuaian senarai item-item profil pembelajaran jika perlu. <em>Jika pengubahsuaian melibatkan susunan item-item yang mempunyai konten, kemungkinan kontennya tidak akan muncul.</em></p>
+<p><strong>Peringatan</strong></p>
+<p>Jika terdapat tambahan konten&nbsp;pada profil pembelajaran, anda boleh tulis <em>(tambah</em>) dan tekan enter.</p><br>
+		</div>
+</div>
+<div class="row">
+	<div class="col-12 col-xs-12 col-sm-3">PEMBERITAHUAN		
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_inspro_remarks noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content">Pengumuman penting</div>
+		</div></div>
+	<div class="col-12 col-xs-12 col-sm-9"><div class="td-wrapper_inspro_remarks" style="">
+	<div class="div-chosen-select" style="float:left;margin-right:10px">
+<select class="form-select select2-hidden-accessible" onchange="disableButton(&quot;disable_on_edit&quot;);" data-placeholder="Tentukan pilihan anda atau isi" name="content[2551][]" id="select_inspro_remarks" multiple="" style="width:100%;max-width:100%" data-select2-id="select2-data-select_inspro_remarks" tabindex="-1" aria-hidden="true">
+<option value=""></option><option value="3852">Minggu Tanpa PdPc</option>
+<option value="3853">Program Transisi Tahun 1</option>
+<option value="3048">Pelan Mengajar Teori</option>
+<option value="3049">Pelan Mengajar Amali</option>
+<option value="2552">Minggu peperiksaan</option>
+<option value="2553">Cuti umum</option>
+<option value="2554">Cuti Sakit</option>
+<option value="2555">Cuti khas</option>
+<option value="2556">Cuti bersalin</option>
+<option value="2557">Cuti kecemasan</option>
+
+</select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-1-9r6g" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered" id="select2-select_inspro_remarks-container"></ul><span class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-describedby="select2-select_inspro_remarks-container" placeholder="Tentukan pilihan anda atau isi" style="width: 100%;"></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+ 
+		<div class="help_note">(Opsyenal) Tekan untuk pilih atau isi catatan jika perlu kemudian tekan Enter</div><script>$('#select_inspro_remarks').select2({tags: true})</script>
+</div>
+	</div>
+</div>
+
+	
+	<div class="row type_conditionedselect InsPro_item">
+		<div class="col-12 col-xs-12 col-sm-3"><div class="item_label_innerwrap">
+		<div class="il">Bidang Pembelajaran</div>
+		
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_Learning_Area noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content"><p>Pelbagai sudut pengetahuan dan kemahiran yang terkandung dalam sesuatu subjek untuk pembelajaran. <em>Contoh: Sains: Penyiasatan saintifik</em></p>
+<ul>
+<li><em>Sila pilih atau tulis untuk memenuhi Rancangan Pembelajaran selama 1 minggu mengikut keperluan.</em></li>
+</ul></div>
+		</div>		</div></div>
+		<div class="col-12 col-xs-12 col-sm-9 input_cell">
+
+		<div class="td-wrapper_3" style=""><div class="div-chosen-select Learning_Area" style="float:left;margin-right:10px">
+												<select data-placeholder="Tentukan pilihan anda atau isi" name="content[3][]" id="select_Learning_Area" multiple="" style="width:100%" onchange="refreshOption('Tajuk',getSelectedOptions(this),'','cg_primary-year6-subject__pendidikan_jasmani_dan_pendidikan_kesihatan_semakan');disableButton('disable_on_edit');" data-select2-id="select2-data-select_Learning_Area" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+						<option value=""></option>
+						<option value="323064"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: GIMNASTIK ASAS </span></option>
+<option value="323183"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: PERGERAKAN BERIRAMA </span></option>
+<option value="323259"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: KEMAHIRAN ASAS PERMAINAN KATEGORI SERANGAN</span></option>
+<option value="323384"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: KEMAHIRAN ASAS PERMAINAN KATEGORI JARING </span></option>
+<option value="323457"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: ASAS PERMAINAN KATEGORI PUKUL DAN MEMADANG </span></option>
+<option value="323527"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: OLAHRAGA ASAS ASAS BERLARI DAN BERJALAN  </span></option>
+<option value="323595"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: OLAHRAGA ASAS ASAS LOMPATAN </span></option>
+<option value="323663"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: OLAHRAGA ASAS ASAS BALINGAN </span></option>
+<option value="323730"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: AKUATIK ASAS </span></option>
+<option value="323783"><span class="c_point"></span> <span class="c_label">BIDANG KEMAHIRAN: REKREASI DAN KESENGGANGAN </span></option>
+<option value="323880"><span class="c_point"></span> <span class="c_label">BIDANG KECERGASAN: KONSEP KECERGASAN </span></option>
+<option value="323946"><span class="c_point"></span> <span class="c_label">BIDANG KECERGASAN: KECERGASAN FIZIKAL BERDASARKAN KESIHATAN </span></option>
+<option value="324083"><span class="c_point"></span> <span class="c_label">PENDIDIKAN KESIHATAN REPRODUKTIF DAN SOSIAL (PEERS) </span></option>
+<option value="324175"><span class="c_point"></span> <span class="c_label">PEMAKANAN </span></option>
+<option value="324187"><span class="c_point"></span> <span class="c_label">PERTOLONGAN CEMAS </span></option>
+						</select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-2-rvao" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered" id="select2-select_Learning_Area-container"></ul><span class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-describedby="select2-select_Learning_Area-container" placeholder="Tentukan pilihan anda atau isi" style="width: 100%;"></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+												</div>
+						<script>
+						
+						
+							$("#select_Learning_Area").select2({
+								tags: true,
+								containerCssClass:"containerCss",
+								dropdownCssClass:"dropdownCssClass",
+								templateResult: formatOption,
+								templateSelection: formatOption,
+								minimumResultsForSearch: -1							
+								
+								
+							});
+							
+							    // init sortable
+							/*	
+							$("ul.select2-selection__rendered").sortable({
+								containment: 'parent',
+								
+							});
+							*/
+							/*
+							$("ul.chosen-choices").sortable({
+								
+								
+							});
+							*/
+							
+							$( function() {
+								$( "ul.chosen-choices" ).sortable();
+								//$( "ul.chosen-choices" ).disableSelection();
+							  } );
+							  
+							/*
+							$("#select_Learning_Area").select2("container").find("ul.select2-choices").sortable({
+								containment: 'parent',
+								start: function() { $("#select_Learning_Area").select2("onSortStart"); },
+								update: function() { $("#select_Learning_Area").select2("onSortEnd"); }
+							});
+							*/
+							
+												function formatOption(option) {
+							if (!option.id) return option.text;
+
+							const rawHtml = $(option.element).data('html');
+
+							if (rawHtml) {
+								return $('' + rawHtml + '');
+							} else {
+								return option.text;
+							}
+						}
+						
+												</script>
+						
+		<div class="help_note">Tekan untuk pilih (atau/dan) isi (atau/dan) salin dan tampal kemudian tekan Enter</div>												
+						</div>
+		</div>
+	</div>
+					
+						<div class="row type_conditionalselect InsPro_item">
+		<div class="col-12 col-xs-12 col-sm-3"><div class="item_label_innerwrap">
+		<div class="il">Tajuk Pembelajaran</div>
+		
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_Tajuk noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content">Tajuk atau kemahiran yang difokuskan pada sesi pembelajaran ini</div>
+		</div>		</div></div>
+		<div class="col-12 col-xs-12 col-sm-9 input_cell">
+
+		<div class="td-wrapper_7" style=""><div class="div-chosen-select Tajuk" style="float:left;margin-right:10px">
+												<select data-placeholder="Tentukan pilihan anda atau isi" name="content[7][]" id="select_Tajuk" multiple="" style="width:100%" onchange="refreshOption('standard_kandungan',getSelectedOptions(this),'','cg_primary-year6-subject__pendidikan_jasmani_dan_pendidikan_kesihatan_semakan');disableButton('disable_on_edit');" data-select2-id="select2-data-select_Tajuk" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+						<option value=""></option>
+												</select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-3-qlwp" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered" id="select2-select_Tajuk-container"></ul><span class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-describedby="select2-select_Tajuk-container" placeholder="Tentukan pilihan anda atau isi" style="width: 100%;"></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+												</div>
+						<script>
+						
+						
+							$("#select_Tajuk").select2({
+								tags: true,
+								containerCssClass:"containerCss",
+								dropdownCssClass:"dropdownCssClass",
+								templateResult: formatOption,
+								templateSelection: formatOption,
+								minimumResultsForSearch: -1							
+								
+								
+							});
+							
+							    // init sortable
+							/*	
+							$("ul.select2-selection__rendered").sortable({
+								containment: 'parent',
+								
+							});
+							*/
+							/*
+							$("ul.chosen-choices").sortable({
+								
+								
+							});
+							*/
+							
+							$( function() {
+								$( "ul.chosen-choices" ).sortable();
+								//$( "ul.chosen-choices" ).disableSelection();
+							  } );
+							  
+							/*
+							$("#select_Tajuk").select2("container").find("ul.select2-choices").sortable({
+								containment: 'parent',
+								start: function() { $("#select_Tajuk").select2("onSortStart"); },
+								update: function() { $("#select_Tajuk").select2("onSortEnd"); }
+							});
+							*/
+							
+												</script>
+						
+		<div class="help_note">Tekan untuk pilih atau tulis dan tekan Enter</div>												
+						</div>
+		</div>
+	</div>
+					
+						<div class="row type_conditionedselect InsPro_item">
+		<div class="col-12 col-xs-12 col-sm-3"><div class="item_label_innerwrap">
+		<div class="il">Standard Kandungan</div>
+		
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_standard_kandungan noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content">Pernyataan spesifik tentang perkara yang murid patut ketahui dan boleh lakukan dalam suatu tempoh persekolahan merangkumi aspek pengetahuan, kemahiran dan nilai.</div>
+		</div>		</div></div>
+		<div class="col-12 col-xs-12 col-sm-9 input_cell">
+
+		<div class="td-wrapper_8" style=""><div class="div-chosen-select standard_kandungan" style="float:left;margin-right:10px">
+												<select data-placeholder="Tentukan pilihan anda atau isi" name="content[8][]" id="select_standard_kandungan" multiple="" style="width:100%" onchange="refreshOption('standard_pembelajaran',getSelectedOptions(this),'','cg_primary-year6-subject__pendidikan_jasmani_dan_pendidikan_kesihatan_semakan');disableButton('disable_on_edit');" data-select2-id="select2-data-select_standard_kandungan" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+						<option value=""></option>
+												</select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-4-wozd" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered" id="select2-select_standard_kandungan-container"></ul><span class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-describedby="select2-select_standard_kandungan-container" placeholder="Tentukan pilihan anda atau isi" style="width: 100%;"></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+												</div>
+						<script>
+						
+						
+							$("#select_standard_kandungan").select2({
+								tags: true,
+								containerCssClass:"containerCss",
+								dropdownCssClass:"dropdownCssClass",
+								templateResult: formatOption,
+								templateSelection: formatOption,
+								minimumResultsForSearch: -1							
+								
+								
+							});
+							
+							    // init sortable
+							/*	
+							$("ul.select2-selection__rendered").sortable({
+								containment: 'parent',
+								
+							});
+							*/
+							/*
+							$("ul.chosen-choices").sortable({
+								
+								
+							});
+							*/
+							
+							$( function() {
+								$( "ul.chosen-choices" ).sortable();
+								//$( "ul.chosen-choices" ).disableSelection();
+							  } );
+							  
+							/*
+							$("#select_standard_kandungan").select2("container").find("ul.select2-choices").sortable({
+								containment: 'parent',
+								start: function() { $("#select_standard_kandungan").select2("onSortStart"); },
+								update: function() { $("#select_standard_kandungan").select2("onSortEnd"); }
+							});
+							*/
+							
+												</script>
+						
+		<div class="help_note">Tekan untuk pilih atau tulis dan tekan Enter</div>												
+						</div>
+		</div>
+	</div>
+					
+						<div class="row type_conditionedselect InsPro_item">
+		<div class="col-12 col-xs-12 col-sm-3"><div class="item_label_innerwrap">
+		<div class="il">Standard Pembelajaran</div>
+		
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_standard_pembelajaran noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content">Suatu penetapan kriteria atau indikator kualiti pembelajaran dan pencapaian yang boleh diukur bagi setiap standard kandungan</div>
+		</div>		</div></div>
+		<div class="col-12 col-xs-12 col-sm-9 input_cell">
+
+		<div class="td-wrapper_9" style=""><div class="div-chosen-select standard_pembelajaran" style="float:left;margin-right:10px">
+												<select data-placeholder="Tentukan pilihan anda atau isi" name="content[9][]" id="select_standard_pembelajaran" multiple="" style="width:100%" onchange="disableButton('disable_on_edit');" data-select2-id="select2-data-select_standard_pembelajaran" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+						<option value=""></option>
+												</select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-5-1uhn" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered" id="select2-select_standard_pembelajaran-container"></ul><span class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-describedby="select2-select_standard_pembelajaran-container" placeholder="Tentukan pilihan anda atau isi" style="width: 100%;"></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+												</div>
+						<script>
+						
+						
+							$("#select_standard_pembelajaran").select2({
+								tags: true,
+								containerCssClass:"containerCss",
+								dropdownCssClass:"dropdownCssClass",
+								templateResult: formatOption,
+								templateSelection: formatOption,
+								minimumResultsForSearch: -1							
+								
+								
+							});
+							
+							    // init sortable
+							/*	
+							$("ul.select2-selection__rendered").sortable({
+								containment: 'parent',
+								
+							});
+							*/
+							/*
+							$("ul.chosen-choices").sortable({
+								
+								
+							});
+							*/
+							
+							$( function() {
+								$( "ul.chosen-choices" ).sortable();
+								//$( "ul.chosen-choices" ).disableSelection();
+							  } );
+							  
+							/*
+							$("#select_standard_pembelajaran").select2("container").find("ul.select2-choices").sortable({
+								containment: 'parent',
+								start: function() { $("#select_standard_pembelajaran").select2("onSortStart"); },
+								update: function() { $("#select_standard_pembelajaran").select2("onSortEnd"); }
+							});
+							*/
+							
+												</script>
+						
+		<div class="help_note">Tekan untuk pilih atau tulis dan tekan Enter</div>												
+						</div>
+		</div>
+	</div>
+					
+										
+	<div class="row type_multitext InsPro_item">
+		<div class="col-12 col-xs-12 col-sm-3"><div class="item_label_innerwrap">
+		<div class="il">Objektif Pembelajaran</div> 
+					
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_objektif_multitext noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content">Pernyataan yang menerangkan matlamat yang ingin atau perlu dikuasai oleh murid-murid di akhir PdPc&nbsp;</div>
+		</div>		</div></div>
+		<div class="col-12 col-xs-12 col-sm-9 input_cell">
+
+			<div class="multitext-wrapper td-wrapper_957" style="">
+					<div class="chosen-container chosen-container-multi" style="width:100%;float:left;margin-right:10px">
+					<ul class="chosen-choices ui-sortable" id="ul_957" style="min-height:30px">
+										<li class="search-field ui-sortable-handle" id="last_957"><textarea id="new_957" onkeypress="return checkEnter(event,'957');" onkeyup="statusEdit('957');disableButton('disable_on_edit');" style=""></textarea>
+					</li>
+					</ul>
+					</div>					
+					<div style="clear:left;padding-top:5px">
+					<input type="button" class="btn btn-primary btn-sm" title="Tambah item baharu untuk 'Objektif Pembelajaran'" value="Tambah" id="addItem_957" onclick="addItem('957','Sila taipkan nama untuk pilihan yang anda ingin tambah')" style=""> </div>
+					
+			</div>
+			
+		<div class="help_note"><ol>
+<li style="list-style-type: none;">
+<ol style="list-style-type: lower-roman;">
+<li>Isi atau salin dan tampal teks yang diperlukan.</li>
+<li>Tekan "Tambah" untuk dimasukkan ke dalam sistem.</li>
+<li>Untuk menyunting tekan 2 kali pada teks yang berkaitan.</li>
+<li>Tekan tanda ☑ untuk penerimaan.</li>
+</ol>
+</li>
+</ol></div>		</div>
+	</div>
+										
+	<div class="row type_multitext InsPro_item">
+		<div class="col-12 col-xs-12 col-sm-3"><div class="item_label_innerwrap">
+		<div class="il">Kriteria Kejayaan</div> 
+					
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_kriteria_kejayaan noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content"><p>Hasrat Pembelajaran (learning intention) <br>yang spesifik -&nbsp;<br>apa sepatutnya pelajar <br>perlu tahu, faham dan lakukan <br>pada sesi pembelajaran.</p></div>
+		</div>		</div></div>
+		<div class="col-12 col-xs-12 col-sm-9 input_cell">
+
+			<div class="multitext-wrapper td-wrapper_869" style="">
+					<div class="chosen-container chosen-container-multi" style="width:100%;float:left;margin-right:10px">
+					<ul class="chosen-choices ui-sortable" id="ul_869" style="min-height:30px">
+										<li class="search-field ui-sortable-handle" id="last_869"><textarea id="new_869" onkeypress="return checkEnter(event,'869');" onkeyup="statusEdit('869');disableButton('disable_on_edit');" style=""></textarea>
+					</li>
+					</ul>
+					</div>					
+					<div style="clear:left;padding-top:5px">
+					<input type="button" class="btn btn-primary btn-sm" title="Tambah item baharu untuk 'Kriteria Kejayaan'" value="Tambah" id="addItem_869" onclick="addItem('869','Sila taipkan nama untuk pilihan yang anda ingin tambah')" style=""> </div>
+					
+			</div>
+			
+		<div class="help_note"><ol style="list-style-type: lower-roman;">
+<li>Isi atau salin dan tampal teks yang diperlukan.</li>
+<li>Tekan "Tambah" untuk dimasukkan ke dalam sistem.</li>
+<li>Untuk menyunting tekan 2 kali pada teks yang berkaitan.</li>
+<li>Tekan tanda ☑ untuk penerimaan.</li>
+</ol></div>		</div>
+	</div>
+					<div class="row"><div class="col-12 col-xs-12"></div></div>
+<div class="row">
+	<div class="col-12 col-xs-12 col-sm-3 InsPro label_desc">Tema Antara Disiplin - Literasi &amp; Proses		
+		<div style="clear:both;height:0"></div>		
+		<div class="blue_info blue_desc blue_info_desc_inspro_21st_century_themes noprint ">
+			<img src="/images/blue_info5.png" style="width:20px;height:20px">
+			<div class="blue_info_content">Kesedaran global merentasi pengetahuan &amp; kompetensi diperlukan oleh pelajar untuk berjaya dalam kerjaya &amp; kehidupan yang mencabar.</div>
+		</div>		<div class="smartsearch" style="background-color: #ffc107;padding:3px 10px">
+		<button type="button" id="ss_button_inspro_21st_century_themes" class="btn btn-warning" onclick="smartSuggest('inspro_21st_century_themes','Tema Antara Disiplin - Literasi &amp; Proses',this);" style="line-height:normal">AI-Smart Search
+			</button>
+			<div id="ai_wait" class=""><img style="width:50px;height:50px" title="Please wait..." src="/model/img/spinner_transparent.gif">
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-xs-12 col-sm-9 td-wrapper_inspro_remarks" style="">
+	<div class="div-chosen-select" style="float:left;margin-right:10px">
+<select class="form-select select2-hidden-accessible" onchange="disableButton(&quot;disable_on_edit&quot;);" data-placeholder="Tentukan pilihan anda atau isi" name="content[2542][]" id="select_inspro_21st_century_themes" multiple="" style="width:100%;max-width:100%" data-select2-id="select2-data-select_inspro_21st_century_themes" tabindex="-1" aria-hidden="true">
+<option value=""></option><option value="2543"><p>Literasi Alam Sekitar/Kelestarian</p></option>
+<option value="2544"><p>Literasi Global</p></option>
+<option value="2545">Literasi Sivik</option>
+<option value="2546">Literasi Maklumat&nbsp;</option>
+<option value="2547"><p>Literasi Digital <em>(termasuk Literasi AI)</em></p></option>
+<option value="2548">Systems Thinking</option>
+<option value="2549"><p><strong>Pemikiran Reka Bentuk</strong> - mencipta penyelesaian yang inovatif.</p></option>
+<option value="2550">Computational Thinking</option>
+
+</select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-6-g16j" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered" id="select2-select_inspro_21st_century_themes-container"></ul><span class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-describedby="select2-select_inspro_21st_century_themes-container" placeholder="Tentukan pilihan anda atau isi" style="width: 100%;"></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+ 
+		<div class="help_note"><p>Tekan butang AI-Smart Search untuk menentukan Tema Antara Disiplin yang sesuai.</p>
+<p>Jika anda mempunyai theme lain yang tidak tersenarai, anda boleh tulis dan tekan<strong> Enter</strong></p></div><script>$('#select_inspro_21st_century_themes').select2({tags: true})</script>
+<div id="loi__inspro_21st_century_themes" style="display:none">2543: Literasi Alam Sekitar/Kelestarian
+2544: Literasi Global
+2545: Literasi Sivik
+2546: Literasi Maklumat&nbsp;
+2547: Literasi Digital <em>(termasuk Literasi AI)</em>
+2548: Systems Thinking
+2549: <strong>Pemikiran Reka Bentuk</strong> - mencipta penyelesaian yang inovatif.
+2550: Computational Thinking
+</div>	</div>
+</div>
+
+	
+</div></div>
+
+ 
+ <div class="container-lg pt-4 grid100 content">
+	<div class="">
+
+		<div class="row" id="">
+
+		
+
+<div id="nav-port" style="height:30px"></div>
+<div class="col-12 col-xs-12 sticky-nav">
+	<div id="nextstep_InsPro" class="next_step toggle_on_edit">Tekan <b>Simpan</b> terlebih dahulu sebelum butang-butang lain berfungsi
+</div>
+
+	<div style="float:left; margin-right:10px;" id="set_nav_primary">
+		
+	
+		<input name="action" type="hidden" value="savecontent" style="">
+		<input name="set" type="hidden" value="InsPro" style="">
+		<input name="src" type="hidden" value="" style="">
+		<input name="pop" type="hidden" value="" style="">
+		<input name="firstElementId" type="hidden" value="3" style="">
+		<input name="settingcontent" type="hidden" value="cg_primary-year6-subject__pendidikan_jasmani_dan_pendidikan_kesihatan_semakan" style="">
+		<input name="returnto" type="hidden" value="instructional" style="">
+				
+		<input name="submit" type="submit" class="btn btn-primary" value="Simpan" style=""> 
+		<input type="button" name="submit" class="btn btn-primary disable_on_edit" value="Cipta Pembelajaran Modular" title="Kombinasi subjek/topik dalam aras kelas yang sama atau dalam aras kelas yang berbeza (&lt;i&gt;kelas tunggal/kelas bercampur&lt;/i&gt;)" onclick="bukaTetapan('set9.php?action=modular&amp;src=&amp;pop=','Sila tekan Simpan sebelum mencipta Modular');" style="">
+		
+				<input name="submit" type="button" class="btn btn-primary" onclick="checkBeforeExit('close');" value="Batal" style="">
+			</div>
+
+		
+	<div style="float:left; margin-right:10px;margin-top:6px" id="set_nav_secondary">
+	
+	<input name="submit" type="button" class="disable_on_edit btn btn-primary btn-sm" onclick="bukaTetapan('record.php?action=editmiw&amp;returnto=set9.php%3Faction%3Dinstructional&amp;src=&amp;pop=','Anda perlu menyimpan rekod terlebih dahulu!');" value="Sunting Nama Rekod" title="Sunting Nama Rekod" style="">
+
+	<input name="submit" type="button" class="disable_on_edit btn btn-primary btn-sm" onclick="bukaTetapan('set9.php?action=InsPro&amp;returnto=instructional&amp;src=&amp;pop=','Sila tekan Simpan sebelum dan selepas menukar Tetapan');" title="Tukar atau tambah item baharu" value="Tukar Tetapan Profil Pembelajaran" style="">	
+	
+	<input name="submit" type="button" class="disable_on_edit btn btn-primary btn-sm" onclick="bukaTetapan('set9.php?action=resetsetting&amp;set=InsPro&amp;returnto=instructional&amp;src=&amp;pop=','Sila tekan Simpan sebelum dan selepas menukar Tetapan');" title="Reset tetapan kembali kepada yang asal" value="Reset Tetapan" style="">	
+	
+	 
+	
+	<span style="width:50px">&nbsp;</span>&nbsp;
+	
+	<input name="submit" type="button" class="disable_on_edit btn btn-secondary btn-sm" onclick="bukaTetapan('record.php?action=copymiw&amp;id=27064489&amp;returnto=set9.php%3Faction%3Dinstructional&amp;src=','Anda perlu menyimpan rekod terlebih dahulu!');" value="Salin Rekod" title="Menyalin ke rekod yang baharu" style="">	
+	
+		 
+
+	 
+	 <input name="randomtoken" type="hidden" value="626aabb9c5" style="">	</div>
+</div>	
+	
+</div></div></div>
+</form>	
+
+<script>
+function alertCannotChangeDate() {
+	alert("Tarikh untuk rekod ini tidak boleh ditukar, sila Salin Rekod sekiranya anda ingin membuat perancangan instruksional baharu.");
+}
+
+	//send ajax request utk dapatkan item pilihan
+	// update field dengan item pilihan 
+
+function smartSuggest(name,itemtosuggest,self) {
+	
+	var karangan = '';
+	var belumada;
+	//Baca dari profilpembelajaran (live) dan suggestkan pilihan
+	
+	self.parentElement.classList.add('waiting');
+	
+	const allInsPro = document.getElementsByClassName('InsPro_item');
+	for (j=0;j< allInsPro.length;j++) {
+		var dimensi='';
+		var isidalam='';
+		//console.log(allInsPro[j]);
+		const itemLabel = allInsPro[j].getElementsByClassName('il');
+		dimensi = itemLabel[0].innerText + ": ";
+		const itemInput = allInsPro[j].getElementsByClassName('input_cell');
+		const selection = itemInput[0].getElementsByTagName("select");
+		if (selection.length) {
+			//console.log("option length "+selection[0].options.length);
+			belumada=true;
+			for (var k = 0; k < selection[0].options.length; k++) {
+				if (selection[0].options[k].selected) {
+					//console.log("selected "+selection[0].options[k].text);
+					if (belumada) {
+						isidalam = isidalam + selection[0].options[k].text;
+						belumada = false;
+					} else {
+						isidalam = isidalam +", " + selection[0].options[k].text;
+					}
+				}
+			}
+			if (isidalam) {
+				isidalam = isidalam + "\n";
+			}
+		}
+		else {
+			//console.log(itemLabel[0].innerText + ' not found');
+			const chosen_container = itemInput[0].getElementsByClassName("chosen-container");
+			const li_item = chosen_container[0].getElementsByTagName("li");
+			var li_item_str='';
+			for (k=0;k< li_item.length;k++) {
+				//console.log(li_item[k].innerText);
+				li_item_str = li_item[k].innerText.trim();
+				if (li_item_str!='') {
+					isidalam = isidalam + li_item_str;
+					if (k<li_item.length-2) {
+						isidalam = isidalam + ", ";
+					}
+				}
+			}
+			if (isidalam) {
+				isidalam = isidalam + "\n";
+			}
+		}
+		if (isidalam) {
+			karangan=karangan+dimensi+isidalam;			
+		}
+	}
+	console.log('karangan: '+karangan);
+	
+	const message = karangan;
+	
+	const subjectSelector = document.getElementById('subject');
+	const levelSelector = document.getElementById('level');
+	const loi = document.getElementById('loi__'+name);	
+	const subjectPreference = subjectSelector.value;
+	const levelPreference = levelSelector.value;	
+	const listofitems = loi.innerText;
+	const action = 'sgst';
+
+	console.log('listofitems: '+listofitems);
+	
+	fetch('/model/chat.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message,subjectPreference,levelPreference,itemtosuggest,
+			listofitems,action
+		})
+    })
+    .then(response => {
+		if (!response.ok) {
+		throw new Error('HTTP error! status: ${response.status}');
+		}
+		return response.text(); // Read the response body as text
+	})
+	.then(text => {
+		//console.log('Response as text:', text);
+		// Attempt to parse the text as JSON, handling potential errors
+		try {
+		  const data = JSON.parse(text);
+		  console.log('Response as JSON:', data);
+	
+		reply = data.reply;
+		reply = reply.replace(/ /g,'');
+		const replyArray = reply.split(",");
+		var selectElement = document.getElementById('select_'+name);
+        // Reset any existing selections
+        for (var i = 0; i < selectElement.options.length; i++) {
+            selectElement.options[i].selected = false;
+        }
+
+		for (var i = 0; i < selectElement.options.length; i++) {
+			if (replyArray.includes(selectElement.options[i].value)) {
+				selectElement.options[i].selected = true;
+				//ssselected[selectId] = reply;
+				//break;
+			}
+		}
+		$(selectElement).trigger('change');
+		
+		//console.log(data);
+		//const reply = JSON.stringify(data.reply);
+		//reply = JSON.stringify(reply);
+		//alert(reply);
+
+		//oldMessage = [{'role': 'user','content': message},
+		//  {'role': 'assistant','content': reply}];
+		//var converter = new showdown.Converter()
+		//reply = converter.makeHtml(reply);
+		console.log(reply);
+		self.parentElement.classList.remove('waiting');
+		/*
+
+		const newChatMessage = document.createElement('p');
+		newChatMessage.style.backgroundColor = "#ddffff"; 
+		newChatMessage.style.padding = "5px"; 
+		//newChatMessage.textContent = `Bot: ${reply}`;
+		newChatMessage.innerHTML = `AI: ${reply}`;
+		chatOutput.appendChild(newChatMessage);
+
+		sendButton.style.display = "inline-block";
+		pleaseWait.style.display = "none";
+		// Update the completion token
+		completionToken = data.completionToken;
+		console.log(completionToken);
+
+		allreply = JSON.stringify(data.allreply);
+		//alert(allreply);
+
+		const replydata = JSON.parse(allreply);
+		//alert(replydata);
+
+		const promptTokens = replydata.prompt_tokens;
+		const completionTokens = replydata.completion_tokens;
+		const totalTokens = replydata.total_tokens;
+
+		console.log('promptTokens: '+ promptTokens); // Output: 70
+		console.log('completionTokens: '+ completionTokens); // Output: 243
+		console.log('totalTokens: '+ totalTokens); // Output: 313
+
+		finishReason.value = completionToken;
+		// Display the token usage
+		tokenUsage.textContent = `Token usage: ${totalTokens}`;
+		
+		//console.log('data',data);
+        // Get the select element
+		
+		*/
+		
+		} catch (e) {
+		  console.error('Failed to parse response as JSON:', e);
+		  // Display the raw text or handle the error as needed
+		}
+	  })
+	  
+
+    .catch(error => console.error('Error:', error));
+	
+		  
+	/*	  
+    fetch('chat.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: selectId, category: category, selected: ssselected[selectId] })
+    })
+    .then(response => response.json())
+    .then(data => {
+		//console.log('data',data);
+        // Get the select element
+        var selectElement = document.getElementById('select_'+selectId);
+
+        // Reset any existing selections
+        for (var i = 0; i < selectElement.options.length; i++) {
+            selectElement.options[i].selected = false;
+        }
+
+        // Loop through the array and set the selected attribute for matching options
+        data.selectedOptions.forEach(function(optionValue) {
+            for (var i = 0; i < selectElement.options.length; i++) {
+                if (selectElement.options[i].value === optionValue) {
+                    selectElement.options[i].selected = true;
+					ssselected[selectId] = optionValue;
+                    break;
+                }
+            }
+        });
+		$(selectElement).trigger('change');
+    })
+    .catch(error => console.error('Error:', error));
+	*/
+}
+ function fetch_miwweek(date_selected,target)
+{
+	//alert ("key:"+key + " value:" + value + " selected:" + selected);
+	//alert("selected "+date_selected);
+	if (date_selected) {
+	   $.ajax({
+		 type: 'post',
+		 url: 'fetch_json.php',
+		 data: {
+			action:'miwweek',
+		    get_selected:date_selected
+		  },
+		 success: function (response) {
+			console.log('response',response);
+			//document.getElementById("select_"+key).innerHTML=response; 
+			if (response!='') {
+				document.getElementById(target).value=response;
+			}
+		 }
+	   });
+	   return(1);
+	}
+}
+</script>	
+
+<div style="clear:both;height:110px;display:block"></div>
+			</main></div>
+		
+			
+<script src="/js/bootstrap-5.0.0-beta1/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript">
+function toggleNav() {
+	var element = document.getElementById("body");
+	if (element.classList) {
+	  element.classList.toggle("folded");
+	} else {
+	  // For IE9
+	  var classes = element.className.split(" ");
+	  var i = classes.indexOf("folded");
+
+	  if (i >= 0) {
+		classes.splice(i, 1);
+	  }
+	  else {
+		classes.push("folded");
+		element.className = classes.join(" ");
+	  }
+	}
+
+	if (folded=='yes') {
+		setCookie('folded','no',100)
+	}
+	else if (folded=='no') {
+		setCookie('folded','yes',100)
+	}
+}
+var folded = getCookie('folded');
+if (folded==='') folded = 'yes';
+</script>
+
+<script src="/js/chosen.jquery.js" type="text/javascript"></script>
+  <script src="/js/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    var config = {
+      '.chosen-select'           : {},
+      '.chosen-select-deselect'  : {allow_single_deselect:true},
+      '.chosen-select-no-single' : {disable_search_threshold:10},
+      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+      '.chosen-select-width'     : {width:"95%"}
+    }
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+  </script>
+<link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.css">
+<script src="/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+jQuery('#datetimepicker').datetimepicker({
+	lang:'ms',
+ timepicker:false,
+ format:'d-m-Y'
+});
+jQuery('#datetimepicker2').datetimepicker({
+	lang:'ms',
+ timepicker:false,
+ format:'d-m-Y'
+});
+var belumedit=1;
+var v8='';
+
+$(document).ready(function(){
+	$("input").change(function(){
+	  belumedit=0;
+	  //alert("change");
+	});
+	$("select").change(function(){
+	  belumedit=0;
+	  //alert("change");
+	});
+	$("textarea").change(function(){
+	  belumedit=0;
+	  //alert("change");
+	});
+
+
+});
+function checkBeforeExit (action,load=null,msg="Anda belum Simpan tetapan atau kandungan!\nSila klik Cancel untuk kembali atau klik OK untuk terus.") {
+	if (belumedit) {
+		proceed=true;
+	}
+	else {
+		proceed=confirm(msg);
+	}
+	if (proceed) {
+		if (action=="back") {
+			window.history.go(-1);
+		}	
+		else if (action=="location") {
+			location.href=load;
+		}	
+		else {
+			if (v8=='8') {
+				window.close();
+			}
+			else {
+				//window.history.go(-1);
+				window.location.href="main9.php";
+			}
+		}
+	}
+	return false;
+}
+
+$(".whattodo").click(function(){
+	var id = $(this).attr("id");
+	//alert(id);
+	if(id) {
+		$("#"+id).toggleClass("expand");
+	}
+	else {
+		$(".whattodo").toggleClass("expand");
+	}
+});	
+
+$(document).ready(function(){
+	var el = $('.sticky-nav');
+	//alert (el.width());
+	if ((el.length) && (el.width()>570)) {
+		var stickyTop = el.offset().top, 
+		latestScroll = 0,
+		bottom = -110;
+		start = 300;
+		width = el.width()+30;
+		var windowBottom = $(window).height();
+		var screenHeight = window.innerHeight;
+		var limit = $('#nav-port').offset().top;
+		//alert(stickyTop);
+		if (limit-screenHeight>start) {
+			$(window).scroll(function () {
+				var stickyTopNow = el.offset().top, 
+				stickyHeight = el.outerHeight(true);
+				
+				//alert(limit);
+				var windowTop = $(window).scrollTop();
+				
+				
+				//if (stickyTop < windowTop-10) {
+					
+				if (windowTop < start ) {
+					el.css({position: 'relative', bottom: bottom});
+					el.removeClass('show-fix');
+				}else {
+					el.addClass('show-fix');               
+					el.css({position: 'fixed', bottom: 0, width:width});
+				}
+				
+				//if (limit > windowTop + screenHeight - stickyHeight )
+				docking = windowTop + screenHeight - stickyHeight;
+				if (docking > limit) {
+					//alert(limit);
+					var diff = limit - windowTop;
+					//el.css({position: 'relative', top: stickyTop});
+					el.css({position: 'relative'});
+					el.removeClass('show-fix');
+					
+				}
+				
+				if (0) {
+					latestScroll = windowTop;
+					debug_float.innerHTML = 'stickyTop='+stickyTop+'<br>';
+					debug_float.innerHTML += 'stickyTopNow='+stickyTopNow+'<br>';
+					debug_float.innerHTML += 'limit='+limit+'<br>';
+					debug_float.innerHTML += 'stickyheight='+stickyHeight+'<br>';
+					debug_float.innerHTML += 'windowTop='+windowTop+'<br>';
+					debug_float.innerHTML += 'windowBottom='+windowBottom+'<br>';
+					debug_float.innerHTML += 'screenHeight='+screenHeight+'<br>';
+					debug_float.innerHTML += 'docking at='+docking+'<br>';
+				}
+			});
+		}
+	}
+});
+function toggleChkUse(sel,id) {
+	if (sel) {
+		var target = document.getElementsByClassName('td-wrapper_'+id);
+		//alert(target);
+		for (i=0;i<target.length;i++) {
+			if (sel.checked) {
+				//target[i].style.display = "block";
+				target[i].classList.add("chk_show");
+				target[i].classList.remove("chk_hide");
+			}
+			else {
+				//target[i].style.display = "none";
+				target[i].classList.add("chk_hide");
+				target[i].classList.remove("chk_show");
+			}
+		}
+
+	}
+}
+function popupCenter(url, title, w, h) {
+	var left = (screen.width/2)-(w/2);
+	var top = (screen.height/2)-(h/2);
+	return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+} 
+
+function checkUnsaveContent () {
+	
+	return checkUnsave('Anda telah menaip sesuatu tetapi belum mengklik butang Tambah atau menekan Enter. \nJika anda teruskan maklumat tersebut akan hilang. \nKlik Cancel sekarang untuk mengklik butang Tambah sebelum Simpan. \nKlik OK jika ingin meneruskan tanpa menyimpan maklumat tersebut.');
+}
+
+var refreshTime = 600000; // every 10 minutes in milliseconds
+window.setInterval( function() {
+    $.ajax({
+        cache: false,
+        type: "GET",
+        url: "fetch_data.php",
+        success: function(data) {
+        }
+    });
+}, refreshTime );
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".prevent-toggle");
+    links.forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.stopPropagation(); // Stop the toggle from triggering
+        event.preventDefault(); // Prevent default link behavior (optional, depends on requirement)
+        window.open(this.href, "_blank"); // Open the link in a new tab
+      });
+    });
+  });
+</script><div class="xdsoft_datetimepicker xdsoft_ xdsoft_noselect "><div class="xdsoft_datepicker active"><div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev"></button><button type="button" class="xdsoft_today_button" style="visibility: visible;"></button><div class="xdsoft_label xdsoft_month"><span>Jun</span><div class="xdsoft_select xdsoft_monthselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="0">Januari</div><div class="xdsoft_option " data-value="1">Februari</div><div class="xdsoft_option " data-value="2">Mac</div><div class="xdsoft_option " data-value="3">April</div><div class="xdsoft_option " data-value="4">Mei</div><div class="xdsoft_option xdsoft_current" data-value="5">Jun</div><div class="xdsoft_option " data-value="6">Julai</div><div class="xdsoft_option " data-value="7">Ogos</div><div class="xdsoft_option " data-value="8">September</div><div class="xdsoft_option " data-value="9">Oktober</div><div class="xdsoft_option " data-value="10">November</div><div class="xdsoft_option " data-value="11">Disember</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><div class="xdsoft_label xdsoft_year"><span>2026</span><div class="xdsoft_select xdsoft_yearselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="1950">1950</div><div class="xdsoft_option " data-value="1951">1951</div><div class="xdsoft_option " data-value="1952">1952</div><div class="xdsoft_option " data-value="1953">1953</div><div class="xdsoft_option " data-value="1954">1954</div><div class="xdsoft_option " data-value="1955">1955</div><div class="xdsoft_option " data-value="1956">1956</div><div class="xdsoft_option " data-value="1957">1957</div><div class="xdsoft_option " data-value="1958">1958</div><div class="xdsoft_option " data-value="1959">1959</div><div class="xdsoft_option " data-value="1960">1960</div><div class="xdsoft_option " data-value="1961">1961</div><div class="xdsoft_option " data-value="1962">1962</div><div class="xdsoft_option " data-value="1963">1963</div><div class="xdsoft_option " data-value="1964">1964</div><div class="xdsoft_option " data-value="1965">1965</div><div class="xdsoft_option " data-value="1966">1966</div><div class="xdsoft_option " data-value="1967">1967</div><div class="xdsoft_option " data-value="1968">1968</div><div class="xdsoft_option " data-value="1969">1969</div><div class="xdsoft_option " data-value="1970">1970</div><div class="xdsoft_option " data-value="1971">1971</div><div class="xdsoft_option " data-value="1972">1972</div><div class="xdsoft_option " data-value="1973">1973</div><div class="xdsoft_option " data-value="1974">1974</div><div class="xdsoft_option " data-value="1975">1975</div><div class="xdsoft_option " data-value="1976">1976</div><div class="xdsoft_option " data-value="1977">1977</div><div class="xdsoft_option " data-value="1978">1978</div><div class="xdsoft_option " data-value="1979">1979</div><div class="xdsoft_option " data-value="1980">1980</div><div class="xdsoft_option " data-value="1981">1981</div><div class="xdsoft_option " data-value="1982">1982</div><div class="xdsoft_option " data-value="1983">1983</div><div class="xdsoft_option " data-value="1984">1984</div><div class="xdsoft_option " data-value="1985">1985</div><div class="xdsoft_option " data-value="1986">1986</div><div class="xdsoft_option " data-value="1987">1987</div><div class="xdsoft_option " data-value="1988">1988</div><div class="xdsoft_option " data-value="1989">1989</div><div class="xdsoft_option " data-value="1990">1990</div><div class="xdsoft_option " data-value="1991">1991</div><div class="xdsoft_option " data-value="1992">1992</div><div class="xdsoft_option " data-value="1993">1993</div><div class="xdsoft_option " data-value="1994">1994</div><div class="xdsoft_option " data-value="1995">1995</div><div class="xdsoft_option " data-value="1996">1996</div><div class="xdsoft_option " data-value="1997">1997</div><div class="xdsoft_option " data-value="1998">1998</div><div class="xdsoft_option " data-value="1999">1999</div><div class="xdsoft_option " data-value="2000">2000</div><div class="xdsoft_option " data-value="2001">2001</div><div class="xdsoft_option " data-value="2002">2002</div><div class="xdsoft_option " data-value="2003">2003</div><div class="xdsoft_option " data-value="2004">2004</div><div class="xdsoft_option " data-value="2005">2005</div><div class="xdsoft_option " data-value="2006">2006</div><div class="xdsoft_option " data-value="2007">2007</div><div class="xdsoft_option " data-value="2008">2008</div><div class="xdsoft_option " data-value="2009">2009</div><div class="xdsoft_option " data-value="2010">2010</div><div class="xdsoft_option " data-value="2011">2011</div><div class="xdsoft_option " data-value="2012">2012</div><div class="xdsoft_option " data-value="2013">2013</div><div class="xdsoft_option " data-value="2014">2014</div><div class="xdsoft_option " data-value="2015">2015</div><div class="xdsoft_option " data-value="2016">2016</div><div class="xdsoft_option " data-value="2017">2017</div><div class="xdsoft_option " data-value="2018">2018</div><div class="xdsoft_option " data-value="2019">2019</div><div class="xdsoft_option " data-value="2020">2020</div><div class="xdsoft_option " data-value="2021">2021</div><div class="xdsoft_option " data-value="2022">2022</div><div class="xdsoft_option " data-value="2023">2023</div><div class="xdsoft_option " data-value="2024">2024</div><div class="xdsoft_option " data-value="2025">2025</div><div class="xdsoft_option xdsoft_current" data-value="2026">2026</div><div class="xdsoft_option " data-value="2027">2027</div><div class="xdsoft_option " data-value="2028">2028</div><div class="xdsoft_option " data-value="2029">2029</div><div class="xdsoft_option " data-value="2030">2030</div><div class="xdsoft_option " data-value="2031">2031</div><div class="xdsoft_option " data-value="2032">2032</div><div class="xdsoft_option " data-value="2033">2033</div><div class="xdsoft_option " data-value="2034">2034</div><div class="xdsoft_option " data-value="2035">2035</div><div class="xdsoft_option " data-value="2036">2036</div><div class="xdsoft_option " data-value="2037">2037</div><div class="xdsoft_option " data-value="2038">2038</div><div class="xdsoft_option " data-value="2039">2039</div><div class="xdsoft_option " data-value="2040">2040</div><div class="xdsoft_option " data-value="2041">2041</div><div class="xdsoft_option " data-value="2042">2042</div><div class="xdsoft_option " data-value="2043">2043</div><div class="xdsoft_option " data-value="2044">2044</div><div class="xdsoft_option " data-value="2045">2045</div><div class="xdsoft_option " data-value="2046">2046</div><div class="xdsoft_option " data-value="2047">2047</div><div class="xdsoft_option " data-value="2048">2048</div><div class="xdsoft_option " data-value="2049">2049</div><div class="xdsoft_option " data-value="2050">2050</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><button type="button" class="xdsoft_next"></button></div><div class="xdsoft_calendar"><table><thead><tr><th>Aha</th><th>Isn</th><th>Sel</th><th>Rab</th><th>Kha</th><th>Jum</th><th>Sab</th></tr></thead><tbody><tr><td data-date="31" data-month="4" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>31</div></td><td data-date="1" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_today xdsoft_weekend"><div>4</div></td><td data-date="5" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>5</div></td><td data-date="6" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>6</div></td></tr><tr><td data-date="7" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>7</div></td><td data-date="8" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_current xdsoft_weekend"><div>8</div></td><td data-date="9" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>9</div></td><td data-date="10" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>10</div></td><td data-date="11" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>11</div></td><td data-date="12" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>12</div></td><td data-date="13" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>13</div></td></tr><tr><td data-date="14" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>14</div></td><td data-date="15" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>15</div></td><td data-date="16" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>16</div></td><td data-date="17" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>17</div></td><td data-date="18" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>18</div></td><td data-date="19" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>19</div></td><td data-date="20" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>20</div></td></tr><tr><td data-date="21" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>21</div></td><td data-date="22" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>22</div></td><td data-date="23" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>23</div></td><td data-date="24" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>24</div></td><td data-date="25" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>25</div></td><td data-date="26" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>26</div></td><td data-date="27" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>27</div></td></tr><tr><td data-date="28" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>28</div></td><td data-date="29" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>29</div></td><td data-date="30" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>30</div></td><td data-date="1" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>4</div></td></tr></tbody></table></div></div><div class="xdsoft_timepicker"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box xdsoft_scroller_box"><div class="xdsoft_time_variant" style="margin-top: 0px;"><div class="xdsoft_time xdsoft_current" data-hour="0" data-minute="0">00:00</div><div class="xdsoft_time " data-hour="1" data-minute="0">01:00</div><div class="xdsoft_time " data-hour="2" data-minute="0">02:00</div><div class="xdsoft_time " data-hour="3" data-minute="0">03:00</div><div class="xdsoft_time " data-hour="4" data-minute="0">04:00</div><div class="xdsoft_time " data-hour="5" data-minute="0">05:00</div><div class="xdsoft_time " data-hour="6" data-minute="0">06:00</div><div class="xdsoft_time " data-hour="7" data-minute="0">07:00</div><div class="xdsoft_time " data-hour="8" data-minute="0">08:00</div><div class="xdsoft_time " data-hour="9" data-minute="0">09:00</div><div class="xdsoft_time " data-hour="10" data-minute="0">10:00</div><div class="xdsoft_time " data-hour="11" data-minute="0">11:00</div><div class="xdsoft_time " data-hour="12" data-minute="0">12:00</div><div class="xdsoft_time " data-hour="13" data-minute="0">13:00</div><div class="xdsoft_time " data-hour="14" data-minute="0">14:00</div><div class="xdsoft_time " data-hour="15" data-minute="0">15:00</div><div class="xdsoft_time " data-hour="16" data-minute="0">16:00</div><div class="xdsoft_time " data-hour="17" data-minute="0">17:00</div><div class="xdsoft_time " data-hour="18" data-minute="0">18:00</div><div class="xdsoft_time " data-hour="19" data-minute="0">19:00</div><div class="xdsoft_time " data-hour="20" data-minute="0">20:00</div><div class="xdsoft_time " data-hour="21" data-minute="0">21:00</div><div class="xdsoft_time " data-hour="22" data-minute="0">22:00</div><div class="xdsoft_time " data-hour="23" data-minute="0">23:00</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><button type="button" class="xdsoft_next"></button></div></div><div class="xdsoft_datetimepicker xdsoft_ xdsoft_noselect "><div class="xdsoft_datepicker active"><div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev"></button><button type="button" class="xdsoft_today_button" style="visibility: visible;"></button><div class="xdsoft_label xdsoft_month"><span>Jun</span><div class="xdsoft_select xdsoft_monthselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="0">Januari</div><div class="xdsoft_option " data-value="1">Februari</div><div class="xdsoft_option " data-value="2">Mac</div><div class="xdsoft_option " data-value="3">April</div><div class="xdsoft_option " data-value="4">Mei</div><div class="xdsoft_option xdsoft_current" data-value="5">Jun</div><div class="xdsoft_option " data-value="6">Julai</div><div class="xdsoft_option " data-value="7">Ogos</div><div class="xdsoft_option " data-value="8">September</div><div class="xdsoft_option " data-value="9">Oktober</div><div class="xdsoft_option " data-value="10">November</div><div class="xdsoft_option " data-value="11">Disember</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><div class="xdsoft_label xdsoft_year"><span>2026</span><div class="xdsoft_select xdsoft_yearselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="1950">1950</div><div class="xdsoft_option " data-value="1951">1951</div><div class="xdsoft_option " data-value="1952">1952</div><div class="xdsoft_option " data-value="1953">1953</div><div class="xdsoft_option " data-value="1954">1954</div><div class="xdsoft_option " data-value="1955">1955</div><div class="xdsoft_option " data-value="1956">1956</div><div class="xdsoft_option " data-value="1957">1957</div><div class="xdsoft_option " data-value="1958">1958</div><div class="xdsoft_option " data-value="1959">1959</div><div class="xdsoft_option " data-value="1960">1960</div><div class="xdsoft_option " data-value="1961">1961</div><div class="xdsoft_option " data-value="1962">1962</div><div class="xdsoft_option " data-value="1963">1963</div><div class="xdsoft_option " data-value="1964">1964</div><div class="xdsoft_option " data-value="1965">1965</div><div class="xdsoft_option " data-value="1966">1966</div><div class="xdsoft_option " data-value="1967">1967</div><div class="xdsoft_option " data-value="1968">1968</div><div class="xdsoft_option " data-value="1969">1969</div><div class="xdsoft_option " data-value="1970">1970</div><div class="xdsoft_option " data-value="1971">1971</div><div class="xdsoft_option " data-value="1972">1972</div><div class="xdsoft_option " data-value="1973">1973</div><div class="xdsoft_option " data-value="1974">1974</div><div class="xdsoft_option " data-value="1975">1975</div><div class="xdsoft_option " data-value="1976">1976</div><div class="xdsoft_option " data-value="1977">1977</div><div class="xdsoft_option " data-value="1978">1978</div><div class="xdsoft_option " data-value="1979">1979</div><div class="xdsoft_option " data-value="1980">1980</div><div class="xdsoft_option " data-value="1981">1981</div><div class="xdsoft_option " data-value="1982">1982</div><div class="xdsoft_option " data-value="1983">1983</div><div class="xdsoft_option " data-value="1984">1984</div><div class="xdsoft_option " data-value="1985">1985</div><div class="xdsoft_option " data-value="1986">1986</div><div class="xdsoft_option " data-value="1987">1987</div><div class="xdsoft_option " data-value="1988">1988</div><div class="xdsoft_option " data-value="1989">1989</div><div class="xdsoft_option " data-value="1990">1990</div><div class="xdsoft_option " data-value="1991">1991</div><div class="xdsoft_option " data-value="1992">1992</div><div class="xdsoft_option " data-value="1993">1993</div><div class="xdsoft_option " data-value="1994">1994</div><div class="xdsoft_option " data-value="1995">1995</div><div class="xdsoft_option " data-value="1996">1996</div><div class="xdsoft_option " data-value="1997">1997</div><div class="xdsoft_option " data-value="1998">1998</div><div class="xdsoft_option " data-value="1999">1999</div><div class="xdsoft_option " data-value="2000">2000</div><div class="xdsoft_option " data-value="2001">2001</div><div class="xdsoft_option " data-value="2002">2002</div><div class="xdsoft_option " data-value="2003">2003</div><div class="xdsoft_option " data-value="2004">2004</div><div class="xdsoft_option " data-value="2005">2005</div><div class="xdsoft_option " data-value="2006">2006</div><div class="xdsoft_option " data-value="2007">2007</div><div class="xdsoft_option " data-value="2008">2008</div><div class="xdsoft_option " data-value="2009">2009</div><div class="xdsoft_option " data-value="2010">2010</div><div class="xdsoft_option " data-value="2011">2011</div><div class="xdsoft_option " data-value="2012">2012</div><div class="xdsoft_option " data-value="2013">2013</div><div class="xdsoft_option " data-value="2014">2014</div><div class="xdsoft_option " data-value="2015">2015</div><div class="xdsoft_option " data-value="2016">2016</div><div class="xdsoft_option " data-value="2017">2017</div><div class="xdsoft_option " data-value="2018">2018</div><div class="xdsoft_option " data-value="2019">2019</div><div class="xdsoft_option " data-value="2020">2020</div><div class="xdsoft_option " data-value="2021">2021</div><div class="xdsoft_option " data-value="2022">2022</div><div class="xdsoft_option " data-value="2023">2023</div><div class="xdsoft_option " data-value="2024">2024</div><div class="xdsoft_option " data-value="2025">2025</div><div class="xdsoft_option xdsoft_current" data-value="2026">2026</div><div class="xdsoft_option " data-value="2027">2027</div><div class="xdsoft_option " data-value="2028">2028</div><div class="xdsoft_option " data-value="2029">2029</div><div class="xdsoft_option " data-value="2030">2030</div><div class="xdsoft_option " data-value="2031">2031</div><div class="xdsoft_option " data-value="2032">2032</div><div class="xdsoft_option " data-value="2033">2033</div><div class="xdsoft_option " data-value="2034">2034</div><div class="xdsoft_option " data-value="2035">2035</div><div class="xdsoft_option " data-value="2036">2036</div><div class="xdsoft_option " data-value="2037">2037</div><div class="xdsoft_option " data-value="2038">2038</div><div class="xdsoft_option " data-value="2039">2039</div><div class="xdsoft_option " data-value="2040">2040</div><div class="xdsoft_option " data-value="2041">2041</div><div class="xdsoft_option " data-value="2042">2042</div><div class="xdsoft_option " data-value="2043">2043</div><div class="xdsoft_option " data-value="2044">2044</div><div class="xdsoft_option " data-value="2045">2045</div><div class="xdsoft_option " data-value="2046">2046</div><div class="xdsoft_option " data-value="2047">2047</div><div class="xdsoft_option " data-value="2048">2048</div><div class="xdsoft_option " data-value="2049">2049</div><div class="xdsoft_option " data-value="2050">2050</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><button type="button" class="xdsoft_next"></button></div><div class="xdsoft_calendar"><table><thead><tr><th>Aha</th><th>Isn</th><th>Sel</th><th>Rab</th><th>Kha</th><th>Jum</th><th>Sab</th></tr></thead><tbody><tr><td data-date="31" data-month="4" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>31</div></td><td data-date="1" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_today xdsoft_weekend"><div>4</div></td><td data-date="5" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>5</div></td><td data-date="6" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>6</div></td></tr><tr><td data-date="7" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>7</div></td><td data-date="8" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>8</div></td><td data-date="9" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>9</div></td><td data-date="10" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>10</div></td><td data-date="11" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>11</div></td><td data-date="12" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_current xdsoft_weekend"><div>12</div></td><td data-date="13" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>13</div></td></tr><tr><td data-date="14" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>14</div></td><td data-date="15" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>15</div></td><td data-date="16" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>16</div></td><td data-date="17" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>17</div></td><td data-date="18" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>18</div></td><td data-date="19" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>19</div></td><td data-date="20" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>20</div></td></tr><tr><td data-date="21" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>21</div></td><td data-date="22" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>22</div></td><td data-date="23" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>23</div></td><td data-date="24" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>24</div></td><td data-date="25" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>25</div></td><td data-date="26" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>26</div></td><td data-date="27" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>27</div></td></tr><tr><td data-date="28" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>28</div></td><td data-date="29" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>29</div></td><td data-date="30" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>30</div></td><td data-date="1" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>4</div></td></tr></tbody></table></div></div><div class="xdsoft_timepicker"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box xdsoft_scroller_box"><div class="xdsoft_time_variant" style="margin-top: 0px;"><div class="xdsoft_time xdsoft_current" data-hour="0" data-minute="0">00:00</div><div class="xdsoft_time " data-hour="1" data-minute="0">01:00</div><div class="xdsoft_time " data-hour="2" data-minute="0">02:00</div><div class="xdsoft_time " data-hour="3" data-minute="0">03:00</div><div class="xdsoft_time " data-hour="4" data-minute="0">04:00</div><div class="xdsoft_time " data-hour="5" data-minute="0">05:00</div><div class="xdsoft_time " data-hour="6" data-minute="0">06:00</div><div class="xdsoft_time " data-hour="7" data-minute="0">07:00</div><div class="xdsoft_time " data-hour="8" data-minute="0">08:00</div><div class="xdsoft_time " data-hour="9" data-minute="0">09:00</div><div class="xdsoft_time " data-hour="10" data-minute="0">10:00</div><div class="xdsoft_time " data-hour="11" data-minute="0">11:00</div><div class="xdsoft_time " data-hour="12" data-minute="0">12:00</div><div class="xdsoft_time " data-hour="13" data-minute="0">13:00</div><div class="xdsoft_time " data-hour="14" data-minute="0">14:00</div><div class="xdsoft_time " data-hour="15" data-minute="0">15:00</div><div class="xdsoft_time " data-hour="16" data-minute="0">16:00</div><div class="xdsoft_time " data-hour="17" data-minute="0">17:00</div><div class="xdsoft_time " data-hour="18" data-minute="0">18:00</div><div class="xdsoft_time " data-hour="19" data-minute="0">19:00</div><div class="xdsoft_time " data-hour="20" data-minute="0">20:00</div><div class="xdsoft_time " data-hour="21" data-minute="0">21:00</div><div class="xdsoft_time " data-hour="22" data-minute="0">22:00</div><div class="xdsoft_time " data-hour="23" data-minute="0">23:00</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><button type="button" class="xdsoft_next"></button></div></div>
+
+
+<div id="debug_float"></div>
+
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;3375acf92f06438e94a4d307a9f7b026&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+</body></html>

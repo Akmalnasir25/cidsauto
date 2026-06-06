@@ -1,0 +1,889 @@
+<!DOCTYPE html><html lang="ms"><head>
+<title>Model Reka Bentuk Instruksional Integral ASIE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2, initial-scale=1, user-scalable=yes">
+
+<link rel="stylesheet" href="/css/bootstrap-5.0.0-beta1/bootstrap.min.css">
+<link rel="stylesheet" href="/css/fontawesome-free-5.15.2-web/css/all.css">
+
+<link rel="stylesheet" type="text/css" href="/css/v9styles.css?20260206">
+
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+window.name = "model";
+
+
+
+</script>
+<script>
+function popupCenter(url, title, w, h) {
+var left = (screen.width/2)-(w/2);
+var top = (screen.height/2)-(h/2);
+return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+} 
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J4MP2SJKZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J4MP2SJKZ5');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92269807-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style>
+.center {
+	text-align:center;
+}
+.nav.nav-pills li.center img {
+	width:40px;
+	height:40px;
+	margin-top:5px;
+}
+.header img {
+    float: none;
+}
+.header.logo{
+	text-align:center;
+	color:#eee;
+	font-weight:normal;
+}
+.header.logo img{
+	height:80px;
+	width:auto;
+}
+.username {
+    padding: 0px 10px 0px 0px;
+}
+.username img{
+    width:60px;
+	height:auto;
+}
+@media (max-width: 991px){
+.col-md-5.header.user, .col-md-2.header.logo {
+    width: 50%;
+	float:left;
+}}
+.whattodo {
+	display:block;
+	top:0;
+	right:0;
+	background-color:#ddd;
+	border:1px solid #999;
+	border-radius:10px;
+	padding:3px 10px;
+	margin:3px;
+	color:#333;
+	position:relative;
+	text-align:left;
+	z-index:99;
+	width:auto;
+	height:33px;
+}
+.whattodo:hover,.whattodo.expand {
+	background-color:#f4f793;
+	border:1px solid #fff;
+	color:#333;
+	cursor:pointer;
+}
+.whattodo.expand {
+	max-width:100%;
+	position:absolute;
+	top:40px;
+	height:auto;
+
+}
+.whattodo ul {
+	list-style:disc;
+	padding-left: 20px;
+}
+.whattodo li {
+	margin-top: 5px;
+	margin-bottom:5px;
+	text-shadow:none;
+	color:#333;
+	list-style:disc;
+}
+.whattodo li:hover {
+	font-size:16px;
+	color:#333;
+	/*line-height:16px;*/
+}
+.whattodo ol {
+	list-style:decimal;
+	list-style-type:decimal;
+}
+.whattodo ol>li {
+	list-style:decimal;
+	list-style-type:decimal;
+}
+.whattodo ol>li ol>li {
+	list-style:lower-alpha;
+	list-style-type:lower-alpha;
+}
+.whattodo ul ul {
+	list-style:circle;
+}
+.ctitle .whattodo {
+	font-weight:normal;
+}
+.wtd_header{
+	font-size:17px;
+}
+.wtd_content{
+	display:none;
+	font-size:15px;
+}
+.wtd_content,.wtd_content i,.wtd_content li,.wtd_content b {
+	font-size:initial;
+}
+.expand .wtd_content {
+	display:block;
+	padding:10px;
+}
+.expand .wtd_header{
+	display:none;
+}
+.wtd_ikon {
+	float: right;
+    display: block;
+    padding: 5px;
+    line-height: 12px;
+    font-family: serif;
+    font-size: 26px;
+    margin: 0 10px 0 0px;
+    border-radius: 50%;
+    background-color: #fff460;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+}
+.expand .wtd_ikon {
+	background-color: #fff460;
+}
+.wtd_ikon:before {
+	content:'i';
+}
+.expand .wtd_ikon:before {
+	content:'x';
+}
+.blackheader .row {
+	position:relative;
+}
+.cids_tagline {
+	font-family: 'Brush Script MT',serif;
+	font-weight:normal;
+}
+.mainpage.module .cids_tagline {
+    font-size: 20px;
+	color:#eee;
+	font-style:italic;
+}
+.asieimage .cids_tagline {
+    font-size: 20px;
+	color:#9a06cc;
+}
+.mainpage .row h1 {
+	margin-bottom:2px;
+	font-weight:600;
+}
+.mainpage .row h3 {
+	width:100%;
+	margin:0;
+	line-height:30px;
+	margin-bottom: 10px;
+
+}
+.mainpage .row h2 {
+	text-transform:uppercase;
+	font-weight:normal;
+	font-size: 14px;
+	line-height:16px;
+	color:#eee;
+}
+.header a {
+	text-decoration:none;
+}
+.lily-video {
+	display: block;
+    top: 0;
+    right: 220px;
+    background-color: #ddd;
+    border: 1px solid #999;
+    border-radius: 10px;
+    padding: 3px 10px;
+    margin: 3px;
+    color: #333;
+    position: absolute;
+    text-align: left;
+    z-index: 98;
+}
+.lily-video img {
+	width:25px;
+}
+.lang_en .lily-video {
+	 right: 192px;	
+}
+.instructional_profile .lily-video {
+	top: 35px;
+    right: 0px;
+}
+.penempatan {
+	text-transform:uppercase;
+}
+@media (max-width: 1199px){
+.whattodo,.lily-video {
+	top:0px;
+}
+}
+@media (max-width: 575px) {
+	.menubar .usertext {
+		display:none;
+	}
+	.mainpage .header {
+		text-align:center;
+	}
+	.header.logo img {
+		height: 60px;
+		width: auto;
+	}
+}
+@media (max-width: 768px) {
+	.mainpage.module  h3.cids_tagline {
+		font-size:14px;
+	}
+}
+#best-practice {
+	height:80px;
+}
+.central3 img {
+	max-width:100%;
+}
+.model_figure {
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+.vidtut {
+	width:55px;
+	position:relative;
+}
+
+.mainpage .row h1 { 
+font-family:Roboto;
+text-decoration:underline;
+font-size:16px;
+text-shadow:0 0 2px #000; 
+}
+.nama_sekolah {
+	text-transform:uppercase;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="nav.css?20260206">
+</head>
+<body class="lang_ms folded" id="body">
+
+<nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-asie topbar d-print-none" aria-label="Ninth navbar example">
+    <div class="container-fluid">
+	<button id="menuToggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button> 
+	<!--
+     <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mySidenav" aria-controls="mySidenav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+	-->
+      <a class="navbar-brand" href="/model">CIDS <span style="font-size:14px">New-Gen</span></a>
+	  
+ 	  
+      <div class="collapse navbar-collapse" id="asietopnavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <!--
+		  <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="main.php">
+			<span class="media-left d-lg-none">
+				<i class="icon fa fa-home fa-fw " aria-hidden="true"  ></i>
+			</span>
+			<span class="d-none d-lg-block">Laman Model</span></a>
+          </li>
+		  -->
+          <li class="nav-item">
+            <a class="nav-link" href="main9.php">
+			<span class="media-left">
+				<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">eRPH</span>
+			</a>
+          </li>
+		 
+		 		  <li class="nav-item">
+            <a class="nav-link" href="koku.php">
+			<span class="media-left">
+				<i class="icon fa fa-running fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Kokurikulum</span></a>
+          </li>
+		  
+		  <li class="nav-item">
+            <a class="nav-link" href="formsLS.php">
+			<span class="media-left">
+				<i class="icon fa fa-tasks fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Lesson Study</span></a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="formsSKPM.php">
+			<span class="media-left">
+				<i class="fas fa-list-ol" aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">SKPM Kualiti@Sekolah</span></a>
+          </li>
+
+		  	  
+		
+       </ul>
+        
+		
+			
+      </div>
+	  <div class="navbar-expand" id="asieusermenu">
+		<ul class="nav navbar-nav ml-auto">
+			<div class="d-none d-lg-block">
+			
+			</div>
+	   
+			<!-- user_menu -->
+			<li class="nav-item d-flex align-items-center">
+				<div class="usermenu">
+					<div class="action-menu moodle-actionmenu nowrap-items d-inline" id="action-menu-1" data-enhance="moodle-core-actionmenu">
+						<div class="menubar d-flex " id="action-menu-1-menubar" role="menubar">
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a href="#" tabindex="0" class="nav-link dropdown-toggle icon-no-margin" id="profilemenu" aria-label="User menu" data-bs-toggle="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-1-menu">
+				
+                            <span class="userbutton"><span class="usertext mr-1">MUHAMMAD AKMAL BIN NASIR </span>
+														<span class="avatars">
+							<span class="avatar current"> <img src="upload/159707/900225025035.jpg" class="userpicture defaultuserpic" width="35" height="35" role="presentation" aria-hidden="true"></span></span>
+														</span>
+                                
+                            <b class="caret"></b>
+                        </a>
+						<ul class="dropdown-menu navbar-asie" aria-labelledby="profilemenu">
+						  <li><a class="dropdown-item" href="admin9.php?action=profail">Sunting Profil Saya</a></li>
+				
+						  <!-- <li><a class="dropdown-item" href="javascript:void(0);">Mesej</a></li> -->
+						  <li><a class="dropdown-item" href="logout.php?redirect=">Log Keluar</a></li>
+						  
+						  						
+						</ul>
+                    </div>
+                </div>
+
+						</div>
+
+				</div></div>
+			</li>
+		</ul>
+		</div>
+    </div>
+  </nav>
+  
+<div class="asie-wrapper"> 
+
+<div id="overlay"></div>
+<nav id="mySidenav" class="d-print-none sidenav navbar navbar-dark navbar-asie d-md-block sidebar side-menu" aria-hidden="false" tabindex="-1" style="min-height: 754px;">
+	 <script>document.getElementById("mySidenav").style.minHeight = (window.innerHeight-46)+'px';</script>  
+   <div id="mySidenav2" class="d-md-block ">
+        <ul class="nav flex-column pt-3">
+          <li class="nav-item chevron-link">
+            <a class="nav-link" onclick="toggleNav();" href="javascript:void(0);">
+			<div class="media media-expand">
+				<span class="media-left">
+					<i class="icon fa fa-chevron-circle-right fa-fw " aria-hidden="true" title="Expand Menu" alt="Expand Menu"></i>
+				</span>
+				<span class="media-body ">&nbsp;</span>
+			</div>	
+			<div class="media media-collapse">
+				<span class="media-left">
+					<i class="icon fa fa-chevron-circle-left fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Tutup Menu</span>
+			</div>	
+            </a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="main.php">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-home fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Laman Utama</span>
+			</div>	
+            </a>
+          </li>
+		  
+
+		  <li class="nav-item mobile_only">
+            <a class="nav-link" href="main9.php">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">eRPH</span>
+			</div>	
+            </a>
+          </li>
+		  
+	 
+		 
+		  <li class="nav-item mobile_only">
+            <a class="nav-link" href="koku.php">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-running fa-fw" aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Kokurikulum</span>
+			</div>	
+            </a>
+          </li>
+		  <li class="nav-item mobile_only">
+            <a class="nav-link" href="formsLS.php">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-tasks fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Lesson Study</span>
+				</div>
+            </a>
+          </li>		  
+		  <li class="nav-item mobile_only">
+            <a class="nav-link" href="formsSKPM.php">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-list-ol" aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">SKPM Kualiti@Sekolah</span>
+			</div>
+            </a>
+          </li>
+
+
+		  	  
+ 
+			<li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#profile-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-user-circle fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Profil</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="profile-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+						
+				<li><a class="dropdown-item" href="admin9.php?action=profail">
+				Sunting Profil Saya</a></li>
+				<li><a class="dropdown-item" href="admin9.php?action=profail_institusi">
+				Profil Institusi</a></li>
+												<li class="divider"></li>
+				<li><a class="dropdown-item" href="admin9.php?action=senarai">
+				Cari Profil Pengguna</a></li>
+				<li><a class="dropdown-item" href="admin9.php?action=cipta_profail">
+				Cipta Profil Pengguna</a></li>
+								</ul>
+			</div>	
+          </li>
+			   <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#setting-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa-fw fas fa-images " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Sumber</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="setting-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+								 
+				<li><a class="dropdown-item" href="resource.php">
+				Library</a></li>
+				<li><a class="dropdown-item" onclick="popupCenter('mediagallery.php?pop=1', 'Settings',1000,450);" href="javascript:void(0);">
+				Galeri</a></li>
+			
+			</ul>
+			</div>			
+          </li>
+	  
+			<li class="  my-3"></li>
+
+						<li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#language-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-globe fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bahasa</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="language-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="/model/main.php?cb=ms">Bahasa Melayu</a></li><li><a class="dropdown-item" href="/model/main.php?cb=en">English</a></li>				</ul>
+				</div>
+			</li>
+								
+		 
+		 
+		
+		  <li class="nav-item">
+            <a class="nav-link" href="akaun.php">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-id-card fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Akaun</span>
+			</div>	
+            </a>
+          </li>
+				  
+		  
+		     
+		
+	 		 
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#exit-collapse" aria-expanded="false" href="#">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-sign-out-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Keluar</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="exit-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="main.php">Laman Utama</a>
+				</li>
+				<li><a class="dropdown-item" href="logout.php?redirect=">Log Keluar</a>
+				</li>
+				
+			</ul>
+			</div>
+		</li>
+        </ul>
+
+        
+      </div>
+	  
+	
+ </nav>
+  <script>
+    const menu = document.getElementById('mySidenav');
+    const overlay = document.getElementById('overlay');
+    const toggleBtn = document.getElementById('menuToggle');
+
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        toggleBtn.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        toggleBtn.classList.remove('active');
+    });	
+
+</script>
+ <script type="text/javascript">
+function checkBeforeNavigate (url,msg="Anda belum Simpan tetapan atau kandungan! Sila klik Cancel untuk kembali atau klik OK untuk terus!") {
+
+	if (typeof belumedit === "undefined") {
+		proceed=true;
+	}
+	else if (belumedit) {
+		proceed=true;
+	}
+	else {
+		proceed=confirm(msg);
+	}
+	if (proceed) {
+		location.href=url;
+	}	
+	return false;
+}
+</script>
+ 	
+<main id="main"> 
+  <div class="container-fluid navbar-dark bg-asie pt-4">
+	<div class="container-lg mainpage module">
+		<div class="row ">
+			<div class="col-lg-5 header">
+				<img src="/images/CIDS-newgen-logo.png" style="float:left;width:95px;padding-right:10px"> 
+								<h1>COLLABORATIVE INSTRUCTIONAL<br> DESIGN SYSTEM (CIDS)</h1>
+								<h3 class="cids_tagline">Transforming teachers... inspiring learners</h3>
+				
+			</div>
+			<div class="col-6 col-lg-2 header logo  d-none d-sm-block">
+			<div class="school_logo"><img src="upload/school/ABA2057.jpg" height="100"><br></div><div class="nama_sekolah">SEKOLAH KEBANGSAAN PENGKALAN, PPD Kinta Utara, Perak, Malaysia</div><div class="penempatan"></div>			</div>
+			<div class="col-6 col-lg-5 header user  d-none d-sm-block">
+				<div class="username">
+				<img src="upload/159707/900225025035.jpg" class="user_photo"><br>				MUHAMMAD AKMAL BIN NASIR 
+				                </div>
+			</div>
+        </div>
+	</div>
+</div>
+<style>
+.main-row {
+	background-color:#78e3d4;
+	text-shadow: 0 0 10px #ffffff;
+	border-radius: 10px;
+
+
+}
+.main-row a:active {
+	background-color:unset;
+}
+.main-row.main_model {
+	/* background-image: url("/model/img/asie10_icon_main2.png"); */
+	background-position-x: right;
+    background-repeat: no-repeat;
+    background-position-y: center;
+	min-height:250px;
+	height:auto;
+}
+.main-row.main_ls {
+	background-image: url("/model/img/asie10_icon_lesson_a.png");
+	background-position-x: right;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    min-height: 250px;
+	height:auto;
+    background-size: 120px;
+}
+.main-row.main_skpm {
+	background-image: url("/model/img/asie10_icon_skpm_a.png");
+	background-position-x: right;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    min-height: 250px;
+	height:auto;
+    background-size: 120px;
+	
+}
+.main-row.main_koku {
+	background-image: url("/model/img/asie10_icon_koku_a.png");
+	background-position-x: right;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    min-height: 250px;
+	height:auto;
+    background-size: 120px;
+}
+.main_landing>div {
+	padding:20px;
+}
+</style>
+	<div class="container ">
+		<div class="row main_landing" style="">
+
+					
+			
+			
+			
+				<div class="alert alert-info" role="alert">
+				  <h1>Penyediaan RPH semasa cuti sekolah</h1><hr>
+				  <p>Untuk makluman, RPH tidak perlu disediakan untuk sepanjang cuti sekolah daripada 23/5/2026 hingga 6/6/2026, walau bagaimanapun ini tertakluk kepada polisi di sekolah masing-masing.</p>
+				  <p>Jika ada RPH dihantar, Dashboard CIDS akan menyenaraikannya di dalam kategori 'RPH telah hantar tidak mengikut jadual atau semasa cuti'.</p>
+				  <p>Harap maklum, terima kasih serta selamat bercuti dan Selamat Menyambut Hari Raya Aidil Adha</p>
+				</div>
+
+					
+			
+				
+			
+		
+			<div class="col-md-12 ">
+			
+					
+			
+			
+				<div class="col-md-12 col-12 pb-3 center">
+								Tekan Untuk Memilih Jenis Perancangan Aktiviti
+								</div>
+
+
+				<div class="row p-3 align-items-center main-row main_model" style="">
+					
+					<div class="col-md-6 col-6">
+										<h3 class="" style="width:100%">Perancangan Instruksional (eRPH)</h3>
+			• Perancangan instruksional untuk semua subjek bagi semua jenis sekolah. 
+			• Format perancangan yang fleksibel boleh diubahsuai mengikut keperluan situasi pendidikan masa kini (PAK21).
+			• Pemantuan, pengesahan pelbagai peringkat pentadbiran.
+			
+										</div>
+					<div class="col-md-6 col-6 align-items-right" style="text-align: right;height:250px">
+					<img src="/model/img/asie10_icon_main2.png" style="max-width:100%">
+					</div>
+					<a href="/model/main9.php" style="position:absolute;top:0;bottom:0"></a>
+				</div>
+
+					
+			</div>
+			<div class="col-12" style="padding:0px">
+			<div style="display:flex;flex-wrap: wrap;">
+		
+			<div class="   " style="flex:1;margin:10px;min-width:300px">
+				<div class=" p-3 align-items-start main-row main_ls" style="position:relative">
+				<h3 class="col-md-12 col-12" style="width:100%">Lesson Study</h3>
+				<div class="col-md-10 col-12">
+				
+			• Bekerjasama merancang, mengajar, mengamati, &amp; berkongsi maklumat hasil daripada sesi pemerhatian dan sesi refleksi.
+ • Ke arah peningkatan profesionalisme guru.
+				 </div>
+					<div class="col-md-6 col-6 align-items-right" style="text-align: right;">
+					
+					</div>
+					<a href="/model/formsLS.php" style="position:absolute;top:0;bottom:0;width:100%"></a>
+					</div>	
+				</div>
+						<div class=" " style="flex:1;margin:10px;min-width:300px">
+			<div class=" p-3 align-items-start main-row main_skpm" style="position:relative">
+			<h3 class="col-md-12 col-12" style="width:100%">SKPM Kualiti@Sekolah </h3>
+				<div class="col-md-10 col-12">
+							• Laporan Standard 4 — Pembelajaran &amp; Pemudahcaraan
+• Penilaian &amp; Pengesahan pelbagai peringkat pentadbiran 
+</div><div class="col-md-6 col-6 align-items-right" style="text-align: right;">
+					
+					</div>
+					<a href="/model/formsSKPM.php" style="position:absolute;top:0;bottom:0;width:100%"></a>
+					</div>
+			</div>
+								<div class="  " style="flex:1;margin:10px;min-width:300px">
+			<div class=" p-3 align-items-start main-row main_koku" style="position:relative">
+				<h3 class="col-md-12 col-12" style="width:100%">
+				Perancangan Kokurikulum
+								</h3>
+				<div class="col-md-10 col-12">
+								• Perancangan &amp; pelaporan aktiviti kokurikulum kelab, persatuan, Unit beruniform.
+• Laporan kehadiran.
+• Pengesahan pelbagai peringkat pentadbiran.
+				
+</div><div class="col-md-6 col-6 align-items-right" style="text-align: right;">
+					
+					</div>
+					<a href="/model/koku.php" style="position:absolute;top:0;bottom:0;width:100%"></a>
+					</div>
+			</div>
+				</div></div>
+
+		
+			
+        </div>
+	</div>		
+	
+ 
+
+	
+	 
+	
+</main>
+</div>
+
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript">
+function toggleNav() {
+	var element = document.getElementById("body");
+	if (element.classList) {
+	  element.classList.toggle("folded");
+	} else {
+	  // For IE9
+	  var classes = element.className.split(" ");
+	  var i = classes.indexOf("folded");
+
+	  if (i >= 0) {
+		classes.splice(i, 1);
+	  }
+	  else {
+		classes.push("folded");
+		element.className = classes.join(" ");
+	  }
+	}
+
+	if (folded=='yes') {
+		setCookie('folded','no',100)
+	}
+	else if (folded=='no') {
+		setCookie('folded','yes',100)
+	}
+}
+var folded = getCookie('folded');
+if (folded==='') folded = 'yes';
+
+// Function to check if the alert should be shown
+function checkAlertStatus() {
+    let alertClosedTimestamp = localStorage.getItem("alertClosedTimestamp");
+    if (alertClosedTimestamp) {
+        let now = new Date().getTime();
+        let oneWeek = 1 * 24 * 60 * 60 * 1000; // 1 week in milliseconds
+        if (now - alertClosedTimestamp < oneWeek) {
+            document.getElementById("alertBox").style.display = "none"; // Hide alert
+        }
+    }
+}
+
+// Function to set the alert close timestamp
+document.getElementById("closeAlert").addEventListener("click", function () {
+    localStorage.setItem("alertClosedTimestamp", new Date().getTime());
+});
+
+// Run check on page load
+checkAlertStatus();
+</script>
+
+
+<script type="text/javascript">
+$(".whattodo").click(function(){
+	var id = $(this).attr("id");
+	//alert(id);
+	if(id) {
+		$("#"+id).toggleClass("expand");
+	}
+	else {
+		$(".whattodo").toggleClass("expand");
+	}
+});
+
+</script>
+
+<link href="/js/lity-2.3.1/dist/lity.css" rel="stylesheet">
+<script src="/js/lity-2.3.1/dist/lity.js"></script>
+
+<script src="/js/bootstrap-5.0.0-beta1/bootstrap.bundle.min.js"></script>
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;3375acf92f06438e94a4d307a9f7b026&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+
+</body></html>

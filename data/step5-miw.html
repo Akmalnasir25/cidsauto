@@ -1,0 +1,1736 @@
+<!DOCTYPE html><html lang="ms"><head>
+<title>Model Reka Bentuk Instruksional Integral ASIE &lt;br/&gt;
+				Versi 9.0</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=0.5, user-scalable=yes">
+<link rel="stylesheet" href="/css/bootstrap-5.0.0-beta1/bootstrap.min.css">
+<link rel="stylesheet" href="/css/fontawesome-free-5.15.2-web/css/all.css">
+
+<link rel="stylesheet" type="text/css" href="/css/v9styles.css?20260205b">
+
+<link rel="stylesheet" type="text/css" href="/css/print_style.css">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+<link rel="stylesheet" type="text/css" href="/css/select2.min.css">
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/js/tinymce_6.6.2/tinymce.min.js"></script>
+<script src="/js/tinymce_6.6.2/eqneditor.js"></script>
+
+<link rel="stylesheet" type="text/css" href="miw.20210515c.css?20260205b">
+<style>
+
+</style>
+  
+<script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript" src="/js/select2.full.js"></script>
+
+<link href="/js/lity-2.3.1/dist/lity.css" rel="stylesheet">
+<script src="/js/lity-2.3.1/dist/lity.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.css">
+<script src="/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="miw.js?20260205b"></script>
+<script type="text/javascript">
+
+var msg1 = "Anda belum Simpan RPH ini!\nSila klik Cancel untuk kembali atau klik OK untuk meneruskan perancangan tanpa menyimpan maklumat pada RPH..";
+
+var msg2 = "Format setting is saved for: ";
+var msg3 = "Rekod ini sahaja";		
+var msg4 = "Semua Rekod Baharu";
+var msg5 = "Sila pilih Subjek dan Aras Kelas yang sama mengikut rekod yang dibuka";
+var msg6 = "Sila masukkan tarikh perancangan untuk MIW terlebih dahulu dan simpan Profil Pembelajaran anda";
+var msg_rph_slot_taken = "Anda tidak boleh menggunakan tarikh dan masa RPH ini kerana sudah terdapat RPH lain yang telah dihantar untuk pengesahan pada slot waktu yang sama";
+var hintToggle=0;
+
+var julattxt = "Julat hari MIW anda merangkumi %berapaminggu% minggu.\nRPH ini untuk minggu ke berapa?";
+//var cookieValue = getCookie("miw_dim_screen");
+//alert ('cookie =' + cookieValue);
+var belumedit=1;
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J4MP2SJKZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J4MP2SJKZ5');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92269807-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel="stylesheet" type="text/css" href="nav.css?20260205b">
+<style>
+@media print {
+  .noprint {
+    display: none !important;
+  }
+  table {
+	  page-break-after:auto;
+	  break-after: auto;  
+	  page-break-before:auto;
+	  break-before: auto;  
+  }
+  .folded #main, #main {
+	  width:100%;
+  }
+}
+
+.preprint pre {
+	text-align:left!important;
+	font-family:monospace;
+}
+.s__strategize {
+	/*min-width:35%;*/
+}
+.table_miw ul p {
+	margin-bottom:0;
+}
+.table_miw {
+	border:0;
+}
+.endorsement .chop-image {
+    clear: both;
+    padding: 0 5px 0 0;
+}
+.row h4 {
+	font-size:medium;
+}
+.table_miw .ititle.miw_modular {
+	font-weight:normal;
+}
+.remark ol {
+	padding-left:15px;
+}
+.fab {
+    font-family: 'Font Awesome 5 Brands'!important;
+}
+.whattodo {
+	position: relative;
+}
+.whattodo.expand {
+	position: absolute;
+	top:36px;
+}
+.lily-video {
+	position:relative!important;
+	right:0;
+}
+.lang_en .d-flex .lily-video {
+	right: 0;
+}
+.help_icon_bar {
+	position:relative;
+}
+@media screen {
+  .help_icon_bar {
+	  height:40px;
+  }
+}
+@media screen and (max-width:997px) {
+	.help_icon_bar {
+	  height:80px;
+  }
+  .select2-container {
+    max-width: 250px;
+  }
+}
+.help_icon_bar .help_icons {
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+.header_miwpra page[size="A4"] {
+    min-height: unset;
+}
+.src_miwpra .top_page page[size="A4"] {
+    min-height: unset;
+	height:12cm;
+}
+.src_miwpra #analyze_strategize{
+	visibility:hidden;
+}
+.src_miwpra #timeslot2, .src_miwpra #timeslot3 {
+	display:none;
+}
+.src_miwpra .page.endorsement {
+	/*padding-top:150px;*/
+}
+.action_editRPH.src_miwpra .endorsement page{
+	display:none;
+}
+.src_miwpra .section_3 {
+	display:none;
+}
+.src_miwpra .rph_nav {
+	display:none;
+}
+.miw_resizeable {
+	
+}
+.endorsement select {
+	max-width:100%;
+}
+
+</style>
+</head>
+<body id="body" class="debug_ lang_ms folded action_miw ver9 ">
+
+<nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-asie topbar d-print-none" aria-label="Ninth navbar example">
+    <div class="container-fluid">
+
+	<button id="menuToggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>    
+<!--
+	<button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mySidenav" aria-controls="mySidenav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+-->
+      <a class="navbar-brand" href="/model">CIDS <span style="font-size:14px">New-Gen</span></a>
+	  
+ 	  
+      <div class="collapse navbar-collapse" id="asietopnavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          
+		  <!--
+		  <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="main9.php">
+			<span class="media-left d-lg-none">
+				<i class="icon fa fa-home fa-fw " aria-hidden="true"  ></i>
+			</span>
+			<span class="d-none d-lg-block">Laman Model</span></a>
+          </li>
+		  -->
+		  		   <li class="nav-item">
+            <a class="nav-link" href="main9.php">
+			<span class="media-left">
+				<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">eRPH</span>
+			</a>
+          </li>
+		  		  		             <li class="nav-item">
+            <a class="nav-link" href="record.php?action=newmiw">
+			<span class="media-left">
+				<i class="icon fa fa-plus fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Cipta Rekod Baharu</span>
+			</a>
+          </li>
+		 
+		  <li class="nav-item">
+            <a class="nav-link" href="search9.php?action=listmiw">
+			<span class="media-left">
+				<i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Buka Rekod</span></a>
+          </li>
+		  		  				  <li class="nav-item">
+            <a class="nav-link" href="search9.php?action=listmiwpra">
+			<span class="media-left">
+				<i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Buka Rekod Prasekolah</span></a>
+          </li>		
+				  
+		  		  
+		  		  <li class="nav-item">
+            <a class="nav-link" href="search9.php?action=search_yearly">
+			<span class="media-left">
+				<i class="icon far fa-calendar-alt fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">RPT</span></a>
+          </li>
+		  		  <li class="nav-item">
+            <a class="nav-link" href="teachers9.php?action=waktumengajar">
+			<span class="media-left">
+				<i class="icon fas fa-table fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Jadual Waktu</span></a>
+          </li>
+		  
+		             <li class="nav-item">
+            <a class="nav-link" href="record.php?action=supervision">
+			<span class="media-left">
+				<i class="icon fa fa-file-signature fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Rekod Penyeliaan</span>
+			</a>
+          </li>          
+		  				
+		  		
+		          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="recordname" data-bs-toggle="dropdown" aria-expanded="false">
+			<span class="media-left">
+				<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Rekod:</span>
+			<span class="miw_name" id="miw_name" title="">TEST_EXPLORE_M2</span></a>		
+            <ul class="dropdown-menu navbar-asie" aria-labelledby="recordname" id="miw_competency_submenu">
+			
+			              			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=instructional');return false;" href="set9.php?action=instructional">Integrasi Pengetahuan - Profil Pembelajaran</a></li>
+			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=media9');return false;" href="set9.php?action=media9">Integrasi Pengetahuan - Profil Pelajar</a></li>
+              <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=developingskills');return false;" href="set9.php?action=developingskills">Membangun - Kemahiran</a></li>
+			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=buildingcharacter');return false;" href="set9.php?action=buildingcharacter">Membentuk - Karakter</a></li>
+			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('set9.php?action=instillingmetalearning');return false;" href="set9.php?action=instillingmetalearning">Menerap - Pembelajaran-Meta</a></li>
+			  			  			  <li><a class="dropdown-item miw_competencies_submenu" onclick="checkBeforeNavigate('miw9.php?action=miw');return false;" href="miw9.php?action=miw">MIW</a></li>
+			                
+            </ul>
+          </li>
+		         </ul>
+        
+		
+			
+      </div>
+	  <div class="navbar-expand" id="asieusermenu">
+		<ul class="nav navbar-nav ml-auto">
+			<div class="d-none d-lg-block">
+			
+			</div>
+	   
+			<!-- user_menu -->
+			<li class="nav-item d-flex align-items-center">
+				<div class="usermenu">
+					<div class="action-menu moodle-actionmenu nowrap-items d-inline" id="action-menu-1" data-enhance="moodle-core-actionmenu">
+						<div class="menubar d-flex " id="action-menu-1-menubar" role="menubar">
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a href="#" tabindex="0" class="nav-link dropdown-toggle icon-no-margin" id="profilemenu" aria-label="User menu" data-bs-toggle="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-1-menu">
+				
+                            <span class="userbutton"><span class="usertext mr-1">MUHAMMAD AKMAL BIN NASIR </span>
+														<span class="avatars">
+							<span class="avatar current"> <img src="upload/159707/900225025035.jpg" class="userpicture defaultuserpic" width="35" height="35" role="presentation" aria-hidden="true"></span></span>
+														</span>
+                                
+                            <b class="caret"></b>
+                        </a>
+						<ul class="dropdown-menu navbar-asie" aria-labelledby="profilemenu">
+						  <li><a class="dropdown-item" href="admin9.php?action=profail">Sunting Profil Saya</a></li>
+
+				
+						  <li><a class="dropdown-item" href="akaun.php">Akaun</a></li>
+										  <!-- <li><a class="dropdown-item" href="javascript:void(0);">Mesej</a></li> -->
+						  <li><a class="dropdown-item" href="logout.php?redirect=">Log Keluar</a></li>
+						  						  
+						</ul>
+                    </div>
+                </div>
+
+						</div>
+
+				</div></div>
+			</li>
+		</ul>
+		</div>
+    </div>
+  </nav>
+  
+<div class="asie-wrapper"> 
+
+<div id="overlay"></div>
+	
+<nav id="mySidenav" class="d-print-none sidenav navbar  navbar-dark navbar-asie d-md-block sidebar  side-menu" aria-hidden="false" tabindex="-1" style="min-height: 854px;">
+	 <script>document.getElementById("mySidenav").style.minHeight = (window.innerHeight-46)+'px';</script>  
+   <div id="mySidenav2" class="d-md-block ">
+        <ul class="nav flex-column pt-3">
+          <li class="nav-item chevron-link">
+            <a class="nav-link" onclick="toggleNav();" href="javascript:void(0);">
+			<div class="media media-expand">
+				<span class="media-left">
+					<i class="icon fa fa-chevron-circle-right fa-fw " aria-hidden="true" title="Expand Menu" alt="Expand Menu"></i>
+				</span>
+				<span class="media-body ">&nbsp;</span>
+			</div>	
+			<div class="media media-collapse">
+				<span class="media-left">
+					<i class="icon fa fa-chevron-circle-left fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Tutup Menu</span>
+			</div>	
+            </a>
+          </li>
+		  		  <li class="nav-item">
+            <a class="nav-link" href="main.php">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-home fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Laman Utama</span>
+			</div>	
+            </a>
+          </li>
+		  		  
+		 
+		  <li class="nav-item  dropdown">
+		    <a href="javascript:void(0);" class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#record-collapse" aria-expanded="false">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Rekod</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="record-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+							<li><a class="dropdown-item" href="record.php?action=newmiw">
+				Cipta Rekod Baharu</a>
+				</li>
+				<li><a class="dropdown-item" href="search9.php?action=listmiw">
+				Buka Rekod</a>
+				</li>
+															<li><a class="dropdown-item" href="search9.php?action=listmiwpra">
+				Buka Rekod Prasekolah</a>
+				</li>				
+								
+								<li><a class="dropdown-item" href="record.php?action=supervision">
+				Rekod Penyeliaan</a>
+				</li>
+												
+				 				<li><a class="dropdown-item" href="search9.php?action=sharedmiwpra">
+				Perkongsian Rekod Prasekolah</a>
+				</li>
+				 				 				<li><a class="dropdown-item" href="search9.php?action=sharedmiw">
+				Perkongsian Rekod</a>
+				</li>
+				 								<li><a class="dropdown-item" href="search9.php?action=searchlib">Koleksi Rekod</a>
+				</li>
+					
+				<li><a class="dropdown-item" href="search9.php?action=listunsubmitted">
+				Rekod Belum Sah</a>
+				</li>
+								
+								<li class="divider"></li>
+				<li><a class="dropdown-item" href="record.php?action=editmiw">
+				Sunting Rekod</a></li>
+				<li><a class="dropdown-item" href="record.php?action=deletemiw">
+				Hapus Rekod</a></li>
+				<li><a class="dropdown-item" href="main9.php?action=clearmiw">
+				Tutup Rekod</a></li>
+				
+							<li class="divider"></li>
+				<li><a class="dropdown-item" href="record.php?action=search_yearly">
+				Rancangan Pelajaran Tahunan</a></li> 
+				<li><a class="dropdown-item" href="record.php?action=sharedrpt">
+				Perkongsian Rancangan Pelajaran Tahunan</a></li> 
+		
+				</ul>
+			</div>				
+          </li>
+		  		
+			<li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#profile-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-user-circle fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Profil</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="profile-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				
+				
+				<li><a class="dropdown-item" href="admin9.php?action=profail">
+				Sunting Profil Saya</a></li>
+				<li><a class="dropdown-item" href="admin9.php?action=profail_institusi">
+				Profil Institusi</a></li>
+												<li class="divider"></li>
+				<li><a class="dropdown-item" href="admin9.php?action=senarai">
+				Cari Profil Pengguna</a></li>
+								<li><a class="dropdown-item" href="admin9.php?action=cipta_profail">
+				Cipta Profil Pengguna</a></li>
+									</ul>
+			</div>	
+          </li>
+
+		  
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#setting-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-cog fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Tetapan</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="setting-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+									<li><a class="dropdown-item" href="set9.php?action=LeaCla&amp;do=create">Cipta Kelas Baharu</a></li>
+					<li><a class="dropdown-item" href="set9.php?action=LeaCla&amp;do=createcombined">Cipta Kelas Gabungan</a></li>
+					<li><a class="dropdown-item" href="set9.php?action=LeaCla&amp;do=search">Sunting Kelas</a></li>
+				
+				 
+				<li><a class="dropdown-item" href="teachers9.php?action=waktumengajar">
+				Jadual Waktu Instruksional</a></li>
+				<li class="divider"></li>
+			
+				<li><a class="dropdown-item" href="set9.php?action=InsPro">
+				Profil Pembelajaran</a></li>
+				<li><a class="dropdown-item" href="set9.php?action=FacPro">
+				Adegan Pengajaran</a></li>
+				
+			
+															
+			</ul>
+			</div>			
+          </li>
+
+		   <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#resource-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa-fw fas fa-images " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Sumber</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="resource-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+								<li id="li_link_to_rph_resources" style="display:none"><a class="dropdown-item" id="menu_link_to_rph_resources" onclick="popupCenter('upload.php?action=uploadRefleksi&amp;rph=&amp;bahanrefleksi=pbd', 'Settings',1000,450);" href="javascript:void(0);">
+				Pautan ke Sumber Maklumat</a></li>
+				
+				
+				<li><a class="dropdown-item" href="resource.php">
+				Library</a></li>
+				<li><a class="dropdown-item" onclick="popupCenter('mediagallery.php?pop=1', 'Settings',1000,450);" href="javascript:void(0);">
+				Galeri</a></li>
+			
+			</ul>
+			</div>			
+          </li>
+		  
+		  		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#statistic-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-chart-bar fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Statistik</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="statistic-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
+				<li><a class="dropdown-item" href="statistik9.php">Statistik Pengguna</a></li>
+				<li><a class="dropdown-item" href="statistik9.php?action=demo">Statistik Pendidikan Abad Ke-21</a></li>
+			</ul>
+			</div>
+          </li>
+		  		  
+		  <li class="  my-3"></li>
+		  
+						<li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#language-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-globe fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bahasa</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="language-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="/model/miw9.php?action=miw&amp;cb=ms">Bahasa Melayu</a></li><li><a class="dropdown-item" href="/model/miw9.php?action=miw&amp;cb=en">English</a></li>				</ul>
+				</div>
+			</li>
+								
+		  		  
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#communication-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-phone-square-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Komunikasi</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="communication-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="meeting9.php?action=videomeet">
+					CIDS VideoCorps</a></li>
+				
+			</ul>
+			</div>
+          </li>
+		  
+		  
+		  <li class="nav-item">
+			            <a class="nav-link" target="web" href="https://asiemodel.net/ms/tutorial-video/">
+						<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-video fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bimbingan Video</span>				
+			</div>	
+            </a>
+          </li>
+		 
+		  
+		  	 
+		
+ 		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#help-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-info-circle fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bantuan</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="help-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie" id="menu1">
+			
+			
+							
+			
+				<li><a class="dropdown-item" href="main9.php?wb=open">Langkah-langkah Pengguna Baharu</a></li>
+
+								
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/manual-pengguna-pengenalan-umum/" target="web">Kerangka Konseptual CIDS</a></li>
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/manual-pengguna-memulakan-perancangan/" target="web">Manual Pengguna - Memulakan Perancangan</a></li>
+				<li><a class="dropdown-item" href="https://asiemodel.net/perancangan-prasekolah-2026-prasekolah-pendidikan-khas-2026/" target="web">Manual Pengguna - Prasekolah</a></li>
+				
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/bimbingan-pdpr/" target="web">Bimbingan Pengguna – Kemahiran PdPR</a></li>
+									<!--
+				<li ><a class="dropdown-item" href="https://asiemodel.net/ms/kategori-subjek/" target="web">Manual Pengguna: Kategori Subjek</a></li>
+				-->
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/rujukan-dskp/" target="web">Rujukan: Sukatan &amp; Kategori Subjek</a></li>
+				<!--
+				<li ><a class="dropdown-item" href="https://asiemodel.net/ms/kbs-bahan-rujukan/" target="web">KBS - Bahan Rujukan</a></li>
+				-->
+				
+				
+				
+										
+								<!-- 
+				<li class="divider"></li>
+				<li ><B>Rujukan</B>
+									<li><a class="dropdown-item" href="javascript:void(0);">KBAT<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:40px">
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (aplikasi di sekolah 2014).pdf">KBAT (aplikasi di sekolah 2014)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (pedagogi -2014).pdf">KBAT (pedagogi -2014)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (konsep) (BI).pdf">KBAT (konsep) (BI)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (panduan).pdf">KBAT (panduan)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (aplikasi di sekolah 2014).pdf">KBAT (aplikasi di sekolah 2014)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (konsep).pdf">KBAT (konsep)</a></li>
+
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">Ujian Psikometrik<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:40px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/ujian psikometrik_rendah (panduan).pdf">Ujian psikometrik_rendah (panduan)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian psikometrik_menengah (panduan).pdf">Ujian psikometrik_menengah (panduan).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (IMK).pdf">Ujian Psikometrik (IMK).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (ITP).pdf">Ujian Psikometrik (ITP).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (IKK).pdf">Ujian Psikometrik (IKK).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Kecerdasan Pelbagai (BI).pdf">Kecerdasan Pelbagai (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Kecerdasan Pelbagai 2 (BI).pdf">Kecerdasan Pelbagai 2 (BI).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Aptitud Tahun3 (penerangan).pdf">Ujian Aptitud Tahun3 (penerangan).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Aptitud Tahun3 (dokumen).pdf">Ujian Aptitud Tahun3 (dokumen).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Gaya belajar (BI).pdf">Gaya belajar (BI).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (huraian).pdf">Ujian Psikometrik (huraian).pdf</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">Pembelajaran Abad Ke-21<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:117px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pembelajaran Abad Ke-21/Pembelajaran Abad Ke-21 (huraian ringkas).pdf">Pembelajaran Abad Ke-21 (huraian ringkas)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pembelajaran Abad Ke-21/Pembelajaran Abad Ke-21_2 (BI).pdf">Pembelajaran Abad Ke-21_2 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pembelajaran Abad Ke-21/Pembelajaran Abad Ke-21 (BI).pdf">Pembelajaran Abad Ke-21 (BI)</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">Pendidikan Umum<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:40px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran Abad Ke-21 (huraian ringkas).pdf">Pembelajaran Abad Ke-21 (huraian ringkas)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran Abad Ke-21_2 (BI).pdf">Pembelajaran Abad Ke-21_2 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pendidikan UNESCO_2030 (BI).pdf">Pendidikan UNESCO_2030 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pengajaran berkesan (BI).pdf">Pengajaran berkesan (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pendidikan UNESCO (BI).pdf">Pendidikan UNESCO (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran berasaskan hasilan (BI).pdf">Pembelajaran berasaskan hasilan (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/PPPM 2013-2025.pdf">PPPM 2013-2025</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Buku Panduan Pengurusan  PBS 2012.pdf">Buku Panduan Pengurusan  PBS 2012</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran Abad Ke-21 (BI).pdf">Pembelajaran Abad Ke-21 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Ubahsuaian Taksonomi Bloom (BI).pdf">Ubahsuaian Taksonomi Bloom (BI)</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">PLC<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:168px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/PLC/Konsep PLC.pdf">Konsep PLC</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/PLC/Modul PLC.pdf">Modul PLC</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/PENJELASAN MEDIA PENGAJARAN.pdf">Penjelasan Media Pengajaran</a></li>
+					
+								</li>
+				-->
+			</ul>
+			</div>
+          </li>    
+		
+ 
+		 <li class="nav-item dropdown" id="faq">
+		             <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#faq-collapse" aria-expanded="false" href="https://asiemodel.net/ms/soalan-lazim-faq/">
+		 			<div class="media">
+				<span class="media-left">
+						
+					<i class="icon far fa-comment-dots" aria-hidden="true" style="width:1.25em;text-align: center;"></i>
+				</span>
+				<span class="media-body ">Soalan Lazim - FAQ</span>
+			</div>	
+            </a>
+		 </li>	
+
+
+		 
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#exit-collapse" aria-expanded="false" href="#">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-sign-out-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Keluar</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="exit-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+						
+				<li><a class="dropdown-item" href="main.php">Laman Utama</a>
+				</li>
+							<li><a class="dropdown-item" href="logout.php?redirect=">Log Keluar</a>
+				</li>
+				
+			</ul>
+			</div>
+		</li>
+
+        </ul>
+
+        
+      </div>
+	  
+	
+ </nav>
+ <script>
+    const menu = document.getElementById('mySidenav');
+    const overlay = document.getElementById('overlay');
+    const toggleBtn = document.getElementById('menuToggle');
+
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        toggleBtn.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        toggleBtn.classList.remove('active');
+    });	
+
+</script>
+ <script type="text/javascript">
+function checkBeforeNavigate (url,msg="Anda belum Simpan tetapan atau kandungan! Sila klik Cancel untuk kembali atau klik OK untuk terus!") {
+
+	if (typeof belumedit === "undefined") {
+		proceed=true;
+	}
+	else if (belumedit) {
+		proceed=true;
+	}
+	else {
+		proceed=confirm(msg);
+	}
+	if (proceed) {
+		location.href=url;
+	}	
+	return false;
+}
+</script>
+ 	
+<main id="main" class="asie-arial13"> 
+
+<form method="post" action="miw9.php" class="form" name="miwform" id="miwform" onsubmit="return validateMIWForm()" autocomplete="off" enctype="multipart/form-data">
+
+
+
+
+<script>var miw_subject='subject__pendidikan_jasmani_dan_pendidikan_kesihatan_semakan';var miw_classlevel='year6';var miw_sesi='';var user_id='159707'</script>
+	<!-- Start MIW header -->
+	<div class="page top_page">
+	<page size="A4" class="">
+		
+	<div class="content_area ">
+	<div class="container-fluid">
+	<div class="row"><div class="alert alert-danger  fade show" role="alert"><h4 class="alert-heading">Ralat</h4><hr><div><p>Tarikh tidak lengkap atau tidak sah, sila betulkan tarikh rekod dengan menyunting <a href="set9.php?action=instructional">Profil Pembelajaran</a></p></div></div>
+<script>var miw_dateFrom='04-06-2026';var miw_dateTo='';</script>				
+		<!--
+		<div class="col-12 alert alert-warning noprint" role="alert">
+		<h3>PERHATIAN! Sistem CIDS sedang membuat penyelenggaran bagi data 2021!</h3>
+		<hr>
+		<P>Sistem CIDS sedang membuat penyelenggaran bagi data 2021 dan sebelumnya.</P>
+		<P>Anda dinasihatkan untuk tidak menyalin RPH baharu dari data 2021 dan sebelumnya buat sementara waktu, bagi mengelakkan daripada berlaku masalah pada data RPH anda.</P>
+		<P></P>
+		</div>
+		-->
+		
+		<div class="col-md-8 col-sm-6 miw_only">
+		<div class="photo " style="float:left;padding:0 15px 0 0"><img src="upload/159707/900225025035.jpg" style="width:100px;height:100px"></div>
+				<div class="info_miw " id="info_miw">
+		
+			
+		<font color="black">		Nama: MUHAMMAD AKMAL BIN NASIR				</font><br>
+		Aras Kelas: Tahun 6		 
+		<br><span class="class-label">Kelas :					<select name="class_id" style="padding:0;margin-bottom:1px;width:initial;height:initial" onchange="fetchMIWContent('media9',this.value,'');toggleRPHdate(this.value);" id="caller_learning_profiles">
+					<option value="" style="color:#aaa">Tekan untuk pilih kelas</option>
+					<option value="83214">6 AFEKTIF</option>
+<option value="97881">6 AFEKTIF &amp; 6 KREATIF</option>
+<option value="83215">6 GENERATIF</option>
+<option value="83216">6 INOVATIF</option>
+<option value="83218">6 KREATIF</option>
+<option value="83219">6 POSITIF</option>
+<option value="83221">6 SPORTIF</option>
+					<option value="create_new_class" style="font-style:italic;color:#aaa"><i><b>Cipta Kelas Baharu</b></i></option>
+					<option value="add_instructional_timetable" style="font-style:italic;color:#aaa"><i><b>Tambah Jadual Waktu Instruksional</b></i></option>
+					</select>
+					<input type="hidden" id="ur_class_id" name="ur[class_id]" value="" style="">
+									<div style="display: inline-block;cursor:pointer;"><img src="/images/database_table.png" onclick="showSelectingTimeTable('popup_float',0,'cg_primary-year6-subject__pendidikan_jasmani_dan_pendidikan_kesihatan_semakan',1);" style="width:20px;height:20px"></div> 		
+				<div class="blue_info blue_info_select_class noprint"><img src="/images/blue_info_30x30.png" style="width:20px;height:20px"><div class="blue_info_content"><p>Tekan <strong>ikon jadual</strong> untuk memilih waktu RPH yang telah ditetapkan</p>
+<ul>
+<li>Jika waktu RPH yang diperlukan <strong>warna kelabu</strong> sila semak (a) <strong>Profil Pembelajaran</strong> - pastikan pemilihan <strong>Kategori Institusi, Aras Kelas, Kategori Subjek </strong>dan <strong>Subjek </strong>adalah betul ATAU (b) hubungi Penyelaras untuk memastikan tetapan pada kelas tersebut adalah betul.</li>
+<li><strong>JANGAN TEKAN BUTANG INI - </strong>&nbsp;<strong>"Tekan untuk pilih kelas" KECUALI</strong> untuk mencipta <strong>RPH tambahan yang tidak tercatat dalam jadual sahaja</strong> bagi aras kelas yang sama jika perlu <strong>(contoh: kelas ganti/kelas tambahan yang menjalankan aktiviti PdP sahaja)</strong></li>
+</ul></div></div>		<br>
+		</span>
+		Subjek: Pendidikan Jasmani dan Pendidikan Kesihatan (Semakan)<br>
+				Tarikh: 04-06-2026 
+		Hingga <br>
+		Minggu Kalendar : 23 Hingga <br>
+		Minggu Instruksional : <br>
+		<div id="field_rphdate" style="visibility:hidden">Tarikh RPH: <input type="input" name="rph[date]" id="rphdatetimepicker" value="" style="">
+</div><input type="hidden" name="rph[time_from]" id="timepicker1" value="" style="">
+<input type="hidden" name="rph[time_to]" id="timepicker2" value="" style="">
+<input type="hidden" name="rph[setjadual]" id="setjadual" value="" style="">
+		
+		<div class="noprint alert_rph_info_redundant">Sila ubah tarikh dan masa RPH ini kerana sudah terdapat RPH lain yang telah dihantar untuk pengesahan pada slot waktu yang sama</div>
+		</div></div>
+		<script>
+		
+		jQuery('#rphdatetimepicker').datetimepicker({
+		lang:'ms',
+		 timepicker:false,
+		 format:'d-m-Y',
+		 		 minDate:'2026/06/04',
+		 		 
+		});
+		function toggleRPHdate(val) {
+			el = document.getElementById("field_rphdate");
+			if ((val!="") && (val!="create_new_class") && (val!='add_instructional_timetable')) {
+				el.style.visibility='visible';
+			}
+			else {
+				el.style.visibility='visible';
+			}
+		}
+		</script>
+		<div class="head_miw center col-md-4  col-sm-6">	
+		<div class="school_logo"><img src="upload/school/ABA2057.jpg" style="height:100px"><br>SEKOLAH KEBANGSAAN PENGKALAN, PPD KINTA UTARA, PERAK, Malaysia</div>LEMBARAN KERJA INTEGRASI PELBAGAI <br><i>(Multiple Integration Worksheet (MIW))</i><br><i>(Rancangan Mingguan / Topikal)</i>		</div>
+		<div style="clear:both"></div>
+	
+	<div class="col-md-6" style="float:left"><div class="help_reminder" style="max-width:600px;padding:10px;margin:auto;color:brown"><p><strong>PENTING: SILA BACA SEMUA INFO</strong> <em>(pada butang Info <strong>Apa Perlu Saya Buat?</strong>,<strong> Ikon Bulat Biru</strong> bertanda<strong> i</strong> &amp; <strong>Klip Video</strong> untuk bantuan pemahaman &amp; mengelak kesilapan)</em></p>
+<p>Secara lalai (default), semua item pembelajaran telahpun bertanda <span style="font-size: 16px; color: blue;">☑</span>. <br>Sila nyahtanda <span style="font-size: 16px; color: blue;">☑</span>&nbsp; ATAU tanda semula jika diperlukan untuk mencipta RPH.</p></div><div style="padding:0 0 10px 10px;" class="noprint"><input id="selectControl3" onclick="checkSelectAll(&quot;miw_checkbox&quot;,3)" type="checkbox" checked="" style="width: 16px;"> Nyahpilih semua item pada semua dimensi</div><div style="clear:both"></div></div><div class=" col-md-6 align-self-center help_icon_bar" style="float:right;margin-bottom: 5px;"><div class="col-sm-12 help_icons noprint"><div class="d-flex justify-content-end"><div class="lily-video" id="vidtut_miw" style="position:absolute"><a data-lity="" href="https://www.youtube.com/embed/dwlF5fKJ9Zk?autoplay=1&amp;rel=0"><img src="/images/video.jpg"></a></div><div class="whattodo" id="wtd_rph2"><span class="wtd_ikon"></span><span class="wtd_header">Apa perlu saya buat?</span><span class="wtd_content"><p><strong>Anda akan memilih item-item perancangan (konten) yang sesuai dari paparan MIW ini untuk Mencipta RPH &amp; aktivitinya&nbsp; (atau menyunting RPH) bagi satu sesi pertemuan pengajaran-pembelajaran</strong></p>
+<ol>
+<li>Mulakan dengan <strong>menekan pada ikon jadual</strong> waktu untuk <strong>memilih slot kelas dalam Jadual Waktu Instruksional </strong><em>(jangan memilih kelas di luar jadual - nanti RPH tidak dikira untuk statistik kecuali kes-kes tertentu (ganti kelas dsb)</em></li>
+<li><strong>Memilih item perancangan:</strong>
+<ol>
+<li>Nyahpilih tanda <span style="font-size: 16px; color: blue;">☑ </span>pada item-item perancangan yang tidak diperlukan ATAU</li>
+<li>Nyahpilih tanda <span style="font-size: 16px; color: blue;">☑ </span>semua item-item perancangan, kemudian pilih satu persatu<br>item-item yang diperlukan.</li>
+</ol>
+</li>
+<li>Tekan butang <strong>Cipta Rekod</strong> pada akhir helaian.</li>
+<li>Isikan <strong>Aktiviti Pengajaran</strong> pada ruang <strong>Adegan Pengajaran</strong> yang disediakan dan tekan <strong>Simpan</strong>.</li>
+<li>Tekan butang <strong>Hantar Untuk Pengesahan</strong> setelah tamat merancang</li>
+<li>Tekan butang <strong>Hantar Semula Untuk Pengesahan</strong> jika terdapat suntingan</li>
+</ol></span></div><div id="inline" style="background:#fff" class="lity-hide"></div></div></div></div>	<div style="clear:both"></div>
+
+
+	<div class="col-12 table_miw editmodeRPH_ viewmodeRPH_" id="analyze_strategize">
+	<section class="miw_resizeable">
+	<div class="section_row">
+
+			
+		
+		<div class="section_col s_block s__analyze">
+			<div class="col3 center ctitle">ANALISIS <br><i>(ANALYZE)</i></div>
+						<div class="dimension center ctitle">Dimensi 1: 
+			Integrasi - Pengetahuan</div>
+						<div class="section_row">
+							<div class="row_InsPro component">
+	
+					<div class="center ctitle miw_InsPro">
+					<a href="#" onclick="location.href='set9.php?action=instructional&amp;src=miw&amp;miw_id=27064489'">Profil Pembelajaran</a>
+					
+										<div style="padding:10px 0 0 0;font-weight:normal;color:#666" class="noprint"><input id="selectControl31" onclick="checkSelectAll(&quot;miw_InsPro_checkbox&quot;,31)" type="checkbox" class="miw_checkbox" checked="" style="float: none; width: 16px;">Nyahpilih item dalam dimensi ini</div>
+								
+					</div>
+					<div class="dimensi_content content miw_InsPro">
+					<ul><li class="ititle"><ul class="inspro_remarks"></ul></li></ul>					</div>
+				</div>
+								<div class="row_InsMPr component">
+					<div class="center ctitle"><a href="#" onclick="location.href='set9.php?action=media9&amp;src=miw&amp;miw_id=27064489'">
+					Profil Pelajar</a>
+					
+										<div style="padding:10px 0 0 0;font-weight:normal;color:#666" class="noprint"><input id="selectControl33" onclick="checkSelectAll(&quot;miw_InsMPr9_checkbox&quot;,33)" type="checkbox" class="miw_checkbox" checked="" style="float: none; width: 16px;">Nyahpilih item dalam dimensi ini</div>
+										</div>
+					<div class="dimensi_content content miw_InsMPr">
+					<div id="miw_media9"></div>
+		<div class="noprint missing_info"><a onclick="location.href='set9.php?action=media9&amp;src=miw&amp;miw_id=27064489'">Tekan untuk memasukkan kandungan</a></div>					</div>
+				</div>
+				
+			</div>
+		</div>
+		 
+		<div class="section_col s_block s__strategize">
+			<div class="col4 center ctitle">
+			MENYUSUN STRATEGI <br><i>(STRATEGIZE)</i></div>
+			<div class="section_row">
+						<div class="row_DevSki component">
+					<div class="center ctitle">
+					<a href="#" onclick="location.href='set9.php?action=developingskills&amp;src=miw&amp;miw_id=27064489'">Dimensi 2:<br> Membangun - Kemahiran</a>
+					
+										<div style="padding:10px 0 0 0;font-weight:normal;color:#666" class="noprint"><input id="selectControl34" onclick="checkSelectAll(&quot;miw_DevSki_checkbox&quot;,34)" type="checkbox" class="miw_checkbox" checked="" style="float: none; width: 16px;">Nyahpilih item dalam dimensi ini</div>
+										
+					</div>
+					<div class="dimensi_content content miw_IntIMe" id="miw_integrating">
+		<div class="noprint missing_info"><a onclick="location.href='set9.php?action=developingskills&amp;src=miw&amp;miw_id=27064489'">Tekan untuk memasukkan kandungan</a></div>					</div>
+				</div>
+								<div class="row_BuiCha component">
+					<div class="center ctitle">
+					<a href="#" onclick="location.href='set9.php?action=buildingcharacter&amp;src=miw&amp;miw_id=27064489'">Dimensi 3:<br> Membentuk - Karakter</a>
+					
+										<div style="padding:10px 0 0 0;font-weight:normal;color:#666" class="noprint"><input id="selectControl35" onclick="checkSelectAll(&quot;miw_BuiCha_checkbox&quot;,35)" type="checkbox" class="miw_checkbox" checked="" style="float: none; width: 16px;">Nyahpilih item dalam dimensi ini</div>
+										</div>
+					<div class="dimensi_content content miw_IntIMe" id="miw_integrating">
+		<div class="noprint missing_info"><a onclick="location.href='set9.php?action=buildingcharacter&amp;src=miw&amp;miw_id=27064489'">Tekan untuk memasukkan kandungan</a></div>					</div>
+				</div>
+								<div class="row_InsMLe component">
+					<div class="center ctitle">
+					<a href="#" onclick="location.href='set9.php?action=instillingmetalearning&amp;src=miw&amp;miw_id=27064489'">Dimensi 4:<br> Menerap - Pembelajaran-Meta</a>
+					
+										<div style="padding:10px 0 0 0;font-weight:normal;color:#666" class="noprint"><input id="selectControl36" onclick="checkSelectAll(&quot;miw_InsMLe_checkbox&quot;,36)" type="checkbox" class="miw_checkbox" checked="" style="float: none; width: 16px;">Nyahpilih item dalam dimensi ini</div>
+										</div>
+					<div class="dimensi_content content miw_IntIMe" id="miw_integrating">
+		<ul><li class="ititle open-left" style="background-color:#05bc57;color:#fff;padding:5px;margin-top:5px;text-align:center"><div class="blue_info blue_info_select_class noprint"><img src="/images/blue_info_30x30.png" style="width:20px;height:20px"><div class="blue_info_content"><p>Tekan pada perkataan Adegan Pengajaran untuk ke laman Dimensi 4 – Menerap Pembelajaran-Meta jika:</p>
+<ul>
+<li>langkah-langkah (adegan pengajaran) yang tercatat di MIW ini berbeza dengan tetapan dibuat terdahulu ATAU</li>
+<li>ingin menukar /mengubahsuai kepada susunan langkah-langkah lain</li>
+</ul>
+<p>Laman Dimensi 4 – Menerap Pembelajaran-Meta</p>
+<ul>
+<li>tentukan adegan pengajaran yang terdapat pada laman Dimensi 4 – Menerap Pembelajaran-Meta menepati apa yang diperlukan</li>
+<li>ubahsuai tetapan jika perlu</li>
+<li>tekan <strong>Simpan</strong></li>
+</ul></div></div> &nbsp;<a href="#" style="color:#fff" onclick="location.href='set9.php?action=instillingmetalearning&amp;src=miw'">Adegan Pengajaran</a></li><li class="ititle">Adegan Pengajaran<ul class="FacPro"><input type="checkbox" class="" name="InsMLe[858][875]" value="1" checked="" style=""><li class="sitem" location.href="set9.php?action=instillingmetalearning&amp;src=miw">Set Induksi</li>
+<input type="checkbox" class="" name="InsMLe[858][864]" value="1" checked="" style=""><li class="sitem" location.href="set9.php?action=instillingmetalearning&amp;src=miw">Langkah 1</li>
+<input type="checkbox" class="" name="InsMLe[858][865]" value="1" checked="" style=""><li class="sitem" location.href="set9.php?action=instillingmetalearning&amp;src=miw">Langkah 2</li>
+<input type="checkbox" class="" name="InsMLe[858][866]" value="1" checked="" style=""><li class="sitem" location.href="set9.php?action=instillingmetalearning&amp;src=miw">Langkah 3</li>
+<input type="checkbox" class="" name="InsMLe[858][876]" value="1" checked="" style=""><li class="sitem" location.href="set9.php?action=instillingmetalearning&amp;src=miw">Penutup</li>
+</ul></li><input type="hidden" class="miw_checkbox miw_InsMLe_checkbox " name="InsMLe[870]" value="1" style=""></ul>					</div>
+				</div>
+						
+		</div>
+
+	</div>
+	</div>		
+	</section>
+		
+	</div>
+		
+		
+		<!--endofmainmiw-->
+		<div id="nav-port"></div></div><div class="row miw_attachment"></div></div></div></page></div>
+<!-- End MIW header  -->
+		<div style="clear:both"></div>
+			
+		
+	
+	
+	
+	
+	
+
+
+	<!-- Start MIW header -->
+	<div class="page endorsement hantar_untuk_pengesahan">
+	<page size="A4" class="">
+		
+	<div class="content_area ">
+	<div class="container-fluid">
+	<div class="row">		<div class="table_rph grouptemplate_ form_row endorsement">
+		<table width="100%" class="">
+		<tbody><tr><td class="ctitle center help_icon_bar" style="">
+				Penyeliaan				
+
+		<div class="col-sm-12 help_icons noprint">
+			<div class="d-flex justify-content-end">
+						<div class="lily-video" id="vidtut_submit_endorsement" style="position:absolute"><a data-lity="" href="https://www.youtube.com/embed/HGtq5vM3few?autoplay=1&amp;rel=0"><img src="/images/video.jpg"></a></div>						<div class="whattodo" id="wtd_endorsement">
+					<span class="wtd_ikon"></span>
+					<span class="wtd_header">Apa perlu saya buat?</span>
+					<span class="wtd_content"><p><strong>Pengesahan</strong></p>
+<ol>
+<li>Tekan pada <strong>Pengesahan</strong></li>
+<li>Pilih ulasan pada ruang <strong>Catatan </strong>dan<strong> Tarikh</strong></li>
+<li>Jika perlu beri ulasan pada ruang <strong>Huraian.&nbsp;</strong>Selain teks boleh juga dimasukkan <strong>media</strong> lain.</li>
+<li>Tekan<strong> Mengesah</strong></li>
+</ol></span>
+				</div>	
+				<div id="inline" style="background:#fff" class="lity-hide"></div>
+			</div>
+	    </div>
+		
+		
+		</td></tr>
+		
+		
+		<tr><td style="text-align:center;padding:10px;">
+<input type="button" value="Hantar Untuk Pengesahan" onclick="popupCenter('rph.php?action=submitForEndorsement&amp;dbug=&amp;rph=', 'Settings',600,400);" class="btn btn-primary btn-sm" title="Tekan untuk menghantar rekod 
+dan untuk disahkan" style=""><br><span style="color:red"><i>Klik untuk menghantar MIW dan RPH yang telah lengkap</i></span><br><br>		
+
+
+		
+		
+	<table style="margin:auto" class="table-hover endorsement">
+	<tbody><tr><td colspan="5" class=" ctitle">Pengesahan Pentadbir
+	</td></tr>
+	<tr>
+		<td>Nama</td>
+		<td>Jawatan</td>
+		<td style="min-width:150px">Catatan - Ruang Sumber</td>
+		<td class="endorse-date-column">Tarikh</td>
+		<td>Pengesahan</td>
+	</tr>
+<tr style="height:50px"><td></td>
+	<td></td>
+	<td></td>
+	<td class="endorse-date-column"></td>
+	<td></td>
+</tr>
+</tbody></table>
+	
+
+</td></tr></tbody></table>
+</div>
+<script>
+
+	$("#select_pre_catatan_rph").select2({
+			containerCssClass:"containerCss",
+			dropdownCssClass:"dropdownCssClass",
+			
+	});
+	$("#select_pre_catatan").select2({
+		containerCssClass:"containerCss",
+		dropdownCssClass:"dropdownCssClass",
+		
+	});
+	
+function removeChop(chop_id) {
+	//document.getElementById('chop_'+chop_id).style.display = 'none';
+	$('.chop_'+chop_id).css({"display": "none"});
+	document.getElementById('dateendorse_'+chop_id).value = '';
+}
+
+  tinymce.init({
+	selector: '.catatan_endorsement',
+	  plugins: 'eqneditor searchreplace autolink directionality code fullscreen image link media table charmap  nonbreaking   advlist lists help charmap',
+	menubar: 'edit view insert format table',
+	menu: {
+		view: { title: 'View', items: 'code | visualaid visualchars visualblocks | spellchecker | preview fullscreen | help' }
+	},
+	toolbar: 'bold italic underline forecolor backcolor | image media link | numlist bullist | outdent indent | eqneditor charmap | fullscreen | ltr rtl ',
+	image_advtab: true,
+	  
+	//height: 600,
+	toolbar_mode: 'sliding',
+	default_link_target:"_blank",
+	contextmenu: "copy paste | link image inserttable | cell row column deletetable",
+	//statusbar:false,
+	resize: 'both',
+	branding: false,
+	content_css : '/css/select_style.css',
+	setup: function(editor) {
+		editor.on('Change', function(e) {
+			belumedit = 0;
+			//alert(this.id);
+			automarkFacPro(this.id);
+			console.log("Change");
+		});
+	}
+	
+  });
+	  
+</script>
+
+</div></div></div></page></div>
+<!-- End MIW header  -->
+	
+
+
+
+<div class="sticky-miw-nav">
+
+
+
+
+
+<nav><div class="miw_nav"><div class="rph_nav"><ul class="menu--main"><li class="miw_item nav_active"><a href="miw9.php?action=openmiw&amp;id=27064489">MIW</a><a class="nav-li" href="miw9.php?action=openmiw&amp;id=27064489"></a></li> </ul></div></div></nav>		<nav><div class="miw_nav">	
+			<div style="float:left; margin-right:10px" id="miw_nav_primary">
+			
+			<input name="src" type="hidden" value="" style="">
+			<input name="btnsubmit" type="button" class="btn btn-primary" value="Pautan ke Sumber Maklumat" onclick="popupCenter('upload.php?action=uploadRPH&amp;id=','Upload',1000,600,false);" title="Muat naik dokumen yang diperlukan" style=""> 
+	
+			<input name="action" class="btn btn-primary" type="button" value="Cipta RPH" title="Mencipta Rancangan Pengajaran Harian" onclick="checkBeforeCreate(this);" style="">
+	<input name="actionRPH" type="hidden" value="createRPH" style="">
+	<input name="randomtoken" type="hidden" value="c777c2d618" style="">
+		<input name="id" id="rph_id" type="hidden" value="" style=""> 
+	
+		<!--
+	<input name="submit" type="button" onclick="window.open('print.php?as=pdf');return(false);" 
+	value="Simpan PDF">  -->
+	
+	<!-- input name="submit" type="button" title="Menyimpan rekod dalam format PDF" onclick="popupCenter('printRPH.php?out=pdf&rphFormat=', 'Print',1000,800);;return(false);" 
+	value="Simpan PDF" -->
+	
+	
+
+		
+	<input type="button" class="btn btn-primary" title="Cetak Rekod / Simpan PDF atau Hantar Ke GC - MIW &amp; RPH" onclick="popupCenter('printRPH.php?rphFormat=', 'Print',1000,800);return(false);" value="Cetak/Simpan PDF/Hantar Ke GC" style=""> 
+		
+			
+			
+	<!--
+	<a href='https://classroom.google.com/' target='_blank' class='btn btn-secondary'><img src='/icon/gclassroom.png' style='height:20px;'> GC</a> -->
+	
+		<input name="owner_id" type="hidden" value="159707" style=""> 
+
+</div>
+<div id="miw_nav_secondary" style="float:left;margin-top:5px">
+	<input name="grouplevelsubject" type="hidden" value="cg_primary-year6-subject__pendidikan_jasmani_dan_pendidikan_kesihatan_semakan" style=""> 
+	<input name="date" type="hidden" value="2026-06-04" style=""> 
+		<!--
+	<input type="button" value="Cipta RPT" title="Cipta Rancangan Pengajaran Tahunan daripada MIW ini"
+	onclick="window.location.href='rpt9.php?action=createRPT'"> -->
+		<input type="button" class="btn btn-secondary btn-sm" value="Ke Laman Utama RPT" title="Pergi ke laman utama Rancangan Pengajaran Tahunan" onclick="window.location.href='rpt9.php?action=create_rpt&amp;cgcls=cg_primary-year6-subject__pendidikan_jasmani_dan_pendidikan_kesihatan_semakan&amp;tahun=2026&amp;user=159707'" style=""> 
+					<!--
+			<input name="action" type="button" class="btn btn-secondary btn-sm" value="Buka Rekod" title="Membuka rekod mengajar yang telah dicipta"
+			onclick="location.href='search9.php?action=listmiw&op=miw'"> 
+			
+							<input name="action" type="button" class="btn btn-secondary btn-sm" value="Rekod Penyeliaan" title="Membuka senarai rekod guru-guru yang diselia"
+				onclick="location.href='search9.php?action=supervision&op=miw'"> 
+			
+			<input name="action" type="button" class="btn btn-secondary btn-sm" value="Perkongsian Rekod" title="Membuka rekod yang dikongsi"
+			onclick="location.href='search9.php?action=sharedmiw&op=miw'"> 
+			
+			<input name="action" type="button" class="btn btn-secondary btn-sm" value="Cari Rekod" title="Mencari semua rekod" onclick="location.href='search9.php?action=searchmiw&op=miw'" > 
+			-->			
+				<!-- 
+	<input name="submit" type="button" class="btn btn-secondary btn-sm" onclick="jumpTo('main9.php');" title="Kembali ke paparan model" value="Kembali ke Model">
+	-->
+			</div>
+		</div>
+	</nav>
+	<div style="clear:both"></div>
+</div>
+
+
+<input name="dbug" type="hidden" value="" style=""> 
+
+
+
+</form>
+<script>
+var refreshTime = 600000; // every 10 minutes in milliseconds
+window.setInterval( function() {
+    $.ajax({
+        cache: false,
+        type: "GET",
+        url: "fetch_data.php",
+        success: function(data) {
+        }
+    });
+}, refreshTime );
+
+function validateMIWForm() {
+	//alert('validate');
+  let x = document.forms["miwform"]["class_id"];
+  if (x.value == "") {
+	x.focus();
+    alert("Sila pilih kelas untuk cipta RPH");
+    return false;
+  }
+  let y = document.forms["miwform"]["rph[date]"];
+  if (y.value == "") {
+	//y.style.visibility='visible';
+	y.focus();
+    alert("Sila isikan tarikh RPH untuk cipta RPH");
+    return false;
+  }
+  //return true;
+  let c1 = ifLaterDate(y.value,miw_dateFrom);
+  let c2 = ifLaterDate(miw_dateTo,y.value);
+  if (c1 || c2) {
+	  alert ("Tarikh RPH mestilah antara tarikh mula dan akhir MIW!\n\n"+miw_dateFrom+" "+"Hingga"+ " "+ miw_dateTo);
+		let y2 = document.getElementById("rphdatetimepicker");
+		y2.focus;
+	  return false;
+  }
+	return true;
+}
+function ifLaterDate (date1,date2) {
+	//if date2 > date1 return true
+	str1 = date1.split('-');
+	str2 = date2.split('-');
+	dateA = new Date(str1[2]+'-'+str1[1]+'-'+str1[0]);
+	dateB = new Date(str2[2]+'-'+str2[1]+'-'+str2[0]);
+	if (dateB > dateA) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}	
+
+</script>
+
+
+<div id="debug_float"></div>
+<div id="popup_float">
+	<div class="inner">
+		<div class="popup_close" onclick="closeSelectingTimeTable('popup_float');">Tutup <span class="x">X</span></div>
+		<div id="popup_float_content"><img src="/images/loading.gif"></div>
+	</div>
+</div>
+
+</main>
+</div><div class="xdsoft_datetimepicker xdsoft_ xdsoft_noselect "><div class="xdsoft_datepicker active"><div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev"></button><button type="button" class="xdsoft_today_button" style="visibility: visible;"></button><div class="xdsoft_label xdsoft_month"><span>Jun</span><div class="xdsoft_select xdsoft_monthselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="0">Januari</div><div class="xdsoft_option " data-value="1">Februari</div><div class="xdsoft_option " data-value="2">Mac</div><div class="xdsoft_option " data-value="3">April</div><div class="xdsoft_option " data-value="4">Mei</div><div class="xdsoft_option xdsoft_current" data-value="5">Jun</div><div class="xdsoft_option " data-value="6">Julai</div><div class="xdsoft_option " data-value="7">Ogos</div><div class="xdsoft_option " data-value="8">September</div><div class="xdsoft_option " data-value="9">Oktober</div><div class="xdsoft_option " data-value="10">November</div><div class="xdsoft_option " data-value="11">Disember</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><div class="xdsoft_label xdsoft_year"><span>2026</span><div class="xdsoft_select xdsoft_yearselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="1950">1950</div><div class="xdsoft_option " data-value="1951">1951</div><div class="xdsoft_option " data-value="1952">1952</div><div class="xdsoft_option " data-value="1953">1953</div><div class="xdsoft_option " data-value="1954">1954</div><div class="xdsoft_option " data-value="1955">1955</div><div class="xdsoft_option " data-value="1956">1956</div><div class="xdsoft_option " data-value="1957">1957</div><div class="xdsoft_option " data-value="1958">1958</div><div class="xdsoft_option " data-value="1959">1959</div><div class="xdsoft_option " data-value="1960">1960</div><div class="xdsoft_option " data-value="1961">1961</div><div class="xdsoft_option " data-value="1962">1962</div><div class="xdsoft_option " data-value="1963">1963</div><div class="xdsoft_option " data-value="1964">1964</div><div class="xdsoft_option " data-value="1965">1965</div><div class="xdsoft_option " data-value="1966">1966</div><div class="xdsoft_option " data-value="1967">1967</div><div class="xdsoft_option " data-value="1968">1968</div><div class="xdsoft_option " data-value="1969">1969</div><div class="xdsoft_option " data-value="1970">1970</div><div class="xdsoft_option " data-value="1971">1971</div><div class="xdsoft_option " data-value="1972">1972</div><div class="xdsoft_option " data-value="1973">1973</div><div class="xdsoft_option " data-value="1974">1974</div><div class="xdsoft_option " data-value="1975">1975</div><div class="xdsoft_option " data-value="1976">1976</div><div class="xdsoft_option " data-value="1977">1977</div><div class="xdsoft_option " data-value="1978">1978</div><div class="xdsoft_option " data-value="1979">1979</div><div class="xdsoft_option " data-value="1980">1980</div><div class="xdsoft_option " data-value="1981">1981</div><div class="xdsoft_option " data-value="1982">1982</div><div class="xdsoft_option " data-value="1983">1983</div><div class="xdsoft_option " data-value="1984">1984</div><div class="xdsoft_option " data-value="1985">1985</div><div class="xdsoft_option " data-value="1986">1986</div><div class="xdsoft_option " data-value="1987">1987</div><div class="xdsoft_option " data-value="1988">1988</div><div class="xdsoft_option " data-value="1989">1989</div><div class="xdsoft_option " data-value="1990">1990</div><div class="xdsoft_option " data-value="1991">1991</div><div class="xdsoft_option " data-value="1992">1992</div><div class="xdsoft_option " data-value="1993">1993</div><div class="xdsoft_option " data-value="1994">1994</div><div class="xdsoft_option " data-value="1995">1995</div><div class="xdsoft_option " data-value="1996">1996</div><div class="xdsoft_option " data-value="1997">1997</div><div class="xdsoft_option " data-value="1998">1998</div><div class="xdsoft_option " data-value="1999">1999</div><div class="xdsoft_option " data-value="2000">2000</div><div class="xdsoft_option " data-value="2001">2001</div><div class="xdsoft_option " data-value="2002">2002</div><div class="xdsoft_option " data-value="2003">2003</div><div class="xdsoft_option " data-value="2004">2004</div><div class="xdsoft_option " data-value="2005">2005</div><div class="xdsoft_option " data-value="2006">2006</div><div class="xdsoft_option " data-value="2007">2007</div><div class="xdsoft_option " data-value="2008">2008</div><div class="xdsoft_option " data-value="2009">2009</div><div class="xdsoft_option " data-value="2010">2010</div><div class="xdsoft_option " data-value="2011">2011</div><div class="xdsoft_option " data-value="2012">2012</div><div class="xdsoft_option " data-value="2013">2013</div><div class="xdsoft_option " data-value="2014">2014</div><div class="xdsoft_option " data-value="2015">2015</div><div class="xdsoft_option " data-value="2016">2016</div><div class="xdsoft_option " data-value="2017">2017</div><div class="xdsoft_option " data-value="2018">2018</div><div class="xdsoft_option " data-value="2019">2019</div><div class="xdsoft_option " data-value="2020">2020</div><div class="xdsoft_option " data-value="2021">2021</div><div class="xdsoft_option " data-value="2022">2022</div><div class="xdsoft_option " data-value="2023">2023</div><div class="xdsoft_option " data-value="2024">2024</div><div class="xdsoft_option " data-value="2025">2025</div><div class="xdsoft_option xdsoft_current" data-value="2026">2026</div><div class="xdsoft_option " data-value="2027">2027</div><div class="xdsoft_option " data-value="2028">2028</div><div class="xdsoft_option " data-value="2029">2029</div><div class="xdsoft_option " data-value="2030">2030</div><div class="xdsoft_option " data-value="2031">2031</div><div class="xdsoft_option " data-value="2032">2032</div><div class="xdsoft_option " data-value="2033">2033</div><div class="xdsoft_option " data-value="2034">2034</div><div class="xdsoft_option " data-value="2035">2035</div><div class="xdsoft_option " data-value="2036">2036</div><div class="xdsoft_option " data-value="2037">2037</div><div class="xdsoft_option " data-value="2038">2038</div><div class="xdsoft_option " data-value="2039">2039</div><div class="xdsoft_option " data-value="2040">2040</div><div class="xdsoft_option " data-value="2041">2041</div><div class="xdsoft_option " data-value="2042">2042</div><div class="xdsoft_option " data-value="2043">2043</div><div class="xdsoft_option " data-value="2044">2044</div><div class="xdsoft_option " data-value="2045">2045</div><div class="xdsoft_option " data-value="2046">2046</div><div class="xdsoft_option " data-value="2047">2047</div><div class="xdsoft_option " data-value="2048">2048</div><div class="xdsoft_option " data-value="2049">2049</div><div class="xdsoft_option " data-value="2050">2050</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><button type="button" class="xdsoft_next"></button></div><div class="xdsoft_calendar"><table><thead><tr><th>Aha</th><th>Isn</th><th>Sel</th><th>Rab</th><th>Kha</th><th>Jum</th><th>Sab</th></tr></thead><tbody><tr><td data-date="31" data-month="4" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_disabled xdsoft_other_month xdsoft_weekend"><div>31</div></td><td data-date="1" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_disabled xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_disabled xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_disabled xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_current xdsoft_today xdsoft_weekend"><div>4</div></td><td data-date="5" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>5</div></td><td data-date="6" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>6</div></td></tr><tr><td data-date="7" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>7</div></td><td data-date="8" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>8</div></td><td data-date="9" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>9</div></td><td data-date="10" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>10</div></td><td data-date="11" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>11</div></td><td data-date="12" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>12</div></td><td data-date="13" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>13</div></td></tr><tr><td data-date="14" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>14</div></td><td data-date="15" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>15</div></td><td data-date="16" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>16</div></td><td data-date="17" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>17</div></td><td data-date="18" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>18</div></td><td data-date="19" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>19</div></td><td data-date="20" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>20</div></td></tr><tr><td data-date="21" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>21</div></td><td data-date="22" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>22</div></td><td data-date="23" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>23</div></td><td data-date="24" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>24</div></td><td data-date="25" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>25</div></td><td data-date="26" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>26</div></td><td data-date="27" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>27</div></td></tr><tr><td data-date="28" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>28</div></td><td data-date="29" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>29</div></td><td data-date="30" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>30</div></td><td data-date="1" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>4</div></td></tr></tbody></table></div></div><div class="xdsoft_timepicker"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box xdsoft_scroller_box"><div class="xdsoft_time_variant" style="margin-top: 0px;"><div class="xdsoft_time " data-hour="0" data-minute="0">00:00</div><div class="xdsoft_time " data-hour="1" data-minute="0">01:00</div><div class="xdsoft_time " data-hour="2" data-minute="0">02:00</div><div class="xdsoft_time " data-hour="3" data-minute="0">03:00</div><div class="xdsoft_time " data-hour="4" data-minute="0">04:00</div><div class="xdsoft_time " data-hour="5" data-minute="0">05:00</div><div class="xdsoft_time " data-hour="6" data-minute="0">06:00</div><div class="xdsoft_time " data-hour="7" data-minute="0">07:00</div><div class="xdsoft_time " data-hour="8" data-minute="0">08:00</div><div class="xdsoft_time " data-hour="9" data-minute="0">09:00</div><div class="xdsoft_time xdsoft_current" data-hour="10" data-minute="0">10:00</div><div class="xdsoft_time " data-hour="11" data-minute="0">11:00</div><div class="xdsoft_time " data-hour="12" data-minute="0">12:00</div><div class="xdsoft_time " data-hour="13" data-minute="0">13:00</div><div class="xdsoft_time " data-hour="14" data-minute="0">14:00</div><div class="xdsoft_time " data-hour="15" data-minute="0">15:00</div><div class="xdsoft_time " data-hour="16" data-minute="0">16:00</div><div class="xdsoft_time " data-hour="17" data-minute="0">17:00</div><div class="xdsoft_time " data-hour="18" data-minute="0">18:00</div><div class="xdsoft_time " data-hour="19" data-minute="0">19:00</div><div class="xdsoft_time " data-hour="20" data-minute="0">20:00</div><div class="xdsoft_time " data-hour="21" data-minute="0">21:00</div><div class="xdsoft_time " data-hour="22" data-minute="0">22:00</div><div class="xdsoft_time " data-hour="23" data-minute="0">23:00</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><button type="button" class="xdsoft_next"></button></div></div>
+
+	<style>
+	.info ul {padding-left: 2rem;}
+	.info {font-size: small;}
+	</style>
+	<!-- WhatsApp Modal -->
+<div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="whatsappModalLabel">Hantar Pesanan WhatsApp</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearWhatsAppModal()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="predefined" class="form-label">Pilih respon:</label>
+          <select class="form-select" id="predefined">
+            <option></option>
+			<option>Tahniah kerana melengkapkan perancangan instruksional dengan baik</option><option>Sila baca ulasan pada bahagian Pengesahan dan ambil tindakan segera</option><option>Terdapat perancangan instruksional yang belum dihantar, sila ambil tindakan segera</option><option>Sila catatkan Refleksi /Penilaian pada perancangan instruksional anda mengikut kesesuaian</option><option>Sila baca ulasan pada bahagian Aktiviti Perancangan Instruksional untuk perhatian </option><option>Sila berjumpa dengan saya untuk perbincangan</option><option>Terdapat kesilapan dalam pemilihan mata pelajaran, sila betulkan</option><option>Sila bersedia untuk pemantauan</option><option>Penyelaras sila kemaskini jumlah guru pada ruang Profil Institusi</option><option>Sila kemaskini profil anda</option><option>Sila kemaskini Jadual Waktu Instruksional anda dan aktifkannya</option>          </select>
+        </div>
+        <div class="mb-3">
+          <label for="customMessage" class="form-label">Mesej anda:</label>
+          <textarea class="form-control" id="customMessage" rows="4" style=""></textarea>
+        </div>
+				<div class="mb-3 info">
+          Sila pastikan anda telah menyimpan nombor penerima di dalam telefon anda        </div>
+				<div class="mb-3 info">
+          <p><strong>PERHATIAN:</strong> Untuk fitur ini berfungsi, pastikan nombor telefon bimbit guru berkaitan sudah tersimpan dalam telefon bimbit anda dan telahpun berkomunikasi melalui whatsapp.</p>
+<p><strong>Fitur ini digunakan oleh pentadbir, penyelaras, pembingan peringkat institusi sahaja (sekolah) untuk perhatian dan tindakan segera guru:</strong></p>
+<ul>
+<li>Menghantar mesej ringkas kepada guru berkaitan perancangan pengajaran</li>
+<li>Masalah/isu teknikal</li>
+<li>Perkara-perkara lain yang bersesuaian</li>
+</ul>
+<p>Beberapa mesej ringkas disediakan untuk pilihan mengikut kesesuaian. Anda boleh juga menulis mesej ringkas pada ruang yang disediakan.</p>        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearWhatsAppModal()">Batal</button>
+        <button class="btn btn-success" onclick="sendWhatsApp()">Hantar&nbsp; <i class="fab fa-whatsapp" style="font-size:20px"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+	let cachedPhoneNumber = null;
+	let currentUserId = null;
+	let myWindow;
+	const senderName = "MUHAMMAD AKMAL BIN NASIR, SEKOLAH KEBANGSAAN PENGKALAN";
+
+	function openWhatsAppModal(userId) {
+		console.log('userId='+userId);
+		currentUserId = userId;
+		const modal = new bootstrap.Modal(document.getElementById('whatsappModal'));
+		modal.show();
+	}
+
+	function clearWhatsAppModal() {
+		document.getElementById('customMessage').value = '';
+		document.getElementById('predefined').selectedIndex = 0;
+	}
+
+	function fillCustomMessage() {
+		const selected = document.getElementById('predefined').value;
+		document.getElementById('customMessage').value = selected;
+	}
+
+	function sendWhatsApp() {
+		const selected = document.getElementById('predefined').value;
+		const message = document.getElementById('customMessage').value;
+		const fullmessage = selected + '\n\n' + message;
+		if (!fullmessage.trim()) {
+			alert("Please enter a message.");
+			return;
+		}
+		const footerNote = `\n\n_— Pesanan ini dihantar oleh ${senderName} melalui CIDS_`;
+		const finalMessage = fullmessage.trim() + footerNote;
+	
+		if (cachedPhoneNumber) {
+			sendToWhatsApp(cachedPhoneNumber, finalMessage);
+		} else {
+			// Get phone number from PHP via AJAX
+			console.log('currentUserId='+currentUserId);
+			fetch(`fetch_user_phone.php?user_id=${currentUserId}`)
+				.then(response => response.text())
+				.then(phone => {
+					//if (!phone || phone === 'null') {
+					//	alert("Phone number not available.");
+					//	return;
+					//}
+					cachedPhoneNumber = phone;
+					sendToWhatsApp(phone, finalMessage);
+				})
+				.catch(error => {
+					alert("Failed to retrieve phone number.");
+					console.error(error);
+				});
+		}
+	}
+	
+	function sendToWhatsApp(phone, message) {
+		
+		console.log('phone='+phone);
+		
+		const encodedMessage = encodeURIComponent(message);
+		if (phone=='null') {
+			phone='';
+		}
+		const whatsappURL = `https://wa.me/${phone}?text=${encodedMessage}`;
+		console.log('whatsappURL='+whatsappURL);
+
+		window.open(whatsappURL, 'myWindow', "width=600, height=500");
+
+		const modalElement = document.getElementById('whatsappModal');
+		const modal = bootstrap.Modal.getInstance(modalElement);
+		modal.hide();
+
+		clearWhatsAppModal();
+		
+	}
+	
+</script>
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;3375acf92f06438e94a4d307a9f7b026&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<script src="/js/bootstrap-5.0.0-beta1/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+function toggleNav() {
+	var element = document.getElementById("body");
+	if (element.classList) {
+	  element.classList.toggle("folded");
+	} else {
+	  // For IE9
+	  var classes = element.className.split(" ");
+	  var i = classes.indexOf("folded");
+
+	  if (i >= 0) {
+		classes.splice(i, 1);
+	  }
+	  else {
+		classes.push("folded");
+		element.className = classes.join(" ");
+	  }
+	}
+
+	if (folded=='yes') {
+		setCookie('folded','no',100)
+	}
+	else if (folded=='no') {
+		setCookie('folded','yes',100)
+	}
+}
+var folded = getCookie('folded');
+if (folded==='') folded = 'yes';
+</script>
+<script>
+jQuery('#datetimepicker').datetimepicker({
+	lang:'ms',
+ timepicker:false,
+ format:'d-m-Y'
+});
+jQuery('#timepicker1').datetimepicker({
+	lang:'ms',
+ datepicker:false,
+ format:'g:i A',
+ step:5,
+ minTime:'06:00',
+ maxTime:'22:30'
+});
+jQuery('#timepicker2').datetimepicker({
+	lang:'ms',
+ datepicker:false,
+ format:'g:i A',
+ step:5,
+ minTime:'06:00',
+ maxTime:'22:30'
+});
+jQuery('#timepicker3').datetimepicker({
+	lang:'ms',
+ datepicker:false,
+ format:'g:i A',
+ step:5,
+ minTime:'06:00',
+ maxTime:'22:30'
+});
+jQuery('#timepicker4').datetimepicker({
+	lang:'ms',
+ datepicker:false,
+ format:'g:i A',
+ step:5,
+ minTime:'06:00',
+ maxTime:'22:30'
+});
+jQuery('#timepicker5').datetimepicker({
+	lang:'ms',
+ datepicker:false,
+ format:'g:i A',
+ step:5,
+ minTime:'06:00',
+ maxTime:'22:30'
+});
+jQuery('#timepicker6').datetimepicker({
+	lang:'ms',
+ datepicker:false,
+ format:'g:i A',
+ step:5,
+ minTime:'06:00',
+ maxTime:'22:30'
+});
+jQuery('.timepickerendorse').datetimepicker({
+ lang:'ms',
+ //timepicker:false,
+ format:'d-m-Y g:i A'
+});
+$(".whattodo").click(function(){
+	var id = $(this).attr("id");
+	//alert(id);
+	if(id) {
+		$("#"+id).toggleClass("expand");
+	}
+	else {
+		$(".whattodo").toggleClass("expand");
+	}
+});
+$(".tippy").click(function(){
+	var id = $(this).attr("id");
+    $("#"+id).toggleClass("expand");
+});
+
+var debug_float = document.getElementById("debug_float");
+
+
+    $(document).ready(function(){
+		var el = $('.sticky-miw-nav');
+		if (el.length) {
+			var stickyTop = el.offset().top, 
+            latestScroll = 0,
+            bottom = 20;
+			width = el.width();
+			//alert(stickyTop);
+        $(window).scroll(function () {
+            stickyHeight = el.outerHeight(true);
+            var limit = $('#nav-port').offset().top;
+			//alert(limit);
+            var windowTop = $(window).scrollTop();
+			var windowBottom = $(window).height();
+			var screenHeight = window.innerHeight;
+            //if (stickyTop < windowTop-10) {
+			if (limit > windowTop + screenHeight - stickyHeight ) {
+                el.css({position: 'relative', bottom: -170});
+                el.removeClass('show-fix');
+            }else {
+				el.addClass('show-fix');               
+                el.css({position: 'fixed', bottom: 0, width:width});
+            }
+			/*
+            if (limit > stickyTop) {
+				alert(limit);
+                var diff = limit - windowTop;
+                el.css({top: diff});
+                el.removeClass('show-fix');
+            }
+			*/
+			/*
+            latestScroll = windowTop;
+			debug_float.innerHTML = 'limit='+limit+'<br>';
+			debug_float.innerHTML += 'stickyheight='+stickyHeight+'<br>';
+			debug_float.innerHTML += 'windowTop='+windowTop+'<br>';
+			debug_float.innerHTML += 'windowBottom='+windowBottom+'<br>';
+			debug_float.innerHTML += 'screenHeight='+screenHeight+'<br>';
+			*/
+        });
+		}
+    });
+function deleteEvaLine(row)
+	{
+		var i=row.parentNode.parentNode;
+		i.parentNode.removeChild(i) 
+	}
+function addEvaLine(row,id)
+	{
+		var my=row.parentNode.parentNode;
+		let newi = my.cloneNode(true);
+
+		var button = document.getElementById("pbd-action-"+id);
+		button.innerHTML = "<button type='button' class='btn btn-primary btn-sm' onClick='deleteEvaLine(this);return false;'>Hapus</button>";
+		
+		var newid = parseInt(id);
+		newid++;
+		//alert (newid);
+		
+        var InputType = newi.getElementsByTagName("input");
+
+        for (var i=0; i<InputType.length; i++){
+         if( InputType[i].type=='checkbox'){
+            InputType[i].checked = false;  
+        }else{
+           InputType[i].value='';               
+            }
+        }
+		
+		var html = newi.innerHTML;
+		
+		
+		var oldtext = "\\[pbd\\]\\["+id+"\\]";
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "[pbd]["+newid+"]");
+		
+		oldtext = "select_(\\d+)-"+id;
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "select_$1"+"-"+newid);	
+		
+		oldtext = "\\(this,"+id+"\\)";
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "(this,"+newid+")");	
+
+		oldtext = "pbd-action-"+id;
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "pbd-action-"+newid);	
+
+		oldtext = "kiraPeratusPBD\\("+id+"\\)";
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "kiraPeratusPBD("+newid+")");	
+
+		oldtext = "pbd_bilanganmurid_"+id;
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "pbd_bilanganmurid_"+newid);	
+
+		oldtext = "pbd_peratusmurid_"+id;
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "pbd_peratusmurid_"+newid);	
+
+
+		newi.id = "pbd-row-"+newid;
+		newi.innerHTML = html;
+		
+		
+		//var script = newi.getElementsByTagName("script");
+		//alert(script);
+		//for (var i=0; i<script.length; i++){
+			//alert(script[i].innerText);
+			//eval(script[i].innerText);
+        //}
+
+		my.parentNode.appendChild(newi) 
+	
+		var peratusmurid = document.getElementById("pbd_peratusmurid_"+newid);
+		peratusmurid.innerHTML = "";
+	
+		var divchosen = document.getElementById("pbd-row-"+newid).getElementsByClassName("div-chosen-select");
+		for (var i=0; i<divchosen.length; i++){
+			var spanelement = divchosen[i].getElementsByTagName("span");
+			for (var j=0; j<spanelement.length; j++){
+				//alert(spanelement[j].innerHTML);
+				spanelement[j].parentNode.removeChild(spanelement[j]);
+			}	
+			var selectelement =  divchosen[i].getElementsByTagName("select");
+			for (var j=0; j<selectelement.length; j++){
+				selectelement[j].classList.remove("select2-hidden-accessible");
+				
+				var thiselementid = selectelement[j].id;
+				//alert (thiselementid);
+				$('#'+thiselementid).select2({tags: true});
+			}
+		}
+
+	
+		
+	}
+function kiraPeratusPBD(id) {
+	var source = document.getElementById('pbd_bilanganmurid_'+id).value;
+	var target = document.getElementById('pbd_peratusmurid_'+id);
+	var pembahagi = document.getElementById('pbd_student_count').value;
+	var peratus = ((source/pembahagi) * 100).toFixed(1);
+	target.innerHTML = peratus+"%";	
+}
+function updatestudentcount(value) {
+	var target = document.getElementById('rar_student_count');
+	target.innerHTML = value;
+}
+function deleteReflekLine(row)
+	{
+		var i=row.parentNode.parentNode;
+		i.parentNode.removeChild(i) 
+	}
+function addReflekLine(row,id)
+	{
+		var my=row.parentNode.parentNode;
+		let newi = my.cloneNode(true);
+
+		var button = document.getElementById("rar-action-"+id);
+		button.innerHTML = "<button type='button' class='btn btn-primary btn-sm' onClick='deleteEvaLine(this);return false;'>Hapus</button>";
+		
+		var newid = parseInt(id);
+		newid++;
+		//alert (newid);
+		
+        var InputType = newi.getElementsByTagName("input");
+
+        for (var i=0; i<InputType.length; i++){
+         if( InputType[i].type=='checkbox'){
+            InputType[i].checked = false;  
+        }else{
+           InputType[i].value='';               
+            }
+        }
+		
+		var html = newi.innerHTML;
+		
+		
+		var oldtext = "\\[rar\\]\\["+id+"\\]";
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "[rar]["+newid+"]");
+		
+		oldtext = "select_(\\d+)-"+id;
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "select_$1"+"-"+newid);	
+		
+		oldtext = "\\(this,"+id+"\\)";
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "(this,"+newid+")");	
+
+		oldtext = "rar-action-"+id;
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "rar-action-"+newid);	
+
+		oldtext = "kiraPeratusReflek\\("+id+"\\)";
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "kiraPeratusReflek("+newid+")");	
+
+		oldtext = "rar_capaisasaran_"+id;
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "rar_capaisasaran_"+newid);	
+
+		oldtext = "rar_peratusmurid_"+id;
+		var sRegExInput = new RegExp(oldtext, "g");    
+		html = html.replace(sRegExInput, "rar_peratusmurid_"+newid);	
+
+
+		newi.id = "rar-row-"+newid;
+		newi.innerHTML = html;
+		
+
+		my.parentNode.appendChild(newi) 
+	
+		var peratusmurid = document.getElementById("rar_peratusmurid_"+newid);
+		peratusmurid.innerHTML = "";
+	
+		var divchosen = document.getElementById("rar-row-"+newid).getElementsByClassName("div-chosen-select");
+		for (var i=0; i<divchosen.length; i++){
+			var spanelement = divchosen[i].getElementsByTagName("span");
+			for (var j=0; j<spanelement.length; j++){
+				//alert(spanelement[j].innerHTML);
+				spanelement[j].parentNode.removeChild(spanelement[j]);
+			}	
+			var selectelement =  divchosen[i].getElementsByTagName("select");
+			for (var j=0; j<selectelement.length; j++){
+				selectelement[j].classList.remove("select2-hidden-accessible");
+				
+				var thiselementid = selectelement[j].id;
+				//alert (thiselementid);
+				$('#'+thiselementid).select2({tags: true});
+			}
+		}
+
+	
+		
+	}
+function kiraPeratusReflek(id) {
+	var source = document.getElementById('rar_capaisasaran_'+id).value;
+	var target = document.getElementById('rar_peratusmurid_'+id);
+	var pembahagi = document.getElementById('rar_student_attendance').innerText;
+	if ((pembahagi) && (pembahagi>0)) {
+		var peratus = ((source/pembahagi) * 100).toFixed(1);
+		target.innerHTML = peratus+"%";	
+	}
+}
+function adjustViewport() {
+    const meta = document.querySelector('meta[name="viewport"]');
+    const content = document.querySelector('.miw_resizeable');
+
+	const layoutWidth = content.offsetWidth;
+    const screenWidth = document.documentElement.clientWidth;
+	//alert('layoutWidth='+layoutWidth);
+	//alert('screenWidth='+screenWidth);
+	
+	//alert('innerWidth='+window.innerWidth);
+	//alert('offsetWidth='+content.offsetWidth);
+    const needsScaling = content.offsetWidth > window.innerWidth;
+
+
+    //if (layoutWidth > screenWidth) {
+	if (screenWidth < 767) {
+        meta.setAttribute(
+            'content',
+            'width=device-width, initial-scale=0.5, maximum-scale=1, user-scalable=yes'
+        );
+    } else {
+        meta.setAttribute(
+            'content',
+            'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes'
+        );
+    }
+}
+
+//window.addEventListener('load', adjustViewport);
+//window.addEventListener('resize', adjustViewport);
+
+</script><div class="xdsoft_datetimepicker xdsoft_ xdsoft_noselect "><div class="xdsoft_datepicker"><div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev"></button><button type="button" class="xdsoft_today_button" style="visibility: visible;"></button><div class="xdsoft_label xdsoft_month"><span>Jun</span><div class="xdsoft_select xdsoft_monthselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="0">Januari</div><div class="xdsoft_option " data-value="1">Februari</div><div class="xdsoft_option " data-value="2">Mac</div><div class="xdsoft_option " data-value="3">April</div><div class="xdsoft_option " data-value="4">Mei</div><div class="xdsoft_option xdsoft_current" data-value="5">Jun</div><div class="xdsoft_option " data-value="6">Julai</div><div class="xdsoft_option " data-value="7">Ogos</div><div class="xdsoft_option " data-value="8">September</div><div class="xdsoft_option " data-value="9">Oktober</div><div class="xdsoft_option " data-value="10">November</div><div class="xdsoft_option " data-value="11">Disember</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><div class="xdsoft_label xdsoft_year"><span>2026</span><div class="xdsoft_select xdsoft_yearselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="1950">1950</div><div class="xdsoft_option " data-value="1951">1951</div><div class="xdsoft_option " data-value="1952">1952</div><div class="xdsoft_option " data-value="1953">1953</div><div class="xdsoft_option " data-value="1954">1954</div><div class="xdsoft_option " data-value="1955">1955</div><div class="xdsoft_option " data-value="1956">1956</div><div class="xdsoft_option " data-value="1957">1957</div><div class="xdsoft_option " data-value="1958">1958</div><div class="xdsoft_option " data-value="1959">1959</div><div class="xdsoft_option " data-value="1960">1960</div><div class="xdsoft_option " data-value="1961">1961</div><div class="xdsoft_option " data-value="1962">1962</div><div class="xdsoft_option " data-value="1963">1963</div><div class="xdsoft_option " data-value="1964">1964</div><div class="xdsoft_option " data-value="1965">1965</div><div class="xdsoft_option " data-value="1966">1966</div><div class="xdsoft_option " data-value="1967">1967</div><div class="xdsoft_option " data-value="1968">1968</div><div class="xdsoft_option " data-value="1969">1969</div><div class="xdsoft_option " data-value="1970">1970</div><div class="xdsoft_option " data-value="1971">1971</div><div class="xdsoft_option " data-value="1972">1972</div><div class="xdsoft_option " data-value="1973">1973</div><div class="xdsoft_option " data-value="1974">1974</div><div class="xdsoft_option " data-value="1975">1975</div><div class="xdsoft_option " data-value="1976">1976</div><div class="xdsoft_option " data-value="1977">1977</div><div class="xdsoft_option " data-value="1978">1978</div><div class="xdsoft_option " data-value="1979">1979</div><div class="xdsoft_option " data-value="1980">1980</div><div class="xdsoft_option " data-value="1981">1981</div><div class="xdsoft_option " data-value="1982">1982</div><div class="xdsoft_option " data-value="1983">1983</div><div class="xdsoft_option " data-value="1984">1984</div><div class="xdsoft_option " data-value="1985">1985</div><div class="xdsoft_option " data-value="1986">1986</div><div class="xdsoft_option " data-value="1987">1987</div><div class="xdsoft_option " data-value="1988">1988</div><div class="xdsoft_option " data-value="1989">1989</div><div class="xdsoft_option " data-value="1990">1990</div><div class="xdsoft_option " data-value="1991">1991</div><div class="xdsoft_option " data-value="1992">1992</div><div class="xdsoft_option " data-value="1993">1993</div><div class="xdsoft_option " data-value="1994">1994</div><div class="xdsoft_option " data-value="1995">1995</div><div class="xdsoft_option " data-value="1996">1996</div><div class="xdsoft_option " data-value="1997">1997</div><div class="xdsoft_option " data-value="1998">1998</div><div class="xdsoft_option " data-value="1999">1999</div><div class="xdsoft_option " data-value="2000">2000</div><div class="xdsoft_option " data-value="2001">2001</div><div class="xdsoft_option " data-value="2002">2002</div><div class="xdsoft_option " data-value="2003">2003</div><div class="xdsoft_option " data-value="2004">2004</div><div class="xdsoft_option " data-value="2005">2005</div><div class="xdsoft_option " data-value="2006">2006</div><div class="xdsoft_option " data-value="2007">2007</div><div class="xdsoft_option " data-value="2008">2008</div><div class="xdsoft_option " data-value="2009">2009</div><div class="xdsoft_option " data-value="2010">2010</div><div class="xdsoft_option " data-value="2011">2011</div><div class="xdsoft_option " data-value="2012">2012</div><div class="xdsoft_option " data-value="2013">2013</div><div class="xdsoft_option " data-value="2014">2014</div><div class="xdsoft_option " data-value="2015">2015</div><div class="xdsoft_option " data-value="2016">2016</div><div class="xdsoft_option " data-value="2017">2017</div><div class="xdsoft_option " data-value="2018">2018</div><div class="xdsoft_option " data-value="2019">2019</div><div class="xdsoft_option " data-value="2020">2020</div><div class="xdsoft_option " data-value="2021">2021</div><div class="xdsoft_option " data-value="2022">2022</div><div class="xdsoft_option " data-value="2023">2023</div><div class="xdsoft_option " data-value="2024">2024</div><div class="xdsoft_option " data-value="2025">2025</div><div class="xdsoft_option xdsoft_current" data-value="2026">2026</div><div class="xdsoft_option " data-value="2027">2027</div><div class="xdsoft_option " data-value="2028">2028</div><div class="xdsoft_option " data-value="2029">2029</div><div class="xdsoft_option " data-value="2030">2030</div><div class="xdsoft_option " data-value="2031">2031</div><div class="xdsoft_option " data-value="2032">2032</div><div class="xdsoft_option " data-value="2033">2033</div><div class="xdsoft_option " data-value="2034">2034</div><div class="xdsoft_option " data-value="2035">2035</div><div class="xdsoft_option " data-value="2036">2036</div><div class="xdsoft_option " data-value="2037">2037</div><div class="xdsoft_option " data-value="2038">2038</div><div class="xdsoft_option " data-value="2039">2039</div><div class="xdsoft_option " data-value="2040">2040</div><div class="xdsoft_option " data-value="2041">2041</div><div class="xdsoft_option " data-value="2042">2042</div><div class="xdsoft_option " data-value="2043">2043</div><div class="xdsoft_option " data-value="2044">2044</div><div class="xdsoft_option " data-value="2045">2045</div><div class="xdsoft_option " data-value="2046">2046</div><div class="xdsoft_option " data-value="2047">2047</div><div class="xdsoft_option " data-value="2048">2048</div><div class="xdsoft_option " data-value="2049">2049</div><div class="xdsoft_option " data-value="2050">2050</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><button type="button" class="xdsoft_next"></button></div><div class="xdsoft_calendar"><table><thead><tr><th>Aha</th><th>Isn</th><th>Sel</th><th>Rab</th><th>Kha</th><th>Jum</th><th>Sab</th></tr></thead><tbody><tr><td data-date="31" data-month="4" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>31</div></td><td data-date="1" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_current xdsoft_today xdsoft_weekend"><div>4</div></td><td data-date="5" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>5</div></td><td data-date="6" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>6</div></td></tr><tr><td data-date="7" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>7</div></td><td data-date="8" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>8</div></td><td data-date="9" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>9</div></td><td data-date="10" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>10</div></td><td data-date="11" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>11</div></td><td data-date="12" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>12</div></td><td data-date="13" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>13</div></td></tr><tr><td data-date="14" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>14</div></td><td data-date="15" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>15</div></td><td data-date="16" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>16</div></td><td data-date="17" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>17</div></td><td data-date="18" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>18</div></td><td data-date="19" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>19</div></td><td data-date="20" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>20</div></td></tr><tr><td data-date="21" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>21</div></td><td data-date="22" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>22</div></td><td data-date="23" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>23</div></td><td data-date="24" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>24</div></td><td data-date="25" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>25</div></td><td data-date="26" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>26</div></td><td data-date="27" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>27</div></td></tr><tr><td data-date="28" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>28</div></td><td data-date="29" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>29</div></td><td data-date="30" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>30</div></td><td data-date="1" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>4</div></td></tr></tbody></table></div></div><div class="xdsoft_timepicker active"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box xdsoft_scroller_box"><div class="xdsoft_time_variant" style="margin-top: 0px;"><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="0">00:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="5">00:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="10">00:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="15">00:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="20">00:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="25">00:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="30">00:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="35">00:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="40">00:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="45">00:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="50">00:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="55">00:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="0">01:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="5">01:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="10">01:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="15">01:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="20">01:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="25">01:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="30">01:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="35">01:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="40">01:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="45">01:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="50">01:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="55">01:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="0">02:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="5">02:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="10">02:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="15">02:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="20">02:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="25">02:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="30">02:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="35">02:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="40">02:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="45">02:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="50">02:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="55">02:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="0">03:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="5">03:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="10">03:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="15">03:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="20">03:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="25">03:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="30">03:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="35">03:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="40">03:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="45">03:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="50">03:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="55">03:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="0">04:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="5">04:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="10">04:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="15">04:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="20">04:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="25">04:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="30">04:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="35">04:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="40">04:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="45">04:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="50">04:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="55">04:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="0">05:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="5">05:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="10">05:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="15">05:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="20">05:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="25">05:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="30">05:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="35">05:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="40">05:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="45">05:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="50">05:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="55">05:55</div><div class="xdsoft_time " data-hour="6" data-minute="0">06:00</div><div class="xdsoft_time " data-hour="6" data-minute="5">06:05</div><div class="xdsoft_time " data-hour="6" data-minute="10">06:10</div><div class="xdsoft_time " data-hour="6" data-minute="15">06:15</div><div class="xdsoft_time " data-hour="6" data-minute="20">06:20</div><div class="xdsoft_time " data-hour="6" data-minute="25">06:25</div><div class="xdsoft_time " data-hour="6" data-minute="30">06:30</div><div class="xdsoft_time " data-hour="6" data-minute="35">06:35</div><div class="xdsoft_time " data-hour="6" data-minute="40">06:40</div><div class="xdsoft_time " data-hour="6" data-minute="45">06:45</div><div class="xdsoft_time " data-hour="6" data-minute="50">06:50</div><div class="xdsoft_time " data-hour="6" data-minute="55">06:55</div><div class="xdsoft_time " data-hour="7" data-minute="0">07:00</div><div class="xdsoft_time " data-hour="7" data-minute="5">07:05</div><div class="xdsoft_time " data-hour="7" data-minute="10">07:10</div><div class="xdsoft_time " data-hour="7" data-minute="15">07:15</div><div class="xdsoft_time " data-hour="7" data-minute="20">07:20</div><div class="xdsoft_time " data-hour="7" data-minute="25">07:25</div><div class="xdsoft_time " data-hour="7" data-minute="30">07:30</div><div class="xdsoft_time " data-hour="7" data-minute="35">07:35</div><div class="xdsoft_time " data-hour="7" data-minute="40">07:40</div><div class="xdsoft_time " data-hour="7" data-minute="45">07:45</div><div class="xdsoft_time " data-hour="7" data-minute="50">07:50</div><div class="xdsoft_time " data-hour="7" data-minute="55">07:55</div><div class="xdsoft_time " data-hour="8" data-minute="0">08:00</div><div class="xdsoft_time " data-hour="8" data-minute="5">08:05</div><div class="xdsoft_time " data-hour="8" data-minute="10">08:10</div><div class="xdsoft_time " data-hour="8" data-minute="15">08:15</div><div class="xdsoft_time " data-hour="8" data-minute="20">08:20</div><div class="xdsoft_time " data-hour="8" data-minute="25">08:25</div><div class="xdsoft_time " data-hour="8" data-minute="30">08:30</div><div class="xdsoft_time " data-hour="8" data-minute="35">08:35</div><div class="xdsoft_time " data-hour="8" data-minute="40">08:40</div><div class="xdsoft_time " data-hour="8" data-minute="45">08:45</div><div class="xdsoft_time " data-hour="8" data-minute="50">08:50</div><div class="xdsoft_time " data-hour="8" data-minute="55">08:55</div><div class="xdsoft_time " data-hour="9" data-minute="0">09:00</div><div class="xdsoft_time " data-hour="9" data-minute="5">09:05</div><div class="xdsoft_time " data-hour="9" data-minute="10">09:10</div><div class="xdsoft_time " data-hour="9" data-minute="15">09:15</div><div class="xdsoft_time " data-hour="9" data-minute="20">09:20</div><div class="xdsoft_time " data-hour="9" data-minute="25">09:25</div><div class="xdsoft_time " data-hour="9" data-minute="30">09:30</div><div class="xdsoft_time " data-hour="9" data-minute="35">09:35</div><div class="xdsoft_time " data-hour="9" data-minute="40">09:40</div><div class="xdsoft_time " data-hour="9" data-minute="45">09:45</div><div class="xdsoft_time " data-hour="9" data-minute="50">09:50</div><div class="xdsoft_time " data-hour="9" data-minute="55">09:55</div><div class="xdsoft_time " data-hour="10" data-minute="0">10:00</div><div class="xdsoft_time " data-hour="10" data-minute="5">10:05</div><div class="xdsoft_time " data-hour="10" data-minute="10">10:10</div><div class="xdsoft_time xdsoft_current" data-hour="10" data-minute="15">10:15</div><div class="xdsoft_time " data-hour="10" data-minute="20">10:20</div><div class="xdsoft_time " data-hour="10" data-minute="25">10:25</div><div class="xdsoft_time " data-hour="10" data-minute="30">10:30</div><div class="xdsoft_time " data-hour="10" data-minute="35">10:35</div><div class="xdsoft_time " data-hour="10" data-minute="40">10:40</div><div class="xdsoft_time " data-hour="10" data-minute="45">10:45</div><div class="xdsoft_time " data-hour="10" data-minute="50">10:50</div><div class="xdsoft_time " data-hour="10" data-minute="55">10:55</div><div class="xdsoft_time " data-hour="11" data-minute="0">11:00</div><div class="xdsoft_time " data-hour="11" data-minute="5">11:05</div><div class="xdsoft_time " data-hour="11" data-minute="10">11:10</div><div class="xdsoft_time " data-hour="11" data-minute="15">11:15</div><div class="xdsoft_time " data-hour="11" data-minute="20">11:20</div><div class="xdsoft_time " data-hour="11" data-minute="25">11:25</div><div class="xdsoft_time " data-hour="11" data-minute="30">11:30</div><div class="xdsoft_time " data-hour="11" data-minute="35">11:35</div><div class="xdsoft_time " data-hour="11" data-minute="40">11:40</div><div class="xdsoft_time " data-hour="11" data-minute="45">11:45</div><div class="xdsoft_time " data-hour="11" data-minute="50">11:50</div><div class="xdsoft_time " data-hour="11" data-minute="55">11:55</div><div class="xdsoft_time " data-hour="12" data-minute="0">12:00</div><div class="xdsoft_time " data-hour="12" data-minute="5">12:05</div><div class="xdsoft_time " data-hour="12" data-minute="10">12:10</div><div class="xdsoft_time " data-hour="12" data-minute="15">12:15</div><div class="xdsoft_time " data-hour="12" data-minute="20">12:20</div><div class="xdsoft_time " data-hour="12" data-minute="25">12:25</div><div class="xdsoft_time " data-hour="12" data-minute="30">12:30</div><div class="xdsoft_time " data-hour="12" data-minute="35">12:35</div><div class="xdsoft_time " data-hour="12" data-minute="40">12:40</div><div class="xdsoft_time " data-hour="12" data-minute="45">12:45</div><div class="xdsoft_time " data-hour="12" data-minute="50">12:50</div><div class="xdsoft_time " data-hour="12" data-minute="55">12:55</div><div class="xdsoft_time " data-hour="13" data-minute="0">13:00</div><div class="xdsoft_time " data-hour="13" data-minute="5">13:05</div><div class="xdsoft_time " data-hour="13" data-minute="10">13:10</div><div class="xdsoft_time " data-hour="13" data-minute="15">13:15</div><div class="xdsoft_time " data-hour="13" data-minute="20">13:20</div><div class="xdsoft_time " data-hour="13" data-minute="25">13:25</div><div class="xdsoft_time " data-hour="13" data-minute="30">13:30</div><div class="xdsoft_time " data-hour="13" data-minute="35">13:35</div><div class="xdsoft_time " data-hour="13" data-minute="40">13:40</div><div class="xdsoft_time " data-hour="13" data-minute="45">13:45</div><div class="xdsoft_time " data-hour="13" data-minute="50">13:50</div><div class="xdsoft_time " data-hour="13" data-minute="55">13:55</div><div class="xdsoft_time " data-hour="14" data-minute="0">14:00</div><div class="xdsoft_time " data-hour="14" data-minute="5">14:05</div><div class="xdsoft_time " data-hour="14" data-minute="10">14:10</div><div class="xdsoft_time " data-hour="14" data-minute="15">14:15</div><div class="xdsoft_time " data-hour="14" data-minute="20">14:20</div><div class="xdsoft_time " data-hour="14" data-minute="25">14:25</div><div class="xdsoft_time " data-hour="14" data-minute="30">14:30</div><div class="xdsoft_time " data-hour="14" data-minute="35">14:35</div><div class="xdsoft_time " data-hour="14" data-minute="40">14:40</div><div class="xdsoft_time " data-hour="14" data-minute="45">14:45</div><div class="xdsoft_time " data-hour="14" data-minute="50">14:50</div><div class="xdsoft_time " data-hour="14" data-minute="55">14:55</div><div class="xdsoft_time " data-hour="15" data-minute="0">15:00</div><div class="xdsoft_time " data-hour="15" data-minute="5">15:05</div><div class="xdsoft_time " data-hour="15" data-minute="10">15:10</div><div class="xdsoft_time " data-hour="15" data-minute="15">15:15</div><div class="xdsoft_time " data-hour="15" data-minute="20">15:20</div><div class="xdsoft_time " data-hour="15" data-minute="25">15:25</div><div class="xdsoft_time " data-hour="15" data-minute="30">15:30</div><div class="xdsoft_time " data-hour="15" data-minute="35">15:35</div><div class="xdsoft_time " data-hour="15" data-minute="40">15:40</div><div class="xdsoft_time " data-hour="15" data-minute="45">15:45</div><div class="xdsoft_time " data-hour="15" data-minute="50">15:50</div><div class="xdsoft_time " data-hour="15" data-minute="55">15:55</div><div class="xdsoft_time " data-hour="16" data-minute="0">16:00</div><div class="xdsoft_time " data-hour="16" data-minute="5">16:05</div><div class="xdsoft_time " data-hour="16" data-minute="10">16:10</div><div class="xdsoft_time " data-hour="16" data-minute="15">16:15</div><div class="xdsoft_time " data-hour="16" data-minute="20">16:20</div><div class="xdsoft_time " data-hour="16" data-minute="25">16:25</div><div class="xdsoft_time " data-hour="16" data-minute="30">16:30</div><div class="xdsoft_time " data-hour="16" data-minute="35">16:35</div><div class="xdsoft_time " data-hour="16" data-minute="40">16:40</div><div class="xdsoft_time " data-hour="16" data-minute="45">16:45</div><div class="xdsoft_time " data-hour="16" data-minute="50">16:50</div><div class="xdsoft_time " data-hour="16" data-minute="55">16:55</div><div class="xdsoft_time " data-hour="17" data-minute="0">17:00</div><div class="xdsoft_time " data-hour="17" data-minute="5">17:05</div><div class="xdsoft_time " data-hour="17" data-minute="10">17:10</div><div class="xdsoft_time " data-hour="17" data-minute="15">17:15</div><div class="xdsoft_time " data-hour="17" data-minute="20">17:20</div><div class="xdsoft_time " data-hour="17" data-minute="25">17:25</div><div class="xdsoft_time " data-hour="17" data-minute="30">17:30</div><div class="xdsoft_time " data-hour="17" data-minute="35">17:35</div><div class="xdsoft_time " data-hour="17" data-minute="40">17:40</div><div class="xdsoft_time " data-hour="17" data-minute="45">17:45</div><div class="xdsoft_time " data-hour="17" data-minute="50">17:50</div><div class="xdsoft_time " data-hour="17" data-minute="55">17:55</div><div class="xdsoft_time " data-hour="18" data-minute="0">18:00</div><div class="xdsoft_time " data-hour="18" data-minute="5">18:05</div><div class="xdsoft_time " data-hour="18" data-minute="10">18:10</div><div class="xdsoft_time " data-hour="18" data-minute="15">18:15</div><div class="xdsoft_time " data-hour="18" data-minute="20">18:20</div><div class="xdsoft_time " data-hour="18" data-minute="25">18:25</div><div class="xdsoft_time " data-hour="18" data-minute="30">18:30</div><div class="xdsoft_time " data-hour="18" data-minute="35">18:35</div><div class="xdsoft_time " data-hour="18" data-minute="40">18:40</div><div class="xdsoft_time " data-hour="18" data-minute="45">18:45</div><div class="xdsoft_time " data-hour="18" data-minute="50">18:50</div><div class="xdsoft_time " data-hour="18" data-minute="55">18:55</div><div class="xdsoft_time " data-hour="19" data-minute="0">19:00</div><div class="xdsoft_time " data-hour="19" data-minute="5">19:05</div><div class="xdsoft_time " data-hour="19" data-minute="10">19:10</div><div class="xdsoft_time " data-hour="19" data-minute="15">19:15</div><div class="xdsoft_time " data-hour="19" data-minute="20">19:20</div><div class="xdsoft_time " data-hour="19" data-minute="25">19:25</div><div class="xdsoft_time " data-hour="19" data-minute="30">19:30</div><div class="xdsoft_time " data-hour="19" data-minute="35">19:35</div><div class="xdsoft_time " data-hour="19" data-minute="40">19:40</div><div class="xdsoft_time " data-hour="19" data-minute="45">19:45</div><div class="xdsoft_time " data-hour="19" data-minute="50">19:50</div><div class="xdsoft_time " data-hour="19" data-minute="55">19:55</div><div class="xdsoft_time " data-hour="20" data-minute="0">20:00</div><div class="xdsoft_time " data-hour="20" data-minute="5">20:05</div><div class="xdsoft_time " data-hour="20" data-minute="10">20:10</div><div class="xdsoft_time " data-hour="20" data-minute="15">20:15</div><div class="xdsoft_time " data-hour="20" data-minute="20">20:20</div><div class="xdsoft_time " data-hour="20" data-minute="25">20:25</div><div class="xdsoft_time " data-hour="20" data-minute="30">20:30</div><div class="xdsoft_time " data-hour="20" data-minute="35">20:35</div><div class="xdsoft_time " data-hour="20" data-minute="40">20:40</div><div class="xdsoft_time " data-hour="20" data-minute="45">20:45</div><div class="xdsoft_time " data-hour="20" data-minute="50">20:50</div><div class="xdsoft_time " data-hour="20" data-minute="55">20:55</div><div class="xdsoft_time " data-hour="21" data-minute="0">21:00</div><div class="xdsoft_time " data-hour="21" data-minute="5">21:05</div><div class="xdsoft_time " data-hour="21" data-minute="10">21:10</div><div class="xdsoft_time " data-hour="21" data-minute="15">21:15</div><div class="xdsoft_time " data-hour="21" data-minute="20">21:20</div><div class="xdsoft_time " data-hour="21" data-minute="25">21:25</div><div class="xdsoft_time " data-hour="21" data-minute="30">21:30</div><div class="xdsoft_time " data-hour="21" data-minute="35">21:35</div><div class="xdsoft_time " data-hour="21" data-minute="40">21:40</div><div class="xdsoft_time " data-hour="21" data-minute="45">21:45</div><div class="xdsoft_time " data-hour="21" data-minute="50">21:50</div><div class="xdsoft_time " data-hour="21" data-minute="55">21:55</div><div class="xdsoft_time " data-hour="22" data-minute="0">22:00</div><div class="xdsoft_time " data-hour="22" data-minute="5">22:05</div><div class="xdsoft_time " data-hour="22" data-minute="10">22:10</div><div class="xdsoft_time " data-hour="22" data-minute="15">22:15</div><div class="xdsoft_time " data-hour="22" data-minute="20">22:20</div><div class="xdsoft_time " data-hour="22" data-minute="25">22:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="30">22:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="35">22:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="40">22:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="45">22:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="50">22:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="55">22:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="0">23:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="5">23:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="10">23:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="15">23:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="20">23:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="25">23:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="30">23:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="35">23:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="40">23:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="45">23:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="50">23:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="55">23:55</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><button type="button" class="xdsoft_next"></button></div></div><div class="xdsoft_datetimepicker xdsoft_ xdsoft_noselect "><div class="xdsoft_datepicker"><div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev"></button><button type="button" class="xdsoft_today_button" style="visibility: visible;"></button><div class="xdsoft_label xdsoft_month"><span>Jun</span><div class="xdsoft_select xdsoft_monthselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="0">Januari</div><div class="xdsoft_option " data-value="1">Februari</div><div class="xdsoft_option " data-value="2">Mac</div><div class="xdsoft_option " data-value="3">April</div><div class="xdsoft_option " data-value="4">Mei</div><div class="xdsoft_option xdsoft_current" data-value="5">Jun</div><div class="xdsoft_option " data-value="6">Julai</div><div class="xdsoft_option " data-value="7">Ogos</div><div class="xdsoft_option " data-value="8">September</div><div class="xdsoft_option " data-value="9">Oktober</div><div class="xdsoft_option " data-value="10">November</div><div class="xdsoft_option " data-value="11">Disember</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><div class="xdsoft_label xdsoft_year"><span>2026</span><div class="xdsoft_select xdsoft_yearselect xdsoft_scroller_box"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="1950">1950</div><div class="xdsoft_option " data-value="1951">1951</div><div class="xdsoft_option " data-value="1952">1952</div><div class="xdsoft_option " data-value="1953">1953</div><div class="xdsoft_option " data-value="1954">1954</div><div class="xdsoft_option " data-value="1955">1955</div><div class="xdsoft_option " data-value="1956">1956</div><div class="xdsoft_option " data-value="1957">1957</div><div class="xdsoft_option " data-value="1958">1958</div><div class="xdsoft_option " data-value="1959">1959</div><div class="xdsoft_option " data-value="1960">1960</div><div class="xdsoft_option " data-value="1961">1961</div><div class="xdsoft_option " data-value="1962">1962</div><div class="xdsoft_option " data-value="1963">1963</div><div class="xdsoft_option " data-value="1964">1964</div><div class="xdsoft_option " data-value="1965">1965</div><div class="xdsoft_option " data-value="1966">1966</div><div class="xdsoft_option " data-value="1967">1967</div><div class="xdsoft_option " data-value="1968">1968</div><div class="xdsoft_option " data-value="1969">1969</div><div class="xdsoft_option " data-value="1970">1970</div><div class="xdsoft_option " data-value="1971">1971</div><div class="xdsoft_option " data-value="1972">1972</div><div class="xdsoft_option " data-value="1973">1973</div><div class="xdsoft_option " data-value="1974">1974</div><div class="xdsoft_option " data-value="1975">1975</div><div class="xdsoft_option " data-value="1976">1976</div><div class="xdsoft_option " data-value="1977">1977</div><div class="xdsoft_option " data-value="1978">1978</div><div class="xdsoft_option " data-value="1979">1979</div><div class="xdsoft_option " data-value="1980">1980</div><div class="xdsoft_option " data-value="1981">1981</div><div class="xdsoft_option " data-value="1982">1982</div><div class="xdsoft_option " data-value="1983">1983</div><div class="xdsoft_option " data-value="1984">1984</div><div class="xdsoft_option " data-value="1985">1985</div><div class="xdsoft_option " data-value="1986">1986</div><div class="xdsoft_option " data-value="1987">1987</div><div class="xdsoft_option " data-value="1988">1988</div><div class="xdsoft_option " data-value="1989">1989</div><div class="xdsoft_option " data-value="1990">1990</div><div class="xdsoft_option " data-value="1991">1991</div><div class="xdsoft_option " data-value="1992">1992</div><div class="xdsoft_option " data-value="1993">1993</div><div class="xdsoft_option " data-value="1994">1994</div><div class="xdsoft_option " data-value="1995">1995</div><div class="xdsoft_option " data-value="1996">1996</div><div class="xdsoft_option " data-value="1997">1997</div><div class="xdsoft_option " data-value="1998">1998</div><div class="xdsoft_option " data-value="1999">1999</div><div class="xdsoft_option " data-value="2000">2000</div><div class="xdsoft_option " data-value="2001">2001</div><div class="xdsoft_option " data-value="2002">2002</div><div class="xdsoft_option " data-value="2003">2003</div><div class="xdsoft_option " data-value="2004">2004</div><div class="xdsoft_option " data-value="2005">2005</div><div class="xdsoft_option " data-value="2006">2006</div><div class="xdsoft_option " data-value="2007">2007</div><div class="xdsoft_option " data-value="2008">2008</div><div class="xdsoft_option " data-value="2009">2009</div><div class="xdsoft_option " data-value="2010">2010</div><div class="xdsoft_option " data-value="2011">2011</div><div class="xdsoft_option " data-value="2012">2012</div><div class="xdsoft_option " data-value="2013">2013</div><div class="xdsoft_option " data-value="2014">2014</div><div class="xdsoft_option " data-value="2015">2015</div><div class="xdsoft_option " data-value="2016">2016</div><div class="xdsoft_option " data-value="2017">2017</div><div class="xdsoft_option " data-value="2018">2018</div><div class="xdsoft_option " data-value="2019">2019</div><div class="xdsoft_option " data-value="2020">2020</div><div class="xdsoft_option " data-value="2021">2021</div><div class="xdsoft_option " data-value="2022">2022</div><div class="xdsoft_option " data-value="2023">2023</div><div class="xdsoft_option " data-value="2024">2024</div><div class="xdsoft_option " data-value="2025">2025</div><div class="xdsoft_option xdsoft_current" data-value="2026">2026</div><div class="xdsoft_option " data-value="2027">2027</div><div class="xdsoft_option " data-value="2028">2028</div><div class="xdsoft_option " data-value="2029">2029</div><div class="xdsoft_option " data-value="2030">2030</div><div class="xdsoft_option " data-value="2031">2031</div><div class="xdsoft_option " data-value="2032">2032</div><div class="xdsoft_option " data-value="2033">2033</div><div class="xdsoft_option " data-value="2034">2034</div><div class="xdsoft_option " data-value="2035">2035</div><div class="xdsoft_option " data-value="2036">2036</div><div class="xdsoft_option " data-value="2037">2037</div><div class="xdsoft_option " data-value="2038">2038</div><div class="xdsoft_option " data-value="2039">2039</div><div class="xdsoft_option " data-value="2040">2040</div><div class="xdsoft_option " data-value="2041">2041</div><div class="xdsoft_option " data-value="2042">2042</div><div class="xdsoft_option " data-value="2043">2043</div><div class="xdsoft_option " data-value="2044">2044</div><div class="xdsoft_option " data-value="2045">2045</div><div class="xdsoft_option " data-value="2046">2046</div><div class="xdsoft_option " data-value="2047">2047</div><div class="xdsoft_option " data-value="2048">2048</div><div class="xdsoft_option " data-value="2049">2049</div><div class="xdsoft_option " data-value="2050">2050</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><i></i></div><button type="button" class="xdsoft_next"></button></div><div class="xdsoft_calendar"><table><thead><tr><th>Aha</th><th>Isn</th><th>Sel</th><th>Rab</th><th>Kha</th><th>Jum</th><th>Sab</th></tr></thead><tbody><tr><td data-date="31" data-month="4" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>31</div></td><td data-date="1" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_current xdsoft_today xdsoft_weekend"><div>4</div></td><td data-date="5" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>5</div></td><td data-date="6" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>6</div></td></tr><tr><td data-date="7" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>7</div></td><td data-date="8" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>8</div></td><td data-date="9" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>9</div></td><td data-date="10" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>10</div></td><td data-date="11" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>11</div></td><td data-date="12" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>12</div></td><td data-date="13" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>13</div></td></tr><tr><td data-date="14" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>14</div></td><td data-date="15" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>15</div></td><td data-date="16" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>16</div></td><td data-date="17" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>17</div></td><td data-date="18" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>18</div></td><td data-date="19" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>19</div></td><td data-date="20" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>20</div></td></tr><tr><td data-date="21" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>21</div></td><td data-date="22" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>22</div></td><td data-date="23" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>23</div></td><td data-date="24" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_weekend"><div>24</div></td><td data-date="25" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_weekend"><div>25</div></td><td data-date="26" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_weekend"><div>26</div></td><td data-date="27" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend"><div>27</div></td></tr><tr><td data-date="28" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend"><div>28</div></td><td data-date="29" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_weekend"><div>29</div></td><td data-date="30" data-month="5" data-year="2026" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_weekend"><div>30</div></td><td data-date="1" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>1</div></td><td data-date="2" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>2</div></td><td data-date="3" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>3</div></td><td data-date="4" data-month="6" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_other_month xdsoft_weekend"><div>4</div></td></tr></tbody></table></div></div><div class="xdsoft_timepicker active"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box xdsoft_scroller_box"><div class="xdsoft_time_variant" style="margin-top: 0px;"><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="0">00:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="5">00:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="10">00:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="15">00:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="20">00:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="25">00:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="30">00:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="35">00:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="40">00:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="45">00:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="50">00:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="0" data-minute="55">00:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="0">01:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="5">01:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="10">01:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="15">01:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="20">01:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="25">01:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="30">01:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="35">01:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="40">01:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="45">01:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="50">01:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="1" data-minute="55">01:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="0">02:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="5">02:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="10">02:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="15">02:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="20">02:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="25">02:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="30">02:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="35">02:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="40">02:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="45">02:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="50">02:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="2" data-minute="55">02:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="0">03:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="5">03:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="10">03:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="15">03:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="20">03:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="25">03:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="30">03:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="35">03:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="40">03:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="45">03:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="50">03:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="3" data-minute="55">03:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="0">04:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="5">04:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="10">04:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="15">04:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="20">04:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="25">04:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="30">04:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="35">04:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="40">04:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="45">04:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="50">04:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="4" data-minute="55">04:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="0">05:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="5">05:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="10">05:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="15">05:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="20">05:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="25">05:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="30">05:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="35">05:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="40">05:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="45">05:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="50">05:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="5" data-minute="55">05:55</div><div class="xdsoft_time " data-hour="6" data-minute="0">06:00</div><div class="xdsoft_time " data-hour="6" data-minute="5">06:05</div><div class="xdsoft_time " data-hour="6" data-minute="10">06:10</div><div class="xdsoft_time " data-hour="6" data-minute="15">06:15</div><div class="xdsoft_time " data-hour="6" data-minute="20">06:20</div><div class="xdsoft_time " data-hour="6" data-minute="25">06:25</div><div class="xdsoft_time " data-hour="6" data-minute="30">06:30</div><div class="xdsoft_time " data-hour="6" data-minute="35">06:35</div><div class="xdsoft_time " data-hour="6" data-minute="40">06:40</div><div class="xdsoft_time " data-hour="6" data-minute="45">06:45</div><div class="xdsoft_time " data-hour="6" data-minute="50">06:50</div><div class="xdsoft_time " data-hour="6" data-minute="55">06:55</div><div class="xdsoft_time " data-hour="7" data-minute="0">07:00</div><div class="xdsoft_time " data-hour="7" data-minute="5">07:05</div><div class="xdsoft_time " data-hour="7" data-minute="10">07:10</div><div class="xdsoft_time " data-hour="7" data-minute="15">07:15</div><div class="xdsoft_time " data-hour="7" data-minute="20">07:20</div><div class="xdsoft_time " data-hour="7" data-minute="25">07:25</div><div class="xdsoft_time " data-hour="7" data-minute="30">07:30</div><div class="xdsoft_time " data-hour="7" data-minute="35">07:35</div><div class="xdsoft_time " data-hour="7" data-minute="40">07:40</div><div class="xdsoft_time " data-hour="7" data-minute="45">07:45</div><div class="xdsoft_time " data-hour="7" data-minute="50">07:50</div><div class="xdsoft_time " data-hour="7" data-minute="55">07:55</div><div class="xdsoft_time " data-hour="8" data-minute="0">08:00</div><div class="xdsoft_time " data-hour="8" data-minute="5">08:05</div><div class="xdsoft_time " data-hour="8" data-minute="10">08:10</div><div class="xdsoft_time " data-hour="8" data-minute="15">08:15</div><div class="xdsoft_time " data-hour="8" data-minute="20">08:20</div><div class="xdsoft_time " data-hour="8" data-minute="25">08:25</div><div class="xdsoft_time " data-hour="8" data-minute="30">08:30</div><div class="xdsoft_time " data-hour="8" data-minute="35">08:35</div><div class="xdsoft_time " data-hour="8" data-minute="40">08:40</div><div class="xdsoft_time " data-hour="8" data-minute="45">08:45</div><div class="xdsoft_time " data-hour="8" data-minute="50">08:50</div><div class="xdsoft_time " data-hour="8" data-minute="55">08:55</div><div class="xdsoft_time " data-hour="9" data-minute="0">09:00</div><div class="xdsoft_time " data-hour="9" data-minute="5">09:05</div><div class="xdsoft_time " data-hour="9" data-minute="10">09:10</div><div class="xdsoft_time " data-hour="9" data-minute="15">09:15</div><div class="xdsoft_time " data-hour="9" data-minute="20">09:20</div><div class="xdsoft_time " data-hour="9" data-minute="25">09:25</div><div class="xdsoft_time " data-hour="9" data-minute="30">09:30</div><div class="xdsoft_time " data-hour="9" data-minute="35">09:35</div><div class="xdsoft_time " data-hour="9" data-minute="40">09:40</div><div class="xdsoft_time " data-hour="9" data-minute="45">09:45</div><div class="xdsoft_time " data-hour="9" data-minute="50">09:50</div><div class="xdsoft_time " data-hour="9" data-minute="55">09:55</div><div class="xdsoft_time " data-hour="10" data-minute="0">10:00</div><div class="xdsoft_time " data-hour="10" data-minute="5">10:05</div><div class="xdsoft_time " data-hour="10" data-minute="10">10:10</div><div class="xdsoft_time xdsoft_current" data-hour="10" data-minute="15">10:15</div><div class="xdsoft_time " data-hour="10" data-minute="20">10:20</div><div class="xdsoft_time " data-hour="10" data-minute="25">10:25</div><div class="xdsoft_time " data-hour="10" data-minute="30">10:30</div><div class="xdsoft_time " data-hour="10" data-minute="35">10:35</div><div class="xdsoft_time " data-hour="10" data-minute="40">10:40</div><div class="xdsoft_time " data-hour="10" data-minute="45">10:45</div><div class="xdsoft_time " data-hour="10" data-minute="50">10:50</div><div class="xdsoft_time " data-hour="10" data-minute="55">10:55</div><div class="xdsoft_time " data-hour="11" data-minute="0">11:00</div><div class="xdsoft_time " data-hour="11" data-minute="5">11:05</div><div class="xdsoft_time " data-hour="11" data-minute="10">11:10</div><div class="xdsoft_time " data-hour="11" data-minute="15">11:15</div><div class="xdsoft_time " data-hour="11" data-minute="20">11:20</div><div class="xdsoft_time " data-hour="11" data-minute="25">11:25</div><div class="xdsoft_time " data-hour="11" data-minute="30">11:30</div><div class="xdsoft_time " data-hour="11" data-minute="35">11:35</div><div class="xdsoft_time " data-hour="11" data-minute="40">11:40</div><div class="xdsoft_time " data-hour="11" data-minute="45">11:45</div><div class="xdsoft_time " data-hour="11" data-minute="50">11:50</div><div class="xdsoft_time " data-hour="11" data-minute="55">11:55</div><div class="xdsoft_time " data-hour="12" data-minute="0">12:00</div><div class="xdsoft_time " data-hour="12" data-minute="5">12:05</div><div class="xdsoft_time " data-hour="12" data-minute="10">12:10</div><div class="xdsoft_time " data-hour="12" data-minute="15">12:15</div><div class="xdsoft_time " data-hour="12" data-minute="20">12:20</div><div class="xdsoft_time " data-hour="12" data-minute="25">12:25</div><div class="xdsoft_time " data-hour="12" data-minute="30">12:30</div><div class="xdsoft_time " data-hour="12" data-minute="35">12:35</div><div class="xdsoft_time " data-hour="12" data-minute="40">12:40</div><div class="xdsoft_time " data-hour="12" data-minute="45">12:45</div><div class="xdsoft_time " data-hour="12" data-minute="50">12:50</div><div class="xdsoft_time " data-hour="12" data-minute="55">12:55</div><div class="xdsoft_time " data-hour="13" data-minute="0">13:00</div><div class="xdsoft_time " data-hour="13" data-minute="5">13:05</div><div class="xdsoft_time " data-hour="13" data-minute="10">13:10</div><div class="xdsoft_time " data-hour="13" data-minute="15">13:15</div><div class="xdsoft_time " data-hour="13" data-minute="20">13:20</div><div class="xdsoft_time " data-hour="13" data-minute="25">13:25</div><div class="xdsoft_time " data-hour="13" data-minute="30">13:30</div><div class="xdsoft_time " data-hour="13" data-minute="35">13:35</div><div class="xdsoft_time " data-hour="13" data-minute="40">13:40</div><div class="xdsoft_time " data-hour="13" data-minute="45">13:45</div><div class="xdsoft_time " data-hour="13" data-minute="50">13:50</div><div class="xdsoft_time " data-hour="13" data-minute="55">13:55</div><div class="xdsoft_time " data-hour="14" data-minute="0">14:00</div><div class="xdsoft_time " data-hour="14" data-minute="5">14:05</div><div class="xdsoft_time " data-hour="14" data-minute="10">14:10</div><div class="xdsoft_time " data-hour="14" data-minute="15">14:15</div><div class="xdsoft_time " data-hour="14" data-minute="20">14:20</div><div class="xdsoft_time " data-hour="14" data-minute="25">14:25</div><div class="xdsoft_time " data-hour="14" data-minute="30">14:30</div><div class="xdsoft_time " data-hour="14" data-minute="35">14:35</div><div class="xdsoft_time " data-hour="14" data-minute="40">14:40</div><div class="xdsoft_time " data-hour="14" data-minute="45">14:45</div><div class="xdsoft_time " data-hour="14" data-minute="50">14:50</div><div class="xdsoft_time " data-hour="14" data-minute="55">14:55</div><div class="xdsoft_time " data-hour="15" data-minute="0">15:00</div><div class="xdsoft_time " data-hour="15" data-minute="5">15:05</div><div class="xdsoft_time " data-hour="15" data-minute="10">15:10</div><div class="xdsoft_time " data-hour="15" data-minute="15">15:15</div><div class="xdsoft_time " data-hour="15" data-minute="20">15:20</div><div class="xdsoft_time " data-hour="15" data-minute="25">15:25</div><div class="xdsoft_time " data-hour="15" data-minute="30">15:30</div><div class="xdsoft_time " data-hour="15" data-minute="35">15:35</div><div class="xdsoft_time " data-hour="15" data-minute="40">15:40</div><div class="xdsoft_time " data-hour="15" data-minute="45">15:45</div><div class="xdsoft_time " data-hour="15" data-minute="50">15:50</div><div class="xdsoft_time " data-hour="15" data-minute="55">15:55</div><div class="xdsoft_time " data-hour="16" data-minute="0">16:00</div><div class="xdsoft_time " data-hour="16" data-minute="5">16:05</div><div class="xdsoft_time " data-hour="16" data-minute="10">16:10</div><div class="xdsoft_time " data-hour="16" data-minute="15">16:15</div><div class="xdsoft_time " data-hour="16" data-minute="20">16:20</div><div class="xdsoft_time " data-hour="16" data-minute="25">16:25</div><div class="xdsoft_time " data-hour="16" data-minute="30">16:30</div><div class="xdsoft_time " data-hour="16" data-minute="35">16:35</div><div class="xdsoft_time " data-hour="16" data-minute="40">16:40</div><div class="xdsoft_time " data-hour="16" data-minute="45">16:45</div><div class="xdsoft_time " data-hour="16" data-minute="50">16:50</div><div class="xdsoft_time " data-hour="16" data-minute="55">16:55</div><div class="xdsoft_time " data-hour="17" data-minute="0">17:00</div><div class="xdsoft_time " data-hour="17" data-minute="5">17:05</div><div class="xdsoft_time " data-hour="17" data-minute="10">17:10</div><div class="xdsoft_time " data-hour="17" data-minute="15">17:15</div><div class="xdsoft_time " data-hour="17" data-minute="20">17:20</div><div class="xdsoft_time " data-hour="17" data-minute="25">17:25</div><div class="xdsoft_time " data-hour="17" data-minute="30">17:30</div><div class="xdsoft_time " data-hour="17" data-minute="35">17:35</div><div class="xdsoft_time " data-hour="17" data-minute="40">17:40</div><div class="xdsoft_time " data-hour="17" data-minute="45">17:45</div><div class="xdsoft_time " data-hour="17" data-minute="50">17:50</div><div class="xdsoft_time " data-hour="17" data-minute="55">17:55</div><div class="xdsoft_time " data-hour="18" data-minute="0">18:00</div><div class="xdsoft_time " data-hour="18" data-minute="5">18:05</div><div class="xdsoft_time " data-hour="18" data-minute="10">18:10</div><div class="xdsoft_time " data-hour="18" data-minute="15">18:15</div><div class="xdsoft_time " data-hour="18" data-minute="20">18:20</div><div class="xdsoft_time " data-hour="18" data-minute="25">18:25</div><div class="xdsoft_time " data-hour="18" data-minute="30">18:30</div><div class="xdsoft_time " data-hour="18" data-minute="35">18:35</div><div class="xdsoft_time " data-hour="18" data-minute="40">18:40</div><div class="xdsoft_time " data-hour="18" data-minute="45">18:45</div><div class="xdsoft_time " data-hour="18" data-minute="50">18:50</div><div class="xdsoft_time " data-hour="18" data-minute="55">18:55</div><div class="xdsoft_time " data-hour="19" data-minute="0">19:00</div><div class="xdsoft_time " data-hour="19" data-minute="5">19:05</div><div class="xdsoft_time " data-hour="19" data-minute="10">19:10</div><div class="xdsoft_time " data-hour="19" data-minute="15">19:15</div><div class="xdsoft_time " data-hour="19" data-minute="20">19:20</div><div class="xdsoft_time " data-hour="19" data-minute="25">19:25</div><div class="xdsoft_time " data-hour="19" data-minute="30">19:30</div><div class="xdsoft_time " data-hour="19" data-minute="35">19:35</div><div class="xdsoft_time " data-hour="19" data-minute="40">19:40</div><div class="xdsoft_time " data-hour="19" data-minute="45">19:45</div><div class="xdsoft_time " data-hour="19" data-minute="50">19:50</div><div class="xdsoft_time " data-hour="19" data-minute="55">19:55</div><div class="xdsoft_time " data-hour="20" data-minute="0">20:00</div><div class="xdsoft_time " data-hour="20" data-minute="5">20:05</div><div class="xdsoft_time " data-hour="20" data-minute="10">20:10</div><div class="xdsoft_time " data-hour="20" data-minute="15">20:15</div><div class="xdsoft_time " data-hour="20" data-minute="20">20:20</div><div class="xdsoft_time " data-hour="20" data-minute="25">20:25</div><div class="xdsoft_time " data-hour="20" data-minute="30">20:30</div><div class="xdsoft_time " data-hour="20" data-minute="35">20:35</div><div class="xdsoft_time " data-hour="20" data-minute="40">20:40</div><div class="xdsoft_time " data-hour="20" data-minute="45">20:45</div><div class="xdsoft_time " data-hour="20" data-minute="50">20:50</div><div class="xdsoft_time " data-hour="20" data-minute="55">20:55</div><div class="xdsoft_time " data-hour="21" data-minute="0">21:00</div><div class="xdsoft_time " data-hour="21" data-minute="5">21:05</div><div class="xdsoft_time " data-hour="21" data-minute="10">21:10</div><div class="xdsoft_time " data-hour="21" data-minute="15">21:15</div><div class="xdsoft_time " data-hour="21" data-minute="20">21:20</div><div class="xdsoft_time " data-hour="21" data-minute="25">21:25</div><div class="xdsoft_time " data-hour="21" data-minute="30">21:30</div><div class="xdsoft_time " data-hour="21" data-minute="35">21:35</div><div class="xdsoft_time " data-hour="21" data-minute="40">21:40</div><div class="xdsoft_time " data-hour="21" data-minute="45">21:45</div><div class="xdsoft_time " data-hour="21" data-minute="50">21:50</div><div class="xdsoft_time " data-hour="21" data-minute="55">21:55</div><div class="xdsoft_time " data-hour="22" data-minute="0">22:00</div><div class="xdsoft_time " data-hour="22" data-minute="5">22:05</div><div class="xdsoft_time " data-hour="22" data-minute="10">22:10</div><div class="xdsoft_time " data-hour="22" data-minute="15">22:15</div><div class="xdsoft_time " data-hour="22" data-minute="20">22:20</div><div class="xdsoft_time " data-hour="22" data-minute="25">22:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="30">22:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="35">22:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="40">22:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="45">22:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="50">22:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="22" data-minute="55">22:55</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="0">23:00</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="5">23:05</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="10">23:10</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="15">23:15</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="20">23:20</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="25">23:25</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="30">23:30</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="35">23:35</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="40">23:40</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="45">23:45</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="50">23:50</div><div class="xdsoft_time xdsoft_disabled" data-hour="23" data-minute="55">23:55</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div></div></div><button type="button" class="xdsoft_next"></button></div></div>
+
+
+</body></html>

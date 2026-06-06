@@ -1,0 +1,2077 @@
+<!DOCTYPE html><html lang="ms"><head>
+<title>Model Reka Bentuk Instruksional Integral ASIE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/css/bootstrap-5.0.0-beta1/bootstrap.min.css">
+<link rel="stylesheet" href="/css/fontawesome-free-5.15.2-web/css/all.css">
+
+<link rel="stylesheet" type="text/css" href="/css/v9styles.css?20260205b">
+
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+
+
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+window.name = "model";
+
+function fetch_select(key,val,selected)
+{
+   $.ajax({
+     type: 'post',
+     url: 'fetch_data.php',
+     data: {
+		get_key:key,
+       get_option:val.value,
+	   get_selected:selected
+	  },
+     success: function (response) {
+       document.getElementById("select_"+key).innerHTML=response; 
+     }
+   });
+}
+function fetch_questions(val)
+{
+   $.ajax({
+     type: 'post',
+     url: 'fetch_questions.php',
+     data: {
+		get_option:val
+     },
+     success: function (response) {
+       document.getElementById("group_questions").innerHTML=response; 
+     }
+   });
+   return (false);
+}
+$(document).ready(function(){
+    var $checkboxes = $('#worksheet_form input[type="checkbox"]');
+    $checkboxes.change(function(){
+        var countCheckedCheckboxes = $checkboxes.filter(':checked').length;
+        $('#select_questions').text(countCheckedCheckboxes + ' soalan telah dipilih.');
+    });
+});
+/*
+    function Check(frm){
+      var checkBoxes = frm.elements['selected_questions[]'];
+      for (i = 0; i < checkBoxes.length; i++){
+        checkBoxes[i].checked = (selectControl.innerHTML == "Select All") ? 'checked' : '';
+      }
+      selectControl.innerHTML = (selectControl.innerHTML == "Select All") ? "Unselect All" : 'Select All';
+    }
+
+    window.onload = function(){
+      var selectControl = document.getElementById("selectControl");
+      selectControl.onclick = function(){Check(document.worksheet_form)};
+    };
+ */ 
+
+</script>
+<script>
+function popupCenter(url, title, w, h) {
+var left = (screen.width/2)-(w/2);
+var top = (screen.height/2)-(h/2);
+return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+} 
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J4MP2SJKZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J4MP2SJKZ5');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92269807-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style>
+.center {
+	text-align:center;
+}
+.nav.nav-pills li.center img {
+	width:40px;
+	height:40px;
+	margin-top:5px;
+}
+.header img {
+    float: none;
+}
+.header.logo{
+	text-align:center;
+	color:#eee;
+	font-weight:normal;
+}
+.header.logo img{
+	height:80px;
+	width:auto;
+}
+.username {
+    padding: 0px 10px 0px 0px;
+}
+.username img{
+    width:60px;
+	height:auto;
+}
+@media (max-width: 991px){
+.col-md-5.header.user, .col-md-2.header.logo {
+    width: 50%;
+	float:left;
+}}
+.whattodo {
+	display:block;
+	top:0;
+	right:0;
+	background-color:#ddd;
+	border:1px solid #999;
+	border-radius:10px;
+	padding:3px 10px;
+	margin:3px;
+	color:#333;
+	position:relative;
+	text-align:left;
+	z-index:99;
+	width:auto;
+	height:33px;
+}
+.whattodo:hover,.whattodo.expand {
+	background-color:#f4f793;
+	border:1px solid #fff;
+	color:#333;
+	cursor:pointer;
+}
+.whattodo.expand {
+	max-width:100%;
+	position:absolute;
+	top:40px;
+	height:auto;
+
+}
+.whattodo ul {
+	list-style:disc;
+	padding-left: 20px;
+}
+.whattodo li {
+	margin-top: 5px;
+	margin-bottom:5px;
+	text-shadow:none;
+	color:#333;
+	list-style:disc;
+}
+.whattodo li:hover {
+	font-size:16px;
+	color:#333;
+	/*line-height:16px;*/
+}
+.whattodo ol {
+	list-style:decimal;
+	list-style-type:decimal;
+}
+.whattodo ol>li {
+	list-style:decimal;
+	list-style-type:decimal;
+}
+.whattodo ol>li ol>li {
+	list-style:lower-alpha;
+	list-style-type:lower-alpha;
+}
+.whattodo ul ul {
+	list-style:circle;
+}
+.ctitle .whattodo {
+	font-weight:normal;
+}
+.wtd_header{
+	font-size:17px;
+}
+.wtd_content{
+	display:none;
+	font-size:15px;
+}
+.wtd_content,.wtd_content i,.wtd_content li,.wtd_content b {
+	font-size:initial;
+}
+.expand .wtd_content {
+	display:block;
+	padding:10px;
+}
+.expand .wtd_header{
+	display:none;
+}
+.wtd_ikon {
+	float: right;
+    display: block;
+    padding: 5px;
+    line-height: 12px;
+    font-family: serif;
+    font-size: 26px;
+    margin: 0 10px 0 0px;
+    border-radius: 50%;
+    background-color: #fff460;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+}
+.expand .wtd_ikon {
+	background-color: #fff460;
+}
+.wtd_ikon:before {
+	content:'i';
+}
+.expand .wtd_ikon:before {
+	content:'x';
+}
+.blackheader .row {
+	position:relative;
+}
+.cids_tagline {
+	font-family: 'Brush Script MT',serif;
+	font-weight:normal;
+	font-style:italic;
+}
+.mainpage.module .cids_tagline {
+    font-size: 20px;
+	color:#eee;
+}
+.asieimage .cids_tagline {
+    font-size: 20px;
+	color:#9a06cc;
+}
+.mainpage .row h1 {
+	margin-bottom:2px;
+	font-weight:600;
+}
+.mainpage .row h3 {
+	width:100%;
+	margin:0;
+	line-height:30px;
+	margin-bottom: 10px;
+
+}
+.mainpage .row h2 {
+	text-transform:uppercase;
+	font-weight:normal;
+	font-size: 14px;
+	line-height:16px;
+	color:#eee;
+}
+.header a {
+	text-decoration:none;
+}
+.lily-video {
+	display: block;
+    top: 0;
+    right: 220px;
+    background-color: #ddd;
+    border: 1px solid #999;
+    border-radius: 10px;
+    padding: 3px 10px;
+    margin: 3px;
+    color: #333;
+    position: absolute;
+    text-align: left;
+    z-index: 98;
+}
+.lily-video img {
+	width:25px;
+}
+.lang_en .lily-video {
+	 right: 192px;	
+}
+.instructional_profile .lily-video {
+	top: 35px;
+    right: 0px;
+}
+.penempatan {
+	text-transform:uppercase;
+}
+@media (max-width: 1199px){
+.whattodo,.lily-video {
+	top:0px;
+}
+}
+@media (max-width: 575px) {
+	.menubar .usertext {
+		display:none;
+	}
+	.mainpage .header {
+		text-align:center;
+	}
+	.header.logo img {
+		height: 60px;
+		width: auto;
+	}
+}
+@media (max-width: 768px) {
+	.mainpage.module  h3.cids_tagline {
+		font-size:14px;
+	}
+  .wtd_header {
+    font-size: 14px;
+	}
+  .whattodo.expand {
+	max-width:100%;
+  }
+  .whattodo p {
+    font-size: 14px;
+  }
+  .folded .navbar-dark .navbar-brand {
+    width: auto!important;
+  }
+	
+	
+}
+#best-practice {
+	height:80px;
+}
+.central3 img {
+	max-width:100%;
+}
+.model_figure {
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+.vidtut {
+	width:55px;
+	position:relative;
+}
+.nama_sekolah {
+	text-transform:uppercase;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="nav.css?20260205b">
+</head>
+<body class="lang_ms folded" id="body">
+
+<nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-asie topbar d-print-none" aria-label="Ninth navbar example">
+    <div class="container-fluid">
+
+	<button id="menuToggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>    
+<!--
+	<button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mySidenav" aria-controls="mySidenav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+-->
+      <a class="navbar-brand" href="/model">CIDS <span style="font-size:14px">New-Gen</span></a>
+	  
+ 	  
+      <div class="collapse navbar-collapse" id="asietopnavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          
+		  <!--
+		  <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="main9.php">
+			<span class="media-left d-lg-none">
+				<i class="icon fa fa-home fa-fw " aria-hidden="true"  ></i>
+			</span>
+			<span class="d-none d-lg-block">Laman Model</span></a>
+          </li>
+		  -->
+		  		   <li class="nav-item">
+            <a class="nav-link" href="main9.php">
+			<span class="media-left">
+				<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">eRPH</span>
+			</a>
+          </li>
+		  		  		             <li class="nav-item">
+            <a class="nav-link" href="record.php?action=newmiw">
+			<span class="media-left">
+				<i class="icon fa fa-plus fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Cipta Rekod Baharu</span>
+			</a>
+          </li>
+		 
+		  <li class="nav-item">
+            <a class="nav-link" href="search9.php?action=listmiw">
+			<span class="media-left">
+				<i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Buka Rekod</span></a>
+          </li>
+		  		  				  <li class="nav-item">
+            <a class="nav-link" href="search9.php?action=listmiwpra">
+			<span class="media-left">
+				<i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Buka Rekod Prasekolah</span></a>
+          </li>		
+				  
+		  		  
+		  		  <li class="nav-item">
+            <a class="nav-link" href="search9.php?action=search_yearly">
+			<span class="media-left">
+				<i class="icon far fa-calendar-alt fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">RPT</span></a>
+          </li>
+		  		  <li class="nav-item">
+            <a class="nav-link" href="teachers9.php?action=waktumengajar">
+			<span class="media-left">
+				<i class="icon fas fa-table fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Jadual Waktu</span></a>
+          </li>
+		  
+		             <li class="nav-item">
+            <a class="nav-link" href="record.php?action=supervision">
+			<span class="media-left">
+				<i class="icon fa fa-file-signature fa-fw " aria-hidden="true"></i>
+			</span>
+			<span class="d-none d-lg-block">Rekod Penyeliaan</span>
+			</a>
+          </li>          
+		  				
+		  		
+		       </ul>
+        
+		
+			
+      </div>
+	  <div class="navbar-expand" id="asieusermenu">
+		<ul class="nav navbar-nav ml-auto">
+			<div class="d-none d-lg-block">
+			
+			</div>
+	   
+			<!-- user_menu -->
+			<li class="nav-item d-flex align-items-center">
+				<div class="usermenu">
+					<div class="action-menu moodle-actionmenu nowrap-items d-inline" id="action-menu-1" data-enhance="moodle-core-actionmenu">
+						<div class="menubar d-flex " id="action-menu-1-menubar" role="menubar">
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a href="#" tabindex="0" class="nav-link dropdown-toggle icon-no-margin" id="profilemenu" aria-label="User menu" data-bs-toggle="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-1-menu">
+				
+                            <span class="userbutton"><span class="usertext mr-1">MUHAMMAD AKMAL BIN NASIR </span>
+														<span class="avatars">
+							<span class="avatar current"> <img src="upload/159707/900225025035.jpg" class="userpicture defaultuserpic" width="35" height="35" role="presentation" aria-hidden="true"></span></span>
+														</span>
+                                
+                            <b class="caret"></b>
+                        </a>
+						<ul class="dropdown-menu navbar-asie" aria-labelledby="profilemenu">
+						  <li><a class="dropdown-item" href="admin9.php?action=profail">Sunting Profil Saya</a></li>
+
+				
+						  <li><a class="dropdown-item" href="akaun.php">Akaun</a></li>
+										  <!-- <li><a class="dropdown-item" href="javascript:void(0);">Mesej</a></li> -->
+						  <li><a class="dropdown-item" href="logout.php?redirect=">Log Keluar</a></li>
+						  						  
+						</ul>
+                    </div>
+                </div>
+
+						</div>
+
+				</div></div>
+			</li>
+		</ul>
+		</div>
+    </div>
+  </nav>
+  
+<div class="asie-wrapper"> 
+
+<div id="overlay"></div>
+	
+<nav id="mySidenav" class="d-print-none sidenav navbar  navbar-dark navbar-asie d-md-block sidebar  side-menu" aria-hidden="false" tabindex="-1" style="min-height: 754px;">
+	 <script>document.getElementById("mySidenav").style.minHeight = (window.innerHeight-46)+'px';</script>  
+   <div id="mySidenav2" class="d-md-block ">
+        <ul class="nav flex-column pt-3">
+          <li class="nav-item chevron-link">
+            <a class="nav-link" onclick="toggleNav();" href="javascript:void(0);">
+			<div class="media media-expand">
+				<span class="media-left">
+					<i class="icon fa fa-chevron-circle-right fa-fw " aria-hidden="true" title="Expand Menu" alt="Expand Menu"></i>
+				</span>
+				<span class="media-body ">&nbsp;</span>
+			</div>	
+			<div class="media media-collapse">
+				<span class="media-left">
+					<i class="icon fa fa-chevron-circle-left fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Tutup Menu</span>
+			</div>	
+            </a>
+          </li>
+		  		  <li class="nav-item">
+            <a class="nav-link" href="main.php">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-home fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Laman Utama</span>
+			</div>	
+            </a>
+          </li>
+		  		  
+		 
+		  <li class="nav-item  dropdown">
+		    <a href="javascript:void(0);" class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#record-collapse" aria-expanded="false">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-file-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Rekod</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="record-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+							<li><a class="dropdown-item" href="record.php?action=newmiw">
+				Cipta Rekod Baharu</a>
+				</li>
+				<li><a class="dropdown-item" href="search9.php?action=listmiw">
+				Buka Rekod</a>
+				</li>
+															<li><a class="dropdown-item" href="search9.php?action=listmiwpra">
+				Buka Rekod Prasekolah</a>
+				</li>				
+								
+								<li><a class="dropdown-item" href="record.php?action=supervision">
+				Rekod Penyeliaan</a>
+				</li>
+												
+				 				<li><a class="dropdown-item" href="search9.php?action=sharedmiwpra">
+				Perkongsian Rekod Prasekolah</a>
+				</li>
+				 				 				<li><a class="dropdown-item" href="search9.php?action=sharedmiw">
+				Perkongsian Rekod</a>
+				</li>
+				 								<li><a class="dropdown-item" href="search9.php?action=searchlib">Koleksi Rekod</a>
+				</li>
+					
+				<li><a class="dropdown-item" href="search9.php?action=listunsubmitted">
+				Rekod Belum Sah</a>
+				</li>
+								
+								<li class="divider"></li>
+				<li><a class="dropdown-item" href="record.php?action=search_yearly">
+				Rancangan Pelajaran Tahunan</a></li> 
+				<li><a class="dropdown-item" href="record.php?action=sharedrpt">
+				Perkongsian Rancangan Pelajaran Tahunan</a></li> 
+		
+				</ul>
+			</div>				
+          </li>
+		  		
+			<li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#profile-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-user-circle fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Profil</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="profile-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				
+				
+				<li><a class="dropdown-item" href="admin9.php?action=profail">
+				Sunting Profil Saya</a></li>
+				<li><a class="dropdown-item" href="admin9.php?action=profail_institusi">
+				Profil Institusi</a></li>
+												<li class="divider"></li>
+				<li><a class="dropdown-item" href="admin9.php?action=senarai">
+				Cari Profil Pengguna</a></li>
+								<li><a class="dropdown-item" href="admin9.php?action=cipta_profail">
+				Cipta Profil Pengguna</a></li>
+									</ul>
+			</div>	
+          </li>
+
+		  
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#setting-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-cog fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Tetapan</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="setting-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+									<li><a class="dropdown-item" href="set9.php?action=LeaCla&amp;do=create">Cipta Kelas Baharu</a></li>
+					<li><a class="dropdown-item" href="set9.php?action=LeaCla&amp;do=createcombined">Cipta Kelas Gabungan</a></li>
+					<li><a class="dropdown-item" href="set9.php?action=LeaCla&amp;do=search">Sunting Kelas</a></li>
+				
+				 
+				<li><a class="dropdown-item" href="teachers9.php?action=waktumengajar">
+				Jadual Waktu Instruksional</a></li>
+				<li class="divider"></li>
+			
+				<li><a class="dropdown-item" href="set9.php?action=InsPro">
+				Profil Pembelajaran</a></li>
+				<li><a class="dropdown-item" href="set9.php?action=FacPro">
+				Adegan Pengajaran</a></li>
+				
+			
+															
+			</ul>
+			</div>			
+          </li>
+
+		   <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#resource-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa-fw fas fa-images " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Sumber</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="resource-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+								<li id="li_link_to_rph_resources" style="display:none"><a class="dropdown-item" id="menu_link_to_rph_resources" onclick="popupCenter('upload.php?action=uploadRefleksi&amp;rph=&amp;bahanrefleksi=pbd', 'Settings',1000,450);" href="javascript:void(0);">
+				Pautan ke Sumber Maklumat</a></li>
+				
+				
+				<li><a class="dropdown-item" href="resource.php">
+				Library</a></li>
+				<li><a class="dropdown-item" onclick="popupCenter('mediagallery.php?pop=1', 'Settings',1000,450);" href="javascript:void(0);">
+				Galeri</a></li>
+			
+			</ul>
+			</div>			
+          </li>
+		  
+		  		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#statistic-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-chart-bar fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Statistik</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="statistic-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
+				<li><a class="dropdown-item" href="statistik9.php">Statistik Pengguna</a></li>
+				<li><a class="dropdown-item" href="statistik9.php?action=demo">Statistik Pendidikan Abad Ke-21</a></li>
+			</ul>
+			</div>
+          </li>
+		  		  
+		  <li class="  my-3"></li>
+		  
+						<li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#language-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-globe fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bahasa</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="language-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="main9.php?cb=ms">Bahasa Melayu</a></li><li><a class="dropdown-item" href="main9.php?cb=en">English</a></li>				</ul>
+				</div>
+			</li>
+								
+		  		  
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#communication-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-phone-square-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Komunikasi</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="communication-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+				<li><a class="dropdown-item" href="meeting9.php?action=videomeet">
+					CIDS VideoCorps</a></li>
+				
+			</ul>
+			</div>
+          </li>
+		  
+		  
+		  <li class="nav-item">
+			            <a class="nav-link" target="web" href="https://asiemodel.net/ms/tutorial-video/">
+						<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-video fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bimbingan Video</span>				
+			</div>	
+            </a>
+          </li>
+		 
+		  
+		  	 
+		
+ 		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#help-collapse" aria-expanded="false" href="javascript:void(0);">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-info-circle fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Bantuan</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="help-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie" id="menu1">
+			
+			
+							
+			
+				<li><a class="dropdown-item" href="main9.php?wb=open">Langkah-langkah Pengguna Baharu</a></li>
+
+								
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/manual-pengguna-pengenalan-umum/" target="web">Kerangka Konseptual CIDS</a></li>
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/manual-pengguna-memulakan-perancangan/" target="web">Manual Pengguna - Memulakan Perancangan</a></li>
+				<li><a class="dropdown-item" href="https://asiemodel.net/perancangan-prasekolah-2026-prasekolah-pendidikan-khas-2026/" target="web">Manual Pengguna - Prasekolah</a></li>
+				
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/bimbingan-pdpr/" target="web">Bimbingan Pengguna – Kemahiran PdPR</a></li>
+									<!--
+				<li ><a class="dropdown-item" href="https://asiemodel.net/ms/kategori-subjek/" target="web">Manual Pengguna: Kategori Subjek</a></li>
+				-->
+				<li><a class="dropdown-item" href="https://asiemodel.net/ms/rujukan-dskp/" target="web">Rujukan: Sukatan &amp; Kategori Subjek</a></li>
+				<!--
+				<li ><a class="dropdown-item" href="https://asiemodel.net/ms/kbs-bahan-rujukan/" target="web">KBS - Bahan Rujukan</a></li>
+				-->
+				
+				
+				
+										
+								<!-- 
+				<li class="divider"></li>
+				<li ><B>Rujukan</B>
+									<li><a class="dropdown-item" href="javascript:void(0);">KBAT<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:40px">
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (aplikasi di sekolah 2014).pdf">KBAT (aplikasi di sekolah 2014)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (pedagogi -2014).pdf">KBAT (pedagogi -2014)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (konsep) (BI).pdf">KBAT (konsep) (BI)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (panduan).pdf">KBAT (panduan)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (aplikasi di sekolah 2014).pdf">KBAT (aplikasi di sekolah 2014)</a></li>
+							<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/KBAT/KBAT (konsep).pdf">KBAT (konsep)</a></li>
+
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">Ujian Psikometrik<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:40px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/ujian psikometrik_rendah (panduan).pdf">Ujian psikometrik_rendah (panduan)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian psikometrik_menengah (panduan).pdf">Ujian psikometrik_menengah (panduan).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (IMK).pdf">Ujian Psikometrik (IMK).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (ITP).pdf">Ujian Psikometrik (ITP).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (IKK).pdf">Ujian Psikometrik (IKK).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Kecerdasan Pelbagai (BI).pdf">Kecerdasan Pelbagai (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Kecerdasan Pelbagai 2 (BI).pdf">Kecerdasan Pelbagai 2 (BI).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Aptitud Tahun3 (penerangan).pdf">Ujian Aptitud Tahun3 (penerangan).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Aptitud Tahun3 (dokumen).pdf">Ujian Aptitud Tahun3 (dokumen).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Gaya belajar (BI).pdf">Gaya belajar (BI).pdf</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Ujian Psikometrik/Ujian Psikometrik (huraian).pdf">Ujian Psikometrik (huraian).pdf</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">Pembelajaran Abad Ke-21<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:117px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pembelajaran Abad Ke-21/Pembelajaran Abad Ke-21 (huraian ringkas).pdf">Pembelajaran Abad Ke-21 (huraian ringkas)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pembelajaran Abad Ke-21/Pembelajaran Abad Ke-21_2 (BI).pdf">Pembelajaran Abad Ke-21_2 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pembelajaran Abad Ke-21/Pembelajaran Abad Ke-21 (BI).pdf">Pembelajaran Abad Ke-21 (BI)</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">Pendidikan Umum<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:40px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran Abad Ke-21 (huraian ringkas).pdf">Pembelajaran Abad Ke-21 (huraian ringkas)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran Abad Ke-21_2 (BI).pdf">Pembelajaran Abad Ke-21_2 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pendidikan UNESCO_2030 (BI).pdf">Pendidikan UNESCO_2030 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pengajaran berkesan (BI).pdf">Pengajaran berkesan (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pendidikan UNESCO (BI).pdf">Pendidikan UNESCO (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran berasaskan hasilan (BI).pdf">Pembelajaran berasaskan hasilan (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/PPPM 2013-2025.pdf">PPPM 2013-2025</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Buku Panduan Pengurusan  PBS 2012.pdf">Buku Panduan Pengurusan  PBS 2012</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Pembelajaran Abad Ke-21 (BI).pdf">Pembelajaran Abad Ke-21 (BI)</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/Pendidikan Umum/Ubahsuaian Taksonomi Bloom (BI).pdf">Ubahsuaian Taksonomi Bloom (BI)</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="javascript:void(0);">PLC<i class="icon-arrow-right"></i></a>
+						<ul class="dropdown-menu sub-menu navbar-asie" style="top:168px">
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/PLC/Konsep PLC.pdf">Konsep PLC</a></li>
+						<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/PLC/Modul PLC.pdf">Modul PLC</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-item" href="/helpfile/RUJUKAN_BM/PENJELASAN MEDIA PENGAJARAN.pdf">Penjelasan Media Pengajaran</a></li>
+					
+								</li>
+				-->
+			</ul>
+			</div>
+          </li>    
+		
+ 
+		 <li class="nav-item dropdown" id="faq">
+		             <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#faq-collapse" aria-expanded="false" href="https://asiemodel.net/ms/soalan-lazim-faq/">
+		 			<div class="media">
+				<span class="media-left">
+						
+					<i class="icon far fa-comment-dots" aria-hidden="true" style="width:1.25em;text-align: center;"></i>
+				</span>
+				<span class="media-body ">Soalan Lazim - FAQ</span>
+			</div>	
+            </a>
+		 </li>	
+
+
+		 
+		  <li class="nav-item dropdown">
+            <a class="btn-toggle nav-link align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#exit-collapse" aria-expanded="false" href="#">
+			<div class="media">
+				<span class="media-left">
+					<i class="icon fa fa-sign-out-alt fa-fw " aria-hidden="true"></i>
+				</span>
+				<span class="media-body ">Keluar</span>
+			</div>	
+            </a>
+			<div class="collapse d-md-block" id="exit-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small dropdown-menu navbar-asie">
+						
+				<li><a class="dropdown-item" href="main.php">Laman Utama</a>
+				</li>
+							<li><a class="dropdown-item" href="logout.php?redirect=">Log Keluar</a>
+				</li>
+				
+			</ul>
+			</div>
+		</li>
+
+        </ul>
+
+        
+      </div>
+	  
+	
+ </nav>
+ <script>
+    const menu = document.getElementById('mySidenav');
+    const overlay = document.getElementById('overlay');
+    const toggleBtn = document.getElementById('menuToggle');
+
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        toggleBtn.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        toggleBtn.classList.remove('active');
+    });	
+
+</script>
+ <script type="text/javascript">
+function checkBeforeNavigate (url,msg="Anda belum Simpan tetapan atau kandungan! Sila klik Cancel untuk kembali atau klik OK untuk terus!") {
+
+	if (typeof belumedit === "undefined") {
+		proceed=true;
+	}
+	else if (belumedit) {
+		proceed=true;
+	}
+	else {
+		proceed=confirm(msg);
+	}
+	if (proceed) {
+		location.href=url;
+	}	
+	return false;
+}
+</script>
+ 	
+<main id="main"> 
+  
+  <style>
+.mainpage .row h1 { 
+	font-family:Roboto;
+	text-decoration:underline;
+	font-size:16px;
+	text-shadow:0 0 2px #000; 
+}
+.mainpage .row h1 {
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+.mainpage .row h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #eee;
+}
+.mainpage.module .cids_tagline {
+    font-size: 20px;
+    color: #eee;
+}
+.mainpage .row h3 {
+    width: 100%;
+    margin: 0;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.cids_tagline {
+    font-family: 'Brush Script MT',serif;
+    font-weight: normal;
+}
+.header.logo {
+    text-align: center;
+    color: #eee;
+    font-weight: normal;
+}
+.username img {
+    width: 60px;
+    height: auto;
+}
+.header img {
+    float: none;
+}
+.header.logo img {
+    height: 80px;
+    width: auto;
+}
+.username {
+    text-align: right;
+}
+.username {
+    float: right;
+    padding: 0px 10px 0px 0px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    color: #fff;
+}
+</style>
+	<div class="container-fluid navbar-dark bg-asie pt-4">
+	<div class="container-lg mainpage module">
+		<div class="row ">
+			<div class="col-lg-5 header">
+				<img src="/images/CIDS-newgen-logo.png" style="float:left;width:95px;padding-right:10px"> 
+								<h1>COLLABORATIVE INSTRUCTIONAL<br> DESIGN SYSTEM (CIDS)</h1>
+								<h3 class="cids_tagline">Transforming teachers... inspiring learners</h3>
+				
+			</div>
+			<div class="col-6 col-lg-2 header logo d-none d-sm-block">
+			<div class="school_logo"><img src="upload/school/ABA2057.jpg" height="100"><br></div><div class="nama_sekolah">SEKOLAH KEBANGSAAN PENGKALAN, PPD Kinta Utara, Perak, Malaysia</div><div class="penempatan"></div>			</div>
+			<div class="col-6 col-lg-5 header user d-none d-sm-block">
+				<div class="username">
+				<img src="upload/159707/900225025035.jpg" class="user_photo"><br>				MUHAMMAD AKMAL BIN NASIR 
+				                </div>
+			</div>
+        </div>
+	</div>
+</div>
+	<div class="container ">
+		<div class="row" style="flex-direction: row;flex-wrap: wrap;justify-content: flex-end;">
+		
+			
+			<style>
+			.lily-video,.lang_en .lily-video {right:0px;height: 34px;width: 50px;}
+			</style>
+			
+			<div class="vidtut" id="vidtut3"><div class="lily-video" id="" style="position:absolute"><a data-lity="" href="https://www.youtube.com/embed/gQS0BClGq14?autoplay=1&amp;rel=0"><img src="/images/video.jpg"></a></div></div>			
+			
+			
+			<div class="whattodo" id="whattodo_cids_concepts"><span class="wtd_ikon"></span><span class="wtd_header">Konsep Perancangan dan Peristilahan</span>
+			<span class="wtd_content">
+						<p><strong>Konsep Perancangan dan Peristilahan</strong></p>
+<ol>
+<li><strong>Peristilahan</strong>
+<ol style="list-style-type: lower-alpha;">
+<li><strong>Model Reka Bentuk Instruksional Integral ASIE</strong>
+<ol style="list-style-type: lower-roman;">
+<li>Sebagai prosedur aliran rancangan pelajaran.</li>
+<li>Terdapat 4 Komponen yang mengandungi beberapa elemen <strong>(1) Analisis</strong> (Analisis Pengetahuan – profil pembelajaran berdasarkan DSKP untuk membentuk objektif pembelajaran), <strong>(2) Menyusun Strategi</strong> (Membangun Kemahiran, Membentuk Karakter, Menerap Pembelajaran - Meta ) <strong>(3) Melaksana</strong> – melaksana dalam PdP, <strong>(4) Menilai</strong> – menilai perancangan guru.</li>
+<li>Elemen-elemen itu merupakan <strong>kompetensi &amp; subkompetensi</strong> yang diperlukan oleh pelajar untuk guru mengintegrasikan dalam perancangan pembelajaran.</li>
+</ol>
+</li>
+<li><strong>MIW </strong>– <strong>Multiple Integration Worksheet</strong> – (Lembaran Integrasi Pelbagai) – templat yang mengumpul pilihan item-item perancangan untuk <strong>1 minggu pengajaran</strong>.</li>
+<li><strong>RPT </strong>– <strong>Rancangan Pelajaran Tahunan - MIW</strong> yang dicipta untuk setiap minggu secara otomatik akan membentuk RPT.</li>
+<li><strong>RPH </strong>– Beberapa <strong>Rancangan Pelajaran Harian</strong> yang dicipta berdasarkan pilihan dibuat daripada MIW.</li>
+<li><strong>Rekod </strong>– Satu set perancangan – <strong>MIW &amp; RPH</strong> – tidak boleh dipisahkan.</li>
+</ol>
+</li>
+<li>Perancangan
+<ol style="list-style-type: lower-alpha;">
+<li>Jika perancangan dibuat pada <strong>awal tahun – dicadangkan</strong>:
+<ul>
+<li><strong>Cipta RPT</strong> terlebih dahulu - proses ini akan membentuk perancangan beberapa MIW untuk sepanjang tahun.</li>
+<li>Untuk <strong>mencipta RPH</strong> - tekan <strong>Buka Rekod</strong>.</li>
+<li>Pilih rekod pada minggu <strong>MIW </strong>yang diperlukan <strong>&amp; teruskan proses cipta RPH</strong> yang ringkas.</li>
+</ul>
+</li>
+<li>Jika perancangan dibuat <strong>pertengahan tahun atau seumpama dengannya</strong>
+<ul>
+<li>Mulakan dengan tekan <strong>Cipta Rekod </strong></li>
+<li><strong>Teruskan proses Cipta RPH </strong></li>
+<li>Rekod yang dicipta akan secara automatik <strong>terbentuk RPT</strong></li>
+<li>Perancangan secara auto membentuk 2 jenis rekod - <strong>MIW (RPT) &amp; MIW (membentuk RPH).</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><br>Sila rujuk Manual Pengguna untuk butiran lengkap atau informasi dan klip video yang terdapat pada setiap laman perancangan.</p>
+						</span></div>
+			
+			<div class="vidtut" id="vidtut4"><div class="lily-video" id="" style="position:absolute"><a data-lity="" href="https://www.youtube.com/embed/elF4Ntqw0CQ?autoplay=1&amp;rel=0"><img src="/images/video.jpg"></a></div><br><br></div>
+
+			<div class="whattodo" id="whattodo_mainmodel"><span class="wtd_ikon"></span><span class="wtd_header">Apa perlu saya buat?</span>
+			<span class="wtd_content">
+						<p><strong>Anda akan merancang instruksional seperti pilihan berikut: </strong></p>
+<ol style="list-style-type: lower-alpha;">
+<li>Merancang RPT pada awal tahun
+<ol style="list-style-type: lower-roman;">
+<li>Tekan <strong>Rekod – Rancangan Pelajaran Tahunan </strong></li>
+</ol>
+</li>
+<li>Merancang RPH setiap minggu
+<ol style="list-style-type: lower-roman;">
+<li>Jika RPT telah dicipta pada awal tahun – tekan <strong>Buka Rekod</strong> dan <strong>pilih rekod</strong> yang diperlukan.</li>
+<li>Jika RPT tidak dicipta – tekan <strong>Cipta Rekod Baharu</strong></li>
+</ol>
+</li>
+</ol>
+<p><br>Sila rujuk Manual Pengguna untuk butiran lengkap atau informasi dan klip video yang terdapat pada setiap laman perancangan.</p>
+			</span></div>
+			
+							
+			
+		
+			
+        </div>
+	</div>		
+	
+			
+	<div class="container asie-arial13 central3">
+		<div class="center" style="font-weight:bold;font-size:16px"><!-- img id='best-practice' src="/images/best_practices.jpg" style="" -->
+				Model Reka Bentuk Instruksional Integral ASIE<br>
+		<i>Sebagai Tool Aliran Langkah-Langkah Mereka Bentuk Aktiviti Instruksional (eRPH) Abad Ke-21</i>
+		
+				</div><br>
+		
+		<!--
+		<div class="row" style="text-align:center;font-size:26px;color:blue">
+			<ul>
+			
+			<li>&#8226; Lalukan tetikus (<i>mouse over</i>) ke atas teks
+dalam komponen model dan ke atas garisan arah aliran untuk membaca preskripsi</li>
+			
+			</ul>
+
+
+		
+		</div>-->
+	</div>
+	
+	<style>
+.asieimage {
+	position:relative;
+	width:900px;
+	height:695px;
+	/* background-color:#eee; */
+	z-index:0;
+	max-width:none;
+}
+.asieimage li {
+		font-size:17px;
+		line-height:17px;
+		color:#eee;
+		text-shadow: 1px 1px 2px #333;
+}
+.asieimage h1 {
+	font-size:24px;
+	color:#eee;
+	text-shadow: 1px 1px 2px #333;
+	margin:3px 0;
+	line-height:30px;
+	z-index:10;
+}
+.asieimage li a{
+	color:#eee;
+	font-size: 17px;
+    line-height: 17px;
+}
+.asieimage li.v9 a {
+	font-size:19px;
+}
+.asieimage h1 a{
+	color:#eee;
+	font-size: 24px;
+    line-height: 30px;
+}
+.asieimage h1.letter {
+	font-size:40px;
+	margin:15px 0 0;
+	font-family:"Arial Black",Arial;
+	font-weight:bold;
+	color: #fff;
+   text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.asieimage ul {
+	z-index:10;
+	margin:0;
+}
+.bullet {
+	font-size:30px;
+}
+#green_circle {
+	position:absolute;
+	top:143px;
+	left:200px;
+	width:500px;
+	height:402px;
+}
+#bg_ukur {
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:0;
+}
+#strategize{
+	position:absolute;
+	top:10px;
+	left:310px;
+	z-index:2;
+	width:280px;
+	height:250px;
+	text-align:center;
+	border:0px solid #999;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#strategize img{
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:-5;
+	width:280px;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#strategize ul{
+	margin-top:-15px;
+}
+#strategize li{
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#strategize li.v9{
+	font-style:normal;
+	font-size:20px;
+	line-height:20px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+#strategize li.v9 a{
+	font-size:20px;
+	line-height:20px;
+}
+#evaluate {
+	position:absolute;
+	bottom:10px;
+	left:310px;
+	z-index:2;
+	width:280px;
+	height:250px;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+	text-align:center;
+	border:0px solid #999;
+}
+#evaluate img{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	z-index:-5;
+	width:280px;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#evaluate li{
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#analisis {
+	position:absolute;
+	top:220px;
+	left:10px;
+	z-index:2;
+	width:280px;
+	height:250px;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+	text-align:center;
+	border:0px solid #999;
+}	
+#analisis img{
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:-5;
+	width:280px;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#analisis li{
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#implement {
+	position:absolute;
+	top:220px;
+	right:10px;
+	z-index:2;
+	width:280px;
+	height:250px;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+	text-align:center;
+	border:0px solid #999;
+}
+#implement img{
+	position:absolute;
+	top:0px;
+	right:0px;
+	z-index:-5;
+	width:280px;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#implement li{
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#analisis:hover {
+	width:320px;
+	left:0px;
+	top:200px;
+	z-index:8;
+}
+#analisis:hover img{
+	top:0px;
+	left:0px;
+	width:320px;
+}	
+#analisis:hover li{
+	padding-bottom:5px;
+	padding-top:5px;
+
+}
+#implement:hover {
+	width:320px;
+	right:0px;
+	top:200px;
+	z-index:8;
+}
+#implement:hover img{
+	top:0px;
+	right:0px;
+	width:320px;
+}
+#implement:hover li{
+	padding-bottom:5px;
+	padding-top:5px;
+	line-height:22px;
+
+}
+#analisis h1.letter, #implement h1.letter{
+	margin:25px 0 0;
+}
+#strategize:hover{
+	width:320px;
+	top:0px;
+	left:290px;
+	height:290px;
+	z-index:8;
+}
+#strategize:hover img{
+	top:0px;
+	left:0px;
+	width:320px;
+}
+#strategize:hover li{
+	margin-bottom: 5px;
+    margin-top: 7px;
+	
+}
+#evaluate:hover {
+	bottom:0px;
+	left:290px;
+	width:320px;
+	height:280px;
+	z-index:8;
+}
+#evaluate:hover img{
+	bottom:0px;
+	left:0px;
+	width:320px;
+}
+#evaluate:hover li{
+	margin-bottom:5px;
+	line-height:22px;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+.asieimage li:hover,.asieimage li:hover a{
+	color:yellow;
+	text-decoration:none;
+}
+.asieimage li.v9:hover,.asieimage li.v9:hover a{
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+.asieimage h1:hover,.asieimage h1:hover a{
+	color:yellow;
+	text-decoration:none;
+}
+.asieimage a:visited,.asieimage a:focus {
+	text-decoration:none;
+}
+.asieimage a:active {
+	background-color:rgba(50,50,50,0.2);
+}
+#miw {
+	position:absolute;
+	width:200px;
+	height:96px;
+	top: 304px;
+	left:350px;
+	text-align:center;
+	border:1px dashed #333;
+	border-radius:20px;
+	z-index:30;
+	-webkit-transition: all .25s ease-in-out; 
+    transition: all .25s ease-in-out;
+}
+#miw:hover {
+	background-color: rgba(200,200,200,0.5);
+	width:210px;
+	height:100px;
+	top: 299px;
+	left:345px;
+
+}
+#miw h1 {
+	color:#333;
+	text-shadow: none;
+	line-height:30px;
+	z-index:10;
+	margin:0;
+}
+#miw a, #miw a:visited, #miw a:focus, #miw a:active {
+	color:#333;
+	text-decoration:none;
+}
+#asiemodeltitle {
+	font-family:"Arial Black";
+	font-size:16px;
+	text-align:center;
+	position:absolute;
+	top:20px;
+	right:10px;
+	width:300px;
+	text-transform: none;
+}
+#asiemodelhelp{
+	font-family:"Arial";
+	font-size:11px;
+	line-height:12px;
+	text-align:left;
+	position:absolute;
+	top:10px;
+	left:10px;
+	width:300px;
+	text-transform: none;
+}
+#asiemodelhelp b{
+	line-height:14px;
+	margin-bottom:2px;
+}
+#asiemodelhelp span {
+	line-height:13px;
+	font-size:11px;
+	padding-left:12px;
+	text-indent: -12px;
+	display:block;
+	padding-top: 4px;
+    padding-bottom: 4px;	
+}
+#asiemodelhelp span b{
+	font-size:11px;
+	line-height:13px;
+	
+}
+#asiemodelhelp span i{
+	font-size:11px;	
+	line-height:13px;
+}
+.redda {
+	position:absolute;
+	width: 90px;
+	border:0px solid #fee;
+	z-index:7;
+}
+#redda1 {
+    top: 225px;
+    left: 247px;
+	-ms-transform: rotate(-40deg); /* IE 9 */
+    -webkit-transform: rotate(-40deg); /* Chrome, Safari, Opera */
+    transform: rotate(-40deg);
+}
+#redda2 {
+    top: 225px;
+    right: 247px;
+	-ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+    transform: rotate(40deg);
+}
+#redda3 {
+    bottom: 225px;
+    left: 247px;
+	-ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+    transform: rotate(40deg);
+}
+#redda4{
+    bottom: 225px;
+    right: 247px;
+	-ms-transform: rotate(-40deg); /* IE 9 */
+    -webkit-transform: rotate(-40deg); /* Chrome, Safari, Opera */
+    transform: rotate(-40deg);
+
+}
+.arrow {
+	position:absolute;
+}
+#barrow2 {
+	top:120px;
+	right:150px;
+}
+#barrow4 {
+	bottom:120px;
+	left:150px;
+}
+#tarrow1 {
+	top:125px;
+	left:150px;
+}
+#tarrow3 {
+	bottom:125px;
+	right:150px;
+}
+#uarrow2 {
+	top:120px;
+	right:140px;
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+	z-index:20;
+}
+#uarrow4 {
+	bottom:120px;
+	left:140px;
+	z-index:20;
+}
+#rarrow1 {
+	top:110px;
+	left:150px;
+	z-index:20;
+}
+#rarrow3 {
+	bottom:110px;
+	right:150px;
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+	z-index:20;
+}
+#middlearrow{
+	top: 260px;
+    left: 290px;
+    height: 180px;
+    width: 320px;
+}
+.m_bm {
+	font-size:20px;
+	font-weight:normal;
+}
+.m_en {
+	font-size:20px;
+	font-weight:normal;
+}
+.m_bi_miw {
+	font-size:12px;
+	font-weight:normal;
+	font-style:italic;
+}
+.en li.f_smaller:hover a {
+	font-size:20px;
+}
+.en li.f_smaller a {
+	font-size:16px;
+}
+.ms li.f_smaller a {
+	font-size:16px;
+}
+.ms li.f_smaller:hover a {
+	font-size:22px;
+}
+.side_info {
+	font-size:13px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100px;
+	line-height:11px;
+}
+.side_info i {
+	font-size:13px;
+	line-height:11px;
+}
+.asieimage a {
+	text-decoration:none;
+}
+.asieimage ul {
+	padding:0;
+}
+#miw span {
+	/*font-size:20px;*/
+}
+@media (max-width:991px) {
+	.asieimage {
+		width:700px;
+		height:542px;
+	}
+	#strategize{
+	top:10px;
+	left:241px;
+	width:218px;
+	height:195px;
+	}	
+	#strategize img{
+		width:218px;
+	}
+	#implement {
+	top:171px;
+	right:10px;
+	width:218px;
+	height:195px;
+	}
+	#implement img{
+		width:218px;
+	}
+	#evaluate {
+	bottom:10px;
+	left:241px;
+	width:218px;
+	height:195px;
+	}
+	#evaluate img{
+		width:218px;
+	}
+	#analisis {
+		top:171px;
+		left:10px;
+		width:218px;
+		height:195px;
+	}	
+	#analisis img{
+		width:218px;
+	}
+	#green_circle {
+		top:112px;
+		left:156px;
+		width:390px;
+		height:313px;
+	}	
+	
+	#analisis:hover {
+	width:250px;
+	left:0px;
+	top:156px;
+	z-index:8;
+	}
+	#analisis:hover img{
+		top:0px;
+		left:0px;
+		width:250px;
+	}	
+	#implement:hover {
+		width:250px;
+		right:0px;
+		top:156px;
+		z-index:8;
+	}
+	#implement:hover img{
+		top:0px;
+		right:0px;
+		width:250px;
+	}
+	#strategize:hover{
+		width:250px;
+		top:0px;
+		left:226px;
+		height:226px;
+		z-index:8;
+	}
+	#strategize:hover img{
+		top:0px;
+		left:0px;
+		width:250px;
+	}
+	#evaluate:hover {
+		bottom:0px;
+		left:226px;
+		width:250px;
+		height:218px;
+		z-index:8;
+	}
+	#evaluate:hover img{
+		bottom:0px;
+		left:0px;
+		width:250px;
+	}
+	#miw {
+		width:156px;
+		height:75px;
+		top: 237px;
+		left:273px;
+	}
+	#miw:hover {
+		width:163px;
+		height:78px;
+		top: 233px;
+		left:269px;
+	}
+	.asieimage li.v9 a {
+    font-size: 15px;
+	}
+	.asieimage li a {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	#strategize li.v9 a {
+    font-size: 15px;
+    line-height: 15px;
+	}
+	.asieimage h1 {
+    font-size: 21px;
+    line-height: 21px;
+	}
+	.asieimage h1.letter {
+		margin-bottom:10px!important;
+	}
+	#strategize ul {
+		margin-top: -10px;
+	}
+	#miw h1 {
+		font-size:16px;
+	}
+	#miw span {
+		font-size:15px;
+	}
+	.lang_ms #miw span {
+		font-size:13px;
+		display:block;
+		line-height:12px;
+	}
+	.lang_ms #miw span.m_bi_miw {
+		display:none;
+	}
+	.lang_ms #evaluate li {
+		margin-top: -16px;
+	}
+	.lang_ms .asieimage h1 a {
+		font-size: 21px;
+		line-height: 21px;
+	}
+	.lang_ms #strategize li.v9 {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	
+	.redda {
+	width: 70px;
+	}
+	#redda1 {
+		top: 175px;
+		left: 192px;
+	}
+	#redda2 {
+		top: 175px;
+		right: 192px;
+	}
+	#redda3 {
+		bottom: 175px;
+		left: 192px;
+	}
+	#redda4{
+		bottom: 175px;
+		right: 192px;
+	}
+
+#barrow2 {
+	top:93px;
+	right:117px;
+}
+#barrow4 {
+	bottom:93px;
+	left:117px;
+}
+#tarrow1 {
+	top:97px;
+	left:117px;
+}
+#tarrow3 {
+	bottom:97px;
+	right:117px;
+}
+#uarrow2 {
+	top:93px;
+	right:109px;
+	height: 84px;
+}
+#uarrow4 {
+	bottom:93px;
+	left:109px;
+	height: 86px;
+}
+#rarrow1 {
+	top:88px;
+	left:117px;
+	width:133px;
+}
+#rarrow3 {
+	bottom:88px;
+	right:117px;
+	width:133px;
+
+}
+#middlearrow{
+	top: 202px;
+    left: 226px;
+    height: 140px;
+    width: 250px;
+}
+
+}
+/* .model_figure_content {
+	width: 455px; 
+    transform: scale(0.65);
+    transform-origin: top left;
+}
+*/
+</style>
+
+	<div class="container-fluid model_figure">
+		
+		<div class="model_figure_content">
+			<div class="asieimage ms">
+
+			<!-- <img src="/model/animasi/bg_ukur.jpg" id="bg_ukur"> -->
+			<img src="/model/animasi/green_circle.png" id="green_circle" title="Kitaran refleksi:  
+Menunjukkan refleksi yang dibuat terhadap aspek-aspek  
+dan item-item di dalam komponen 
+dan antara komponen-komponen dalam kitaran.">
+			
+			
+			
+			
+			<div id="strategize">
+				<h1 title="MENYUSUN STRATEGI" class="letter">S</h1>
+				<h1 title="Prosedur menyusun strategi pengajaran 
+di peringkat makro/rancangan mingguan 
+berdasarkan PAK21 atau persekitaran 
+pembelajaran lain yang sesuai">STRATEGIZE<br><span class="m_bm">(Menyusun Strategi)</span></h1>
+				<br>
+			
+				<ul>
+	
+					<li class="v9"><a href="set9.php?action=developingskills&amp;v=9.0" title="“Bagaimana kita guna apa yang kita tahu” - 
+Kemahiran Belajar terkini yang harus dikuasai oleh murid,
+kaedah, teknik, pendekatan dan pentaksiran yang sesuai 
+dengan proses pembelajaran.">
+					Membangun - Kemahiran</a></li>
+					
+					<li class="v9"><a href="set9.php?action=buildingcharacter&amp;v=9.0" title="“Bagaimana kita berkelakuan dan terlibat di persada dunia” - Sikap, tingkah laku, pola
+ fikiran, keperibadian, perangai, nilai,
+ kemahiran sosial dan emosi, kemahiran 
+bukan kognitif, dan kemahiran insaniah.">
+					Membentuk - Karakter</a></li>
+					
+					<li class="v9"><a href="set9.php?action=instillingmetalearning&amp;v=9.0" title="“Bagaimana kita melakukan refleksi 
+dan adaptasi pada diri” - Nilai dalam 
+Meta-kognisi &amp; pertumbuhan “mindset”">
+					Menerap - <br>Pembelajaran-Meta</a></li>
+			
+				</ul>
+				<img src="/model/animasi/strategize.png">
+			</div>
+			<div id="evaluate">
+			<h1 title="MENILAI" class="letter">E</h1>
+				<h1><a alt="EVALUATE" title="Prosedur penambahbaikan dan 
+refleksi pengajaran." href="javascript:void(0);">
+				EVALUATE<br><span class="m_bm">(Menilai)</span></a></h1><br>
+				
+				<ul>
+					<li class="v9"><a title="Menyemak semula perancangan pembelajaran berdasarkan 
+maklum balas untuk penambahbaikan masa hadapan" href="forms9.php">
+					Bertindak Balas, Mengkaji<br>&amp; Menyemak Semula<br>Perancangan Instruksional</a></li>
+					
+				</ul>
+				<img src="/model/animasi/evaluate.png">
+			</div>
+			<div id="analisis">
+				<h1 title="ANALISIS" class="letter">A</h1>
+				<h1 title="Analisis tema PAK21, kandungan pembelajaran, 
+subjek, objektif pembelajaran atau item-item 
+lain yang berkaitan.">ANALYZE<br><span class="m_bm">(Analisis)</span></h1>
+				<ul>
+					<li class="v9" style="padding:10px 0 10px"><a href="set9.php?action=instructional&amp;v=9.0" title="Apa yang kita tahu dan faham - 
+Senarai maklumat pada profil pembelajaran seperti Tema PAK21, 
+kandungan subjek, objektif pembelajaran atau item-item lain yang berkaitan.">
+					Integrasi - Pengetahuan</a></li>
+									
+
+			<li style="font-style:italic"><a href="set9.php?action=instructional" title="Informasi tentang isi kandungan subjek, 
+tema PAK21 dan item-item lain"> 
+					Profil Pembelajaran</a></li>
+
+					<li style="font-style:italic"><a href="set9.php?action=media9" title="Kesediaan pelajar terhadap pelajaran &amp; 
+atribut pelajar – profil ujian psikometrik 
+tertentu atau profil-profil lain"> 
+					Profil Pelajar</a></li>
+					
+					<li style="font-style:italic"><a href="set9.php?action=media9" title="Senarai cadangan pelbagai sumber pembelajaran
+yang boleh dipilih untuk diintegrasikan dalam PdP.">
+					Profil Media Pembelajaran</a></li>
+					
+				</ul>
+				<img src="/model/animasi/analisis.png">
+
+			</div>
+			<div id="implement">
+				<h1 title="MELAKSANA" class="letter">I</h1>
+				<h1><a alt="IMPLEMENT" title="Prosedur mengadaptasi perancangan 
+pengajaran di peringkat makro / 
+rancangan mingguan untuk mencipta RPH" href="miw9.php?action=miw">
+				IMPLEMENT<br><span class="m_bm">(Melaksana)</span></a></h1><br>
+				<ul>
+					<li class="v9"><a title="Perancangan yang dibina disesuaikan bagi membentuk Rancangan 
+Pelajaran Harian untuk dilaksanakan dalam sesi PdPC" href="miw9.php?action=miw">
+					Mengadaptasi &amp; Mengaplikasi <br>Perancangan Instruksional</a></li>
+					
+				</ul>
+			<img src="/model/animasi/implement.png">
+
+			</div>
+			<div id="miw"><a alt="MIW" title="Paparan maklumat perancangan pengajaran peringkat 
+mingguan/topikal untuk membina beberapa 
+Rancangan Pengajaran Harian (RPH)." href="miw9.php?action=miw">
+			<h1>MIW</h1> 
+				<span style=""><span class="m_bi_miw">(Multiple Integration Worksheet)</span><br>
+(Lembaran Kerja Integrasi Pelbagai)</span></a>
+			</div>
+			<img src="/model/animasi/red_dotted_arrow.png" class="redda" id="redda1" title="Interaksi antara komponen:  
+Interaksi 2 hala antara komponen-komponen dan MIW, 
+bagi mewujudkan keadaan yang lebih fleksibel kepada guru  
+ketika merancang pengajaran dengan merujuk,  membuat pertimbangan semula 
+atau membuat perubahan pada maklumat yang terdapat pada aspek dan item 
+dalam komponen-komponen tersebut ke arah memenuhi keperluan pelajar.">
+			<img src="/model/animasi/red_dotted_arrow.png" class="redda" id="redda2" title="Interaksi antara komponen:  
+Interaksi 2 hala antara komponen-komponen dan MIW, 
+bagi mewujudkan keadaan yang lebih fleksibel kepada guru  
+ketika merancang pengajaran dengan merujuk,  membuat pertimbangan semula 
+atau membuat perubahan pada maklumat yang terdapat pada aspek dan item 
+dalam komponen-komponen tersebut ke arah memenuhi keperluan pelajar.">
+			<img src="/model/animasi/red_dotted_arrow.png" class="redda" id="redda3" title="Interaksi antara komponen:  
+Interaksi 2 hala antara komponen-komponen dan MIW, 
+bagi mewujudkan keadaan yang lebih fleksibel kepada guru  
+ketika merancang pengajaran dengan merujuk,  membuat pertimbangan semula 
+atau membuat perubahan pada maklumat yang terdapat pada aspek dan item 
+dalam komponen-komponen tersebut ke arah memenuhi keperluan pelajar.">
+			<img src="/model/animasi/red_dotted_arrow.png" class="redda" id="redda4" title="Interaksi antara komponen:  
+Interaksi 2 hala antara komponen-komponen dan MIW, 
+bagi mewujudkan keadaan yang lebih fleksibel kepada guru  
+ketika merancang pengajaran dengan merujuk,  membuat pertimbangan semula 
+atau membuat perubahan pada maklumat yang terdapat pada aspek dan item 
+dalam komponen-komponen tersebut ke arah memenuhi keperluan pelajar.">
+			
+			<img src="/model/animasi/barrow.png" class="arrow" id="barrow2" title="Aliran prosedur: 
+Menunjukkan arah aliran prosedur yang praktikal 
+terhadap pembentukan perancangan pengajaran 
+dari satu komponen ke satu komponen yang lain.">
+			<img src="/model/animasi/barrow.png" class="arrow" id="barrow4" title="Aliran prosedur: 
+Menunjukkan arah aliran prosedur yang praktikal 
+terhadap pembentukan perancangan pengajaran 
+dari satu komponen ke satu komponen yang lain.">
+			<img src="/model/animasi/tarrow.png" class="arrow" id="tarrow1" title="Aliran prosedur: 
+Menunjukkan arah aliran prosedur yang praktikal 
+terhadap pembentukan perancangan pengajaran 
+dari satu komponen ke satu komponen yang lain.">
+			<img src="/model/animasi/tarrow.png" class="arrow" id="tarrow3" title="Aliran prosedur: 
+Menunjukkan arah aliran prosedur yang praktikal 
+terhadap pembentukan perancangan pengajaran 
+dari satu komponen ke satu komponen yang lain.">
+			<img src="/model/animasi/uarrow.png" class="arrow" id="uarrow2" title="Aliran prosedur: 
+Menunjukkan arah aliran prosedur yang praktikal 
+terhadap pembentukan perancangan pengajaran 
+dari satu komponen ke satu komponen yang lain.">
+			<img src="/model/animasi/uarrow.png" class="arrow" id="uarrow4" title="Aliran prosedur: 
+Menunjukkan arah aliran prosedur yang praktikal 
+terhadap pembentukan perancangan pengajaran 
+dari satu komponen ke satu komponen yang lain.">
+			<img src="/model/animasi/rarrow.png" class="arrow" id="rarrow1" title="Aliran prosedur: 
+Menunjukkan arah aliran prosedur yang praktikal 
+terhadap pembentukan perancangan pengajaran 
+dari satu komponen ke satu komponen yang lain.">
+			<img src="/model/animasi/rarrow.png" class="arrow" id="rarrow3" title="Aliran prosedur: 
+Menunjukkan arah aliran prosedur yang praktikal 
+terhadap pembentukan perancangan pengajaran 
+dari satu komponen ke satu komponen yang lain.">
+			
+			<img src="/model/animasi/middlearrow.png" class="arrow" id="middlearrow" width="320" height="180" usemap="#image-maps-middlearrow">
+			<map name="image-maps-middlearrow" id="image-maps-middlearrow">
+			<area id="o1" alt="o1" title="Integrasi komponen-komponen:  
+Integrasi maklumat yang terdapat pada komponen-komponen 
+ke dalam MIW yang merupakan mekanisme mereka bentuk 
+keseluruhan perancangan." shape="rect" coords="144,0,173,45" style="outline:none;" target="_self">
+			<area id="o2" alt="o2" title="Integrasi komponen-komponen:  
+Integrasi maklumat yang terdapat pada komponen-komponen 
+ke dalam MIW yang merupakan mekanisme mereka bentuk 
+keseluruhan perancangan." shape="rect" coords="271,78,318,101" style="outline:none;" target="_self">
+			<area id="o3" alt="o3" title="Integrasi komponen-komponen:  
+Integrasi maklumat yang terdapat pada komponen-komponen 
+ke dalam MIW yang merupakan mekanisme mereka bentuk 
+keseluruhan perancangan." shape="rect" coords="143,139,175,178" style="outline:none;" target="_self">
+			<area id="o4" alt="o4" title="Integrasi komponen-komponen:  
+Integrasi maklumat yang terdapat pada komponen-komponen 
+ke dalam MIW yang merupakan mekanisme mereka bentuk 
+keseluruhan perancangan." shape="rect" coords="0,74,54,99" style="outline:none;" target="_self">
+			<area id="rd1" alt="rd1" title="Interaksi antara komponen:  
+Interaksi 2 hala antara komponen-komponen dan MIW, 
+bagi mewujudkan keadaan yang lebih fleksibel kepada guru  
+ketika merancang pengajaran dengan merujuk,  membuat pertimbangan semula 
+atau membuat perubahan pada maklumat yang terdapat pada aspek dan item 
+dalam komponen-komponen tersebut ke arah memenuhi keperluan pelajar." shape="rect" coords="171,0,204,50" style="outline:none;" target="_self">
+			<area id="rd2" alt="rd2" title="Interaksi antara komponen:  
+Interaksi 2 hala antara komponen-komponen dan MIW, 
+bagi mewujudkan keadaan yang lebih fleksibel kepada guru  
+ketika merancang pengajaran dengan merujuk,  membuat pertimbangan semula 
+atau membuat perubahan pada maklumat yang terdapat pada aspek dan item 
+dalam komponen-komponen tersebut ke arah memenuhi keperluan pelajar." shape="rect" coords="267,99,317,124" style="outline:none;" target="_self">
+			<area id="rd3" alt="rd3" title="Interaksi antara komponen:  
+Interaksi 2 hala antara komponen-komponen dan MIW, 
+bagi mewujudkan keadaan yang lebih fleksibel kepada guru  
+ketika merancang pengajaran dengan merujuk,  membuat pertimbangan semula 
+atau membuat perubahan pada maklumat yang terdapat pada aspek dan item 
+dalam komponen-komponen tersebut ke arah memenuhi keperluan pelajar." shape="rect" coords="172,139,197,176" style="outline:none;" target="_self">
+			<area id="rd4" alt="rd4" title="Interaksi antara komponen:  
+Interaksi 2 hala antara komponen-komponen dan MIW, 
+bagi mewujudkan keadaan yang lebih fleksibel kepada guru  
+ketika merancang pengajaran dengan merujuk,  membuat pertimbangan semula 
+atau membuat perubahan pada maklumat yang terdapat pada aspek dan item 
+dalam komponen-komponen tersebut ke arah memenuhi keperluan pelajar." shape="rect" coords="4,98,58,126" style="outline:none;" target="_self">
+			</map>
+
+			</div>
+		</div>
+	</div>
+	
+<script>
+function adjustScale() {
+    const content = document.querySelector('.planning-content');
+    const scale = window.innerWidth < 768 ? 0.65 : 1;
+
+    content.style.transform = `scale(${scale})`;
+}
+
+//adjustScale();
+//window.addEventListener('resize', adjustScale);
+</script>	
+</main>
+</div>
+
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript">
+function toggleNav() {
+	var element = document.getElementById("body");
+	if (element.classList) {
+	  element.classList.toggle("folded");
+	} else {
+	  // For IE9
+	  var classes = element.className.split(" ");
+	  var i = classes.indexOf("folded");
+
+	  if (i >= 0) {
+		classes.splice(i, 1);
+	  }
+	  else {
+		classes.push("folded");
+		element.className = classes.join(" ");
+	  }
+	}
+
+	if (folded=='yes') {
+		setCookie('folded','no',100)
+	}
+	else if (folded=='no') {
+		setCookie('folded','yes',100)
+	}
+}
+var folded = getCookie('folded');
+if (folded==='') folded = 'yes';
+</script>
+
+
+
+<script type="text/javascript">
+$(".whattodo").click(function(){
+	var id = $(this).attr("id");
+	//alert(id);
+	if(id) {
+		$("#"+id).toggleClass("expand");
+	}
+	else {
+		$(".whattodo").toggleClass("expand");
+	}
+});
+
+</script>
+
+<link href="/js/lity-2.3.1/dist/lity.css" rel="stylesheet">
+<script src="/js/lity-2.3.1/dist/lity.js"></script>
+
+<script src="/js/bootstrap-5.0.0-beta1/bootstrap.bundle.min.js"></script>
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;3375acf92f06438e94a4d307a9f7b026&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+
+</body></html>

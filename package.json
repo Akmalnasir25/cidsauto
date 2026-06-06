@@ -1,0 +1,23 @@
+{
+  "name": "cidsauto",
+  "version": "1.0.0",
+  "description": "CIDS eRPH automation - auto-fill RPH for all classes/weeks 2026",
+  "main": "index.js",
+   "scripts": {
+     "start": "node server.js",
+     "login": "node index.js 2 2 pj6",
+     "extract": "py -3 extract_rpt.py",
+     "test": "node index.js 2 2 pj6",
+     "minggu8": "node index.js 8 8 all"
+   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "mammoth": "^1.12.0",
+    "multer": "^2.1.1",
+    "playwright": "^1.60.0"
+  }
+}
