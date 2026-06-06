@@ -835,11 +835,6 @@ async function main() {
      ]
    };
 
-   // Allow custom executable path for container deployments (e.g., Railway/Render)
-   if (process.env.PLAYWRIGHT_EXECUTABLE_PATH) {
-     launchOptions.executablePath = process.env.PLAYWRIGHT_EXECUTABLE_PATH;
-   }
-
    const browser = await chromium.launch(launchOptions);
 
   const context = await browser.newContext({
