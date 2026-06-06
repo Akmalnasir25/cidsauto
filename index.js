@@ -37,7 +37,7 @@ const CONFIG = {
   baseUrl: 'https://asiemodel.net/model/',
   username: USERNAME,
   password: PASSWORD,
-  headless: false,
+  headless: process.env.HEADLESS === 'true' || process.env.NODE_ENV === 'production',
   slowMo: 300,
   timeout: 60000,
   teacherName: TEAM_NAME,
