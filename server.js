@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3001;
 let isRunning = false;
 let currentLog = '';
 let currentProcess = null;
+let currentPort = PORT; // For tracking actual port
 
 const CONFIG_PATH = path.join(__dirname, 'config.json');
 
@@ -471,7 +472,7 @@ const server = http.createServer((req, res) => {
 
 function startServer(port) {
   server.listen(port, () => {
-    PORT = port;
+    currentPort = port;
     console.log(`\n╔═══════════════════════════════════════════╗`);
     console.log(`║   RPH AUTOMATION INTERFACE                ║`);
     console.log(`║   Server berjalan di:                     ║`);
@@ -485,6 +486,8 @@ function startServer(port) {
     } else {
       console.error(e);
     }
+  });
+}
   });
 }
 
