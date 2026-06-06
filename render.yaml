@@ -11,10 +11,6 @@ services:
         value: production
       - key: ACTIVE_PROFILE
         value: Akmal
-      - key: CIDS_USERNAME
-        fromSecret: cids_username
-      - key: CIDS_PASSWORD
-        fromSecret: cids_password
       - key: PYTHONUNBUFFERED
         value: "1"
 
