@@ -59,9 +59,6 @@ const SUBJECT_MAP = {
   'MAT6': { cls: 'cg_primary-year6-subject__matematik_semakan', nama: 'Matematik Tahun 6' },
 };
 
-const CLASS_SCHEDULE = activeProfile.schedule || {};
-const MIW_GROUPS = activeProfile.groups || [];
-
 function addDaysToDate(dateStr, daysToAdd) {
   const parts = dateStr.split('/');
   const d = new Date(parts[2], parts[1] - 1, parts[0]);
