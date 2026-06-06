@@ -48,7 +48,7 @@ const CONFIG = {
 };
 
 console.log(`[PROFILE] Menggunakan profil: ${activeProfileName}`);
-console.log(`[RPT] Memuat data dari: ${rptFileName}`);
+console.log(`[RPT] Memuat data dari: ${RPT_FILE}`);
 
 const SUBJECT_MAP = {
   'PJ4': { cls: 'cg_primary-year4-pjpk', nama: 'PJ Tahun 4' },
