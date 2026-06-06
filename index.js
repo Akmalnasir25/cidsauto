@@ -37,8 +37,8 @@ const CONFIG = {
   baseUrl: 'https://asiemodel.net/model/',
   username: USERNAME,
   password: PASSWORD,
-  headless: process.env.HEADLESS === 'true' || process.env.NODE_ENV === 'production',
-  slowMo: 100,
+  headless: process.env.HEADLESS === 'true',
+  slowMo: 300,
   timeout: 60000,
   teacherName: TEAM_NAME,
   rptFile: RPT_FILE,
@@ -49,7 +49,6 @@ const CONFIG = {
 
 console.log(`[PROFILE] Menggunakan profil: ${activeProfileName}`);
 console.log(`[RPT] Memuat data dari: ${RPT_FILE}`);
-console.log(`[DEBUG] Username length: ${CONFIG.username ? CONFIG.username.length : 0}, Password length: ${CONFIG.password ? CONFIG.password.length : 0}`);
 
 const SUBJECT_MAP = {
   'PJ4': { cls: 'cg_primary-year4-pjpk', nama: 'PJ Tahun 4' },
@@ -106,62 +105,11 @@ function tarihToDDMMYYYY(ddmmyyyy) {
 
 async function login(page) {
   console.log('Logging in...');
-  await page.goto(CONFIG.url, { waitUntil: 'load', timeout: 120000 });
-  await sleep(5000);
+  await page.goto(CONFIG.url, { waitUntil: 'domcontentloaded', timeout: 120000 });
+  await sleep(2000);
 
   try {
-    // Check current URL before attempting login
-    console.log('Current URL before login:', page.url());
-    
-    // Ambil screenshot untuk debug bila gagal
-    await page.screenshot({ path: path.join(__dirname, 'debug-login-page.png'), fullPage: true });
-    console.log('Screenshot saved: debug-login-page.png');
-    
-    // Semak semua input yang ada di page
-    const allInputs = await page.locator('input').all();
-    console.log(`Found ${allInputs.length} input elements on page`);
-    for (let i = 0; i < allInputs.length; i++) {
-      const name = await allInputs[i].getAttribute('name').catch(() => 'none');
-      const type = await allInputs[i].getAttribute('type').catch(() => 'none');
-      console.log(`  Input[${i}]: name="${name}" type="${type}"`);
-    }
-
-    // Semak jika ada iframe
-    const frames = page.frames();
-    console.log(`Found ${frames.length} frames`);
-    for (let i = 0; i < frames.length; i++) {
-      console.log(`  Frame[${i}]: url="${frames[i].url()}"`);
-    }
-    
-    // Cari username input - mungkin dalam iframe
-    let usernameInput = page.locator('input[name="username"]');
-    const usernameCount = await usernameInput.count();
-    
-    if (usernameCount === 0 && frames.length > 1) {
-      console.log('Username not in main page, checking frames...');
-      for (let i = 1; i < frames.length; i++) {
-        usernameInput = frames[i].locator('input[name="username"]');
-        const frameCount = await usernameInput.count();
-        if (frameCount > 0) {
-          console.log(`Username found in frame[${i}]`);
-          // Set page context to this frame
-          await usernameInput.waitFor({ state: 'visible', timeout: 30000 });
-          await usernameInput.fill(CONFIG.username);
-          console.log('Username filled (in frame)');
-          await frames[i].locator('input[name="password"]').fill(CONFIG.password);
-          console.log('Password filled (in frame)');
-          await sleep(500);
-          await frames[i].locator('input[name="submit"][value="Login"]').click();
-          console.log('Login button clicked (in frame)');
-          await page.waitForURL('**/main.php**', { timeout: 60000 });
-          console.log('Logged in. URL: ' + page.url());
-          return;
-        }
-      }
-    }
-    
-    await usernameInput.waitFor({ state: 'visible', timeout: 60000 });
-    await usernameInput.fill(CONFIG.username);
+    await page.locator('input[name="username"]').fill(CONFIG.username);
     console.log('Username filled');
     
     await page.locator('input[name="password"]').fill(CONFIG.password);
@@ -177,10 +125,6 @@ async function login(page) {
   } catch (e) {
     console.log('Login error or already logged in. URL: ' + page.url());
     console.log('Error details:', e.message);
-    
-    await page.screenshot({ path: path.join(__dirname, 'login-error.png'), fullPage: true }).catch(() => {});
-    console.log('Screenshot saved: login-error.png');
-    
     throw e;
   }
 }
@@ -911,32 +855,7 @@ async function main() {
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
-      '--disable-gpu',
-      '--disable-software-rasterizer',
-      '--disable-accelerated-2d-canvas',
-      '--disable-accelerated-jpeg-decoding',
-      '--disable-extensions',
-      '--disable-background-networking',
-      '--disable-background-timer-throttling',
-      '--disable-backgrounding-occluded-windows',
-      '--disable-breakpad',
-      '--disable-client-side-phishing-detection',
-      '--disable-default-apps',
-      '--disable-domain-reliability',
-      '--disable-hang-monitor',
-      '--disable-ipc-flooding-protection',
-      '--disable-popup-blocking',
-      '--disable-prompt-on-repost',
-      '--disable-renderer-backgrounding',
-      '--disable-sync',
-      '--disable-translate',
-      '--disable-web-security',
-      '--disable-features=TranslateUI',
-      '--memory-pressure-off',
-      '--no-first-run',
-      '--single-process',
-      '--no-zygote',
-      '--js-flags="--max-old-space-size=256"'
+      '--disable-gpu'
     ]
   };
 
@@ -944,14 +863,6 @@ async function main() {
 
   const context = await browser.newContext({
     viewport: { width: 1280, height: 900 },
-    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
-    extraHTTPHeaders: {
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-      'Accept-Language': 'en-US,en;q=0.9,ms;q=0.8',
-      'Accept-Encoding': 'gzip, deflate, br',
-      'Connection': 'keep-alive',
-      'Upgrade-Insecure-Requests': '1'
-    }
   });
 
   const page = await context.newPage();

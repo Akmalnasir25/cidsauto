@@ -1,10 +1,3 @@
-process.on('uncaughtException', (err) => {
-  console.error('Uncaught Exception:', err);
-});
-process.on('unhandledRejection', (reason, promise) => {
-  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
-});
-
 const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
 const http = require('http');
 const fs = require('fs');
@@ -14,8 +7,7 @@ const ExcelJS = require('exceljs');
 const multer = require('multer');
 const upload = multer({ dest: __dirname + '/' });
 
-const PORT = parseInt(process.env.PORT, 10) || 3001;
-console.log(`[INFO] Starting server on port ${PORT}...`);
+const PORT = process.env.PORT || 3001;
 let isRunning = false;
 let currentLog = '';
 let currentProcess = null;
@@ -23,28 +15,16 @@ let currentPort = PORT; // For tracking actual port
 
 const CONFIG_PATH = path.join(__dirname, 'config.json');
 
-// Ensure data directory exists (required for Render production)
-const DATA_DIR = path.join(__dirname, 'data');
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-}
-
 // Helper: Load config with migration from old format
 function loadConfig() {
-  let config = { activeProfile: 'Akmal', profiles: { 'Akmal': { login: {}, rptFile: 'rpt-data.json', schedule: {}, groups: [] } } };
-  if (fs.existsSync(CONFIG_PATH)) {
-    try {
-      config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
-    } catch (e) {
-      console.log('[WARN] Failed to read config.json, using defaults');
-    }
-  }
+  let config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
   
+  // Auto-migrate old format (no activeProfile key) to new multi-profile format
   if (!config.activeProfile && !config.profiles) {
-    config = {
-      activeProfile: 'Akmal',
+    const migrated = {
+      activeProfile: 'Cikgu Akmal',
       profiles: {
-        'Akmal': {
+        'Cikgu Akmal': {
           login: config.login || { username: '', password: '' },
           teacherName: config.teacherName || '',
           rptFile: 'rpt-data.json',
@@ -53,19 +33,16 @@ function loadConfig() {
         }
       }
     };
-    if (process.env.NODE_ENV !== 'production') {
-      fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
-      console.log('[MIGRATION] Old config auto-migrated to multi-profile format.');
-    }
+    config = migrated;
+    fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
+    console.log('[MIGRATION] Old config auto-migrated to multi-profile format.');
   }
   
   return config;
 }
 
 function saveConfig(config) {
-  if (process.env.NODE_ENV !== 'production') {
-    fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
-  }
+  fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
 }
 
 function getActiveProfile(config) {
@@ -495,7 +472,7 @@ const server = http.createServer((req, res) => {
 });
 
 function startServer(port) {
-  server.listen(port, '0.0.0.0', () => {
+  server.listen(port, () => {
     currentPort = port;
     console.log(`\n╔═══════════════════════════════════════════╗`);
     console.log(`║   RPH AUTOMATION INTERFACE                ║`);

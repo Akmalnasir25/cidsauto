@@ -2,6 +2,7 @@ node_modules/
 *.docx
 *.xlsx
 *.xls
+data/rpt-data*.json
 data/rpt-data-*.json
 error.txt
 _active_rpt_file.txt
