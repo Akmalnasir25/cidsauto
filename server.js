@@ -486,7 +486,6 @@ function startServer(port) {
     } else {
       console.error(e);
     }
-  });
 }
   });
 }
