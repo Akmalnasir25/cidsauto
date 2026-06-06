@@ -109,14 +109,31 @@ async function login(page) {
   await sleep(2000);
 
   try {
+    // Check current URL before attempting login
+    console.log('Current URL before login:', page.url());
+    
+    // Take screenshot for debugging (optional)
+    // await page.screenshot({ path: 'debug-login-page.png' });
+    
     await page.locator('input[name="username"]').fill(CONFIG.username);
+    console.log('Username filled');
+    
     await page.locator('input[name="password"]').fill(CONFIG.password);
+    console.log('Password filled');
+    
     await sleep(500);
+    
     await page.locator('input[name="submit"][value="Login"]').click();
+    console.log('Login button clicked');
+    
     await page.waitForURL('**/main.php**', { timeout: 60000 });
     console.log('Logged in. URL: ' + page.url());
   } catch (e) {
     console.log('Login error or already logged in. URL: ' + page.url());
+    console.log('Error details:', e.message);
+    
+    // Re-throw to fail the automation
+    throw e;
   }
 }
 
@@ -296,7 +313,7 @@ function generateRPHContent(rptWeek, subject, sessionInfo) {
   const sk = cleanText(rptWeek.standard_kandungan) || 'Standard Kandungan';
   const sp = cleanText(rptWeek.standard_pembelajaran) || 'Standard Pembelajaran';
   const spPreview = sp.length > 150 ? sp.substring(0, 150) + '...' : sp;
-  const masaStr = sessionInfo ? `<p><strong>Masa:</strong> ${sessionInfo}</p>` : '';
+  const masaStr = sessionInfo ? `<p><strong>Masa:</strong> ${sessionInfo.start} - ${sessionInfo.end}</p>` : '';
 
   if (subject === 'PJ') {
     return {
@@ -643,6 +660,21 @@ async function fillRPHForm(page, rptWeek, className, subject, sessionInfo) {
     }
   }
 
+  // FILL TIME FIELDS IF SESSION INFO AVAILABLE
+  if (sessionInfo && sessionInfo.start && sessionInfo.end) {
+    try {
+      await page.evaluate(({ start, end }) => {
+        const from = document.getElementById('timepicker1');
+        const to = document.getElementById('timepicker2');
+        if (from) from.value = start;
+        if (to) to.value = end;
+      }, { start: sessionInfo.start, end: sessionInfo.end });
+      console.log('    Time fields: ' + sessionInfo.start + ' - ' + sessionInfo.end + ' OK');
+    } catch (e) {
+      console.log('    Time fields ERROR: ' + e.message);
+    }
+  }
+
   try {
     await page.locator('input[value="Simpan RPH"]').first().click();
     await page.waitForLoadState('networkidle', { timeout: 15000 });
@@ -751,7 +783,7 @@ async function ciptaRPH(page, className, rptWeek, tarikh, subject) {
     } catch (e) {}
     await sleep(8000);
 
-    const sessionInfo = tarikh && tarikh.length >= 4 ? tarikh[2] + ' - ' + tarikh[3] : null;
+    const sessionInfo = tarikh && tarikh.length >= 4 ? { start: tarikh[2], end: tarikh[3] } : null;
     await fillRPHForm(page, rptWeek, className, subject, sessionInfo);
     console.log('    Final URL: ' + page.url());
 

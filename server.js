@@ -15,16 +15,28 @@ let currentPort = PORT; // For tracking actual port
 
 const CONFIG_PATH = path.join(__dirname, 'config.json');
 
+// Ensure data directory exists (required for Render production)
+const DATA_DIR = path.join(__dirname, 'data');
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
 // Helper: Load config with migration from old format
 function loadConfig() {
-  let config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+  let config = { activeProfile: 'Akmal', profiles: { 'Akmal': { login: {}, rptFile: 'rpt-data.json', schedule: {}, groups: [] } } };
+  if (fs.existsSync(CONFIG_PATH)) {
+    try {
+      config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+    } catch (e) {
+      console.log('[WARN] Failed to read config.json, using defaults');
+    }
+  }
   
-  // Auto-migrate old format (no activeProfile key) to new multi-profile format
   if (!config.activeProfile && !config.profiles) {
-    const migrated = {
-      activeProfile: 'Cikgu Akmal',
+    config = {
+      activeProfile: 'Akmal',
       profiles: {
-        'Cikgu Akmal': {
+        'Akmal': {
           login: config.login || { username: '', password: '' },
           teacherName: config.teacherName || '',
           rptFile: 'rpt-data.json',
@@ -33,16 +45,19 @@ function loadConfig() {
         }
       }
     };
-    config = migrated;
-    fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
-    console.log('[MIGRATION] Old config auto-migrated to multi-profile format.');
+    if (process.env.NODE_ENV !== 'production') {
+      fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
+      console.log('[MIGRATION] Old config auto-migrated to multi-profile format.');
+    }
   }
   
   return config;
 }
 
 function saveConfig(config) {
-  fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
+  if (process.env.NODE_ENV !== 'production') {
+    fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
+  }
 }
 
 function getActiveProfile(config) {

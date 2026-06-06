@@ -2,11 +2,11 @@ services:
   - type: web
     name: cidsauto
     env: node
-    buildCommand: npm ci --only=production && npx playwright install-deps && pip3 install -r requirements.txt && npx playwright install chromium
+    buildCommand: npm ci && npx playwright install-deps chromium && pip3 install -r requirements.txt && npx playwright install chromium
     startCommand: node server.js
     envVars:
       - key: HEADLESS
-        value: true
+        value: "true"
       - key: NODE_ENV
         value: production
       - key: ACTIVE_PROFILE
@@ -15,4 +15,6 @@ services:
         fromSecret: cids_username
       - key: CIDS_PASSWORD
         fromSecret: cids_password
+      - key: PYTHONUNBUFFERED
+        value: "1"
 
