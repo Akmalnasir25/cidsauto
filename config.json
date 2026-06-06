@@ -1,0 +1,33 @@
+{
+  "activeProfile": "Akmal",
+  "profiles": {
+    "Akmal": {
+      "login": {
+        "username": "CIDSGURU30770",
+        "password": "Ikam@l2521"
+      },
+      "teacherName": "akmal",
+      "rptFile": "rpt-data.json",
+      "schedule": {
+        "4I": [ { "day": 2, "start": "09:00", "end": "09:30" }, { "day": 4, "start": "09:00", "end": "09:30" } ],
+        "4S": [ { "day": 2, "start": "08:30", "end": "09:00" }, { "day": 4, "start": "08:30", "end": "09:00" } ],
+        "5K": [ { "day": 1, "start": "08:30", "end": "09:00" }, { "day": 3, "start": "08:30", "end": "09:00" } ],
+        "5P": [ { "day": 2, "start": "07:30", "end": "08:00" }, { "day": 4, "start": "07:30", "end": "08:00" } ],
+        "6I": [ { "day": 1, "start": "08:00", "end": "08:30" }, { "day": 3, "start": "08:00", "end": "08:30" } ],
+        "6G": [ { "day": 2, "start": "08:00", "end": "08:30" }, { "day": 4, "start": "08:00", "end": "08:30" } ],
+        "5A": [ { "day": 0, "start": "09:50", "end": "10:50" } ],
+        "5I": [ { "day": 1, "start": "09:50", "end": "10:50" } ],
+        "6K": [ { "day": 0, "start": "10:50", "end": "11:50" } ],
+        "MAT6I": [ { "day": 1, "start": "10:50", "end": "11:50" }, { "day": 3, "start": "11:50", "end": "12:50" }, { "day": 4, "start": "09:50", "end": "10:50" } ]
+      },
+      "groups": [
+        { "subject": "PJ", "tahun": 4, "rptKey": "pj4", "subKey": "PJ4", "classSchedule": ["4I", "4S"] },
+        { "subject": "PJ", "tahun": 5, "rptKey": "pj5", "subKey": "PJ5", "classSchedule": ["5K", "5P"] },
+        { "subject": "PJ", "tahun": 6, "rptKey": "pj6", "subKey": "PJ6", "classSchedule": ["6I", "6G"] },
+        { "subject": "RBT", "tahun": 5, "rptKey": "rbt5", "subKey": "RBT5", "classSchedule": ["5A", "5I"] },
+        { "subject": "RBT", "tahun": 6, "rptKey": "rbt6", "subKey": "RBT6", "classSchedule": ["6K"] },
+        { "subject": "MAT", "tahun": 6, "rptKey": "mat6", "subKey": "MAT6", "classSchedule": ["MAT6I"] }
+      ]
+    }
+  }
+}

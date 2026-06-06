@@ -2,28 +2,49 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
+// Load config.json if exists
+let appConfig = { activeProfile: 'Akmal', profiles: {} };
 const configPath = path.join(__dirname, 'config.json');
-const appConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+if (fs.existsSync(configPath)) {
+  appConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+} else {
+  console.log('Warning: config.json not found, using defaults');
+}
 
-// Multi-profile support
-const activeProfileName = appConfig.activeProfile || 'Cikgu Akmal';
-const activeProfile = appConfig.profiles?.[activeProfileName] || appConfig; // Fallback for old format
-const rptFileName = activeProfile.rptFile || 'rpt-data.json';
-const rptDataPath = path.join(__dirname, 'data', rptFileName);
+// Allow environment variable override for deployment
+const ACTIVE_PROFILE = process.env.ACTIVE_PROFILE || appConfig.activeProfile || 'Akmal';
+const PROFILE_DATA = appConfig.profiles?.[ACTIVE_PROFILE] || appConfig;
+const RPT_FILE = process.env.RPT_FILE || PROFILE_DATA.rptFile || 'rpt-data.json';
+const TEAM_NAME = process.env.TEACHER_NAME || PROFILE_DATA.teacherName || 'akmal';
+const USERNAME = process.env.CIDS_USERNAME || PROFILE_DATA.login?.username || '';
+const PASSWORD = process.env.CIDS_PASSWORD || PROFILE_DATA.login?.password || '';
 
+const rptDataPath = path.join(__dirname, 'data', RPT_FILE);
 const rptData = fs.existsSync(rptDataPath) 
   ? JSON.parse(fs.readFileSync(rptDataPath, 'utf-8')) 
   : {};
 
+// For backward compatibility with existing code references
+const activeProfileName = ACTIVE_PROFILE;
+const activeProfile = PROFILE_DATA;
+
+const CLASS_SCHEDULE = activeProfile.schedule || {};
+const MIW_GROUPS = activeProfile.groups || [];
+const TEACHER_NAME = TEAM_NAME; // Already set above
+
 const CONFIG = {
   url: 'https://asiemodel.net/#login',
   baseUrl: 'https://asiemodel.net/model/',
-  username: activeProfile.login?.username || '',
-  password: activeProfile.login?.password || '',
+  username: USERNAME,
+  password: PASSWORD,
   headless: false,
   slowMo: 300,
   timeout: 60000,
-  gotoTimeout: 60000,
+  teacherName: TEAM_NAME,
+  rptFile: RPT_FILE,
+  groups: MIW_GROUPS,
+  schedule: CLASS_SCHEDULE,
+  profileName: ACTIVE_PROFILE
 };
 
 console.log(`[PROFILE] Menggunakan profil: ${activeProfileName}`);
@@ -40,7 +61,6 @@ const SUBJECT_MAP = {
 
 const CLASS_SCHEDULE = activeProfile.schedule || {};
 const MIW_GROUPS = activeProfile.groups || [];
-const TEACHER_NAME = (activeProfile.teacherName || activeProfile.login?.username || 'akmal').toLowerCase();
 
 function addDaysToDate(dateStr, daysToAdd) {
   const parts = dateStr.split('/');
