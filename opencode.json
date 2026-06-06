@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "fiqstr_core": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Fiqstr Core API",
+      "options": {
+        "baseURL": "https://core.fiqstr.com/v1",
+        "apiKey": "fiq-MROuqcL3mf7zgi10BKyK5zvRXLeePZBP-2t_3Sz1h4cvhIWC"
+      },
+      "models": {
+        "claude-opus-4.8": { "name": "Claude Opus 4.8" }
+      }
+    }
+  },
+  "model": "fiqstr_core:claude-opus-4.8"
+}

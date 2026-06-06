@@ -824,10 +824,23 @@ async function main() {
   console.log('Weeks: ' + startWeek + ' to ' + endWeek);
   console.log('Group: ' + targetGroup);
 
-  const browser = await chromium.launch({
-    headless: CONFIG.headless,
-    slowMo: CONFIG.slowMo,
-  });
+   const launchOptions = {
+     headless: CONFIG.headless,
+     slowMo: CONFIG.slowMo,
+     args: [
+       '--no-sandbox',
+       '--disable-setuid-sandbox',
+       '--disable-dev-shm-usage',
+       '--disable-gpu'
+     ]
+   };
+
+   // Allow custom executable path for container deployments (e.g., Railway/Render)
+   if (process.env.PLAYWRIGHT_EXECUTABLE_PATH) {
+     launchOptions.executablePath = process.env.PLAYWRIGHT_EXECUTABLE_PATH;
+   }
+
+   const browser = await chromium.launch(launchOptions);
 
   const context = await browser.newContext({
     viewport: { width: 1280, height: 900 },

@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: cidsauto
+    env: node
+    buildCommand: npm ci --only=production && npx playwright install-deps && pip3 install -r requirements.txt
+    startCommand: node server.js
+    envVars:
+      - key: HEADLESS
+        value: true
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: "0"
+      - key: PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD
+        value: "1"
+      - key: PLAYWRIGHT_EXECUTABLE_PATH
+        value: /usr/bin/chromium
+      - key: NODE_ENV
+        value: production
+      - key: ACTIVE_PROFILE
+        value: Akmal
+      - key: CIDS_USERNAME
+        fromSecret: cids_username
+      - key: CIDS_PASSWORD
+        fromSecret: cids_password
+

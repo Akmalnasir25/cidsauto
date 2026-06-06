@@ -1,3 +1,4 @@
+const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -421,7 +422,7 @@ const server = http.createServer((req, res) => {
       const markerPath = path.join(__dirname, '_active_rpt_file.txt');
       fs.writeFileSync(markerPath, rptFile);
       
-      exec(`python extract_rpt.py`, { cwd: __dirname }, (error, stdout, stderr) => {
+       exec(`${pythonCmd} extract_rpt.py`, { cwd: __dirname }, (error, stdout, stderr) => {
         for (const sub of subjects) {
           const filePath = path.join(__dirname, `rpt_${sub}.docx`);
           try { if (fs.existsSync(filePath)) fs.unlinkSync(filePath); } catch (e) {}
