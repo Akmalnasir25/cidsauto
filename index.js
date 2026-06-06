@@ -106,8 +106,8 @@ function tarihToDDMMYYYY(ddmmyyyy) {
 
 async function login(page) {
   console.log('Logging in...');
-  await page.goto(CONFIG.url, { waitUntil: 'networkidle', timeout: 120000 });
-  await sleep(3000);
+  await page.goto(CONFIG.url, { waitUntil: 'load', timeout: 120000 });
+  await sleep(5000);
 
   try {
     // Check current URL before attempting login
@@ -117,10 +117,50 @@ async function login(page) {
     await page.screenshot({ path: path.join(__dirname, 'debug-login-page.png'), fullPage: true });
     console.log('Screenshot saved: debug-login-page.png');
     
-    // Tunggu input username wujud dengan timeout lebih lama
-    const usernameInput = page.locator('input[name="username"]');
-    await usernameInput.waitFor({ state: 'visible', timeout: 90000 });
+    // Semak semua input yang ada di page
+    const allInputs = await page.locator('input').all();
+    console.log(`Found ${allInputs.length} input elements on page`);
+    for (let i = 0; i < allInputs.length; i++) {
+      const name = await allInputs[i].getAttribute('name').catch(() => 'none');
+      const type = await allInputs[i].getAttribute('type').catch(() => 'none');
+      console.log(`  Input[${i}]: name="${name}" type="${type}"`);
+    }
+
+    // Semak jika ada iframe
+    const frames = page.frames();
+    console.log(`Found ${frames.length} frames`);
+    for (let i = 0; i < frames.length; i++) {
+      console.log(`  Frame[${i}]: url="${frames[i].url()}"`);
+    }
     
+    // Cari username input - mungkin dalam iframe
+    let usernameInput = page.locator('input[name="username"]');
+    const usernameCount = await usernameInput.count();
+    
+    if (usernameCount === 0 && frames.length > 1) {
+      console.log('Username not in main page, checking frames...');
+      for (let i = 1; i < frames.length; i++) {
+        usernameInput = frames[i].locator('input[name="username"]');
+        const frameCount = await usernameInput.count();
+        if (frameCount > 0) {
+          console.log(`Username found in frame[${i}]`);
+          // Set page context to this frame
+          await usernameInput.waitFor({ state: 'visible', timeout: 30000 });
+          await usernameInput.fill(CONFIG.username);
+          console.log('Username filled (in frame)');
+          await frames[i].locator('input[name="password"]').fill(CONFIG.password);
+          console.log('Password filled (in frame)');
+          await sleep(500);
+          await frames[i].locator('input[name="submit"][value="Login"]').click();
+          console.log('Login button clicked (in frame)');
+          await page.waitForURL('**/main.php**', { timeout: 60000 });
+          console.log('Logged in. URL: ' + page.url());
+          return;
+        }
+      }
+    }
+    
+    await usernameInput.waitFor({ state: 'visible', timeout: 60000 });
     await usernameInput.fill(CONFIG.username);
     console.log('Username filled');
     
@@ -138,11 +178,9 @@ async function login(page) {
     console.log('Login error or already logged in. URL: ' + page.url());
     console.log('Error details:', e.message);
     
-    // Ambil screenshot error
     await page.screenshot({ path: path.join(__dirname, 'login-error.png'), fullPage: true }).catch(() => {});
     console.log('Screenshot saved: login-error.png');
     
-    // Re-throw to fail the automation
     throw e;
   }
 }
