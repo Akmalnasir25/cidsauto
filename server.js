@@ -487,7 +487,7 @@ const server = http.createServer((req, res) => {
 });
 
 function startServer(port) {
-  server.listen(port, () => {
+  server.listen(port, '0.0.0.0', () => {
     currentPort = port;
     console.log(`\n╔═══════════════════════════════════════════╗`);
     console.log(`║   RPH AUTOMATION INTERFACE                ║`);
