@@ -1,3 +1,10 @@
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
 const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
 const http = require('http');
 const fs = require('fs');
@@ -7,7 +14,8 @@ const ExcelJS = require('exceljs');
 const multer = require('multer');
 const upload = multer({ dest: __dirname + '/' });
 
-const PORT = process.env.PORT || 3001;
+const PORT = parseInt(process.env.PORT, 10) || 3001;
+console.log(`[INFO] Starting server on port ${PORT}...`);
 let isRunning = false;
 let currentLog = '';
 let currentProcess = null;
