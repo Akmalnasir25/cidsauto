@@ -49,6 +49,7 @@ const CONFIG = {
 
 console.log(`[PROFILE] Menggunakan profil: ${activeProfileName}`);
 console.log(`[RPT] Memuat data dari: ${RPT_FILE}`);
+console.log(`[DEBUG] Username length: ${CONFIG.username ? CONFIG.username.length : 0}, Password length: ${CONFIG.password ? CONFIG.password.length : 0}`);
 
 const SUBJECT_MAP = {
   'PJ4': { cls: 'cg_primary-year4-pjpk', nama: 'PJ Tahun 4' },
@@ -105,17 +106,22 @@ function tarihToDDMMYYYY(ddmmyyyy) {
 
 async function login(page) {
   console.log('Logging in...');
-  await page.goto(CONFIG.url, { waitUntil: 'domcontentloaded', timeout: 120000 });
-  await sleep(2000);
+  await page.goto(CONFIG.url, { waitUntil: 'networkidle', timeout: 120000 });
+  await sleep(3000);
 
   try {
     // Check current URL before attempting login
     console.log('Current URL before login:', page.url());
     
-    // Take screenshot for debugging (optional)
-    // await page.screenshot({ path: 'debug-login-page.png' });
+    // Ambil screenshot untuk debug bila gagal
+    await page.screenshot({ path: path.join(__dirname, 'debug-login-page.png'), fullPage: true });
+    console.log('Screenshot saved: debug-login-page.png');
     
-    await page.locator('input[name="username"]').fill(CONFIG.username);
+    // Tunggu input username wujud dengan timeout lebih lama
+    const usernameInput = page.locator('input[name="username"]');
+    await usernameInput.waitFor({ state: 'visible', timeout: 90000 });
+    
+    await usernameInput.fill(CONFIG.username);
     console.log('Username filled');
     
     await page.locator('input[name="password"]').fill(CONFIG.password);
@@ -131,6 +137,10 @@ async function login(page) {
   } catch (e) {
     console.log('Login error or already logged in. URL: ' + page.url());
     console.log('Error details:', e.message);
+    
+    // Ambil screenshot error
+    await page.screenshot({ path: path.join(__dirname, 'login-error.png'), fullPage: true }).catch(() => {});
+    console.log('Screenshot saved: login-error.png');
     
     // Re-throw to fail the automation
     throw e;
