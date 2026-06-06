@@ -859,6 +859,7 @@ async function main() {
    const launchOptions = {
      headless: CONFIG.headless,
      slowMo: CONFIG.slowMo,
+     channel: 'chrome',
      args: [
        '--no-sandbox',
        '--disable-setuid-sandbox',

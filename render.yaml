@@ -2,7 +2,7 @@ services:
   - type: web
     name: cidsauto
     env: node
-    buildCommand: npm ci && pip3 install -r requirements.txt && npx playwright install chromium
+    buildCommand: npm ci && pip3 install -r requirements.txt && npx playwright install chrome
     startCommand: node server.js
     envVars:
       - key: HEADLESS
