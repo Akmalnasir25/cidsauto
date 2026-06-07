@@ -85,7 +85,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     return results;
   }, targetWeeks);
 
-  console.log('4. Minggu 8 records to submit: ' + miwRecords.length);
+  console.log('4. ' + (targetWeeks.length > 0 ? 'Minggu ' + targetWeeks.join(', ') : 'Semua minggu') + ' records to submit: ' + miwRecords.length);
   miwRecords.forEach(r => console.log('   ' + r.subject));
 
   // 5. Submit each record via popup

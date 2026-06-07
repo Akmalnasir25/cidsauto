@@ -649,7 +649,27 @@
           <div class="small" style="margin-top:6px;">Taip nombor minggu dipisahkan dengan koma. Tinggalkan kosong untuk hantar SEMUA rekod RPH.</div>
         </div>
         <button class="btn btn-primary" id="btnEndorse" onclick="startEndorse()">🚀 Mula Hantar Pengesahan</button>
+        <button class="btn btn-danger" id="btnEndorseStop" onclick="stopAutomation()" disabled style="display:none;"><span>■</span> Henti</button>
         <div class="msg" id="endorse-msg"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span>📊</span> Log & Preview</div>
+          <div style="display:flex; gap:6px;">
+            <button class="icon-btn" onclick="exportLog()" title="Export Log">📄</button>
+            <button class="icon-btn" onclick="toggleAutoScroll()" title="Auto-scroll" id="autoScrollBtnEndorse" style="color:#7c5cff;">↕</button>
+          </div>
+        </div>
+        <div class="status-bar status-idle" id="statusBoxEndorse">
+          <div class="status-dot"></div>
+          <span id="statusTextEndorse">Sedia untuk memulakan pengesahan</span>
+        </div>
+        <div class="progress-bar" id="progressWrapEndorse">
+          <div class="progress-fill" id="progressFillEndorse"></div>
+        </div>
+        <div class="log-container mt-12" id="logContainerEndorse">Belum ada log. Sila pilih minggu dan mula hantar pengesahan.</div>
+        <img src="" id="previewImgEndorse" class="preview-img" style="display:none;" alt="Live Preview">
       </div>
     </div>
 
@@ -1035,6 +1055,56 @@
     }
 
     // ===== Endorse =====
+    function setEndorseRunning(running) {
+      document.getElementById('btnEndorse').disabled = running;
+      const stopBtn = document.getElementById('btnEndorseStop');
+      stopBtn.style.display = running ? 'inline-flex' : 'none';
+      stopBtn.disabled = !running;
+      const box = document.getElementById('statusBoxEndorse');
+      const bar = document.getElementById('progressWrapEndorse');
+      const statusText = document.getElementById('statusTextEndorse');
+      box.className = running ? 'status-bar status-running' : 'status-bar status-idle';
+      if (running) {
+        bar.classList.add('running-progress');
+        statusText.textContent = 'Menghantar pengesahan...';
+      } else {
+        bar.classList.remove('running-progress');
+      }
+    }
+
+    async function refreshEndorsePreview() {
+      const img = document.getElementById('previewImgEndorse');
+      try {
+        const res = await fetch('/api/screenshot?t=' + Date.now());
+        if (res.ok && res.headers.get('content-type') === 'image/png') {
+          const blob = await res.blob();
+          img.src = URL.createObjectURL(blob);
+          img.style.display = 'block';
+        }
+      } catch (e) { /* ignore */ }
+    }
+
+    async function checkEndorseStatus() {
+      try {
+        const res = await fetch('/api/status');
+        if (!res.ok) return;
+        const data = await res.json();
+        const logContainer = document.getElementById('logContainerEndorse');
+        logContainer.textContent = data.log || 'Menunggu output...';
+        logContainer.scrollTop = logContainer.scrollHeight;
+        if (!data.isRunning && isEndorsing) {
+          isEndorsing = false;
+          setEndorseRunning(false);
+          clearInterval(endorsePollInterval);
+          document.getElementById('statusTextEndorse').textContent = '✅ Proses pengesahan selesai!';
+          toast('Selesai', 'Pengesahan telah berjaya diselesaikan.', 'success');
+        }
+      } catch (e) { /* ignore */ }
+    }
+
+    let isEndorsing = false;
+    let endorsePollInterval = null;
+
     async function startEndorse() {
       const weeksInput = document.getElementById('endorse-weeks').value.trim();
       const weeks = weeksInput
@@ -1048,7 +1118,8 @@
         'Hantar Pengesahan',
         `Proses ini akan menghantar pengesahan untuk <b>${weekMsg}</b>. Teruskan?`,
         async () => {
-          document.getElementById('btnEndorse').disabled = true;
+          setEndorseRunning(true);
+          isEndorsing = true;
           try {
             const res = await fetch('/api/endorse', { 
               method: 'POST',
@@ -1058,11 +1129,18 @@
             const data = await res.json();
             if (data.success) {
               toast('Dimulakan', `Proses pengesahan ${weekMsg} sedang berjalan.`, 'success');
+              endorsePollInterval = setInterval(checkEndorseStatus, 1500);
+              setInterval(refreshEndorsePreview, 5000);
             } else {
               toast('Ralat', data.error || 'Gagal', 'error');
+              setEndorseRunning(false);
+              isEndorsing = false;
             }
-          } catch (e) { toast('Ralat', e.message, 'error'); }
-          document.getElementById('btnEndorse').disabled = false;
+          } catch (e) { 
+            toast('Ralat', e.message, 'error'); 
+            setEndorseRunning(false);
+            isEndorsing = false;
+          }
         }
       );
     }
