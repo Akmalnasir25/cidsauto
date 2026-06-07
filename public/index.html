@@ -3,552 +3,1289 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RPH Automation - CIDS</title>
+  <title>CIDS eRPH Automation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-1: #0a0e27;
+      --bg-2: #141836;
+      --bg-3: #1e2248;
+      --card: rgba(30, 34, 72, 0.6);
+      --card-hover: rgba(40, 45, 85, 0.8);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.16);
+      --text: #e6e9f5;
+      --text-dim: #8b92b3;
+      --accent: #7c5cff;
+      --accent-2: #5c8cff;
+      --success: #2ecc71;
+      --danger: #ff5c7c;
+      --warning: #ffb347;
+      --bg-body: #0a0e27;
+      --text-primary: #e6e9f5;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-      min-height: 100vh; color: #fff; padding: 20px;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-body);
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(124, 92, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 90%, rgba(92, 140, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(124, 92, 255, 0.05) 0%, transparent 60%);
+      min-height: 100vh;
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
     }
-    .container { max-width: 1000px; margin: 0 auto; }
-    header { text-align: center; padding: 30px 0; }
-    header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-    header p { font-size: 1.1em; opacity: 0.9; }
-    .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+    body.light {
+      --bg-body: #f5f7fa;
+      --text-primary: #1a202c;
+      --card: rgba(255, 255, 255, 0.8);
+      --card-hover: rgba(255, 255, 255, 0.9);
+      --border: rgba(0, 0, 0, 0.1);
+      --border-hover: rgba(0, 0, 0, 0.2);
+      --text-dim: #718096;
+      background: #f5f7fa;
+      background-image: none;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image:
+        linear-gradient(rgba(124, 92, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 92, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body.light::before { display: none; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 30px 24px; position: relative; z-index: 1; }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 32px;
+      margin-bottom: 32px;
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    .brand { display: flex; align-items: center; gap: 16px; }
+    .brand-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 10px 30px rgba(124, 92, 255, 0.4);
+    }
+    .brand-text h1 {
+      font-size: 22px; font-weight: 800;
+      background: linear-gradient(135deg, #fff 0%, #a0b0ff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    body.light .brand-text h1 {
+      background: linear-gradient(135deg, #1a202c 0%, #4a5568 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .brand-text p { font-size: 13px; color: var(--text-dim); font-weight: 500; margin-top: 2px; }
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .profile-select-wrapper { position: relative; }
+    .profile-select {
+      appearance: none;
+      padding: 12px 44px 12px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text-primary);
+      font-size: 14px; font-weight: 500;
+      cursor: pointer; min-width: 240px;
+      transition: all 0.2s;
+    }
+    body.light .profile-select { background: rgba(0,0,0,0.03); }
+    .icon-btn {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      cursor: pointer; font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    body.light .icon-btn { background: rgba(0,0,0,0.03); }
+    .icon-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--border-hover); transform: translateY(-1px); }
+
+    /* Stats / Dashboard */
+    .dashboard { margin-bottom: 32px; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .stat-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: rgba(124, 92, 255, 0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .stat-value { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+    .stat-label { font-size: 11px; color: var(--text-dim); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+    /* Calendar View */
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .cal-day {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px;
+      text-align: center;
+      font-size: 11px;
+      min-height: 50px;
+      font-weight: 600;
+      color: var(--text-dim);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cal-day.selected { 
+      background: rgba(124, 92, 255, 0.2); 
+      border-color: var(--accent); 
+      color: #fff; 
+    }
+    body.light .cal-day.selected { color: #1a202c; }
+    .cal-day .day-num { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+    .cal-day.disabled { opacity: 0.3; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 6px;
+      margin-bottom: 24px;
+      gap: 4px;
+    }
     .tab-btn {
-      padding: 12px 30px; font-size: 1em; font-weight: 600; border: none; border-radius: 8px;
-      cursor: pointer; transition: all 0.3s; background: rgba(255,255,255,0.2); color: #fff;
+      flex: 1;
+      padding: 12px 20px;
+      background: transparent;
+      border: none;
+      border-radius: 10px;
+      color: var(--text-dim);
+      font-size: 13px; font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px;
     }
-    .tab-btn:hover { background: rgba(255,255,255,0.3); }
-    .tab-btn.active { background: #4CAF50; box-shadow: 0 4px 12px rgba(76,175,80,0.4); }
+    .tab-btn:hover { color: var(--text-primary); background: rgba(255, 255, 255, 0.04); }
+    body.light .tab-btn:hover { background: rgba(0,0,0,0.03); }
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(124, 92, 255, 0.35);
+    }
+
+    /* Cards */
     .card {
-      background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px;
-      padding: 30px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      transition: border-color 0.3s;
     }
-    .card h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(255,255,255,0.2); }
-    .form-group { margin-bottom: 20px; }
-    label { display: block; font-size: 0.95em; margin-bottom: 8px; font-weight: 500; }
-    input[type="text"], input[type="password"], input[type="number"], input[type="file"] {
-      width: 100%; padding: 12px 16px; font-size: 1em; border-radius: 8px;
-      border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);
-      color: #fff; outline: none; transition: all 0.3s;
+    .card:hover { border-color: var(--border-hover); }
+    .card-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
     }
-    input:focus { border-color: #4CAF50; background: rgba(255,255,255,0.15); }
-    .week-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 8px; margin-top: 10px; }
-    .week-btn {
-      padding: 8px 12px; border: 2px solid rgba(255,255,255,0.3); border-radius: 6px;
-      background: rgba(255,255,255,0.05); color: #fff; cursor: pointer; font-size: 0.9em;
-      transition: all 0.3s; text-align: center;
-    }
-    .week-btn:hover { background: rgba(76,175,80,0.3); border-color: #4CAF50; }
-    .week-btn.selected { background: #4CAF50; border-color: #4CAF50; }
-    .btn-group { display: flex; gap: 12px; margin-top: 20px; }
-    .btn {
-      flex: 1; padding: 14px 24px; font-size: 1em; font-weight: 600; border: none;
-      border-radius: 8px; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px;
-    }
-    .btn-start { background: #4CAF50; color: #fff; }
-    .btn-start:hover { background: #45a049; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(76,175,80,0.4); }
-    .btn-stop { background: #f44336; color: #fff; }
-    .btn-stop:hover { background: #da190b; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(244,67,54,0.4); }
-    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
-    .status { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-weight: 500; }
-    .status.idle { background: rgba(158,158,158,0.3); }
-    .status.running { background: rgba(76,175,80,0.3); border: 1px solid #4CAF50; }
-    .status-dot { width: 12px; height: 12px; border-radius: 50%; background: #9e9e9e; }
-    .status.running .status-dot { background: #4CAF50; animation: pulse 1.5s infinite; }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(76,175,80,0.7); }
-      50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(76,175,80,0); }
-    }
-    .log-container {
-      background: rgba(0,0,0,0.4); border-radius: 8px; padding: 16px; max-height: 400px;
-      overflow-y: auto; font-family: 'Courier New', monospace; font-size: 0.85em;
-      line-height: 1.5; white-space: pre-wrap; word-break: break-all;
-    }
-    .log-container::-webkit-scrollbar { width: 8px; }
-    .log-container::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 8px; }
-    .log-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 8px; }
+    .card-title { font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    .card-badge { padding: 4px 10px; background: rgba(124, 92, 255, 0.15); color: var(--accent); border-radius: 6px; font-size: 10px; font-weight: 600; }
+
+    /* Info Box */
     .info-box {
-      background: rgba(33,150,243,0.2); border: 1px solid rgba(33,150,243,0.5); border-radius: 8px;
-      padding: 12px 16px; margin-bottom: 20px; font-size: 0.9em;
+      background: rgba(92, 140, 255, 0.08);
+      border: 1px solid rgba(92, 140, 255, 0.2);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      font-size: 12px;
+      color: #a0b0ff;
+      display: flex; align-items: flex-start; gap: 10px;
     }
-    .quick-select { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
+    body.light .info-box { color: #3182ce; background: rgba(92, 140, 255, 0.15); }
+
+    /* Form */
+    .form-group { margin-bottom: 18px; }
+    label {
+      display: block;
+      font-size: 12px; font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    input, select {
+      width: 100%; padding: 11px 14px; font-size: 13px; border-radius: 10px;
+      border: 1px solid var(--border); background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary); font-family: inherit; transition: all 0.2s;
+    }
+    body.light input, body.light select { background: #fff; border-color: #e2e8f0; }
+    input:focus, select:focus { outline: none; border-color: var(--accent); }
+
+    /* Week Grid */
+    .week-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr)); gap: 5px; margin-top: 10px; }
+    .week-btn {
+      padding: 6px 3px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-primary);
+      cursor: pointer; font-size: 11px; font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.15s;
+      text-align: center;
+      user-select: none;
+    }
+    .week-btn:hover:not(.disabled) { background: rgba(124, 92, 255, 0.15); border-color: var(--accent); transform: translateY(-1px); }
+    .week-btn.selected {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      border-color: transparent; color: #fff;
+      box-shadow: 0 3px 10px rgba(124, 92, 255, 0.4);
+    }
+    .week-btn.disabled { opacity: 0.3; cursor: not-allowed; }
+
+    /* Quick Select */
+    .quick-select { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
     .quick-btn {
-      padding: 6px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px;
-      background: rgba(255,255,255,0.1); color: #fff; cursor: pointer; font-size: 0.85em; transition: all 0.2s;
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-dim);
+      cursor: pointer; font-size: 11px; font-weight: 600;
+      transition: all 0.2s;
     }
-    .quick-btn:hover { background: rgba(255,255,255,0.2); }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+    .quick-btn:hover { background: rgba(124, 92, 255, 0.15); border-color: var(--accent); color: var(--text-primary); }
+
+    /* Buttons */
+    .btn-group { display: flex; gap: 8px; margin-top: 16px; }
+    .btn {
+      flex: 1; padding: 12px 16px; font-size: 12px; font-weight: 700;
+      border: none; border-radius: 10px; cursor: pointer;
+      transition: all 0.25s; text-transform: uppercase; letter-spacing: 0.5px;
+      font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(124, 92, 255, 0.35);
+    }
+    .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(124, 92, 255, 0.5); }
+    .btn-danger { background: linear-gradient(135deg, #ff5c7c 0%, #ff7c5c 100%); color: #fff; box-shadow: 0 6px 16px rgba(255, 92, 124, 0.3); }
+    .btn-danger:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255, 92, 124, 0.45); }
+    .btn-ghost { background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border: 1px solid var(--border); }
+    .btn-ghost:hover:not(:disabled) { background: rgba(255, 255, 255, 0.1); }
+    body.light .btn-ghost { background: #f7fafc; border-color: #e2e8f0; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
+
+    /* Status */
+    .status-bar {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 16px; border-radius: 10px;
+      margin-bottom: 14px; font-weight: 600; font-size: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .status-idle .status-dot { background: var(--text-dim); }
+    .status-running .status-dot { background: var(--success); }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; transition: background 0.3s; }
+    .status-running { background: rgba(46, 204, 113, 0.08); border-color: rgba(46, 204, 113, 0.3); }
+    .status-running .status-dot { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); animation: pulse 1.5s infinite; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+      50% { box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); }
+    }
+
+    /* Log */
+    .log-container {
+      background: #070a1f;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px; max-height: 380px;
+      overflow-y: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; line-height: 1.6;
+      white-space: pre-wrap; word-break: break-all;
+      color: #b0b8d0;
+      position: relative;
+    }
+    body.light .log-container { background: #f7fafc; color: #2d3748; border-color: #e2e8f0; }
+    .log-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .log-container::-webkit-scrollbar { width: 5px; }
+    .log-container::-webkit-scrollbar-track { background: transparent; }
+    .log-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+    /* Live Preview */
+    .preview-img {
+      width: 100%; max-height: 380px;
+      object-fit: contain;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-top: 12px;
+      background: #000;
+    }
+
+    /* Progress bar */
+    .progress-bar { width: 100%; height: 3px; background: rgba(255, 255, 255, 0.05); border-radius: 2px; overflow: hidden; margin-top: 10px; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 2px; transition: width 0.4s ease; width: 0%; }
+    .running-progress .progress-fill { animation: progress-indeterminate 1.8s infinite; }
+    @keyframes progress-indeterminate {
+      0% { width: 0%; margin-left: 0%; }
+      50% { width: 40%; margin-left: 30%; }
+      100% { width: 0%; margin-left: 100%; }
+    }
+
+    /* Toast */
+    #toast-container {
+      position: fixed; top: 24px; right: 24px; z-index: 1000;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .toast {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px;
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      min-width: 300px; max-width: 400px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      animation: slideIn 0.3s ease;
+    }
+    @keyframes slideIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    .toast.hiding { animation: slideOut 0.3s ease forwards; }
+    @keyframes slideOut { to { transform: translateX(120%); opacity: 0; } }
+    .toast-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .toast.success .toast-icon { background: rgba(46, 204, 113, 0.2); color: var(--success); }
+    .toast.error .toast-icon { background: rgba(255, 92, 124, 0.2); color: var(--danger); }
+    .toast.info .toast-icon { background: rgba(92, 140, 255, 0.2); color: var(--accent-2); }
+    .toast-content { flex: 1; }
+    .toast-title { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+    .toast-body { font-size: 12px; color: var(--text-dim); }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: none; align-items: center; justify-content: center;
+      z-index: 1000; padding: 20px;
+    }
+    .modal-overlay.active { display: flex; animation: fadeIn 0.2s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .modal {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px; max-width: 480px; width: 100%;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      animation: modalSlide 0.3s ease;
+    }
+    body.light .modal { background: #fff; }
+    @keyframes modalSlide { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .modal-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .modal-body { color: var(--text-dim); font-size: 14px; margin-bottom: 24px; line-height: 1.6; }
+
+    /* Upload area */
     .upload-area {
-      border: 2px dashed rgba(255,255,255,0.3); border-radius: 8px; padding: 30px;
-      text-align: center; margin-bottom: 15px; transition: all 0.3s;
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      transition: all 0.2s;
+      cursor: pointer;
     }
-    .upload-area:hover { border-color: #4CAF50; background: rgba(76,175,80,0.1); }
-    .msg { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 0.9em; }
-    .msg.success { background: rgba(76,175,80,0.3); border: 1px solid #4CAF50; }
-    .msg.error { background: rgba(244,67,54,0.3); border: 1px solid #f44336; }
+    .upload-area:hover { border-color: var(--accent); background: rgba(124, 92, 255, 0.05); }
+    .upload-icon { font-size: 32px; margin-bottom: 10px; opacity: 0.7; }
+    .upload-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    .upload-sub { font-size: 11px; color: var(--text-dim); }
+
+    /* RPT grid */
+    .rpt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }
+    @media (max-width: 700px) { .rpt-grid { grid-template-columns: 1fr; } }
+    .rpt-field { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 10px; padding: 12px; transition: all 0.2s; }
+    body.light .rpt-field { background: #fff; }
+    .rpt-field label { font-size: 10px; margin-bottom: 6px; }
+    .rpt-field input[type="file"] { padding: 6px; font-size: 11px; border-width: 1px; }
+    .rpt-field input[type="file"]::file-selector-button {
+      padding: 5px 8px; border-radius: 6px; border: none;
+      background: rgba(124, 92, 255, 0.25); color: var(--text-primary);
+      cursor: pointer; font-size: 10px; font-weight: 600; margin-right: 8px; transition: all 0.2s;
+    }
+
+    /* Tab Content */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.3s; }
+
+    /* Inline messages */
+    .msg { margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 12px; display: none; }
+    .msg.success { background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.3); color: #7ce8a5; }
+    .msg.error { background: rgba(255, 92, 124, 0.1); border: 1px solid rgba(255, 92, 124, 0.3); color: #ff9bb0; }
+    body.light .msg.success { color: #2f855a; }
+    body.light .msg.error { color: #c53030; }
+
+    /* Main Layout */
+    .main-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 1000px) { .main-layout { grid-template-columns: 1fr; } }
+
+    .mt-12 { margin-top: 12px; }
+    .small { font-size: 10px; color: var(--text-dim); }
+
+    /* Shortcuts Hint */
+    .shortcuts-hint {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      background: var(--card); backdrop-filter: blur(20px);
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 8px 16px; font-size: 11px; color: var(--text-dim);
+      z-index: 100; display: flex; gap: 16px; align-items: center;
+    }
+    .kbd { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 10px; }
+    body.light .kbd { background: #e2e8f0; }
   </style>
 </head>
 <body>
-   <div class="container">
-     <header>
-       <h1>🎓 RPH Automation</h1>
-       <p>Sistem Automasi Rancangan Pengajaran Harian CIDS</p>
-       <div style="margin:15px 0;">
-         <label for="profile-select" style="margin-right:10px; font-weight:600;">Profil Guru:</label>
-         <select id="profile-select" onchange="switchProfile()" style="padding:8px 16px; border-radius:6px; border:2px solid rgba(255,255,255,0.3); background:rgba(255,255,255,0.2); color:#fff; font-size:1em; min-width:250px;">
-           <option value="">-- Pilih Profil --</option>
-         </select>
-         <button class="btn btn-start" onclick="createNewProfile()" style="width:auto; padding:8px 16px; margin-left:10px;">➕ Profil Baru</button>
-       </div>
-      <div class="tabs">
-        <button class="tab-btn active" onclick="showTab('automation')">🚀 Jana RPH</button>
-        <button class="tab-btn" onclick="showTab('settings')">⚙️ Tetapan Sistem</button>
-      </div>
-    </header>
+  <div id="toast-container"></div>
 
-    <!-- TAB AUTOMATION -->
-    <div id="tab-automation" class="tab-content active">
-      <div class="card">
-        <h2>⚙️ Tetapan Minggu</h2>
-        <div class="info-box">💡 Pilih minggu yang ingin dijana RPH. Anda boleh pilih satu minggu sahaja atau julat minggu.</div>
-        <div class="quick-select">
-          <button class="quick-btn" onclick="selectRange(8,18)">Minggu 8-18</button>
-          <button class="quick-btn" onclick="selectRange(8,13)">Minggu 8-13 (Sem 1)</button>
-          <button class="quick-btn" onclick="selectRange(14,18)">Minggu 14-18 (Sem 2)</button>
-          <button class="quick-btn" onclick="selectAll()">Semua (1-38)</button>
-        </div>
-        <div class="form-group">
-          <label>Julat Minggu:</label>
-          <div class="week-grid" id="weekGrid"></div>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-start" id="btnStart" onclick="startAutomation()">🚀 Mula Automation</button>
-          <button class="btn btn-stop" id="btnStop" onclick="stopAutomation()" disabled>⏹ Hentikan</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>📊 Status & Log</h2>
-        <div class="status idle" id="statusBox">
-          <div class="status-dot"></div>
-          <span id="statusText">Sedia untuk dimulakan</span>
-        </div>
-        <div class="log-container" id="logContainer">Tiada log. Sila mulakan automation.</div>
-      </div>
-    </div>
-
-    <!-- TAB SETTINGS -->
-       <div id="tab-settings" class="tab-content">
-       <div class="card">
-         <h2>👥 Pengurusan Profil Guru</h2>
-         <div class="info-box">Buat, ubah atau padam profil guru. Setiap profil mempunyai login, jadual waktu dan RPT sendiri.</div>
-         <div class="form-group">
-           <label>Profil Aktif:</label>
-           <select id="cfg-profile" onchange="loadProfileSettings()" style="width:100%; padding:12px; border-radius:8px; background:rgba(255,255,255,0.15); color:#fff; border:2px solid rgba(255,255,255,0.3);">
-           </select>
-         </div>
-         <div id="profile-management">
-           <div class="form-group">
-             <label style="font-weight:600;">Tindakan Profil:</label>
-             <div class="btn-group">
-               <button class="btn btn-start" onclick="activateProfile()" style="width:auto;">✅ Aktifkan</button>
-               <button class="btn btn-stop" onclick="deleteProfile()" style="width:auto;">🗑 Padam</button>
-             </div>
-           </div>
-         </div>
-         <div id="profile-msg"></div>
-       </div>
-
-       <div class="card">
-         <h2>🔐 Log Masuk CIDS</h2>
-        <div class="form-group">
-          <label>Nama Pengguna:</label>
-          <input type="text" id="cfg-username">
-        </div>
-        <div class="form-group">
-          <label>Kata Laluan:</label>
-          <input type="password" id="cfg-password">
-        </div>
-        <div class="form-group">
-          <label>Nama Guru (untuk carian dropdown CIDS):</label>
-          <input type="text" id="cfg-teacherName" placeholder="Contoh: akmal, zulaikha, ahmad">
-          <small style="opacity:0.7; font-size:0.8em;">Sistem akan cari nama ini dalam dropdown Senarai Rekod CIDS.</small>
-        </div>
-        <button class="btn btn-start" onclick="saveLogin()" style="width:auto;">💾 Simpan Log Masuk</button>
-        <div id="login-msg"></div>
-      </div>
-
-      <div class="card">
-        <h2>📅 Muat Naik Jadual Waktu (Excel)</h2>
-        <div class="info-box">Muat naik fail Excel jadual waktu guru. Sistem akan automatik membaca hari, waktu, subjek dan kelas.</div>
-        <div class="upload-area">
-          <input type="file" id="jadual-file" accept=".xlsx, .xls" style="display:none;" onchange="uploadJadual()">
-          <button class="btn btn-start" onclick="document.getElementById('jadual-file').click()" style="width:auto;">📁 Pilih Fail Excel</button>
-          <p id="jadual-filename" style="margin-top:10px; font-size:0.9em;"></p>
-        </div>
-        <div id="jadual-msg"></div>
-      </div>
-
-      <div class="card">
-        <h2>📚 Muat Naik Fail RPT KPM (.docx)</h2>
-        <div class="info-box">
-          <p>Pilih fail RPT untuk setiap subjek. <strong>Anda tidak perlu muat naik semua</strong>, hanya yang ada perubahan sahaja.</p>
-          <p>Sistem akan <strong>gabungkan</strong> dengan data RPT sedia ada.</p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; margin-bottom:20px;">
-          <label style="margin:0;">Pendidikan Jasmani (PJ Tahun 4):</label> <input type="file" id="rpt-pj4" accept=".docx,.doc">
-          <label style="margin:0;">Pendidikan Jasmani (PJ Tahun 5):</label> <input type="file" id="rpt-pj5" accept=".docx,.doc">
-          <label style="margin:0;">Pendidikan Jasmani (PJ Tahun 6):</label> <input type="file" id="rpt-pj6" accept=".docx,.doc">
-          <label style="margin:0;">Matematik (MAT Tahun 6):</label> <input type="file" id="rpt-mat6" accept=".docx,.doc">
-          <label style="margin:0;">Reka Bentuk & Teknologi (RBT Tahun 5):</label> <input type="file" id="rpt-rbt5" accept=".docx,.doc">
-          <label style="margin:0;">Reka Bentuk & Teknologi (RBT Tahun 6):</label> <input type="file" id="rpt-rbt6" accept=".docx,.doc">
-        </div>
-        
-        <button class="btn btn-start" onclick="uploadAllRPT()" style="width:100%;">📤 Muat Naik & Proses Semua RPT</button>
-        <div id="rpt-msg"></div>
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <div class="modal-title" id="modal-title">Sahkan</div>
+      <div class="modal-body" id="modal-body">Adakah anda pasti?</div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-ghost" onclick="closeModal()">Batal</button>
+        <button class="btn btn-primary" id="modal-confirm">Sahkan</button>
       </div>
     </div>
   </div>
 
+  <!-- Audio -->
+  <audio id="audioNotify" src="data:audio/wav;base64,UklGRl9vT19hdWrpZVd..." preload="auto"></audio>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="brand-icon">📚</div>
+        <div class="brand-text">
+          <h1>CIDS eRPH Automation</h1>
+          <p>Sistem Automasi Rancangan Pengajaran Harian</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <select id="profile-select" onchange="switchProfile()" class="profile-select">
+          <option value="">Pilih Profil</option>
+        </select>
+        <button class="icon-btn" onclick="openNewProfileModal()" title="Profil Baru">+</button>
+        <button class="icon-btn" onclick="toggleTheme()" title="Tukar Tema">🌙</button>
+        <button class="icon-btn" onclick="backupConfig()" title="Backup">💾</button>
+        <button class="icon-btn" onclick="restoreConfig()" title="Restore">📥</button>
+      </div>
+    </header>
+
+    <!-- Stats Dashboard -->
+    <div class="dashboard">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📅</div>
+          <div class="stat-value" id="stat-weeks">0</div>
+          <div class="stat-label">Minggu Dipilih</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-value" id="stat-status" style="font-size:14px;">Sedia</div>
+          <div class="stat-label">Status</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏱️</div>
+          <div class="stat-value" id="stat-duration" style="font-size:18px;">—</div>
+          <div class="stat-label">Tempoh</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👤</div>
+          <div class="stat-value" id="stat-profile" style="font-size:14px;">—</div>
+          <div class="stat-label">Profil Aktif</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-value" id="stat-completed" style="font-size:18px;">0</div>
+          <div class="stat-label">Selesai</div>
+        </div>
+      </div>
+
+      <!-- Calendar Preview -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span>📅</span> Jadual Mingguan</div>
+          <div class="card-badge" id="weekBadge">0 dipilih</div>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab(event, 'automation')">🚀 Jana RPH</button>
+      <button class="tab-btn" onclick="showTab(event, 'endorse')">✉️ Hantar Pengesahan</button>
+      <button class="tab-btn" onclick="showTab(event, 'settings')">⚙️ Tetapan</button>
+    </div>
+
+    <!-- TAB AUTOMATION -->
+    <div id="tab-automation" class="tab-content active">
+      <div class="main-layout">
+        <!-- Kiri: Kawalan -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span>📅</span> Tetapan Minggu</div>
+              <button class="icon-btn" onclick="toggleAudio()" title="Bunyi Notifikasi">🔔</button>
+            </div>
+
+            <div class="info-box" id="resumeBox" style="display:none; background: rgba(255, 179, 71, 0.15); border-color: rgba(255, 179, 71, 0.4);">
+              ⏭️ Ada sesi sebelum ini yang belum selesai. Sila klik "Resume" untuk sambung.
+              <button class="btn btn-primary" style="margin-left:auto; padding:6px 12px; font-size:10px;" onclick="resumeAutomation()">Resume</button>
+            </div>
+
+            <div class="quick-select">
+              <button class="quick-btn" onclick="selectRange(8,18)">Mg 8-18</button>
+              <button class="quick-btn" onclick="selectRange(8,13)">Mg 8-13</button>
+              <button class="quick-btn" onclick="selectRange(14,18)">Mg 14-18</button>
+              <button class="quick-btn" onclick="selectRange(19,25)">Mg 19-25</button>
+              <button class="quick-btn" onclick="selectAll()">Semua</button>
+              <button class="quick-btn" onclick="clearSelection()">Kosongkan</button>
+            </div>
+
+            <label>JULAT MINGGU</label>
+            <div class="week-grid" id="weekGrid"></div>
+
+            <div class="btn-group">
+              <button class="btn btn-primary" id="btnStart" onclick="startAutomation()"><span>▶</span> Mula</button>
+              <button class="btn btn-danger" id="btnStop" onclick="stopAutomation()" disabled><span>■</span> Henti</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanan: Log & Preview -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span>📊</span> Log & Preview</div>
+              <div style="display:flex; gap:6px;">
+                <button class="icon-btn" onclick="exportLog()" title="Export Log">📄</button>
+                <button class="icon-btn" onclick="toggleAutoScroll()" title="Auto-scroll" id="autoScrollBtn" style="color:#7c5cff;">↕</button>
+              </div>
+            </div>
+
+            <div class="status-bar status-idle" id="statusBox">
+              <div class="status-dot"></div>
+              <span id="statusText">Sedia untuk dimulakan</span>
+            </div>
+
+            <div class="progress-bar" id="progressWrap">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="log-container mt-12" id="logContainer">Belum ada log. Sila mulakan automation.</div>
+            
+            <img src="" id="previewImg" class="preview-img" style="display:none;" alt="Live Preview">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB ENDORSE -->
+    <div id="tab-endorse" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span>✉️</span> Hantar Pengesahan MAR</div>
+        </div>
+        <div class="info-box">Pilih minggu yang ingin dihantar untuk pengesahan. Kosongkan untuk hantar semua minggu.</div>
+        <div class="form-group">
+          <label>Pilih Minggu:</label>
+          <input type="text" id="endorse-weeks" placeholder="Contoh: 8,9,10 (kosong = semua minggu)" style="width:100%; padding:12px; border-radius:8px; border:2px solid rgba(255,255,255,0.3); background:rgba(255,255,255,0.1); color:#fff; outline:none;">
+          <div class="small" style="margin-top:6px;">Taip nombor minggu dipisahkan dengan koma. Tinggalkan kosong untuk hantar SEMUA rekod RPH.</div>
+        </div>
+        <button class="btn btn-primary" id="btnEndorse" onclick="startEndorse()">🚀 Mula Hantar Pengesahan</button>
+        <div class="msg" id="endorse-msg"></div>
+      </div>
+    </div>
+
+    <!-- TAB SETTINGS -->
+    <div id="tab-settings" class="tab-content">
+      <div class="main-layout">
+        <!-- Kiri: Profil & Login -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span>👤</span> Pengurusan Profil</div>
+            </div>
+            <div class="form-group">
+              <label>Profil Aktif</label>
+              <select id="cfg-profile" onchange="loadProfileSettings()"><option value="">Pilih Profil</option></select>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-primary" onclick="activateProfile()">Aktifkan</button>
+              <button class="btn btn-danger" onclick="deleteProfile()">Padam</button>
+            </div>
+            <div class="msg" id="profile-msg"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span>🔐</span> Log Masuk CIDS</div>
+            </div>
+            <div class="form-group">
+              <label>Nama Pengguna</label>
+              <input type="text" id="cfg-username" placeholder="Cth: cikguakmal">
+            </div>
+            <div class="form-group">
+              <label>Kata Laluan</label>
+              <input type="password" id="cfg-password" placeholder="••••••••">
+            </div>
+            <div class="form-group">
+              <label>Nama Guru (dropdown CIDS)</label>
+              <input type="text" id="cfg-teacherName" placeholder="akmal, zulaikha...">
+              <div class="small" style="margin-top:6px;">Sistem akan cari nama ini dalam dropdown Senarai Rekod CIDS.</div>
+            </div>
+            <button class="btn btn-primary" onclick="saveLogin()">💾 Simpan</button>
+            <div class="msg" id="login-msg"></div>
+          </div>
+        </div>
+
+        <!-- Kanan: Upload -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span>📅</span> Muat Naik Jadual Waktu</div>
+            </div>
+            <div class="info-box">Muat naik fail Excel jadual waktu guru. Sistem akan automatik membaca hari, waktu, subjek dan kelas.</div>
+            <div class="upload-area" onclick="document.getElementById('jadual-file').click()">
+              <div class="upload-icon">📁</div>
+              <div class="upload-title" id="jadual-title">Klik untuk pilih fail Excel</div>
+              <div class="upload-sub">Format: .xlsx atau .xls</div>
+              <input type="file" id="jadual-file" accept=".xlsx, .xls" style="display:none;" onchange="uploadJadual()">
+            </div>
+            <div class="msg" id="jadual-msg"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span>📚</span> Muat Naik Fail RPT</div>
+              <span class="small">Boleh proses beberapa serentak</span>
+            </div>
+            <div class="info-box">Pilih fail RPT untuk subjek yang ingin dikemaskini. <strong>Tidak perlu muat naik semua.</strong> Data akan digabungkan dengan data sedia ada.</div>
+
+            <div class="rpt-grid">
+              <div class="rpt-field"><label>PJ Tahun 4</label><input type="file" id="rpt-pj4" accept=".docx,.doc"></div>
+              <div class="rpt-field"><label>PJ Tahun 5</label><input type="file" id="rpt-pj5" accept=".docx,.doc"></div>
+              <div class="rpt-field"><label>PJ Tahun 6</label><input type="file" id="rpt-pj6" accept=".docx,.doc"></div>
+              <div class="rpt-field"><label>Matematik Tahun 6</label><input type="file" id="rpt-mat6" accept=".docx,.doc"></div>
+              <div class="rpt-field"><label>RBT Tahun 5</label><input type="file" id="rpt-rbt5" accept=".docx,.doc"></div>
+              <div class="rpt-field"><label>RBT Tahun 6</label><input type="file" id="rpt-rbt6" accept=".docx,.doc"></div>
+            </div>
+
+            <button class="btn btn-primary" onclick="uploadAllRPT()" style="width:100%;">📤 Muat Naik & Proses</button>
+            <div class="msg" id="rpt-msg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer style="text-align: center; padding: 30px 0 20px; color: var(--text-dim); font-size: 13px; font-weight: 500; border-top: 1px solid var(--border); margin-top: 40px;">
+      Design by: <span style="color: var(--accent); font-weight: 700;">Akmal Nasir</span>
+    </footer>
+  </div>
+
+  <!-- Shortcuts Hint -->
+  <div class="shortcuts-hint">
+    <span>⌨️ Shortcuts:</span>
+    <span><span class="kbd">Ctrl+R</span> Mula</span>
+    <span><span class="kbd">Ctrl+.</span> Henti</span>
+    <span><span class="kbd">Ctrl+/</span> Tetapan</span>
+  </div>
+
   <script>
+    // ===== State =====
     let selectedWeeks = [];
     let isRunning = false;
     let pollInterval = null;
+    let startTime = null;
+    let durationInterval = null;
+    let autoScroll = true;
+    let audioEnabled = false;
+    let isDarkMode = true;
 
-     // Profile management functions
-      async function loadProfiles() {
-        try {
-          const res = await fetch('/api/profiles');
-          const data = await res.json();
-          const profileSelect = document.getElementById('profile-select');
-          const cfgProfile = document.getElementById('cfg-profile');
-          
-          // Clear existing options
-          profileSelect.innerHTML = '<option value="">-- Pilih Profil --</option>';
-          cfgProfile.innerHTML = '';
-          
-          if (data.profiles && Array.isArray(data.profiles)) {
-            data.profiles.forEach(name => {
-              const option1 = document.createElement('option');
-              option1.value = name;
-              option1.textContent = name + (name === data.activeProfile ? ' (Aktif)' : '');
-              if (name === data.activeProfile) option1.selected = true;
-              profileSelect.appendChild(option1);
-              
-              const option2 = document.createElement('option');
-              option2.value = name;
-              option2.textContent = name + (name === data.activeProfile ? ' (Aktif)' : '');
-              if (name === data.activeProfile) option2.selected = true;
-              cfgProfile.appendChild(option2);
-            });
-          }
-        } catch (e) { console.error('Error loading profiles:', e); }
-      }
-
-     async function switchProfile() {
-       const profileName = document.getElementById('profile-select').value;
-       if (!profileName) return;
-       
-       try {
-         const res = await fetch(`/api/profiles/${encodeURIComponent(profileName)}/activate`, { method: 'POST' });
-         const result = await res.json();
-         if (result.success) {
-           loadProfiles();
-           if (document.getElementById('tab-settings').classList.contains('active')) {
-             loadConfig();
-           }
-         } else {
-           alert('Ralat: ' + (result.error || 'Gagal tukar profil'));
-         }
-       } catch (e) { alert('Ralat: ' + e.message); }
-     }
-
-     async function activateProfile() {
-       const profileName = document.getElementById('cfg-profile').value;
-       if (!profileName) {
-         showMsg('profile-msg', 'Sila pilih profil terlebih dahulu', 'error');
-         return;
-       }
-       
-       try {
-         const res = await fetch(`/api/profiles/${encodeURIComponent(profileName)}/activate`, { method: 'POST' });
-         const result = await res.json();
-         if (result.success) {
-           showMsg('profile-msg', `Profil "${profileName}" telah diaktifkan!`, 'success');
-           loadProfiles();
-         } else {
-           showMsg('profile-msg', 'Ralat: ' + (result.error || 'Gagal aktifkan profil'), 'error');
-         }
-       } catch (e) { showMsg('profile-msg', 'Ralat: ' + e.message, 'error'); }
-     }
-
-     async function createNewProfile() {
-       const name = prompt('Masukkan nama profil guru baru:');
-       if (!name || !name.trim()) return;
-       
-       const username = prompt('Masukkan username CIDS:');
-       if (!username) return;
-       
-       const password = prompt('Masukkan password CIDS:');
-       if (!password) return;
-       
-       try {
-         const res = await fetch('/api/profiles', {
-           method: 'POST',
-           headers: { 'Content-Type': 'application/json' },
-           body: JSON.stringify({ name: name.trim(), username, password })
-         });
-         const result = await res.json();
-         if (result.success) {
-           alert(`Profil "${name.trim()}" telah dicipta! Sila muat naik jadual waktu dan RPT untuk profil ini.`);
-           loadProfiles();
-           document.getElementById('cfg-profile').value = name.trim();
-           loadProfileSettings();
-         } else {
-           alert('Ralat: ' + (result.error || 'Gagal cipta profil'));
-         }
-       } catch (e) { alert('Ralat: ' + e.message); }
-     }
-
-     async function deleteProfile() {
-       const profileName = document.getElementById('cfg-profile').value;
-       if (!profileName) {
-         showMsg('profile-msg', 'Sila pilih profil terlebih dahulu', 'error');
-         return;
-       }
-       
-       if (!confirm(`Padam profil "${profileName}"? Tindakan ini tidak boleh dibatalkan.`)) return;
-       
-       try {
-         const res = await fetch(`/api/profiles/${encodeURIComponent(profileName)}`, { method: 'DELETE' });
-         const result = await res.json();
-         if (result.success) {
-           showMsg('profile-msg', `Profil "${profileName}" telah dipadam!`, 'success');
-           loadProfiles();
-         } else {
-           showMsg('profile-msg', 'Ralat: ' + (result.error || 'Gagal padam profil'), 'error');
-         }
-       } catch (e) { showMsg('profile-msg', 'Ralat: ' + e.message, 'error'); }
-     }
-
-     async function loadProfileSettings() {
-       const profileName = document.getElementById('cfg-profile').value;
-       if (!profileName) return;
-       
-       try {
-         const res = await fetch('/api/config');
-         const config = await res.json();
-         document.getElementById('cfg-username').value = config.login.username;
-         document.getElementById('cfg-password').value = config.login.password;
-         document.getElementById('cfg-teacherName').value = config.teacherName || '';
-       } catch (e) { console.error(e); }
-     }
-
-     function initWeekGrid() {
+    // ===== Week Grid =====
+    function initWeekGrid() {
       const grid = document.getElementById('weekGrid');
-      const CUTI_MINGGU = [1, 6, 39, 40, 41, 42];
+      const CUTI = [1, 6, 39, 40, 41, 42];
       for (let w = 1; w <= 42; w++) {
         const btn = document.createElement('button');
         btn.className = 'week-btn';
-        if (CUTI_MINGGU.includes(w)) {
-          btn.style.opacity = '0.3';
-          btn.style.backgroundColor = 'rgba(150,200,150,0.1)';
-          btn.textContent = `M${w} ✗`;
+        if (CUTI.includes(w)) {
+          btn.className += ' disabled';
+          btn.textContent = `M${w}`;
           btn.title = 'Minggu Cuti';
         } else {
           btn.textContent = `M${w}`;
-          btn.onclick = () => toggleWeek(w, btn);
+          btn.onclick = () => { toggleWeek(w, btn); renderCalendar(); };
         }
         grid.appendChild(btn);
       }
     }
 
     function toggleWeek(week, btn) {
-      if (selectedWeeks.includes(week)) {
-        selectedWeeks = selectedWeeks.filter(w => w !== week);
+      const idx = selectedWeeks.indexOf(week);
+      if (idx > -1) {
+        selectedWeeks.splice(idx, 1);
         btn.classList.remove('selected');
       } else {
         selectedWeeks.push(week);
         btn.classList.add('selected');
       }
+      updateWeekBadge();
     }
 
     function selectRange(start, end) {
       selectedWeeks = [];
       document.querySelectorAll('.week-btn').forEach((btn, i) => {
         const w = i + 1;
-        if (w >= start && w <= end && !btn.textContent.includes('✗')) {
+        if (w >= start && w <= end && !btn.classList.contains('disabled')) {
           selectedWeeks.push(w);
           btn.classList.add('selected');
         } else {
           btn.classList.remove('selected');
         }
       });
+      renderCalendar();
+      updateWeekBadge();
     }
 
     function selectAll() {
       selectedWeeks = [];
       document.querySelectorAll('.week-btn').forEach((btn, i) => {
         const w = i + 1;
-        if (!btn.textContent.includes('✗')) {
+        if (!btn.classList.contains('disabled')) {
           selectedWeeks.push(w);
           btn.classList.add('selected');
         }
       });
+      renderCalendar();
+      updateWeekBadge();
     }
 
+    function clearSelection() {
+      selectedWeeks = [];
+      document.querySelectorAll('.week-btn').forEach(btn => btn.classList.remove('selected'));
+      renderCalendar();
+      updateWeekBadge();
+    }
+
+    function updateWeekBadge() {
+      document.getElementById('weekBadge').textContent = `${selectedWeeks.length} dipilih`;
+      document.getElementById('stat-weeks').textContent = selectedWeeks.length;
+    }
+
+    function renderCalendar() {
+      const grid = document.getElementById('calendarGrid');
+      grid.innerHTML = '';
+      const mingguTarikh = window.mingguTarikh || {};
+      for (let w = 1; w <= 42; w++) {
+        const day = document.createElement('div');
+        day.className = 'cal-day';
+        let info = '';
+        if (mingguTarikh[w]) {
+          const [dari, hingga] = mingguTarikh[w];
+          info = `<div style="font-size:9px; margin-top:2px; color: var(--text-dim);">${dari.slice(0,6)}-${hingga.slice(0,6)}</div>`;
+        }
+        if ([1, 6, 39, 40, 41, 42].includes(w)) {
+          day.classList.add('disabled');
+          info = '<div style="font-size:9px; color:#ff5c7c;">Cuti</div>';
+        }
+        if (selectedWeeks.includes(w)) day.classList.add('selected');
+        day.innerHTML = `<div class="day-num">M${w}</div>${info}`;
+        grid.appendChild(day);
+      }
+    }
+
+    // ===== Tabs =====
+    function showTab(e, name) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + name).classList.add('active');
+      e.currentTarget.classList.add('active');
+      if (name === 'settings') { loadConfig(); loadProfiles(); }
+    }
+
+    // ===== Toast =====
+    function toast(title, body, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const t = document.createElement('div');
+      t.className = `toast ${type}`;
+      const icons = { success: '✓', error: '✕', info: 'i' };
+      t.innerHTML = `
+        <div class="toast-icon">${icons[type]}</div>
+        <div class="toast-content">
+          <div class="toast-title">${title}</div>
+          ${body ? `<div class="toast-body">${body}</div>` : ''}
+        </div>
+      `;
+      container.appendChild(t);
+      setTimeout(() => {
+        t.classList.add('hiding');
+        setTimeout(() => t.remove(), 300);
+      }, 4000);
+      if (audioEnabled && type === 'success') document.getElementById('audioNotify').play();
+    }
+
+    // ===== Modal =====
+    function openModal(title, body, onConfirm) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-body').textContent = body;
+      document.getElementById('modal-overlay').classList.add('active');
+      const confirmBtn = document.getElementById('modal-confirm');
+      confirmBtn.onclick = () => {
+        closeModal();
+        if (onConfirm) onConfirm();
+      };
+    }
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('active');
+    }
+
+    // ===== Automation =====
     async function startAutomation() {
-      if (selectedWeeks.length === 0) { alert('Sila pilih sekurang-kurangnya satu minggu!'); return; }
+      if (selectedWeeks.length === 0) {
+        toast('Ralat', 'Sila pilih sekurang-kurangnya satu minggu!', 'error');
+        return;
+      }
       const startWeek = Math.min(...selectedWeeks);
       const endWeek = Math.max(...selectedWeeks);
-      if (!confirm(`Mulakan automation untuk minggu ${startWeek} hingga ${endWeek}?`)) return;
 
-      document.getElementById('btnStart').disabled = true;
-      document.getElementById('btnStop').disabled = false;
-      document.getElementById('statusBox').className = 'status running';
-      document.getElementById('statusText').textContent = `Menjana RPH minggu ${startWeek}-${endWeek}...`;
+      openModal(
+        'Mulakan Automation',
+        `Jana RPH untuk minggu ${startWeek}-${endWeek}? Proses akan berjalan dalam background.`,
+        async () => {
+          setRunning(true);
+          try {
+            const res = await fetch('/api/start', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ startWeek, endWeek })
+            });
+            const data = await res.json();
+            if (data.error) {
+              toast('Ralat', data.error, 'error');
+              setRunning(false);
+              return;
+            }
+            toast('Dimulakan', `Menjana minggu ${startWeek}-${endWeek}...`, 'success');
+            isRunning = true;
+            pollInterval = setInterval(checkStatus, 1500);
+          } catch (e) {
+            toast('Ralat', e.message, 'error');
+            setRunning(false);
+          }
+        }
+      );
+    }
 
-      try {
-        const res = await fetch('/api/start', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ startWeek, endWeek })
-        });
-        const data = await res.json();
-        if (data.error) { alert(data.error); resetUI(); return; }
-        isRunning = true;
-        pollInterval = setInterval(checkStatus, 2000);
-      } catch (e) { alert('Ralat: ' + e.message); resetUI(); }
+    async function resumeAutomation() {
+      toast('Resume', 'Menyambung sesi terdahulu...', 'info');
+      // Clear resume box and start normally - backend will handle progress.json
+      document.getElementById('resumeBox').style.display = 'none';
+      await startAutomation();
+    }
+
+    function setRunning(running) {
+      document.getElementById('btnStart').disabled = running;
+      document.getElementById('btnStop').disabled = !running;
+      const box = document.getElementById('statusBox');
+      const bar = document.getElementById('progressWrap');
+      const statusText = document.getElementById('statusText');
+      const stat = document.getElementById('stat-status');
+      box.className = running ? 'status-bar status-running' : 'status-bar status-idle';
+      if (running) {
+        bar.classList.add('running-progress');
+        statusText.textContent = 'Menjana RPH...';
+        stat.textContent = 'Aktif';
+        stat.style.color = '#7ce8a5';
+        startTime = Date.now();
+        durationInterval = setInterval(updateDuration, 1000);
+        // Start preview refresh
+        refreshPreview();
+      } else {
+        bar.classList.remove('running-progress');
+        clearInterval(durationInterval);
+        document.getElementById('previewImg').style.display = 'none';
+        // Clear progress file on success
+        fetch('/api/clear-progress', { method: 'POST' }).catch(() => {});
+      }
+    }
+
+    function updateDuration() {
+      if (!startTime) return;
+      const s = Math.floor((Date.now() - startTime) / 1000);
+      const m = Math.floor(s / 60);
+      const ss = s % 60;
+      document.getElementById('stat-duration').textContent = m > 0 ? `${m}m ${ss}s` : `${ss}s`;
     }
 
     async function stopAutomation() {
-      if (!confirm('Adakah anda pasti mahu menghentikan proses?')) return;
-      try { await fetch('/api/stop', { method: 'POST' }); resetUI(); } catch (e) { console.error(e); }
+      openModal('Hentikan Proses', 'Adakah anda pasti mahu menghentikan proses?', async () => {
+        await fetch('/api/stop', { method: 'POST' }).catch(() => {});
+        setRunning(false);
+        isRunning = false;
+        if (pollInterval) clearInterval(pollInterval);
+        toast('Dihentikan', 'Proses automation telah dihentikan.', 'info');
+      });
     }
 
     async function checkStatus() {
       try {
         const res = await fetch('/api/status');
+        if (!res.ok) return;
         const data = await res.json();
         const logContainer = document.getElementById('logContainer');
         logContainer.textContent = data.log || 'Menunggu output...';
-        logContainer.scrollTop = logContainer.scrollHeight;
+        if (autoScroll) logContainer.scrollTop = logContainer.scrollHeight;
+        // Update completed count from log
+        const matches = (data.log || '').match(/Minggu (\d+) selesai/g);
+        document.getElementById('stat-completed').textContent = matches ? matches.length : 0;
         if (!data.isRunning && isRunning) {
-          isRunning = false; resetUI();
-          document.getElementById('statusBox').className = 'status idle';
+          isRunning = false;
+          setRunning(false);
+          clearInterval(pollInterval);
           document.getElementById('statusText').textContent = '✅ Proses selesai!';
+          document.getElementById('stat-status').textContent = 'Selesai';
+          document.getElementById('stat-status').style.color = '#7ce8a5';
+          toast('Selesai', 'Automation telah berjaya diselesaikan.', 'success');
+        }
+      } catch (e) { /* ignore */ }
+    }
+
+    function toggleAutoScroll() {
+      autoScroll = !autoScroll;
+      document.getElementById('autoScrollBtn').style.color = autoScroll ? '#7c5cff' : '';
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      document.getElementById('audioNotify').muted = !audioEnabled;
+      toast('Audio', audioEnabled ? 'Bunyi notifikasi diaktifkan.' : 'Bunyi notifikasi dimatikan.', 'info');
+    }
+
+    async function refreshPreview() {
+      const img = document.getElementById('previewImg');
+      try {
+        const res = await fetch('/api/screenshot?t=' + Date.now());
+        if (res.ok && res.headers.get('content-type') === 'image/png') {
+          const blob = await res.blob();
+          img.src = URL.createObjectURL(blob);
+          img.style.display = 'block';
+        }
+      } catch (e) { /* ignore */ }
+    }
+
+    async function exportLog() {
+     window.open('/api/export-log', '_blank');
+    }
+
+    // ===== Endorse =====
+    async function startEndorse() {
+      const weeksInput = document.getElementById('endorse-weeks').value.trim();
+      const weeks = weeksInput
+        ? weeksInput.split(',').map(w => parseInt(w.trim())).filter(w => !isNaN(w))
+        : [];
+      const weekMsg = weeks.length > 0 
+        ? `minggu ${weeks.join(', ')}` 
+        : 'SEMUA MINGGU';
+      
+      openModal(
+        'Hantar Pengesahan MAR',
+        `Proses ini akan menghantar pengesahan untuk <b>${weekMsg}</b>. Teruskan?`,
+        async () => {
+          document.getElementById('btnEndorse').disabled = true;
+          try {
+            const res = await fetch('/api/endorse', { 
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ weeks })
+            });
+            const data = await res.json();
+            if (data.success) {
+              toast('Dimulakan', `Proses pengesahan ${weekMsg} sedang berjalan.`, 'success');
+            } else {
+              toast('Ralat', data.error || 'Gagal', 'error');
+            }
+          } catch (e) { toast('Ralat', e.message, 'error'); }
+          document.getElementById('btnEndorse').disabled = false;
+        }
+      );
+    }
+
+    // ===== Backup/Restore =====
+    async function backupConfig() {
+      try {
+        const res = await fetch('/api/backup');
+        const blob = await res.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `cids-backup-${new Date().toISOString().slice(0,10)}.json`;
+        a.click();
+        window.URL.revokeObjectURL(url);
+        toast('Backup', 'Konfigurasi berjaya dimuat turun.', 'success');
+      } catch (e) { toast('Ralat', e.message, 'error'); }
+    }
+
+    async function restoreConfig() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+      input.onchange = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        try {
+          const text = await file.text();
+          const res = await fetch('/api/restore', { method: 'POST', body: text, headers: { 'Content-Type': 'application/json' } });
+          const result = await res.json();
+          if (result.success) {
+            toast('Restore', 'Data berjaya dipulihkan!', 'success');
+            loadConfig(); loadProfiles();
+          } else {
+            toast('Ralat', result.error, 'error');
+          }
+        } catch (err) { toast('Ralat', err.message, 'error'); }
+      };
+      input.click();
+    }
+
+    // ===== Theme =====
+    function toggleTheme() {
+      isDarkMode = !isDarkMode;
+      document.body.classList.toggle('light');
+      const btn = document.querySelector('.icon-btn[onclick="toggleTheme()"]');
+      btn.textContent = isDarkMode ? '🌙' : '☀️';
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    }
+
+    // ===== Keyboard Shortcuts =====
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'r') {
+        e.preventDefault();
+        if (!document.getElementById('btnStart').disabled) startAutomation();
+      } else if (e.ctrlKey && e.key === '.') {
+        e.preventDefault();
+        if (!document.getElementById('btnStop').disabled) stopAutomation();
+      } else if (e.ctrlKey && e.key === '/') {
+        e.preventDefault();
+        document.querySelector('.tab-btn:nth-child(3)').click();
+      }
+    });
+
+    // ===== Check for resume on load =====
+    async function checkResume() {
+      try {
+        const res = await fetch('/api/progress');
+        const data = await res.json();
+        if (data.hasProgress && data.completed.length > 0) {
+          document.getElementById('resumeBox').style.display = 'flex';
+        }
+      } catch (e) {}
+    }
+
+    // ===== Profiles =====
+    async function loadProfiles() {
+      try {
+        const res = await fetch('/api/profiles');
+        const data = await res.json();
+        const profileSelect = document.getElementById('profile-select');
+        const cfgProfile = document.getElementById('cfg-profile');
+        profileSelect.innerHTML = '<option value="">Pilih Profil</option>';
+        cfgProfile.innerHTML = '<option value="">Pilih Profil</option>';
+
+        if (data.profiles && Array.isArray(data.profiles)) {
+          data.profiles.forEach(name => {
+            const opt1 = document.createElement('option');
+            opt1.value = name;
+            opt1.textContent = name + (name === data.activeProfile ? ' ★' : '');
+            if (name === data.activeProfile) opt1.selected = true;
+            profileSelect.appendChild(opt1);
+
+            const opt2 = document.createElement('option');
+            opt2.value = name;
+            opt2.textContent = name + (name === data.activeProfile ? ' ★' : '');
+            if (name === data.activeProfile) opt2.selected = true;
+            cfgProfile.appendChild(opt2);
+          });
+
+          document.getElementById('stat-profile').textContent = data.activeProfile || '—';
         }
       } catch (e) { console.error(e); }
     }
 
-    function resetUI() {
-      if (pollInterval) { clearInterval(pollInterval); pollInterval = null; }
-      isRunning = false;
-      document.getElementById('btnStart').disabled = false;
-      document.getElementById('btnStop').disabled = true;
+    async function switchProfile() {
+      const profileName = document.getElementById('profile-select').value;
+      if (!profileName) return;
+      try {
+        const res = await fetch(`/api/profiles/${encodeURIComponent(profileName)}/activate`, { method: 'POST' });
+        const result = await res.json();
+        if (result.success) {
+          toast('Profil Ditukar', `Profil aktif: ${profileName}`, 'success');
+          loadProfiles();
+          if (document.getElementById('tab-settings').classList.contains('active')) loadConfig();
+        } else {
+          toast('Ralat', result.error || 'Gagal tukar profil', 'error');
+        }
+      } catch (e) { toast('Ralat', e.message, 'error'); }
     }
 
-     function showTab(tabName) {
-       document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-       document.getElementById('tab-' + tabName).classList.add('active');
-       event.target.classList.add('active');
-       if (tabName === 'settings') {
-         loadConfig();
-         loadProfiles();
-       }
-     }
+    async function activateProfile() {
+      const name = document.getElementById('cfg-profile').value;
+      if (!name) { showMsg('profile-msg', 'Sila pilih profil', 'error'); return; }
+      try {
+        const res = await fetch(`/api/profiles/${encodeURIComponent(name)}/activate`, { method: 'POST' });
+        const result = await res.json();
+        if (result.success) {
+          showMsg('profile-msg', `Profil "${name}" diaktifkan!`, 'success');
+          toast('Profil Diaktifkan', name, 'success');
+          loadProfiles();
+        } else {
+          showMsg('profile-msg', result.error || 'Gagal', 'error');
+        }
+      } catch (e) { showMsg('profile-msg', e.message, 'error'); }
+    }
 
+    async function deleteProfile() {
+      const name = document.getElementById('cfg-profile').value;
+      if (!name) { showMsg('profile-msg', 'Sila pilih profil', 'error'); return; }
+      openModal(
+        'Padam Profil',
+        `Padam profil "${name}"? Tindakan ini tidak boleh dibatalkan.`,
+        async () => {
+          try {
+            const res = await fetch(`/api/profiles/${encodeURIComponent(name)}`, { method: 'DELETE' });
+            const result = await res.json();
+            if (result.success) {
+              showMsg('profile-msg', `Profil "${name}" dipadam!`, 'success');
+              toast('Profil Dipadam', name, 'success');
+              loadProfiles();
+            } else {
+              showMsg('profile-msg', result.error || 'Gagal', 'error');
+            }
+          } catch (e) { showMsg('profile-msg', e.message, 'error'); }
+        }
+      );
+    }
+
+    function openNewProfileModal() {
+      const name = prompt('Nama profil baru:');
+      if (!name || !name.trim()) return;
+      const username = prompt('Username CIDS:');
+      if (!username) return;
+      const password = prompt('Password CIDS:');
+      if (!password) return;
+      createNewProfile(name.trim(), username, password);
+    }
+
+    async function createNewProfile(name, username, password) {
+      try {
+        const res = await fetch('/api/profiles', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, username, password })
+        });
+        const result = await res.json();
+        if (result.success) {
+          toast('Profil Dicipta', name, 'success');
+          loadProfiles();
+          if (document.getElementById('tab-settings').classList.contains('active')) loadConfig();
+        } else {
+          toast('Ralat', result.error || 'Gagal cipta profil', 'error');
+        }
+      } catch (e) { toast('Ralat', e.message, 'error'); }
+    }
+
+    async function loadProfileSettings() {
+      const name = document.getElementById('cfg-profile').value;
+      if (!name) return;
+      await loadConfig();
+    }
+
+    // ===== Config & Profiles =====
     async function loadConfig() {
       try {
         const res = await fetch('/api/config');
         const data = await res.json();
-        document.getElementById('cfg-username').value = data.login.username;
-        document.getElementById('cfg-password').value = data.login.password;
+        document.getElementById('cfg-username').value = data.login?.username || '';
+        document.getElementById('cfg-password').value = data.login?.password || '';
         document.getElementById('cfg-teacherName').value = data.teacherName || '';
-        renderRPTUploads(data.taughtSubjects || {});
-      } catch (e) { console.error(e); }
-    }
-
-    async function saveLogin() {
-      try {
-        const res = await fetch('/api/config');
-        const config = await res.json();
-        config.login.username = document.getElementById('cfg-username').value;
-        config.login.password = document.getElementById('cfg-password').value;
-        config.teacherName = document.getElementById('cfg-teacherName').value.toLowerCase();
-        
-        const saveRes = await fetch('/api/config', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(config)
-        });
-        const result = await saveRes.json();
-        showMsg('login-msg', result.message, result.success ? 'success' : 'error');
-      } catch (e) { showMsg('login-msg', 'Ralat: ' + e.message, 'error'); }
-    }
-
-    async function uploadJadual() {
-      const fileInput = document.getElementById('jadual-file');
-      if (!fileInput.files.length) return;
-      document.getElementById('jadual-filename').textContent = fileInput.files[0].name;
-      showMsg('jadual-msg', 'Sedang memproses...', '');
-      
-      const file = fileInput.files[0];
-      const formData = new FormData();
-      formData.append('file', file);
-
-      try {
-        const res = await fetch('/api/upload-jadual', { method: 'POST', body: file });
-        const result = await res.json();
-        showMsg('jadual-msg', result.message || result.error, result.success ? 'success' : 'error');
-      } catch (e) { showMsg('jadual-msg', 'Ralat: ' + e.message, 'error'); }
-    }
-
-    async function uploadAllRPT() {
-      const subjects = ['pj4', 'pj5', 'pj6', 'mat6', 'rbt5', 'rbt6'];
-      const formData = new FormData();
-      let hasFile = false;
-      const uploadedFiles = [];
-      
-      subjects.forEach(sub => {
-        const input = document.getElementById(`rpt-${sub}`);
-        if (input.files.length > 0) {
-          formData.append(sub, input.files[0]);
-          uploadedFiles.push(sub);
-          hasFile = true;
-        }
-      });
-      
-      if (!hasFile) {
-        showMsg('rpt-msg', 'Sila pilih sekurang-kurangnya satu fail RPT!', 'error');
-        return;
+        window.mingguTarikh = data.mingguTarikh || {};
+        renderCalendar();
+        return data;
+      } catch (e) { 
+        console.error('Error loading config:', e); 
       }
-      
-      showMsg('rpt-msg', `Sedang memproses ${uploadedFiles.length} fail RPT (${uploadedFiles.join(', ')}). Ini mungkin mengambil masa 10-30 saat...`, '');
-      
-      try {
-        const res = await fetch('/api/upload-rpt-docx', { method: 'POST', body: formData });
-        const result = await res.json();
-        showMsg('rpt-msg', result.message || result.error, result.success ? 'success' : 'error');
-        if (result.success) {
-          setTimeout(() => { subjects.forEach(sub => document.getElementById(`rpt-${sub}`).value = ''); }, 3000);
-        }
-      } catch (e) { showMsg('rpt-msg', 'Ralat: ' + e.message, 'error'); }
     }
 
-    function showMsg(elementId, text, type) {
-      const el = document.getElementById(elementId);
-      el.textContent = text;
-      el.className = 'msg ' + type;
+    async function loadProfileSettings() {
+      const name = document.getElementById('cfg-profile').value;
+      if (!name) return;
+      await loadConfig();
     }
 
-     initWeekGrid();
-     loadProfiles();
+    // ===== Init =====
+    initWeekGrid();
+    loadProfiles();
+    loadConfig().then(() => {
+      renderCalendar();
+      checkResume();
+    });
+    if (localStorage.getItem('theme') === 'light') toggleTheme();
   </script>
 </body>
 </html>

@@ -868,20 +868,38 @@ async function main() {
   const page = await context.newPage();
   page.setDefaultTimeout(CONFIG.timeout);
 
+  const progressPath = path.join(__dirname, 'data', 'progress.json');
+  let completedWeeks = [];
+  if (fs.existsSync(progressPath)) {
+    try {
+      const progress = JSON.parse(fs.readFileSync(progressPath, 'utf-8'));
+      completedWeeks = progress.completedWeeks || [];
+    } catch (e) {}
+  }
+
   try {
     await login(page);
 
     for (let minggu = startWeek; minggu <= endWeek; minggu++) {
       if (CUTI_MINGGU.includes(minggu)) continue;
+      if (completedWeeks.includes(minggu)) {
+        console.log(`[RESUME] Minggu ${minggu} sudah selesai, dilangkau.`);
+        continue;
+      }
 
       for (const group of MIW_GROUPS) {
         if (targetGroup !== 'all' && group.rptKey !== targetGroup) continue;
         await processWeek(page, group, minggu);
         await sleep(2000);
       }
+      
+      completedWeeks.push(minggu);
+      fs.writeFileSync(progressPath, JSON.stringify({ completedWeeks }, null, 2));
+      console.log(`[PROGRESS] Minggu ${minggu} selesai (${completedWeeks.length}/${endWeek - startWeek + 1})`);
     }
 
     console.log('\n=== Automation Complete ===');
+    try { fs.unlinkSync(progressPath); } catch (e) {}
   } catch (e) {
     console.error('Fatal error: ' + e.message);
     try {

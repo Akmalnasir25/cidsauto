@@ -1,6 +1,10 @@
 const { chromium } = require('playwright');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+// Read minggu argumen dari CLI (optional)
+  const targetWeeks = process.argv.slice(2).map(w => parseInt(w)).filter(w => !isNaN(w));
+  console.log('Minggu target: ' + (targetWeeks.length > 0 ? targetWeeks.join(', ') : 'SEMUA MINGGU'));
+
 (async () => {
   const browser = await chromium.launch({ headless: false, slowMo: 100 });
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
@@ -47,8 +51,8 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
   console.log('   URL after Mar: ' + page.url());
   await page.screenshot({ path: 'data/after-mar-hantar.png', fullPage: true });
 
-  // 4. Get Minggu 8 MIW IDs
-  const miwRecords = await page.evaluate(() => {
+  // 4. Get MIW IDs berdasarkan minggu yang dipilih
+  const miwRecords = await page.evaluate((weeks) => {
     const trs = document.querySelectorAll('table tbody tr');
     const results = [];
     trs.forEach((row, i) => {
@@ -57,18 +61,29 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
       const subject = (cells[2]?.textContent.trim() || '');
       const hantarLink = Array.from(row.querySelectorAll('a')).find(a => a.textContent.trim() === 'Hantar Untuk Pengesahan');
       
-      // Debug info
-      if (subject.includes('M8') || subject.includes('M7')) {
+      // Debug info untuk minggu target
+      const debugMatch = subject.match(/M(\d+)/);
+      if (debugMatch && (weeks.length === 0 || weeks.includes(parseInt(debugMatch[1])))) {
         console.log('Found row ' + i + ': subject="' + subject.substring(0,40) + '", hasHantar=' + !!hantarLink);
       }
       
-      if (!hantarLink || !subject.includes('M8')) return;
+      // Skip jika tiada hantar link
+      if (!hantarLink) return;
+      
+      // Filter berdasarkan minggu jika weeks ada
+      if (weeks.length > 0) {
+        const match = subject.match(/M(\d+)/);
+        if (!match) return;
+        const minggu = parseInt(match[1]);
+        if (!weeks.includes(minggu)) return;
+      }
+      
       const onclick = hantarLink.getAttribute('onclick') || '';
       const miwMatch = onclick.match(/miw_id=(\d+)/);
       results.push({ row: i, subject: subject.substring(0, 40), miwId: miwMatch ? miwMatch[1] : null });
     });
     return results;
-  });
+  }, targetWeeks);
 
   console.log('4. Minggu 8 records to submit: ' + miwRecords.length);
   miwRecords.forEach(r => console.log('   ' + r.subject));

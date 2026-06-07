@@ -132,6 +132,112 @@ const server = http.createServer((req, res) => {
     res.end(JSON.stringify({ success: true, message: 'Proses dihentikan' }));
   }
 
+   // === ENDORSEMENT (HANTAR PENGESAHAN) ===
+   else if (url === '/api/endorse' && req.method === 'POST') {
+     if (isRunning) {
+       res.writeHead(400, { 'Content-Type': 'application/json' });
+       res.end(JSON.stringify({ error: 'Proses automation sedang berjalan' }));
+       return;
+     }
+     
+     let weeks = [];
+     try {
+       let body = '';
+       req.on('data', chunk => body += chunk);
+       req.on('end', () => {
+         if (body) {
+           const data = JSON.parse(body);
+           weeks = data.weeks || [];
+         }
+         runEndorsement(weeks, res);
+       });
+     } catch (e) {
+       res.writeHead(400);
+       res.end(JSON.stringify({ error: 'Invalid request' }));
+     }
+   }
+
+  // === BACKUP & RESTORE ===
+  else if (url === '/api/backup' && req.method === 'GET') {
+    try {
+      const config = fs.readFileSync(CONFIG_PATH, 'utf-8');
+      const rptPath = path.join(__dirname, 'data', 'rpt-data.json');
+      const rpt = fs.existsSync(rptPath) ? fs.readFileSync(rptPath, 'utf-8') : '{}';
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Content-Disposition': 'attachment; filename="cids-backup.json"' });
+      res.end(JSON.stringify({ config: JSON.parse(config), rptData: JSON.parse(rpt), timestamp: new Date().toISOString() }));
+    } catch (e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Gagal buat backup' }));
+    }
+  }
+
+  else if (url === '/api/restore' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const data = JSON.parse(body);
+        if (data.config) fs.writeFileSync(CONFIG_PATH, JSON.stringify(data.config, null, 2));
+        if (data.rptData) {
+          const rptPath = path.join(__dirname, 'data', 'rpt-data.json');
+          fs.writeFileSync(rptPath, JSON.stringify(data.rptData, null, 2));
+        }
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, message: 'Data berjaya dipulihkan!' }));
+      } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Fail backup tidak sah' }));
+      }
+    });
+  }
+
+  // === SCREENSHOT PREVIEW ===
+  else if (url === '/api/screenshot' && req.method === 'GET') {
+    const imgPath = path.join(__dirname, 'debug-login-page.png');
+    if (fs.existsSync(imgPath)) {
+      res.writeHead(200, { 'Content-Type': 'image/png' });
+      res.end(fs.readFileSync(imgPath));
+    } else {
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('Tiada screenshot tersedia');
+    }
+  }
+
+  // === EXPORT LOG ===
+  else if (url === '/api/export-log' && req.method === 'GET') {
+    res.writeHead(200, { 
+      'Content-Type': 'text/plain',
+      'Content-Disposition': `attachment; filename="cids-log-${new Date().toISOString().slice(0,10)}.txt"`
+    });
+    res.end(currentLog || 'Tiada log.');
+  }
+
+  // === PROGRESS CHECK ===
+  else if (url === '/api/progress' && req.method === 'GET') {
+    const progressPath = path.join(__dirname, 'data', 'progress.json');
+    if (fs.existsSync(progressPath)) {
+      try {
+        const progress = JSON.parse(fs.readFileSync(progressPath, 'utf-8'));
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ hasProgress: true, completed: progress.completedWeeks || [] }));
+      } catch (e) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ hasProgress: false }));
+      }
+    } else {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ hasProgress: false }));
+    }
+  }
+
+  // === CLEAR PROGRESS ===
+  else if (url === '/api/clear-progress' && req.method === 'POST') {
+    const progressPath = path.join(__dirname, 'data', 'progress.json');
+    try { if (fs.existsSync(progressPath)) fs.unlinkSync(progressPath); } catch (e) {}
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: true }));
+  }
+
   // === PROFILE MANAGEMENT ===
   else if (url === '/api/profiles' && req.method === 'GET') {
     try {
@@ -258,10 +364,16 @@ const server = http.createServer((req, res) => {
     try {
       const config = loadConfig();
       const active = getActiveProfile(config);
+      const rptPath = path.join(__dirname, 'data', 'rpt-data.json');
+      let rptData = {};
+      if (fs.existsSync(rptPath)) {
+        try { rptData = JSON.parse(fs.readFileSync(rptPath, 'utf-8')); } catch(e) {}
+      }
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({
         activeProfile: config.activeProfile,
         profileNames: Object.keys(config.profiles),
+        mingguTarikh: rptData.minggu_tarikh || {},
         ...active
       }));
     } catch (e) {
@@ -470,6 +582,23 @@ const server = http.createServer((req, res) => {
     });
   }
 });
+
+function runEndorsement(weeks, res) {
+  const weekArgs = weeks.length > 0 ? weeks.join(' ') : '';
+  const weekMsg = weeks.length > 0 ? `minggu ${weeks.join(', ')}` : 'SEMUA MINGGU';
+  currentLog = `=== HANTAR PENGESAHAN DIMULAKAN ===\n${weekMsg}\n`;
+  isRunning = true;
+  currentProcess = exec(`node hantar-pengesahan.js ${weekArgs}`, { cwd: __dirname }, (error, stdout, stderr) => {
+    isRunning = false;
+    currentProcess = null;
+    if (error) currentLog += `\n[ERROR] ${error.message}\n`;
+    currentLog += stdout + (stderr ? `\n[STDERR] ${stderr}\n` : '') + '\n=== SELESAI ===\n';
+  });
+  currentProcess.stdout.on('data', (data) => { currentLog += data; });
+  currentProcess.stderr.on('data', (data) => { currentLog += `\n[ERROR] ${data}\n`; });
+  res.writeHead(200, { 'Content-Type': 'application/json' });
+  res.end(JSON.stringify({ success: true, message: `Proses pengesahan ${weekMsg} dimulakan` }));
+}
 
 function startServer(port) {
   server.listen(port, () => {
